@@ -4,7 +4,9 @@ import "../index.css";
 import logo from "../assets/GreyLogo.png";
 import AnimatedRadialSunburstChart from "./Radials";
 import Sliders from "./Sliders";
+import Button from "@mui/material/Button";
 import RechartBar from "./RechartTest";
+import questionBank from "../modules/question-bank";
 
 const initialData = [
   {
@@ -27,16 +29,29 @@ const initialData = [
 function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [desiredSlide, setDesiredSlide] = useState(0);
-  // const [data, setData] = useState(initialData);
+  const [questions, setQuestions] = useState([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
+  const [questionIndex, setQuestionIndex] = useState(0);
+  const [questionNum, setQuestionNum] = useState(
+    questionBank[questions[questionIndex]]
+  );
 
   function handleCurrent(x) {
     setCurrentSlide(Number(x));
-    console.log({ x });
+    // console.log({ x });
   }
 
   function handleDesired(y) {
     setDesiredSlide(Number(y));
-    console.log({ y });
+    // console.log({ y });
+  }
+
+  function handleNext() {
+    setCurrentSlide(0);
+    setDesiredSlide(0);
+    setQuestionNum(questionBank[questions[questionIndex + 1]]);
+    setQuestionIndex((prev) => prev + 1);
+
+    // console.log(questionNum);
   }
 
   return (
@@ -51,19 +66,19 @@ function App() {
           </h1>
           <div className="divider w-40 ml-6 md:ml-40"></div>
           <h2 className="text-lg md:text-xl font-light pl-8 md:pl-0 md:ml-40 md:pl-2 -mt-5 md:mt-0 bg-slate-100 md:bg-white">
-            Strategy
+            {questionNum.Type}
           </h2>
         </header>
         <div className="md:ml-40 md:bg-[#bde1f7] w-fit p-4">
           <div className="mt-2  -mb-1 ml-4 font-bold text-slate-600 text-sm md:text-md">
-            Question 1 of 5
+            Question {questionNum.Number} of {questionNum.Of}
           </div>
           <h3 className=" font-bold text-lg md:text-2xl">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit?
+            {questionNum.Dimension}
           </h3>
         </div>
         <div className="w-1/4 hidden md:flex text-xs md:-ml-5 md:-mb-5 mt-3 font-bold">
-          <div className="ml-40 flex items-center">
+          <div className="ml-40 flex items-center pl-5 py-4">
             <div className="w-[10px] bg-[#09497B] h-[10px] rounded-full mr-2"></div>
             Current
           </div>
@@ -90,31 +105,38 @@ function App() {
             <div>Level 1</div>
             <div></div>
           </div>
-          <div className="hidden h-80 flex flex-col md:flex justify-between ml-10 text-slate-700 text-xs md:w-1/4">
-            <div>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde,
-              nam omnis. tempora blanditiis provident
-            </div>
-            <div>
-              ex ipsam non, nihil omnis aliquid sapiente vel. Numquam, illum.
-            </div>
-            <div>Culpa, quod aliquam ut tempore aperiam,</div>
-            <div>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi
-              deserunt incidunt soluta odit enim laborum aliquid debitis
-              maiores, error numquam necessitatibus.{" "}
-            </div>
-            <div>
-              Voluptate doloribus illum est repudiandae assumenda nihil
-              necessitatibus eveniet?
-            </div>
+          <div className="hidden h-80 flex flex-col md:flex justify-between ml-10 text-slate-700 text-xs md:w-1/3">
+            <div>{questionNum.Response_5}</div>
+            <div>{questionNum.Response_4}</div>
+            <div>{questionNum.Response_3}</div>
+            <div>{questionNum.Response_2}</div>
+            <div>{questionNum.Response_1}</div>
             <div></div>
           </div>
-          <div className="md:-mt-24 -mt-18 flex justify-center -z-10">
+          <div className="md:-mt-24 -mt-24 md:flex md:justify-center relative -z-10">
             <RechartBar
               currentSlide={currentSlide}
               desiredSlide={desiredSlide}
             ></RechartBar>
+          </div>
+        </div>
+        <div className="w-screen flex justify-center">
+          <div className="p-2">
+            <Button variant="outlined" size="large">
+              BACK
+            </Button>
+          </div>
+          <div className="p-2">
+            {currentSlide != 0 && desiredSlide != 0 && (
+              <Button variant="outlined" size="large" onClick={handleNext}>
+                NEXT
+              </Button>
+            )}
+            {(currentSlide == 0 || desiredSlide == 0) && (
+              <Button variant="outlined" size="large" disabled>
+                NEXT
+              </Button>
+            )}
           </div>
         </div>
       </div>

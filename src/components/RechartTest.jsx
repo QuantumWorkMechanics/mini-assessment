@@ -53,8 +53,8 @@ function RechartBar({ currentSlide, desiredSlide }) {
 
   return (
     <RadialBarChart
-      width={500}
-      height={500}
+      width={400}
+      height={400}
       data={data}
       innerRadius="20%"
       outerRadius="70%"
