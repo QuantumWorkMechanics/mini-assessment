@@ -29,27 +29,32 @@ function RechartBar({ currentSlide, desiredSlide }) {
   var test = [3, 4, 5];
 
   useEffect(() => {
-    console.log(currentSlide);
+    // console.log(currentSlide);
     let nextData = [...data];
     (nextData[0] = {
       name: "A",
       x: currentSlide,
       fill: "#09497B",
     }),
-      console.log(nextData);
+      (nextData[1] = {
+        name: "B",
+        x: desiredSlide,
+        fill: "#FDB517",
+      });
+    // console.log(nextData);
     setData(nextData);
-  }, [currentSlide]);
+  }, [currentSlide, desiredSlide]);
 
-  useEffect(() => {
-    let nextDesiredData = [...data];
-    (nextDesiredData[1] = {
-      name: "B",
-      x: desiredSlide,
-      fill: "#FDB517",
-    }),
-      console.log(nextDesiredData);
-    setData(nextDesiredData);
-  }, [desiredSlide]);
+  // useEffect(() => {
+  //   let nextDesiredData = [...data];
+  //   (nextDesiredData[1] = {
+  //     name: "B",
+  //     x: desiredSlide,
+
+  //   }),
+  //     console.log(nextDesiredData);
+  //   setData(nextDesiredData);
+  // }, [desiredSlide]);
 
   return (
     <RadialBarChart
