@@ -1,6 +1,8 @@
 const questionBank = [
   {
     Type: "Leadership & Change",
+    Current: 0,
+    Desired: 0,
     Number: "1",
     Of: "10",
     Dimension: "Holistic approach to Transformation ",
@@ -15,6 +17,8 @@ const questionBank = [
   },
   {
     Type: "Leadership & Change",
+    Current: 0,
+    Desired: 0,
     Number: "2",
     Of: "10",
     Dimension: "Scientific Data Driven",
@@ -29,6 +33,8 @@ const questionBank = [
   },
   {
     Type: "Leadership & Change",
+    Current: 0,
+    Desired: 0,
     Number: "3",
     Of: "10",
     Dimension: "Experimental",
@@ -43,6 +49,8 @@ const questionBank = [
   },
   {
     Type: "Leadership & Change",
+    Current: 0,
+    Desired: 0,
     Number: "4",
     Of: "10",
     Dimension: "Transfromational Leadership",
@@ -57,6 +65,8 @@ const questionBank = [
   },
   {
     Type: "Leadership & Change",
+    Current: 0,
+    Desired: 0,
     Number: "5",
     Of: "10",
     Dimension: "Systemic Model for Change",
@@ -71,6 +81,8 @@ const questionBank = [
   },
   {
     Type: "Leadership & Change",
+    Current: 0,
+    Desired: 0,
     Number: "6",
     Of: "10",
     Dimension: "Resourcing for Innovation",
@@ -85,6 +97,8 @@ const questionBank = [
   },
   {
     Type: "Leadership & Change",
+    Current: 0,
+    Desired: 0,
     Number: "7",
     Of: "10",
     Dimension: "Organizing Agility ",
@@ -99,6 +113,8 @@ const questionBank = [
   },
   {
     Type: "Leadership & Change",
+    Current: 0,
+    Desired: 0,
     Number: "8",
     Of: "10",
     Dimension: "Rewarding  Innovation",
@@ -113,6 +129,8 @@ const questionBank = [
   },
   {
     Type: "Leadership & Change",
+    Current: 0,
+    Desired: 0,
     Number: "9",
     Of: "10",
     Dimension: "Sound Foundations",

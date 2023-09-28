@@ -6,6 +6,8 @@ import Button from "@mui/material/Button";
 import RechartBar from "./RechartTest";
 import questionBank from "../../modules/question-bank";
 import logo from "../../assets/GreyLogo.png";
+import { useLocation } from "react-router-dom";
+import NavBar from "../NavBar";
 
 const initialData = [
   {
@@ -26,10 +28,13 @@ const initialData = [
 ];
 
 function Questionnaire() {
+  const location = useLocation();
+  //   console.log(location);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [desiredSlide, setDesiredSlide] = useState(0);
   const [questions, setQuestions] = useState([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
   const [questionIndex, setQuestionIndex] = useState(0);
+  //   const [selections, setSelections] = useState(state);
   const [questionNum, setQuestionNum] = useState(
     questionBank[questions[questionIndex]]
   );
@@ -54,6 +59,8 @@ function Questionnaire() {
   }
 
   function handleBack() {
+    let currentScore = questionBank[questions[questionIndex - 1]];
+    console.log({ currentScore });
     setCurrentSlide(0);
     setDesiredSlide(0);
     setQuestionNum(questionBank[questions[questionIndex - 1]]);
@@ -64,10 +71,8 @@ function Questionnaire() {
 
   return (
     <>
+      <NavBar></NavBar>
       <div className="h-screen text-primary flex flex-col">
-        <div className="h-[60px] md:h-[100px] w-screen bg-[#878787]">
-          <img src={logo} alt="" className="h-[40px] md:h-[70px] mt-3 ml-5" />
-        </div>
         <header>
           <h1 className="pt-2 pl-2 md:p-6 md:pl-40 text-xl md:text-3xl font-bold">
             My Assessment

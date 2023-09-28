@@ -1,17 +1,59 @@
 import React, { useState } from "react";
 
-export default function Diamond() {
-  const [leadership, setLeadership] = useState(false);
+export default function Diamond({ handleSelection, test, handleReady }) {
+  const [topLeft, setTopLeft] = useState(false);
+  const [topRight, setTopRight] = useState(false);
+  const [rightCircle, setRightCircle] = useState(false);
+  const [bottomCircle, setBottomCircle] = useState(false);
+  const [leftCircle, setLeftCircle] = useState(false);
+  const [middleCircle, setMiddleCircle] = useState(false);
 
-  function handleLeadership() {
-    if (leadership == false) {
-      setLeadership(true);
-    } else {
-      setLeadership(false);
-    }
+  function handleTopLeft() {
+    handleSelection("topLeft", !topLeft);
+    setTopLeft((prev) => !prev);
   }
+
+  function handleTopRight() {
+    handleSelection("topRight", !topRight);
+    setTopRight((prev) => !prev);
+  }
+
+  function handleRightCircle() {
+    handleSelection("rightCircle", !rightCircle);
+    setRightCircle((prev) => !prev);
+  }
+
+  function handleLeftCircle() {
+    handleSelection("leftCircle", !leftCircle);
+    setLeftCircle((prev) => !prev);
+  }
+
+  function handleBottomCircle() {
+    handleSelection("bottomCircle", !bottomCircle);
+    setBottomCircle((prev) => !prev);
+  }
+
+  function handleMiddleCircle() {
+    handleSelection("middleCircle", !middleCircle);
+    setMiddleCircle((prev) => !prev);
+  }
+
+  function handleSVG(e) {
+    console.log(e.target.id);
+    e.target.id == "topLeftCircle" && handleTopLeft();
+    e.target.id == "topRightCircle" && handleTopRight();
+    e.target.id == "leftCircle" && handleLeftCircle();
+    e.target.id == "rightCircle" && handleRightCircle();
+    e.target.id == "bottomCircle" && handleBottomCircle();
+    e.target.id == "middleCircle" && handleMiddleCircle();
+  }
+
   return (
     <>
+      <div className="text-[#09497B] text-3xl font-light">
+        Click on the diamond component to add it to your assessments
+      </div>
+      <div className="divider w-[40%] pl-4"></div>
       <div className="relative">
         <svg
           version="1.1"
@@ -23,6 +65,7 @@ export default function Diamond() {
           viewBox="0 0 426.4 309.3"
           style={{ enableBackground: "new 0 0 426.4 309.3" }}
           xmlSpace="preserve"
+          onClick={(e) => handleSVG(e)}
         >
           <style
             type="text/css"
@@ -88,51 +131,116 @@ export default function Diamond() {
           />
           <g>
             <path
+              id="topLeftCircle"
               className={
-                ((leadership == false && "st16 ") || "") +
-                ((leadership && "st9 ") || "")
+                "cursor-pointer " +
+                ((topLeft == false && "fill-[#cccccc] hover:fill-[#FFCB18]") ||
+                  "") +
+                ((topLeft && "fill-[#FDB517] ") || "")
               }
               d="M103,47.6c4.8,0,8.7-3.9,8.7-8.7c0-4.8-3.9-8.7-8.7-8.7s-8.7,3.9-8.7,8.7C94.3,43.7,98.2,47.6,103,47.6"
             />
             <path
-              className="st9"
+              id="topLeftRing"
+              className={
+                "cursor-pointer " +
+                ((topLeft == false && "fill-[#cccccc] hover:fill-[#FFCB18] ") ||
+                  "") +
+                ((topLeft && "fill-[#FDB517] ") || "")
+              }
               d="M103,50.6c-6.4,0-11.7-5.2-11.7-11.7s5.2-11.7,11.7-11.7c6.4,0,11.7,5.2,11.7,11.7S109.4,50.6,103,50.6z
                M103,28.5c-5.7,0-10.4,4.7-10.4,10.4s4.7,10.4,10.4,10.4c5.7,0,10.4-4.7,10.4-10.4S108.7,28.5,103,28.5z"
             />
             <path
-              className="st9"
+              id="topRightCircle"
+              className={
+                "cursor-pointer " +
+                ((topRight == false &&
+                  "fill-[#cccccc] hover:fill-[#FFCB18] ") ||
+                  "") +
+                ((topRight && "fill-[#FDB517] ") || "")
+              }
               d="M326.8,47.6c4.8,0,8.7-3.9,8.7-8.7c0-4.8-3.9-8.7-8.7-8.7s-8.7,3.9-8.7,8.7S322,47.6,326.8,47.6"
             />
             <path
-              className="st9"
+              id="topRightRing"
+              className={
+                "cursor-pointer " +
+                ((topRight == false &&
+                  "fill-[#cccccc] hover:fill-[#FFCB18] ") ||
+                  "") +
+                ((topRight && "fill-[#FDB517] ") || "")
+              }
               d="M326.8,50.6c-6.4,0-11.7-5.2-11.7-11.7s5.2-11.7,11.7-11.7s11.7,5.2,11.7,11.7S333.3,50.6,326.8,50.6z
                M326.8,28.5c-5.7,0-10.4,4.7-10.4,10.4s4.7,10.4,10.4,10.4s10.4-4.7,10.4-10.4S332.6,28.5,326.8,28.5z"
             />
             <path
-              className="st9"
+              id="rightCircle"
+              className={
+                "cursor-pointer " +
+                ((rightCircle == false &&
+                  "fill-[#cccccc] hover:fill-[#FFCB18] ") ||
+                  "") +
+                ((rightCircle && "fill-[#FDB517] ") || "")
+              }
               d="M388.5,113.5c4.8,0,8.7-3.9,8.7-8.7c0-4.8-3.9-8.7-8.7-8.7s-8.7,3.9-8.7,8.7
               C379.8,109.6,383.7,113.5,388.5,113.5"
             />
             <path
-              className="st9"
+              id="rightRing"
+              className={
+                "cursor-pointer " +
+                ((rightCircle == false &&
+                  "fill-[#cccccc] hover:fill-[#FFCB18] ") ||
+                  "") +
+                ((rightCircle && "fill-[#FDB517] ") || "")
+              }
               d="M388.5,116.5c-6.4,0-11.7-5.2-11.7-11.7s5.2-11.7,11.7-11.7s11.7,5.2,11.7,11.7S395,116.5,388.5,116.5z
                M388.5,94.4c-5.7,0-10.4,4.7-10.4,10.4s4.7,10.4,10.4,10.4c5.7,0,10.4-4.7,10.4-10.4S394.3,94.4,388.5,94.4z"
             />
             <path
-              className="st9"
+              id="leftCircle"
+              className={
+                "cursor-pointer " +
+                ((leftCircle == false &&
+                  "fill-[#cccccc] hover:fill-[#FFCB18] ") ||
+                  "") +
+                ((leftCircle && "fill-[#FDB517] ") || "")
+              }
               d="M39.2,113.5c4.8,0,8.7-3.9,8.7-8.7c0-4.8-3.9-8.7-8.7-8.7s-8.7,3.9-8.7,8.7C30.5,109.6,34.4,113.5,39.2,113.5"
             />
             <path
-              className="st9"
+              id="leftRing"
+              className={
+                "cursor-pointer " +
+                ((leftCircle == false &&
+                  "fill-[#cccccc] hover:fill-[#FFCB18] ") ||
+                  "") +
+                ((leftCircle && "fill-[#FDB517] ") || "")
+              }
               d="M39.2,116.5c-6.4,0-11.7-5.2-11.7-11.7s5.2-11.7,11.7-11.7s11.7,5.2,11.7,11.7S45.6,116.5,39.2,116.5z
                M39.2,94.4c-5.7,0-10.4,4.7-10.4,10.4s4.7,10.4,10.4,10.4s10.4-4.7,10.4-10.4S44.9,94.4,39.2,94.4z"
             />
             <path
-              className="st9"
+              id="bottomCircle"
+              className={
+                "cursor-pointer " +
+                ((bottomCircle == false &&
+                  "fill-[#cccccc] hover:fill-[#FFCB18] ") ||
+                  "") +
+                ((bottomCircle && "fill-[#FDB517] ") || "")
+              }
               d="M216.1,291c4.8,0,8.7-3.9,8.7-8.7c0-4.8-3.9-8.7-8.7-8.7s-8.7,3.9-8.7,8.7C207.4,287.1,211.3,291,216.1,291"
             />
             <path
-              className="st9"
+              id="bottomRing"
+              className={
+                "cursor-pointer " +
+                ((bottomCircle == false &&
+                  "fill-[#cccccc] hover:fill-[#FFCB18] ") ||
+                  "") +
+                ((bottomCircle && "fill-[#FDB517] ") || "")
+              }
               d="M216.1,294c-6.4,0-11.7-5.2-11.7-11.7s5.2-11.7,11.7-11.7c6.4,0,11.7,5.2,11.7,11.7S222.5,294,216.1,294z
                M216.1,271.9c-5.7,0-10.4,4.7-10.4,10.4s4.7,10.4,10.4,10.4s10.4-4.7,10.4-10.4S221.9,271.9,216.1,271.9z"
             />
@@ -189,27 +297,54 @@ export default function Diamond() {
             {" "}
           </text>
           <path
-            className="st9"
+            id="middleCircle"
+            className={
+              ((middleCircle == false &&
+                "fill-[#cccccc] hover:fill-[#FFCB18] ") ||
+                "") + ((middleCircle && "fill-[#FDB517] ") || "")
+            }
             d="M167.2,192c4.8,0,8.7-3.9,8.7-8.7c0-4.8-3.9-8.7-8.7-8.7c-4.8,0-8.7,3.9-8.7,8.7
           C158.6,188.1,162.5,192,167.2,192"
           />
           <path
-            className="st9"
+            id="middleRing"
+            className={
+              ((middleCircle == false &&
+                "fill-[#cccccc] hover:fill-[#FFCB18] ") ||
+                "") + ((middleCircle && "fill-[#FDB517] ") || "")
+            }
             d="M167.2,195c-6.4,0-11.7-5.2-11.7-11.7s5.2-11.7,11.7-11.7s11.7,5.2,11.7,11.7S173.7,195,167.2,195z
            M167.2,172.9c-5.7,0-10.4,4.7-10.4,10.4s4.7,10.4,10.4,10.4s10.4-4.7,10.4-10.4S173,172.9,167.2,172.9z"
           />
         </svg>
-        <div
+        {/* <div
           className="absolute h-[5.6%] w-[4.2%] top-[9.8%] left-[22%] rounded-full"
           onClick={handleLeadership}
-        ></div>
+        ></div> */}
+        <div className="absolute w-[25%] h-[1px] bg-[#FDB517] top-[60%] left-[12%] "></div>
         <div
+          onClick={handleTopLeft}
           className={
-            "absolute h-[5.6%] w-[20%] top-[5%]  rounded-full text-lg " +
-            (leadership && "underline decoration-[#FDB517]")
+            "leading-5 text-[#0EA8DC] cursor-pointer font-lighter absolute  w-[23%] md:w-[20%] top-[5%]   text-xs md:text-sm " +
+            (topLeft && "underline decoration-[#FDB517]")
           }
         >
-          Leadership & Change
+          LEADERSHIP & CHANGE
+        </div>
+        <div className="absolute bottom-6 l-2">
+          {!test && (
+            <button className="text-2xl font-lighter w-[100px] outline text-slate-400 disabled ">
+              READY
+            </button>
+          )}
+          {test && (
+            <button
+              className="text-2xl font-lighter w-[100px] outline text-[#09497B] hover:text-[#0EA8DC] "
+              onClick={() => handleReady()}
+            >
+              READY
+            </button>
+          )}
         </div>
       </div>
     </>
