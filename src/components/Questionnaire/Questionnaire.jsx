@@ -83,12 +83,13 @@ function Questionnaire() {
           </h2>
         </header>
         <div className="md:ml-40 md:bg-[#bde1f7] w-fit p-4">
-          <div className="mt-2  -mb-1 ml-4 font-bold text-slate-600 text-sm md:text-md">
+          <div className="-mt-2 md:mt-2  md:-mb-1 md:ml-4 font-bold text-slate-600 text-sm md:text-md">
             Question {questionNum.Number} of {questionNum.Of}
           </div>
           <h3 className=" font-bold text-lg md:text-2xl">
             {questionNum.Dimension}
           </h3>
+          <div className="md:hidden divider"></div>
         </div>
         <div className="w-1/4 hidden md:flex text-xs md:-ml-5 md:-mb-5 mt-3 font-bold">
           <div className="ml-40 flex items-center pl-5 py-4">
@@ -100,8 +101,8 @@ function Questionnaire() {
             Desired
           </div>
         </div>
-        <div className="md:hidden p-1 relative mb-2 ">
-          <div className="absolute">
+        <div className="md:hidden p-1 relative mb-2 px-4 mb-8 ">
+          <div className="absolute -mt-5 text-sm">
             {currentSlide == 1 && questionNum.Response_1}
             {currentSlide == 2 && questionNum.Response_2}
             {currentSlide == 3 && questionNum.Response_3}
@@ -118,7 +119,7 @@ function Questionnaire() {
               desiredSlide={desiredSlide}
             ></Sliders>
           </div>
-          <div className="md:hidden p-1 relative -mt-4 ">
+          <div className="md:hidden p-1 relative -mt-4 px-4 text-sm">
             <div className="absolute">
               {desiredSlide == 1 && questionNum.Response_1}
               {desiredSlide == 2 && questionNum.Response_2}

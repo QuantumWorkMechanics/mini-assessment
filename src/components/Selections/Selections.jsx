@@ -72,7 +72,7 @@ export default function Selections() {
                   Begin by selecting which worktech competencies you woud like
                   to asses.
                 </div>
-                <div className="text-white font-light ">
+                <div className="hidden md:block text-white font-light ">
                   Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                   Ipsum dolorem saepe accusantium consequatur quidem
                   consequuntur vitae officia, possimus sit aspernatur debitis
@@ -80,9 +80,9 @@ export default function Selections() {
                 </div>
               </div>
             </div>
-            <div className="w-screen md:mt-4 -mt-[40%] flex justify-center">
+            <div className="w-screen md:mt-4 -mt-[80%] flex justify-center">
               <button
-                className="text-2xl md:text-3xl text-white md:text-[#09497B] hover:text-white hover:bg-[#09497B] hover:outline-[#FDB517] outline outline-4  p-2"
+                className="text-2xl md:text-3xl text-white md:text-[#09497B] hover:text-white hover:outline-[#0EA8DC] hover:bg-[#09497B] outline outline-4  p-2"
                 onClick={handleStart}
               >
                 BEGIN

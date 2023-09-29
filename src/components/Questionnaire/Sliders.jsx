@@ -18,7 +18,9 @@ export default function Sliders({
   return (
     <>
       <div className="md:place-self-start md:my-40 flex flex-col md:flex-row justify-center md:justify-start p-6 md:p-0">
-        <div className="m-4 text-slate-600 md:hidden">Current Level</div>
+        <div className="m-4 text-slate-600 md:hidden text-xs mb-1">
+          Current Level
+        </div>
         <div className=" md:-mr-20">
           <div className=" ">
             <input
@@ -34,7 +36,9 @@ export default function Sliders({
           </div>
         </div>
 
-        <div className="text-slate-600 md:hidden m-4">Desired Level</div>
+        <div className="text-slate-600 md:hidden m-4 text-xs mb-1">
+          Desired Level
+        </div>
         <div className=" md:-ml-44">
           <div className="flex flex-col">
             <div className=" bottom-0">
