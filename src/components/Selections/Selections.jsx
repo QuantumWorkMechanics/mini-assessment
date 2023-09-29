@@ -76,12 +76,11 @@ export default function Selections() {
                   Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                   Ipsum dolorem saepe accusantium consequatur quidem
                   consequuntur vitae officia, possimus sit aspernatur debitis
-                  dolor aperiam! Facere, ipsa maxime. Quod vitae dignissimos
-                  accusamus!
+                  dolor aperiam! Facere, ipsa maxime.
                 </div>
               </div>
             </div>
-            <div className="w-screen md:mt-4 -mt-14 flex justify-center">
+            <div className="w-screen md:mt-4 -mt-[40%] flex justify-center">
               <button
                 className="text-2xl md:text-3xl text-white md:text-[#09497B] hover:text-white hover:bg-[#09497B] hover:outline-[#FDB517] outline outline-4  p-2"
                 onClick={handleStart}
