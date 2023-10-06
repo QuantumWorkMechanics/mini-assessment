@@ -325,7 +325,7 @@ export default function Diamond({ handleSelection, test, handleReady }) {
         <div
           onClick={handleTopLeft}
           className={
-            "leading-5 text-[#0EA8DC] cursor-pointer font-lighter absolute  w-[23%] md:w-[20%] top-[5%]   text-xs md:text-sm " +
+            "leading-5 text-[#0EA8DC] cursor-pointer font-lighter absolute  w-[23%] md:w-[20%] top-[5%]   text-xs md:text-lg " +
             (topLeft && "underline decoration-[#FDB517]")
           }
         >

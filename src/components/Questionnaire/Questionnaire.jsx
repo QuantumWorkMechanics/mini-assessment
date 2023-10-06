@@ -105,6 +105,7 @@ function Questionnaire() {
 
   function handleNext() {
     if (questionIndex + 1 == questionList.length) {
+      setProgress(1);
       setIsExploding(true);
       // setTimeout(document.getElementById("my_modal_1").showModal(), 1000);
       return;
