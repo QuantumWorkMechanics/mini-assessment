@@ -1,10 +1,11 @@
 const questionBank = [
   {
+    DiamondLoc: "topLeft",
     Type: "Leadership & Change",
     Current: 0,
     Desired: 0,
     Number: "1",
-    Of: "10",
+    Of: "9",
     Dimension: "Holistic approach to Transformation ",
     Response_1:
       "Our transformation projects are very ad hoc, and the business is not enagged or listened to.",
@@ -16,11 +17,12 @@ const questionBank = [
       "Our approach to transformation prioritizes understanding business problems using techniques such as design thinking to redesign experiences before implementing technology solutions.",
   },
   {
+    DiamondLoc: "topLeft",
     Type: "Leadership & Change",
     Current: 0,
     Desired: 0,
     Number: "2",
-    Of: "10",
+    Of: "9",
     Dimension: "Scientific Data Driven",
     Response_1:
       "Our innovation strategy lacks reliable data and modern tools and have no standard way of executing innovation.",
@@ -32,11 +34,12 @@ const questionBank = [
       "We invest heavily in data, toolsets, training, and research to drive innovation using advanced technology.",
   },
   {
+    DiamondLoc: "topLeft",
     Type: "Leadership & Change",
     Current: 0,
     Desired: 0,
     Number: "3",
-    Of: "10",
+    Of: "9",
     Dimension: "Experimental",
     Response_1:
       "We are not encouraged to think creatively, as we are expected to adhere to our existing business model without much emphasis on innovation for new models.",
@@ -48,11 +51,12 @@ const questionBank = [
       "Our culture values experimentation and calculated risk-taking, supported by adherence to company wide methodologies. We have demonstrated success in generating new sources of growth.",
   },
   {
+    DiamondLoc: "topLeft",
     Type: "Leadership & Change",
     Current: 0,
     Desired: 0,
     Number: "4",
-    Of: "10",
+    Of: "9",
     Dimension: "Transfromational Leadership",
     Response_1:
       "Leaders prioritize results and current models, but neglect innovation despite recognizing its importance.",
@@ -64,11 +68,12 @@ const questionBank = [
       "Leadership drives innovation with strategic planning, adaptability, and guidance.",
   },
   {
+    DiamondLoc: "topLeft",
     Type: "Leadership & Change",
     Current: 0,
     Desired: 0,
     Number: "5",
-    Of: "10",
+    Of: "9",
     Dimension: "Systemic Model for Change",
     Response_1:
       "My leaders don't prioritize fostering and monitoring change, leaving it mainly to HR.",
@@ -80,11 +85,12 @@ const questionBank = [
       "Our leaders prioritize change and foster organizational learning through openness and trust.  Busines leadership is synonymous with change leadership.",
   },
   {
+    DiamondLoc: "topLeft",
     Type: "Leadership & Change",
     Current: 0,
     Desired: 0,
     Number: "6",
-    Of: "10",
+    Of: "9",
     Dimension: "Resourcing for Innovation",
     Response_1:
       "The organization does not devote resources to innovation and new business models.",
@@ -96,11 +102,12 @@ const questionBank = [
       "Our organization prioritizes resource allocation and consistently reviews talent and resource allocation to align with high-impact areas. Leadership understands the quality and types of resources needed for success.",
   },
   {
+    DiamondLoc: "topLeft",
     Type: "Leadership & Change",
     Current: 0,
     Desired: 0,
     Number: "7",
-    Of: "10",
+    Of: "9",
     Dimension: "Organizing Agility ",
     Response_1:
       "We are a rigid hierarchy model and functional siloes. Leadership lacks a clear strategy for increasing business agility.",
@@ -112,11 +119,12 @@ const questionBank = [
       "Our focus is on agility and scalability through a network of project teams. Our leadership successfully reorganized functional silos into integrated, cross-functional teams aligned to products or platforms in IT, R&D, product development, and engineering.",
   },
   {
+    DiamondLoc: "topLeft",
     Type: "Leadership & Change",
     Current: 0,
     Desired: 0,
     Number: "8",
-    Of: "10",
+    Of: "9",
     Dimension: "Rewarding  Innovation",
     Response_1:
       "Innovation is not regarded as a core or legitimate career in our company and a pathway for senior management.",
@@ -128,12 +136,47 @@ const questionBank = [
       "We promote innovation and reward success at all levels. Transformative careers lead to senior leadership.",
   },
   {
+    DiamondLoc: "topLeft",
     Type: "Leadership & Change",
     Current: 0,
     Desired: 0,
     Number: "9",
-    Of: "10",
+    Of: "9",
     Dimension: "Sound Foundations",
+    Response_1:
+      "Outdated technology infrastructure hinders digital innovation. IT department creates ad hoc solutions due to insufficient investment.",
+    Response_2: "My answer lies between 1 and 3",
+    Response_3:
+      "Our technology foundation is undergoing a transition with both strengths and weaknesses, leading to an inconsistent user experience. Investment efforts are underway, but the overall direction is not always clear.",
+    Response_4: "My answer lies between 3 and 5",
+    Response_5:
+      "Our technology foundation drives digital innovation with intuitive platforms, visible priorities, and clear communication.",
+  },
+  {
+    DiamondLoc: "topRight",
+    Type: "Test",
+    Current: 0,
+    Desired: 0,
+    Number: "1",
+    Of: "1",
+    Dimension: "Test topRight",
+    Response_1:
+      "Outdated technology infrastructure hinders digital innovation. IT department creates ad hoc solutions due to insufficient investment.",
+    Response_2: "My answer lies between 1 and 3",
+    Response_3:
+      "Our technology foundation is undergoing a transition with both strengths and weaknesses, leading to an inconsistent user experience. Investment efforts are underway, but the overall direction is not always clear.",
+    Response_4: "My answer lies between 3 and 5",
+    Response_5:
+      "Our technology foundation drives digital innovation with intuitive platforms, visible priorities, and clear communication.",
+  },
+  {
+    DiamondLoc: "rightCircle",
+    Type: "Test 2",
+    Current: 0,
+    Desired: 0,
+    Number: "1",
+    Of: "1",
+    Dimension: "Test rightCircle",
     Response_1:
       "Outdated technology infrastructure hinders digital innovation. IT department creates ad hoc solutions due to insufficient investment.",
     Response_2: "My answer lies between 1 and 3",
