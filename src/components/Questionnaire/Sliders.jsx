@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Ranges from "./Ranges";
+// import Ranges from "./Ranges";
+import { SpotlightTour, useSpotlight } from "react-spotlight-tour";
+import Spotlight from "react-spotlight-tour/spotlight";
 
 export default function Sliders({
   handleCurrent,
@@ -14,6 +16,10 @@ export default function Sliders({
   //   setCurrentSlide(x);
   //   console.log({ x });
   // }
+  const spotlightRef = useSpotlight(
+    "Use the sliders \n to select your current \n and desired level.",
+    "top"
+  );
 
   return (
     <>
@@ -24,6 +30,7 @@ export default function Sliders({
         <div className=" md:-mr-20">
           <div className=" ">
             <input
+              ref={spotlightRef}
               type="range"
               value={currentSlide}
               min={0}
@@ -43,6 +50,7 @@ export default function Sliders({
           <div className="flex flex-col">
             <div className=" bottom-0">
               <input
+                ref={spotlightRef}
                 id="desired"
                 type="range"
                 value={desiredSlide}
