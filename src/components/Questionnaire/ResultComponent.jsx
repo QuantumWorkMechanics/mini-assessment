@@ -54,9 +54,13 @@ export default function ResultComponent({ component, questionList }) {
           <div className="px-4 md:mr-32 text-[#666666] text-sm max-w-[70ch] leading-7">
             <div className="mt-4 md:mt-20">
               Your current {questionSet[0].Type} score is{" "}
-              <strong className="text-lg text-[#09497B]">{current}</strong> and
-              your desired score is{" "}
-              <strong className="text-lg text-[#09497B]">{desired}</strong>
+              <strong className="text-lg text-[#09497B]">
+                {Math.round(current * 10) / 10}
+              </strong>{" "}
+              and your desired score is{" "}
+              <strong className="text-lg text-[#09497B]">
+                {Math.round(desired * 10) / 10}
+              </strong>
             </div>
             <div className="mt-10">
               Achieving your desired {questionSet[0].Type} goals will require{" "}

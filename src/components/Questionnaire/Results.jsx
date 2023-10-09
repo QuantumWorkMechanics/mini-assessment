@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import RechartBar from "./RechartTest";
 import ResultComponent from "./ResultComponent";
 import Header from "./Header";
+import SmallBar from "./SmallBar";
+import ResultsDiamond from "./ResultsDiamond";
 
 export default function Results({ questionList, categories }) {
   const [results, setResults] = useState({});
@@ -19,19 +21,73 @@ export default function Results({ questionList, categories }) {
     return total / loc[0].Of;
   }
 
-  // useEffect(() => {
-  //     let tempResults =
-  // }, []);
+  useEffect(() => {
+    let tempObj = { ...categories };
+    let tempCurrent = 0;
+    let tempDesired = 0;
+    if (categories.topLeft) {
+      tempCurrent = findAvg("topLeft", "current");
+      tempDesired = findAvg("topLeft", "desired");
+      tempObj = {
+        ...tempObj,
+        topLeft: { current: tempCurrent, desired: tempDesired },
+      };
+    }
+    if (categories.topRight) {
+      tempCurrent = findAvg("topRight", "current");
+      tempDesired = findAvg("topRight", "desired");
+      tempObj = {
+        ...tempObj,
+        topRight: { current: tempCurrent, desired: tempDesired },
+      };
+    }
+    if (categories.rightCircle) {
+      tempCurrent = findAvg("rightCircle", "current");
+      tempDesired = findAvg("rightCircle", "desired");
+      tempObj = {
+        ...tempObj,
+        rightCircle: { current: tempCurrent, desired: tempDesired },
+      };
+    }
+    if (categories.leftCircle) {
+      tempCurrent = findAvg("leftCircle", "current");
+      tempDesired = findAvg("leftCircle", "desired");
+      tempObj = {
+        ...tempObj,
+        leftCircle: { current: tempCurrent, desired: tempDesired },
+      };
+    }
+    if (categories.bottomCircle) {
+      tempCurrent = findAvg("bottomCircle", "current");
+      tempDesired = findAvg("bottomCircle", "desired");
+      tempObj = {
+        ...tempObj,
+        bottomCircle: { current: tempCurrent, desired: tempDesired },
+      };
+    }
+    if (categories.middleCircle) {
+      tempCurrent = findAvg("middleCircle", "current");
+      tempDesired = findAvg("middleCircle", "desired");
+      tempObj = {
+        ...tempObj,
+        middleCircle: { current: tempCurrent, desired: tempDesired },
+      };
+    }
+    console.log({ tempObj });
+    setResults(tempObj);
+  }, []);
 
   return (
     <div className="bg-webs">
       {" "}
       <header>
-        <h1 className="pt-2 pl-2 pl-14 md:p-6 md:pl-40 text-xl md:text-3xl font-bold flex ">
+        <h1 className="pt-2 pl-2 pl-14 md:p-6 md:pl-40 text-sm md:text-md font-bold flex ">
           My Results
         </h1>{" "}
-        <div className="divider w-1/3 md:w-1/4 pl-16 md:pl-44"></div>
       </header>
+      <div className="hidden md:block w-[80%] ml-[10%] animate-fade-up animate-once animate-duration-[600ms] animate-delay-300">
+        <ResultsDiamond components={categories} results={results} />
+      </div>
       {categories.topLeft && (
         <ResultComponent component={"topLeft"} questionList={questionList} />
       )}

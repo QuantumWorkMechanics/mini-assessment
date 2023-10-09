@@ -12,7 +12,7 @@ export default function SectionComplete({ setSeeResult, setSectionComplete }) {
         You completed a section
       </div>
 
-      <div className="animate-fade animate-once animate-duration-400 animate-delay-[1600ms]">
+      <div className="animate-fade animate-once animate-duration-400 animate-delay-[1600ms] mt-28">
         <Button
           style={{ minWidth: "120px", margin: "20px" }}
           variant="outlined"

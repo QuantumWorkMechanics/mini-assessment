@@ -51,8 +51,11 @@ export default function Diamond({ handleSelection, test, handleReady }) {
 
   return (
     <>
-      <div className="text-[#09497B] text-3xl font-light">
+      <div className="hidden md:block text-[#09497B] text-3xl font-light">
         Click on the diamond component to add it to your assessments
+      </div>
+      <div className="md:hidden text-[#09497B] text-3xl font-light">
+        Tapon the diamond component text add it to your assessments
       </div>
       <div className="divider w-[40%] pl-4"></div>
       <div className="relative">
@@ -348,7 +351,7 @@ export default function Diamond({ handleSelection, test, handleReady }) {
         <div
           onClick={handleRightCircle}
           className={
-            "leading-5 text-[#016AAB] font-bold cursor-pointer font-lighter absolute  w-[23%] md:w-[20%] top-[45%]  -right-[3%] text-xs md:text-lg " +
+            "leading-5 text-[#016AAB] font-bold cursor-pointer font-lighter absolute  w-[23%] md:w-[20%] top-[50%] md:top-[45%]  -right-[3%] text-xs md:text-lg " +
             (rightCircle && "underline decoration-[#FDB517]")
           }
         >
@@ -359,7 +362,7 @@ export default function Diamond({ handleSelection, test, handleReady }) {
         <div
           onClick={handleLeftCircle}
           className={
-            "leading-5 text-[#016AAB] font-bold  cursor-pointer font-lighter absolute  w-[23%] md:w-[20%] top-[38%]  text-xs md:text-lg " +
+            "leading-5 text-[#016AAB] font-bold  cursor-pointer font-lighter absolute  w-[23%] md:w-[20%] top-[40%] md:top-[38%]  text-xs md:text-lg " +
             (leftCircle && "underline decoration-[#FDB517]")
           }
         >
@@ -390,7 +393,7 @@ export default function Diamond({ handleSelection, test, handleReady }) {
             .Type.toUpperCase()}
         </div>
         <div className="absolute w-[25%] h-[1px] bg-[#FDB517] bottom-[6%] right-[22%] "></div>
-        <div className="absolute bottom-6 l-2">
+        <div className="absolute bottom-3 md:bottom-6 l-2">
           {!test && (
             <button className="text-2xl font-lighter w-[100px] outline text-slate-300 disabled ">
               READY
