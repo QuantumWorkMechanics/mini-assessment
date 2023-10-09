@@ -17,7 +17,7 @@ export default function Sliders({
   //   console.log({ x });
   // }
   const spotlightRef = useSpotlight(
-    "Use the sliders \n to select your current \n and desired level.",
+    "Tap or click \n to select your current \n and desired level.",
     "top"
   );
 

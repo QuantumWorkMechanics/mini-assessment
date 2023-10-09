@@ -95,6 +95,7 @@ function Questionnaire() {
     // console.log({ tempList });
     setQuestionList(tempList);
     setQuestionNum(tempList[0]);
+    setTimeout(() => setOpen(false), 4000);
     // console.log(location.state);
   }, []);
 
