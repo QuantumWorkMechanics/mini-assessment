@@ -26,8 +26,6 @@ function RechartBar({ currentSlide, desiredSlide }) {
     },
   ]);
 
-  var test = [3, 4, 5];
-
   useEffect(() => {
     // console.log(currentSlide);
     let nextData = [...data];

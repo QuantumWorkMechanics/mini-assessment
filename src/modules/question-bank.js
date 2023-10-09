@@ -1,5 +1,6 @@
 const questionBank = [
   {
+    Description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     DiamondLoc: "topLeft",
     Type: "Leadership & Change",
     Current: 0,
@@ -136,6 +137,8 @@ const questionBank = [
       "We promote innovation and reward success at all levels. Transformative careers lead to senior leadership.",
   },
   {
+    Description:
+      "Nulla ipsum, deleniti totam rerum maxime explicabo iure quia magni modi voluptas nobis numquam.",
     DiamondLoc: "topLeft",
     Type: "Leadership & Change",
     Current: 0,
@@ -153,8 +156,9 @@ const questionBank = [
       "Our technology foundation drives digital innovation with intuitive platforms, visible priorities, and clear communication.",
   },
   {
+    Description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     DiamondLoc: "topRight",
-    Type: "Test",
+    Type: "Extended Workforce",
     Current: 0,
     Desired: 0,
     Number: "1",
@@ -170,8 +174,64 @@ const questionBank = [
       "Our technology foundation drives digital innovation with intuitive platforms, visible priorities, and clear communication.",
   },
   {
+    Description: "Enim neque aut quos et animi eligendi sed.",
     DiamondLoc: "rightCircle",
-    Type: "Test 2",
+    Type: "Workforce Planning",
+    Current: 0,
+    Desired: 0,
+    Number: "1",
+    Of: "1",
+    Dimension: "Test rightCircle",
+    Response_1:
+      "Outdated technology infrastructure hinders digital innovation. IT department creates ad hoc solutions due to insufficient investment.",
+    Response_2: "My answer lies between 1 and 3",
+    Response_3:
+      "Our technology foundation is undergoing a transition with both strengths and weaknesses, leading to an inconsistent user experience. Investment efforts are underway, but the overall direction is not always clear.",
+    Response_4: "My answer lies between 3 and 5",
+    Response_5:
+      "Our technology foundation drives digital innovation with intuitive platforms, visible priorities, and clear communication.",
+  },
+  {
+    Description:
+      "Nulla ipsum, deleniti totam rerum maxime explicabo iure quia magni modi voluptas nobis numquam.",
+    DiamondLoc: "bottomCircle",
+    Type: "Workforce Productivity",
+    Current: 0,
+    Desired: 0,
+    Number: "1",
+    Of: "1",
+    Dimension: "Test rightCircle",
+    Response_1:
+      "Outdated technology infrastructure hinders digital innovation. IT department creates ad hoc solutions due to insufficient investment.",
+    Response_2: "My answer lies between 1 and 3",
+    Response_3:
+      "Our technology foundation is undergoing a transition with both strengths and weaknesses, leading to an inconsistent user experience. Investment efforts are underway, but the overall direction is not always clear.",
+    Response_4: "My answer lies between 3 and 5",
+    Response_5:
+      "Our technology foundation drives digital innovation with intuitive platforms, visible priorities, and clear communication.",
+  },
+  {
+    Description: "Enim neque aut quos et animi eligendi sed.",
+    DiamondLoc: "leftCircle",
+    Type: "Talent Aquisition",
+    Current: 0,
+    Desired: 0,
+    Number: "1",
+    Of: "1",
+    Dimension: "Test rightCircle",
+    Response_1:
+      "Outdated technology infrastructure hinders digital innovation. IT department creates ad hoc solutions due to insufficient investment.",
+    Response_2: "My answer lies between 1 and 3",
+    Response_3:
+      "Our technology foundation is undergoing a transition with both strengths and weaknesses, leading to an inconsistent user experience. Investment efforts are underway, but the overall direction is not always clear.",
+    Response_4: "My answer lies between 3 and 5",
+    Response_5:
+      "Our technology foundation drives digital innovation with intuitive platforms, visible priorities, and clear communication.",
+  },
+  {
+    Description: "Enim neque aut quos et animi eligendi sed.",
+    DiamondLoc: "middleCircle",
+    Type: "Talent Management",
     Current: 0,
     Desired: 0,
     Number: "1",

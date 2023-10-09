@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.bg-webs {
+  background-image: url("");
+}
+
 body {
   font-family: "Noto Sans", "Roboto";
 }

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import questionBank from "../modules/question-bank";
 
 export default function Diamond({ handleSelection, test, handleReady }) {
   const [topLeft, setTopLeft] = useState(false);
@@ -321,25 +322,83 @@ export default function Diamond({ handleSelection, test, handleReady }) {
           className="absolute h-[5.6%] w-[4.2%] top-[9.8%] left-[22%] rounded-full"
           onClick={handleLeadership}
         ></div> */}
-        <div className="absolute w-[25%] h-[1px] bg-[#FDB517] top-[60%] left-[12%] "></div>
+        <div className="absolute w-[25%] h-[1px] bg-[#FDB517] top-[62%] left-[13%] "></div>
         <div
           onClick={handleTopLeft}
           className={
-            "leading-5 text-[#0EA8DC] cursor-pointer font-lighter absolute  w-[23%] md:w-[20%] top-[5%]   text-xs md:text-lg " +
+            "leading-5 text-[#016AAB] font-bold  cursor-pointer font-lighter absolute  w-[23%] md:w-[20%] top-[5%]   text-xs md:text-lg " +
             (topLeft && "underline decoration-[#FDB517]")
           }
         >
-          LEADERSHIP & CHANGE
+          {questionBank
+            .find((el) => el.DiamondLoc == "topLeft")
+            .Type.toUpperCase()}
         </div>
+        <div
+          onClick={handleTopRight}
+          className={
+            "leading-5 text-[#016AAB] font-bold  cursor-pointer font-lighter absolute  w-[23%] md:w-[20%] top-[5%]  -right-[3%] text-xs md:text-lg " +
+            (topRight && "underline decoration-[#FDB517]")
+          }
+        >
+          {questionBank
+            .find((el) => el.DiamondLoc == "topRight")
+            .Type.toUpperCase()}
+        </div>
+        <div
+          onClick={handleRightCircle}
+          className={
+            "leading-5 text-[#016AAB] font-bold cursor-pointer font-lighter absolute  w-[23%] md:w-[20%] top-[45%]  -right-[3%] text-xs md:text-lg " +
+            (rightCircle && "underline decoration-[#FDB517]")
+          }
+        >
+          {questionBank
+            .find((el) => el.DiamondLoc == "rightCircle")
+            .Type.toUpperCase()}
+        </div>
+        <div
+          onClick={handleLeftCircle}
+          className={
+            "leading-5 text-[#016AAB] font-bold  cursor-pointer font-lighter absolute  w-[23%] md:w-[20%] top-[38%]  text-xs md:text-lg " +
+            (leftCircle && "underline decoration-[#FDB517]")
+          }
+        >
+          {questionBank
+            .find((el) => el.DiamondLoc == "leftCircle")
+            .Type.toUpperCase()}
+        </div>
+        <div
+          onClick={handleMiddleCircle}
+          className={
+            "leading-5 text-[#016AAB] font-bold  cursor-pointer font-lighter absolute  w-[23%] md:w-[20%] top-[62%]  text-xs md:text-lg " +
+            (middleCircle && "underline decoration-[#FDB517]")
+          }
+        >
+          {questionBank
+            .find((el) => el.DiamondLoc == "middleCircle")
+            .Type.toUpperCase()}
+        </div>
+        <div
+          onClick={handleBottomCircle}
+          className={
+            "leading-5 text-[#016AAB] font-bold cursor-pointer font-lighter absolute  w-[23%] md:w-[20%] bottom-[6%] right-[3%] text-xs md:text-lg " +
+            (bottomCircle && "underline decoration-[#FDB517]")
+          }
+        >
+          {questionBank
+            .find((el) => el.DiamondLoc == "bottomCircle")
+            .Type.toUpperCase()}
+        </div>
+        <div className="absolute w-[25%] h-[1px] bg-[#FDB517] bottom-[6%] right-[22%] "></div>
         <div className="absolute bottom-6 l-2">
           {!test && (
-            <button className="text-2xl font-lighter w-[100px] outline text-slate-400 disabled ">
+            <button className="text-2xl font-lighter w-[100px] outline text-slate-300 disabled ">
               READY
             </button>
           )}
           {test && (
             <button
-              className="text-2xl font-lighter w-[100px] outline text-[#09497B] hover:text-[#0EA8DC] "
+              className="text-2xl font-lighter w-[100px] outline text-[#016AAB] font-bold hover:text-[#0EA8DC] "
               onClick={() => handleReady()}
             >
               READY

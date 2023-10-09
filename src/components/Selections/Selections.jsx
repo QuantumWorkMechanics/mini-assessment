@@ -3,6 +3,7 @@ import diamondFooter from "../../assets/Diamond-2.jpg";
 import Diamond from "../Diamond";
 import NavBar from "../NavBar";
 import { useNavigate } from "react-router-dom";
+import questionBank from "../../modules/question-bank";
 
 export default function Selections() {
   const navigate = useNavigate();
@@ -109,41 +110,74 @@ export default function Selections() {
                 <ul>
                   <li className="text-sm p-2">
                     <span className="font-bold text-[#0EA8DC] text-md">
-                      LEADERSHIP & CHANGE{" "}
+                      {" "}
+                      {
+                        questionBank.find((el) => el.DiamondLoc == "topLeft")
+                          .Type
+                      }
                     </span>
-                    - Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    {" - " +
+                      questionBank.find((el) => el.DiamondLoc == "topLeft")
+                        .Description}
                   </li>
                   <li className="text-sm p-2">
                     <span className="font-bold text-[#0EA8DC] text-md">
-                      SAMPLE{" "}
+                      {" "}
+                      {
+                        questionBank.find((el) => el.DiamondLoc == "topRight")
+                          .Type
+                      }
                     </span>{" "}
-                    - Nulla ipsum, deleniti totam rerum maxime explicabo iure
-                    quia magni modi voluptas nobis numquam.
+                    {" - " +
+                      questionBank.find((el) => el.DiamondLoc == "topRight")
+                        .Description}
                   </li>
                   <li className="text-sm p-2">
                     <span className="font-bold text-[#0EA8DC] text-md">
-                      SAMPLE{" "}
+                      {
+                        questionBank.find(
+                          (el) => el.DiamondLoc == "rightCircle"
+                        ).Type
+                      }
                     </span>{" "}
-                    - Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    {" - " +
+                      questionBank.find((el) => el.DiamondLoc == "rightCircle")
+                        .Description}
                   </li>
                   <li className="text-sm p-2">
                     <span className="font-bold text-[#0EA8DC] text-md">
-                      SAMPLE{" "}
+                      {
+                        questionBank.find((el) => el.DiamondLoc == "leftCircle")
+                          .Type
+                      }
                     </span>{" "}
-                    - Enim neque aut quos et animi eligendi sed.
+                    {" - " +
+                      questionBank.find((el) => el.DiamondLoc == "leftCircle")
+                        .Description}
                   </li>
                   <li className="text-sm p-2">
                     <span className="font-bold text-[#0EA8DC] text-md">
-                      SAMPLE{" "}
+                      {
+                        questionBank.find(
+                          (el) => el.DiamondLoc == "middleCircle"
+                        ).Type
+                      }
                     </span>{" "}
-                    - Nulla ipsum, deleniti totam rerum maxime explicabo iure
-                    quia magni modi voluptas nobis numquam.
+                    {" - " +
+                      questionBank.find((el) => el.DiamondLoc == "middleCircle")
+                        .Description}
                   </li>
                   <li className="text-sm p-2">
                     <span className="font-bold text-[#0EA8DC] text-md">
-                      SAMPLE{" "}
+                      {
+                        questionBank.find(
+                          (el) => el.DiamondLoc == "bottomCircle"
+                        ).Type
+                      }
                     </span>{" "}
-                    - Enim neque aut quos et animi eligendi sed.
+                    {" - " +
+                      questionBank.find((el) => el.DiamondLoc == "bottomCircle")
+                        .Description}
                   </li>
                 </ul>
               </div>
