@@ -45,7 +45,7 @@ function SmallBar({ current, desired }) {
         x: desired,
         fill: "#FDB517",
       });
-    console.log(nextData);
+    // console.log(nextData);
     setData(nextData);
   }, []);
 

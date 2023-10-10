@@ -5,8 +5,9 @@
 .result-bg {
   background-image: url("../public/GettyImages-675834103.avif");
 
-  background-position: 45% 50%;
-  background-sice: contain;
+  background-position: 30% 50%;
+  background-sice: cover;
+  background-repeat: no-repeat;
 }
 
 /* .result-bg:after {

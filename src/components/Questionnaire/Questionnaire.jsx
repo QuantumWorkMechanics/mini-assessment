@@ -9,7 +9,7 @@ import SectionComplete from "./SectionCompleted";
 import AllSectionsComplete from "./AllSectionsComplete";
 import Header from "./Header";
 import AssessmentBody from "./AssessmentBody";
-import Results from "./Results";
+import Results from "./Results/Results";
 
 function Questionnaire() {
   const location = useLocation();

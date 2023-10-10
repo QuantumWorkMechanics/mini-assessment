@@ -22,7 +22,7 @@ function RechartBar({ currentSlide, desiredSlide }) {
     {
       name: "C",
       x: 5,
-      fill: "white",
+      fill: "none",
     },
   ]);
 
