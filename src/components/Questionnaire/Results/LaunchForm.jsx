@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function LaunchForm({ handleForm }) {
+export default function LaunchForm({ setShowForm }) {
   return (
     <>
       <div className="w-full">Placeholder</div>
@@ -16,7 +16,10 @@ export default function LaunchForm({ handleForm }) {
             className="input input-bordered input-primary w-full max-w-xs"
           />
         </div>
-        <button className="bg-[#1290e5] text-white p-2 rounded h-10">
+        <button
+          onClick={() => setShowForm(true)}
+          className="bg-[#1290e5] text-white p-2 rounded h-10"
+        >
           Submit
         </button>
       </div>

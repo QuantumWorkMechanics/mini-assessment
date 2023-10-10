@@ -80,6 +80,7 @@ export default function ResultComponent({ component, questionList }) {
               </div>
             </div>
           </div>
+          {/* <div className="md:hidden h-28">End</div> */}
         </>
       )}
     </>
