@@ -2,8 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
-.bg-webs {
-  background-image: url("");
+.result-bg {
+  background-image: url("../public/GettyImages-675834103.avif");
+
+  background-position: 45% 50%;
+  background-sice: contain;
+}
+
+/* .result-bg:after {
+  content: "";
+  position: absolute;
+  bottom: -25%;
+  left: 20%;
+  height: 55%;
+  width: 60%;
+  overflow: hidden;
+  background: #ffffff;
+  transform: translateY(-10%) rotate(-70deg);
+  z-index: -20;
+} */
+
+.frame-bg {
+  background-image: linear-gradient(
+    100deg,
+    #22313f 70%,
+    #f4f4f4 calc(70% + 2px)
+  );
 }
 
 body {

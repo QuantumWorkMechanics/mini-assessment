@@ -5,9 +5,15 @@ import ResultComponent from "./ResultComponent";
 import Header from "./Header";
 import SmallBar from "./SmallBar";
 import ResultsDiamond from "./ResultsDiamond";
+import HeroResult from "./HeroResult";
+import { SpotlightTour, useSpotlight } from "react-spotlight-tour";
+import Spotlight from "react-spotlight-tour/spotlight";
 
 export default function Results({ questionList, categories }) {
   const [results, setResults] = useState({});
+  const spotLightRef = useSpotlight(
+    "Click on the component area to see more details."
+  );
 
   function findAvg(location, type) {
     let loc = questionList.filter((el) => el.DiamondLoc == location);
@@ -80,13 +86,19 @@ export default function Results({ questionList, categories }) {
   return (
     <div className="bg-webs">
       {" "}
-      <header>
+      {/* <header>
         <h1 className="pt-2 pl-2 pl-14 md:p-6 md:pl-40 text-sm md:text-md font-bold flex ">
           My Results
         </h1>{" "}
-      </header>
-      <div className="hidden md:block w-[80%] ml-[10%] animate-fade-up animate-once animate-duration-[600ms] animate-delay-300">
-        <ResultsDiamond components={categories} results={results} />
+      </header> */}
+      <div className="flex justify-end h-[60%] -mt-2">
+        <div className="absolute h-full result-bg w-[100vw] -ml-[30%] z-0 animate-fade animate-once animate-duration-[2000ms]">
+          <div className="w-[120vw] -ml-[20vw] h-full bg-gradient-to-tl from-white from-40%"></div>
+        </div>
+
+        <div className="top-[10%] hidden md:block w-[70vw] h-auto -ml-[10%] animate-fade-up animate-once animate-duration-[600ms] animate-delay-300  text-xs md:text-md lg:text-[1rem] xl:text-lg overflow-hidden">
+          <ResultsDiamond components={categories} results={results} />
+        </div>
       </div>
       {categories.topLeft && (
         <ResultComponent component={"topLeft"} questionList={questionList} />
