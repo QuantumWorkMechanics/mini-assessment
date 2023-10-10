@@ -35,8 +35,8 @@ function Questionnaire() {
 
   useEffect(() => {
     window.matchMedia("(min-width: 768px)").matches
-      ? window.scrollTo({ top: 300, behavior: "smooth" })
-      : window.scrollTo({ top: 80, behavior: "smooth" });
+      ? window.scrollTo({ top: 112, behavior: "smooth" })
+      : window.scrollTo({ top: 72, behavior: "smooth" });
     let tempList = [];
     if (location.state.topLeft) {
       tempList = tempList.concat(
