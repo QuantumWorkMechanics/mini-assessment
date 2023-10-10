@@ -28,6 +28,7 @@ export default function Selections() {
 
   function handleReady() {
     // console.log("ready");
+
     let data = { ...selections };
     navigate("/questionnaire", { state: data });
   }
@@ -181,13 +182,13 @@ export default function Selections() {
                   </li>
                 </ul>
               </div>
-              <div>
+              {/* <div>
                 Quis nemo laboriosam provident ex adipisci, mollitia ipsam
                 maiores amet voluptatum hic illo velit unde reprehenderit magnam
                 aperiam. Eius quia in atque!
-              </div>
+              </div> */}
             </div>
-            <div className="p-6">
+            <div className="p-6 ml-3 md:-ml-4 md:mr-10">
               <Diamond
                 handleSelection={handleSelection}
                 test={test}

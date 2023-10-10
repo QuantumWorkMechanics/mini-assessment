@@ -5,6 +5,7 @@ import ResultComponent from "./ResultComponent";
 import SmallBar from "./SmallBar";
 import ResultsDiamond from "./ResultsDiamond";
 import HeroResult from "./HeroResult";
+import LaunchForm from "./LaunchForm";
 
 export default function Results({ questionList, categories }) {
   const [results, setResults] = useState({});
@@ -125,9 +126,12 @@ export default function Results({ questionList, categories }) {
         {curSlide == 0 && (
           <>
             <div className="mt-[2%] absolute left-[10%] md:w-1/4 animate-fade-up animate-once animate-duration-[600ms] animate-delay-300 ">
-              <div className=" text-[30pt] font-bold">YOUR RESULTS</div>
-              <div className="ml-2 text-xl mt-[35%] ">
+              <div className=" text-[30pt] font-bold">Your Results</div>
+              <div className="ml-2 text-lg md:mt-[35%] ">
                 Overall: {Math.floor(currentTotal * 5)}
+              </div>
+              <div className="ml-2 text-xl font-semibold text-[#065a9e]">
+                {" "}
                 {currentTotal > 0 && currentTotal < 0.4 && " Starting"}
                 {currentTotal >= 0.4 && currentTotal < 0.6 && " Developing"}
                 {currentTotal >= 0.6 && currentTotal < 0.8 && " Intermediate"}
@@ -139,8 +143,10 @@ export default function Results({ questionList, categories }) {
                 aliquid laudantium fuga nulla ex illum. Reiciendis sit
                 aspernatur ad rem molestias, quaerat laudantium.
               </div>
-              <div className="ml-2 text-xl mt-6">
+              <div className="ml-2 text-xl mt-[25%] md:mt-6">
                 My Goal: {Math.floor(desiredTotal * 5)}
+              </div>
+              <div className="ml-2 text-xl font-semibold text-[#065a9e]">
                 {desiredTotal > 0 && desiredTotal < 0.4 && " Starting"}
                 {desiredTotal >= 0.4 && desiredTotal < 0.6 && " Developing"}
                 {desiredTotal >= 0.6 && desiredTotal < 0.8 && " Intermediate"}
@@ -162,7 +168,7 @@ export default function Results({ questionList, categories }) {
           onClick={() => {
             handleCurrentSlide(1);
           }}
-          className="cursor-pointer absolute h-20 w-12 bg-[#878787] z-30 mt-[19%] mr-8 text-white text-[40pt] pl-2"
+          className="cursor-pointer absolute h-20 w-12 bg-[#878787] z-30 mt-[70%] md:mt-[19%] md:mr-8 text-white text-[40pt] pl-2"
         >
           {">"}
         </div>
@@ -171,7 +177,7 @@ export default function Results({ questionList, categories }) {
             handleCurrentSlide(-1);
             // console.log(curSlide);
           }}
-          className="cursor-pointer left-8 absolute h-20 w-12 bg-[#878787] z-30 mt-[19%]  text-white text-[40pt] pl-2"
+          className="cursor-pointer left-0 md:left-8 absolute h-20 w-12 bg-[#878787] z-30 mt-[70%] md:mt-[19%]  text-white text-[40pt] pl-2"
         >
           {"<"}
         </div>
@@ -218,6 +224,9 @@ export default function Results({ questionList, categories }) {
           />
         </div>
       )}
+      <div className=" absolute w-screen md:w-[50%] right-[8%] -bottom-10">
+        <LaunchForm />
+      </div>
     </div>
   );
 }

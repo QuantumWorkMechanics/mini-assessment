@@ -36,13 +36,13 @@ export default function ResultComponent({ component, questionList }) {
           {" "}
           <div className="flex justify-center z-20">
             <div className="p-3 -mb-20 md:mt-10 text-lg md:text-[50pt] -ml-10 font-lighter z-20">
-              {questionSet[0].Type.toUpperCase()}
+              {questionSet[0].Type}
             </div>
           </div>
           <div className="flex flex-col md:flex-row mb-10 md:mb-0 z-0 -ml-10 md:ml-0">
             <div className="">
               <RechartBar currentSlide={current} desiredSlide={desired} />
-              <div className="-mt-20 md:w-1/4 flex justify-center text-xs md:ml-14 md:-mt-24 font-bold">
+              <div className="-mt-28 md:-mt-20 md:w-1/4 flex justify-center text-xs md:ml-14 md:-mt-24 font-bold">
                 <div className="md:ml-40 flex items-center pl-5 py-4 mr-2">
                   <div className="w-[10px] bg-[#09497B] h-[10px] rounded-full mr-2"></div>
                   Current
@@ -53,8 +53,8 @@ export default function ResultComponent({ component, questionList }) {
                 </div>
               </div>
             </div>
-            <div className="hyphens-auto text-justify bg-gradient-to-br from-white to-neutral-50 mt-[20%] px-4 mr-8 ml-10 md:mr-32 text-[#666666] text-sm max-w-[70ch] leading-7">
-              <div className="mt-10 md:ml-8 ">
+            <div className="hyphens-auto text-justify bg-gradient-to-br from-white to-neutral-50 mt-[15%] px-4 mr-8 ml-10 md:mr-32 text-[#666666] text-sm max-w-screen md:max-w-[70ch] leading-7">
+              <div className="mt-2 md:mt-10 md:ml-8 ">
                 Your current {questionSet[0].Type} score is{" "}
                 <strong className="text-lg text-[#09497B]">
                   {Math.round(current * 10) / 10}

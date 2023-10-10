@@ -2,6 +2,8 @@ import React from "react";
 import { Button } from "@mui/material";
 import RechartBar from "./RechartTest";
 import Sliders from "./Sliders";
+import { SpotlightTour, useSpotlight } from "react-spotlight-tour";
+import Spotlight from "react-spotlight-tour/spotlight";
 
 export default function AssessmentBody({
   currentSlide,
@@ -13,6 +15,7 @@ export default function AssessmentBody({
   handleCurrent,
   handleDesired,
 }) {
+  const spotlightRef2 = useSpotlight("Press next to continue.", "top");
   return (
     <>
       <div className="w-1/4 hidden md:flex text-xs md:-ml-5 md:-mb-5 mt-3 font-bold">
@@ -118,7 +121,7 @@ export default function AssessmentBody({
         </div>
       </div>
       <div className="w-screen flex -mt-80 md:mt-0 justify-between md:justify-center ">
-        <div className="p-2">
+        <div className="p-2 ">
           {questionIndex > 0 && (
             <Button variant="outlined" size="large" onClick={handleBack}>
               BACK
@@ -130,7 +133,7 @@ export default function AssessmentBody({
             </Button>
           )}
         </div>
-        <div className="p-2">
+        <div ref={spotlightRef2} className="p-2">
           {currentSlide != 0 && desiredSlide != 0 && (
             <Button variant="outlined" size="large" onClick={handleNext}>
               NEXT

@@ -329,7 +329,7 @@ export default function Diamond({ handleSelection, test, handleReady }) {
         <div
           onClick={handleTopLeft}
           className={
-            "leading-5 text-[#016AAB] font-bold  cursor-pointer font-lighter absolute  w-[23%] md:w-[20%] top-[5%]   text-xs md:text-lg " +
+            "md:leading-5 text-[#1290e5] font-bold  cursor-pointer font-lighter absolute  w-[25%] md:w-[20%] top-[5%] -left-3 md:left-0  text-xs md:text-lg " +
             (topLeft && "underline decoration-[#FDB517]")
           }
         >
@@ -340,7 +340,7 @@ export default function Diamond({ handleSelection, test, handleReady }) {
         <div
           onClick={handleTopRight}
           className={
-            "leading-5 text-[#016AAB] font-bold  cursor-pointer font-lighter absolute  w-[23%] md:w-[20%] top-[5%]  -right-[3%] text-xs md:text-lg " +
+            "md:leading-5 text-[#1290e5] font-bold  cursor-pointer font-lighter absolute  w-[23%] md:w-[20%] top-[5%]  -right-[3%] text-right text-xs md:text-lg " +
             (topRight && "underline decoration-[#FDB517]")
           }
         >
@@ -351,7 +351,7 @@ export default function Diamond({ handleSelection, test, handleReady }) {
         <div
           onClick={handleRightCircle}
           className={
-            "leading-5 text-[#016AAB] font-bold cursor-pointer font-lighter absolute  w-[23%] md:w-[20%] top-[50%] md:top-[45%]  -right-[3%] text-xs md:text-lg " +
+            "md:leading-5 text-[#1290e5] font-bold cursor-pointer font-lighter absolute  w-[23%] md:w-[20%] top-[50%] md:top-[45%] text-right -right-[6%] text-xs md:text-lg " +
             (rightCircle && "underline decoration-[#FDB517]")
           }
         >
@@ -362,7 +362,7 @@ export default function Diamond({ handleSelection, test, handleReady }) {
         <div
           onClick={handleLeftCircle}
           className={
-            "leading-5 text-[#016AAB] font-bold  cursor-pointer font-lighter absolute  w-[23%] md:w-[20%] top-[40%] md:top-[38%]  text-xs md:text-lg " +
+            "md:leading-5 text-[#1290e5] font-bold  cursor-pointer font-lighter absolute -left-[8%] w-[23%] md:w-[20%] top-[40%] md:top-[38%]  text-xs md:text-lg " +
             (leftCircle && "underline decoration-[#FDB517]")
           }
         >
@@ -373,7 +373,7 @@ export default function Diamond({ handleSelection, test, handleReady }) {
         <div
           onClick={handleMiddleCircle}
           className={
-            "leading-5 text-[#016AAB] font-bold  cursor-pointer font-lighter absolute  w-[23%] md:w-[20%] top-[62%]  text-xs md:text-lg " +
+            "md:leading-5 text-[#1290e5] font-bold  cursor-pointer font-lighter absolute  w-[23%] md:w-[20%] top-[62%]  text-xs md:text-lg " +
             (middleCircle && "underline decoration-[#FDB517]")
           }
         >
@@ -384,7 +384,7 @@ export default function Diamond({ handleSelection, test, handleReady }) {
         <div
           onClick={handleBottomCircle}
           className={
-            "leading-5 text-[#016AAB] font-bold cursor-pointer font-lighter absolute  w-[23%] md:w-[20%] bottom-[6%] right-[3%] text-xs md:text-lg " +
+            "md:leading-5 text-[#1290e5] font-bold cursor-pointer font-lighter absolute  w-[23%] md:w-[25%] bottom-[6%] right-[12%] text-right text-xs md:text-lg " +
             (bottomCircle && "underline decoration-[#FDB517]")
           }
         >
@@ -392,8 +392,11 @@ export default function Diamond({ handleSelection, test, handleReady }) {
             .find((el) => el.DiamondLoc == "bottomCircle")
             .Type.toUpperCase()}
         </div>
+        <div className="absolute text-[6pt] md:text-sm lg:text-md xl:text-lg text-center font-semibold w-[20%] left-[40%] bottom-[42%]">
+          WORKFORCE AGILITY
+        </div>
         <div className="absolute w-[25%] h-[1px] bg-[#FDB517] bottom-[6%] right-[22%] "></div>
-        <div className="absolute bottom-3 md:bottom-6 l-2">
+        <div className="absolute -bottom-2 md:bottom-3 md:bottom-6 l-2">
           {!test && (
             <button className="text-2xl font-lighter w-[100px] outline text-slate-300 disabled ">
               READY
