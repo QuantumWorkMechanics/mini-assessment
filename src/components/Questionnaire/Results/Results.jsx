@@ -132,47 +132,58 @@ export default function Results({ questionList, categories }) {
             {/* <div className=" absolute z-30 left-0">Result</div> */}
             {curSlide == 0 && (
               <>
-                <div className="mt-[2%] absolute left-[10%] md:w-1/4 animate-fade-up animate-once animate-duration-[600ms] animate-delay-300 ">
-                  <div className=" text-[30pt] font-bold">Your Results</div>
-                  <div className="ml-2 text-lg md:mt-[35%] ">
-                    Overall: {Math.floor(currentTotal * 5)}
+                <div className="flex flex-col">
+                  <div className="ml-4 mt-4 md:hidden text-xl order-first z-20">
+                    Your Results
                   </div>
-                  <div className="ml-2 text-xl font-semibold text-[#065a9e]">
-                    {" "}
-                    {currentTotal > 0 && currentTotal < 0.4 && " Starting"}
-                    {currentTotal >= 0.4 && currentTotal < 0.6 && " Developing"}
-                    {currentTotal >= 0.6 &&
-                      currentTotal < 0.8 &&
-                      " Intermediate"}
-                    {currentTotal >= 0.8 && " Advanced"}
+                  <div className="order-last mt-[2%] md:absolute md:left-[10%] md:w-1/4 animate-fade-up animate-once animate-duration-[600ms] animate-delay-300 ">
+                    <div className="hidden md:block text-[30pt] font-bold">
+                      Your Results
+                    </div>
+                    <div className="ml-2 text-lg md:mt-[35%] ">
+                      Overall: {Math.floor(currentTotal * 5)}
+                    </div>
+                    <div className="ml-2 text-xl font-semibold text-[#065a9e]">
+                      {" "}
+                      {currentTotal > 0 && currentTotal < 0.4 && " Starting"}
+                      {currentTotal >= 0.4 &&
+                        currentTotal < 0.6 &&
+                        " Developing"}
+                      {currentTotal >= 0.6 &&
+                        currentTotal < 0.8 &&
+                        " Intermediate"}
+                      {currentTotal >= 0.8 && " Advanced"}
+                    </div>
+                    <div className=" text-sm  text-[#000001] mt-4 bg-slate-50/50  p-2">
+                      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                      Officia, cumque asperiores quasi ducimus modi tenetur quas
+                      aliquid laudantium fuga nulla ex illum. Reiciendis sit
+                      aspernatur ad rem molestias, quaerat laudantium.
+                    </div>
+                    <div className="ml-2 text-xl mt-[25%] md:mt-6">
+                      My Goal: {Math.floor(desiredTotal * 5)}
+                    </div>
+                    <div className="ml-2 text-xl font-semibold text-[#065a9e]">
+                      {desiredTotal > 0 && desiredTotal < 0.4 && " Starting"}
+                      {desiredTotal >= 0.4 &&
+                        desiredTotal < 0.6 &&
+                        " Developing"}
+                      {desiredTotal >= 0.6 &&
+                        desiredTotal < 0.8 &&
+                        " Intermediate"}
+                      {desiredTotal >= 0.8 && " Advanced"}
+                    </div>
+                    <div className=" text-sm text-[#000001] mt-4 bg-slate-50/50  p-2">
+                      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                      Officia, cumque asperiores quasi ducimus modi tenetur quas
+                      aliquid laudantium fuga nulla ex illum. Reiciendis sit
+                      aspernatur ad rem molestias, quaerat laudantium.
+                    </div>
+                    <div className="md:hidden h-28"></div>
                   </div>
-                  <div className=" text-sm  text-[#000001] mt-4 bg-slate-50/50  p-2">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Officia, cumque asperiores quasi ducimus modi tenetur quas
-                    aliquid laudantium fuga nulla ex illum. Reiciendis sit
-                    aspernatur ad rem molestias, quaerat laudantium.
+                  <div className=" mt-[10%] block w-screen md:w-[60vw] h-auto mr-[5%] animate-fade-up animate-once animate-duration-[600ms] animate-delay-300  text-xs md:text-md lg:text-[1rem] xl:text-lg ">
+                    <ResultsDiamond components={categories} results={results} />
                   </div>
-                  <div className="ml-2 text-xl mt-[25%] md:mt-6">
-                    My Goal: {Math.floor(desiredTotal * 5)}
-                  </div>
-                  <div className="ml-2 text-xl font-semibold text-[#065a9e]">
-                    {desiredTotal > 0 && desiredTotal < 0.4 && " Starting"}
-                    {desiredTotal >= 0.4 && desiredTotal < 0.6 && " Developing"}
-                    {desiredTotal >= 0.6 &&
-                      desiredTotal < 0.8 &&
-                      " Intermediate"}
-                    {desiredTotal >= 0.8 && " Advanced"}
-                  </div>
-                  <div className=" text-sm text-[#000001] mt-4 bg-slate-50/50  p-2">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Officia, cumque asperiores quasi ducimus modi tenetur quas
-                    aliquid laudantium fuga nulla ex illum. Reiciendis sit
-                    aspernatur ad rem molestias, quaerat laudantium.
-                  </div>
-                  <div className="md:hidden h-28"></div>
-                </div>
-                <div className="mt-[10%] hidden md:block w-[60vw] h-auto mr-[5%] animate-fade-up animate-once animate-duration-[600ms] animate-delay-300  text-xs md:text-md lg:text-[1rem] xl:text-lg overflow-hidden">
-                  <ResultsDiamond components={categories} results={results} />
                 </div>
               </>
             )}
@@ -245,23 +256,24 @@ export default function Results({ questionList, categories }) {
           <div className="hidden md:block fixed w-screen md:w-[50%] right-[8%] bottom-10">
             <LaunchForm setShowForm={setShowForm} />
           </div>
-          <div className="px-2 text-white items-center text-[50pt] fixed h-[70px] w-screen bottom-0 md:hidden bg-[#878787] flex flex-row justify-between">
+          <div className="px-2 text-white items-center text-[50pt] fixed h-[70px] w-screen bottom-0 md:hidden bg-[#999999] flex flex-row justify-between">
             <div
+              className="bg-[#878787 h-14]"
               onClick={() => {
-                handleCurrentSlide(1);
+                handleCurrentSlide(-1);
               }}
             >
               {"< "}
             </div>
             <button
               onClick={() => setShowForm(true)}
-              className="text-xl p-2 border-2 text-white"
+              className="text-xl rounded p-2 border text-white bg-[#3cacf4] "
             >
               GET PDF
             </button>
             <div
               onClick={() => {
-                handleCurrentSlide(-1);
+                handleCurrentSlide(1);
               }}
             >
               {" >"}

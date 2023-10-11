@@ -214,7 +214,7 @@ export default function ResultsDiamond({ components, results }) {
         <div
           //   onClick={handleLeftCircle}
           className={
-            " text-[#016AAB] font-bold  cursor-pointer font-lighter absolute  w-[23%] md:w-[18%] top-[39%] md:top-[46%] left-[5%] leading-tight  " +
+            " text-[#016AAB] font-bold  cursor-pointer font-lighter absolute  w-[23%] md:w-[18%]  top-[46%] left-[5%] leading-tight  " +
             ((leftCircle && " text-[#016AAB]") || " text-slate-400")
           }
         >

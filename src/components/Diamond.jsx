@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import questionBank from "../modules/question-bank";
+import Pulsating from "./Utils.jsx/Pulsating";
 
 export default function Diamond({ handleSelection, test, handleReady }) {
   const [topLeft, setTopLeft] = useState(false);
@@ -8,6 +9,7 @@ export default function Diamond({ handleSelection, test, handleReady }) {
   const [bottomCircle, setBottomCircle] = useState(false);
   const [leftCircle, setLeftCircle] = useState(false);
   const [middleCircle, setMiddleCircle] = useState(false);
+  const [visible, setVisible] = useState(true);
 
   function handleTopLeft() {
     handleSelection("topLeft", !topLeft);
@@ -144,6 +146,7 @@ export default function Diamond({ handleSelection, test, handleReady }) {
               }
               d="M103,47.6c4.8,0,8.7-3.9,8.7-8.7c0-4.8-3.9-8.7-8.7-8.7s-8.7,3.9-8.7,8.7C94.3,43.7,98.2,47.6,103,47.6"
             />
+
             <path
               id="topLeftRing"
               className={
@@ -326,6 +329,7 @@ export default function Diamond({ handleSelection, test, handleReady }) {
           onClick={handleLeadership}
         ></div> */}
         <div className="absolute w-[25%] h-[1px] bg-[#FDB517] top-[62%] left-[13%] "></div>
+
         <div
           onClick={handleTopLeft}
           className={
@@ -337,6 +341,7 @@ export default function Diamond({ handleSelection, test, handleReady }) {
             .find((el) => el.DiamondLoc == "topLeft")
             .Type.toUpperCase()}
         </div>
+
         <div
           onClick={handleTopRight}
           className={

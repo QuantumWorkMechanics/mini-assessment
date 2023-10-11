@@ -35,11 +35,11 @@ export default function ResultComponent({ component, questionList }) {
         <>
           {" "}
           <div className="flex justify-center z-20">
-            <div className="p-3 -mb-20 md:mt-10 text-lg md:text-[50pt] -ml-10 font-lighter z-20">
+            <div className="p-3 -mb-20 mt-10 md:mt-20 text-lg md:text-[50pt] font-lighter z-20">
               {questionSet[0].Type}
             </div>
           </div>
-          <div className="flex flex-col md:flex-row mb-10 md:mb-0 z-0 -ml-10 md:ml-0">
+          <div className="flex flex-col md:flex-row mb-10 md:mb-0 z-0 md:ml-0 w-screen justify-around items-center">
             <div className="">
               <RechartBar currentSlide={current} desiredSlide={desired} />
               <div className="-mt-28 md:-mt-20 md:w-1/4 flex justify-center text-xs md:ml-14 md:-mt-24 font-bold">
@@ -53,8 +53,8 @@ export default function ResultComponent({ component, questionList }) {
                 </div>
               </div>
             </div>
-            <div className="hyphens-auto text-justify bg-gradient-to-br from-white to-neutral-50 mt-[15%] px-4 mr-8 ml-10 md:mr-32 text-[#666666] text-sm max-w-screen md:max-w-[70ch] leading-7">
-              <div className="mt-2 md:mt-10 md:ml-8 ">
+            <div className="hyphens-auto text-justify bg-gradient-to-br from-white to-neutral-50 mt-[15%] px-4  md:mr-32 text-[#666666] text-sm w-screen md:max-w-[70ch] leading-7">
+              <div className="mt-2 md:my-10 md:ml-8 ">
                 Your current {questionSet[0].Type} score is{" "}
                 <strong className="text-lg text-[#09497B]">
                   {Math.round(current * 10) / 10}
@@ -64,7 +64,7 @@ export default function ResultComponent({ component, questionList }) {
                   {Math.round(desired * 10) / 10}
                 </strong>
               </div>
-              <div className="mb-2 mt-10 md:ml-8 font-lighter">
+              <div className="mb-2 mt-10 md:m-8 font-lighter">
                 Achieving your desired {questionSet[0].Type} goals will require{" "}
                 {desired >= 4 &&
                   "some sample text for when desired is greater than 4.                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique maxime eaque voluptatibus assumenda eveniet fugiat, magnam odit ducimus iste illo totam magni officiis et soluta rem reiciendis pariatur at necessitatibus!"}
@@ -78,6 +78,7 @@ export default function ResultComponent({ component, questionList }) {
                   desired < 2 &&
                   "some sample text for between 1 and 2.                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique maxime eaque voluptatibus assumenda eveniet fugiat, magnam odit ducimus iste illo totam magni officiis et soluta rem reiciendis pariatur at necessitatibus!"}
               </div>
+              <div className="md:hidden h-14"></div>
             </div>
           </div>
           {/* <div className="md:hidden h-28">End</div> */}
