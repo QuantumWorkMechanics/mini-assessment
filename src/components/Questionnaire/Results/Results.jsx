@@ -181,7 +181,7 @@ export default function Results({ questionList, categories }) {
                     </div>
                     <div className="md:hidden h-28"></div>
                   </div>
-                  <div className=" mt-[10%] block w-screen md:w-[60vw] h-auto mr-[5%] animate-fade-up animate-once animate-duration-[600ms] animate-delay-300  text-xs md:text-md lg:text-[1rem] xl:text-lg ">
+                  <div className=" mt-[10%] block w-screen md:w-[60vw] h-auto mr-[5%] lg:-ml-[6%] md:-ml-[8%] animate-fade-up animate-once animate-duration-[600ms] animate-delay-300  text-xs md:text-md lg:text-[1rem] xl:text-lg ">
                     <ResultsDiamond components={categories} results={results} />
                   </div>
                 </div>
@@ -191,7 +191,7 @@ export default function Results({ questionList, categories }) {
               onClick={() => {
                 handleCurrentSlide(1);
               }}
-              className="hidden md:block cursor-pointer absolute h-20 w-12 bg-[#878787] z-30 mt-[70%] md:mt-[19%] md:mr-8 text-white text-[40pt] pl-2"
+              className="hidden md:block cursor-pointer absolute h-20 w-12 bg-[#878787] z-30 mt-[70%] md:mt-[19%] mr-2 lg:mr-8 text-white text-[40pt] pl-2"
             >
               {">"}
             </div>
@@ -200,7 +200,7 @@ export default function Results({ questionList, categories }) {
                 handleCurrentSlide(-1);
                 // console.log(curSlide);
               }}
-              className="hidden md:block cursor-pointer left-0 md:left-8 absolute h-20 w-12 bg-[#878787] z-30 mt-[70%] md:mt-[19%]  text-white text-[40pt] pl-2"
+              className="hidden md:block cursor-pointer left-0 md:left-2 lg:left-8 absolute h-20 w-12 bg-[#878787] z-30 mt-[70%] md:mt-[19%]  text-white text-[40pt] pl-2"
             >
               {"<"}
             </div>
