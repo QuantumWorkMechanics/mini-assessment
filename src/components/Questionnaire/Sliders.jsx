@@ -6,16 +6,9 @@ import Spotlight from "react-spotlight-tour/spotlight";
 export default function Sliders({
   handleCurrent,
   handleDesired,
-  currentSlide,
-  desiredSlide,
+  currentSliderValue,
+  desiredSliderValue,
 }) {
-  // const [currentSlide, setCurrentSlide] = useState(0);
-  // const [desiredSlide, setDesiredSlide] = useState(0);
-
-  // function handleCurrent(x) {
-  //   setCurrentSlide(x);
-  //   console.log({ x });
-  // }
   const spotlightRef = useSpotlight(
     "Tap or click \n to select your current \n and desired level.",
     "top"
@@ -32,7 +25,7 @@ export default function Sliders({
             <input
               ref={spotlightRef}
               type="range"
-              value={currentSlide}
+              value={currentSliderValue}
               min={0}
               max={5}
               className="bg-white md:w-80 md:-rotate-90 range range-xs range-primary"
@@ -53,7 +46,7 @@ export default function Sliders({
                 ref={spotlightRef}
                 id="desired"
                 type="range"
-                value={desiredSlide}
+                value={desiredSliderValue}
                 min={0}
                 max={5}
                 className="bg-white  md:w-80 md:-rotate-90 range range-xs range-secondary"

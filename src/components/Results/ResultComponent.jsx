@@ -1,21 +1,29 @@
 import React, { useState, useEffect } from "react";
 
-import RechartBar from "../RechartTest";
+import RechartBar from "../Questionnaire/RechartBar";
 
-export default function ResultComponent({ component, questionList }) {
+export default function ResultComponent({
+  // component,
+  questionList,
+  slides,
+  currentSlide,
+}) {
   const [questionSet, setQuestionSet] = useState([]);
   const [current, setCurrent] = useState(0);
   const [desired, setDesired] = useState(0);
 
   useEffect(() => {
-    let tempList = questionList.filter((el) => el.DiamondLoc == component);
+    // console.log({slides,currentSlide});
+    let tempList = questionList.filter(
+      (el) => el.DiamondLoc == slides[currentSlide]
+    );
     console.log({ tempList });
     setQuestionSet(tempList);
-    let tempCurrent = findAvg(component, "current");
+    let tempCurrent = findAvg(slides[currentSlide], "current");
     setCurrent(tempCurrent);
-    let tempDesired = findAvg(component, "desired");
+    let tempDesired = findAvg(slides[currentSlide], "desired");
     setDesired(tempDesired);
-  }, []);
+  }, [currentSlide]);
 
   function findAvg(location, type) {
     let loc = questionList.filter((el) => el.DiamondLoc == location);
@@ -41,7 +49,10 @@ export default function ResultComponent({ component, questionList }) {
           </div>
           <div className="flex flex-col md:flex-row mb-10 md:mb-0 z-0 md:ml-0 w-screen justify-around items-center">
             <div className="">
-              <RechartBar currentSlide={current} desiredSlide={desired} />
+              <RechartBar
+                currentSliderValue={current}
+                desiredSliderValue={desired}
+              />
               <div className="-mt-28 md:-mt-20 md:w-1/4 flex justify-center text-xs md:ml-14 md:-mt-24 font-bold">
                 <div className="md:ml-40 flex items-center pl-5 py-4 mr-2">
                   <div className="w-[10px] bg-[#09497B] h-[10px] rounded-full mr-2"></div>

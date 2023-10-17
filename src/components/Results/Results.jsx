@@ -1,19 +1,22 @@
-import React, { useState, useEffect } from "react";
-
+import React, { useState, useEffect, useRef } from "react";
 import ResultComponent from "./ResultComponent";
-// import Header from "./Results/Header";
 import SmallBar from "./SmallBar";
 import ResultsDiamond from "./ResultsDiamond";
-import HeroResult from "./HeroResult";
 import LaunchForm from "./LaunchForm";
+import html2canvas from "html2canvas";
+import { jsPDF } from "jspdf";
+import PDFResult from "./PDFResult";
+import categoryList from "../Utils.jsx/CategoryList";
 
 export default function Results({ questionList, categories }) {
   const [results, setResults] = useState({});
   const [slides, setSlides] = useState(["diamond"]);
-  const [curSlide, setCurSlide] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(0);
   const [currentTotal, setCurrentTotal] = useState(0);
   const [desiredTotal, setDesiredTotal] = useState(0);
   const [showForm, setShowForm] = useState(false);
+
+  const printRef = useRef();
 
   function findAvg(location, type) {
     let loc = questionList.filter((el) => el.DiamondLoc == location);
@@ -32,64 +35,25 @@ export default function Results({ questionList, categories }) {
   }
 
   useEffect(() => {
-    let tempObj = { ...categories };
+    let tempResults = { ...categories };
     let tempCurrent = 0;
     let tempDesired = 0;
-    let tempArr = ["diamond"];
-    if (categories.topLeft) {
-      tempCurrent = findAvg("topLeft", "current");
-      tempDesired = findAvg("topLeft", "desired");
-      tempObj = {
-        ...tempObj,
-        topLeft: { current: tempCurrent, desired: tempDesired },
-      };
-      tempArr.push("topLeft");
-    }
-    if (categories.topRight) {
-      tempCurrent = findAvg("topRight", "current");
-      tempDesired = findAvg("topRight", "desired");
-      tempObj = {
-        ...tempObj,
-        topRight: { current: tempCurrent, desired: tempDesired },
-      };
-      tempArr.push("topRight");
-    }
-    if (categories.rightCircle) {
-      tempCurrent = findAvg("rightCircle", "current");
-      tempDesired = findAvg("rightCircle", "desired");
-      tempObj = {
-        ...tempObj,
-        rightCircle: { current: tempCurrent, desired: tempDesired },
-      };
-      tempArr.push("rightCircle");
-    }
-    if (categories.leftCircle) {
-      tempCurrent = findAvg("leftCircle", "current");
-      tempDesired = findAvg("leftCircle", "desired");
-      tempObj = {
-        ...tempObj,
-        leftCircle: { current: tempCurrent, desired: tempDesired },
-      };
-      tempArr.push("leftCircle");
-    }
-    if (categories.bottomCircle) {
-      tempCurrent = findAvg("bottomCircle", "current");
-      tempDesired = findAvg("bottomCircle", "desired");
-      tempObj = {
-        ...tempObj,
-        bottomCircle: { current: tempCurrent, desired: tempDesired },
-      };
-      tempArr.push("bottomCircle");
-    }
-    if (categories.middleCircle) {
-      tempCurrent = findAvg("middleCircle", "current");
-      tempDesired = findAvg("middleCircle", "desired");
-      tempObj = {
-        ...tempObj,
-        middleCircle: { current: tempCurrent, desired: tempDesired },
-      };
-      tempArr.push("middleCircle");
-    }
+    let tempSlidesArr = ["diamond"];
+
+    categoryList.map((selectedCategory) => {
+      if (categories[selectedCategory]) {
+        tempCurrent = findAvg(selectedCategory, "current");
+        tempDesired = findAvg(selectedCategory, "desired");
+        tempResults[selectedCategory] = {
+          current: tempCurrent,
+          desired: tempDesired,
+        };
+        tempSlidesArr.push(selectedCategory);
+      }
+
+      // console.log(tempObj);
+    });
+
     let tempTotal = 0;
     let tempTotalCurrent = 0;
     let tempTotalDesired = 0;
@@ -102,37 +66,33 @@ export default function Results({ questionList, categories }) {
     // console.log({ tempObj, tempArr });
     setCurrentTotal(tempTotalCurrent / tempTotal);
     setDesiredTotal(tempTotalDesired / tempTotal);
-    setResults(tempObj);
-    setSlides(tempArr);
+    setResults(tempResults);
+    setSlides(tempSlidesArr);
   }, []);
 
   function handleCurrentSlide(num) {
-    if (curSlide + num >= 0 && curSlide + num < slides.length) {
-      let tempNum = curSlide;
+    if (currentSlide + num >= 0 && currentSlide + num < slides.length) {
+      let tempNum = currentSlide;
       tempNum = tempNum + num;
-      setCurSlide(tempNum);
-      console.log(tempNum);
+      setCurrentSlide(tempNum);
+      // forceUpdate();
+      // console.log(tempNum);
     }
   }
 
   return (
     <>
       {showForm == false && (
-        <div className="">
+        <div id="results-wrapper">
           {" "}
-          {/* <header>
-        <h1 className="pt-2 pl-2 pl-14 md:p-6 md:pl-40 text-sm md:text-md font-bold flex ">
-          My Results
-        </h1>{" "}
-      </header> */}
           <div className="flex justify-end h-[100%] -mt-2">
             <div className="absolute h-full result-bg w-[100vw] bg-cover -ml-[30%] z-0 animate-fade animate-once animate-duration-[2000ms]">
               <div className="w-[120vw] -ml-[20vw] h-full bg-gradient-to-tl from-white from-40%"></div>
             </div>
             {/* <div className=" absolute z-30 left-0">Result</div> */}
-            {curSlide == 0 && (
+            {currentSlide == 0 && (
               <>
-                <div className="flex flex-col">
+                <div ref={printRef} className="flex flex-col">
                   <div className="ml-4 mt-4 md:hidden text-xl order-first z-20">
                     Your Results
                   </div>
@@ -181,7 +141,10 @@ export default function Results({ questionList, categories }) {
                     </div>
                     <div className="md:hidden h-28"></div>
                   </div>
-                  <div className=" mt-[10%] block w-screen md:w-[60vw] h-auto mr-[5%] lg:-ml-[6%] md:-ml-[8%] animate-fade-up animate-once animate-duration-[600ms] animate-delay-300  text-xs md:text-md lg:text-[1rem] xl:text-lg ">
+                  <div
+                    id="diamond"
+                    className=" mt-[10%] block w-screen md:w-[60vw] h-auto mr-[5%] lg:-ml-[6%] md:-ml-[8%] animate-fade-up animate-once animate-duration-[600ms] animate-delay-300  text-xs md:text-md lg:text-[1rem] xl:text-lg "
+                  >
                     <ResultsDiamond components={categories} results={results} />
                   </div>
                 </div>
@@ -198,63 +161,31 @@ export default function Results({ questionList, categories }) {
             <div
               onClick={() => {
                 handleCurrentSlide(-1);
-                // console.log(curSlide);
+                // console.log(currentSlide);
               }}
               className="hidden md:block cursor-pointer left-0 md:left-2 lg:left-8 absolute h-20 w-12 bg-[#878787] z-30 mt-[70%] md:mt-[19%]  text-white text-[40pt] pl-2"
             >
               {"<"}
             </div>
           </div>
-          {slides[curSlide] == "topRight" && (
+          {slides[currentSlide] != "diamond" && (
             <div className="absolute animate-fade-left animate-once animate-duration-700">
               <ResultComponent
-                component={"topRight"}
+                // component={slides[currentSlide]}
+                slides={slides}
+                currentSlide={currentSlide}
                 questionList={questionList}
               />
             </div>
           )}
-          {slides[curSlide] == "topLeft" && (
-            <div className="absolute animate-fade-left animate-once animate-duration-700">
-              <ResultComponent
-                component={"topLeft"}
-                questionList={questionList}
-              />
-            </div>
-          )}
-          {slides[curSlide] == "rightCircle" && (
-            <div className="absolute animate-fade-left animate-once animate-duration-700">
-              <ResultComponent
-                component={"rightCircle"}
-                questionList={questionList}
-              />{" "}
-            </div>
-          )}
-          {slides[curSlide] == "leftCircle" && (
-            <div className="absolute animate-fade-left animate-once animate-duration-700">
-              <ResultComponent
-                component={"leftCircle"}
-                questionList={questionList}
-              />
-            </div>
-          )}
-          {slides[curSlide] == "middleCircle" && (
-            <div className="absolute animate-fade-left animate-once animate-duration-700">
-              <ResultComponent
-                component={"middleCircle"}
-                questionList={questionList}
-              />
-            </div>
-          )}
-          {slides[curSlide] == "bottomCircle" && (
-            <div className="absolute animate-fade-left animate-once animate-duration-700">
-              <ResultComponent
-                component={"bottomCircle"}
-                questionList={questionList}
-              />
-            </div>
-          )}
-          <div className="hidden md:block fixed w-screen md:w-[50%] right-[8%] bottom-10">
-            <LaunchForm setShowForm={setShowForm} />
+          <div
+            id="launch-form"
+            className=" hidden md:block fixed w-screen md:w-[50%] right-[8%] bottom-10"
+          >
+            <LaunchForm
+              setShowForm={setShowForm}
+              // handleDownloadPDF={handleDownloadPDF}
+            />
           </div>
           <div className="px-2 text-white items-center text-[50pt] fixed h-[70px] w-screen bottom-0 md:hidden bg-[#999999] flex flex-row justify-between">
             <div
@@ -281,7 +212,11 @@ export default function Results({ questionList, categories }) {
           </div>
         </div>
       )}
-      {showForm && <div>Placeholder for HS form</div>}
+      {showForm && (
+        <div>
+          <PDFResult components={categories} results={results} />
+        </div>
+      )}
     </>
   );
 }

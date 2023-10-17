@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import diamondFooter from "../../assets/Diamond-2.jpg";
-import Diamond from "../Diamond";
-import NavBar from "../NavBar";
+import Diamond from "./Diamond";
+import NavBar from "../Navigation/NavBar";
 import { useNavigate } from "react-router-dom";
 import questionBank from "../../modules/question-bank";
 
@@ -33,27 +33,28 @@ export default function Selections() {
     navigate("/questionnaire", { state: data });
   }
 
-  function handleSelection(e, f) {
-    console.log(e);
-    console.log(f);
-    let nextSelections = { ...selections };
-    if (e == "topLeft") nextSelections = { ...nextSelections, topLeft: f };
-    if (e == "topRight") nextSelections = { ...nextSelections, topRight: f };
-    if (e == "rightCircle")
-      nextSelections = { ...nextSelections, rightCircle: f };
-    if (e == "leftCircle")
-      nextSelections = { ...nextSelections, leftCircle: f };
-    if (e == "bottomCircle")
-      nextSelections = { ...nextSelections, bottomCircle: f };
-    if (e == "middleCircle")
-      nextSelections = { ...nextSelections, middleCircle: f };
-    console.log(nextSelections);
-    setSelections(nextSelections);
-    nextTest = Object.values(nextSelections);
-    setTest(nextTest.includes(true));
-    // console.log({ test });
-    // console.log(test.includes(true));
-  }
+  // function handleSelection(diamondCategory, isSelected) {
+  //   // console.log(e);
+  //   // console.log(f);
+  //   let nextSelections = { ...selections };
+  //   // if (e == "topLeft")
+  //   nextSelections[diamondCategory] = isSelected;
+  //   // if (e == "topRight") nextSelections = { ...nextSelections, topRight: f };
+  //   // if (e == "rightCircle")
+  //   //   nextSelections = { ...nextSelections, rightCircle: f };
+  //   // if (e == "leftCircle")
+  //   //   nextSelections = { ...nextSelections, leftCircle: f };
+  //   // if (e == "bottomCircle")
+  //   //   nextSelections = { ...nextSelections, bottomCircle: f };
+  //   // if (e == "middleCircle")
+  //   //   nextSelections = { ...nextSelections, middleCircle: f };
+  //   // console.log(nextSelections);
+  //   setSelections(nextSelections);
+  //   nextTest = Object.values(nextSelections);
+  //   setTest(nextTest.includes(true));
+  //   // console.log({ test });
+  //   // console.log(test.includes(true));
+  // }
 
   return (
     <>
@@ -190,9 +191,11 @@ export default function Selections() {
             </div>
             <div className="p-6 ml-3 md:-ml-4 md:mr-10">
               <Diamond
-                handleSelection={handleSelection}
-                test={test}
+                // handleSelection={handleSelection}
+                // test={test}
                 handleReady={handleReady}
+                selections={selections}
+                setSelections={setSelections}
               ></Diamond>
             </div>
           </div>

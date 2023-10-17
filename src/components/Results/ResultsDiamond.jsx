@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import questionBank from "../../../modules/question-bank";
+import questionBank from "../../modules/question-bank";
 import SmallBar from "./SmallBar";
 import { Button } from "@mui/material";
 
@@ -25,49 +25,8 @@ export default function ResultsDiamond({ components, results }) {
     console.log({ results });
   }, []);
 
-  function handleTopLeft() {
-    handleSelection("topLeft", !topLeft);
-    setTopLeft((prev) => !prev);
-  }
-
-  function handleTopRight() {
-    handleSelection("topRight", !topRight);
-    setTopRight((prev) => !prev);
-  }
-
-  function handleRightCircle() {
-    handleSelection("rightCircle", !rightCircle);
-    setRightCircle((prev) => !prev);
-  }
-
-  function handleLeftCircle() {
-    handleSelection("leftCircle", !leftCircle);
-    setLeftCircle((prev) => !prev);
-  }
-
-  function handleBottomCircle() {
-    handleSelection("bottomCircle", !bottomCircle);
-    setBottomCircle((prev) => !prev);
-  }
-
-  function handleMiddleCircle() {
-    handleSelection("middleCircle", !middleCircle);
-    setMiddleCircle((prev) => !prev);
-  }
-
-  function handleSVG(e) {
-    console.log(e.target.id);
-    e.target.id == "topLeftCircle" && handleTopLeft();
-    e.target.id == "topRightCircle" && handleTopRight();
-    e.target.id == "leftCircle" && handleLeftCircle();
-    e.target.id == "rightCircle" && handleRightCircle();
-    e.target.id == "bottomCircle" && handleBottomCircle();
-    e.target.id == "middleCircle" && handleMiddleCircle();
-  }
-
   return (
     <>
-      {/* <div className="divider w-[40%] pl-4"></div> */}
       <div className="relative">
         <div className="flex justify-center z-10">
           <div className="w-1/2 mt-[8%]">
@@ -81,10 +40,7 @@ export default function ResultsDiamond({ components, results }) {
             />
           </div>
         </div>
-        {/* <div
-          className="absolute h-[5.6%] w-[4.2%] top-[9.8%] left-[22%] rounded-full"
-          onClick={handleLeadership}
-        ></div> */}
+
         <div
           className={
             "absolute w-[26.5%] h-[1px]  bottom-[19.5%] left-[13%] " +
@@ -106,7 +62,6 @@ export default function ResultsDiamond({ components, results }) {
           )}
         </div>
         <div
-          //   onClick={handleMiddleCircle}
           className={
             "text-[#016AAB] font-bold  cursor-pointer font-lighter absolute  w-[23%] md:w-[18%] top-[81%] left-[13%] leading-tight  " +
             ((middleCircle && " text-[#016AAB]") || " text-slate-400")
@@ -137,7 +92,6 @@ export default function ResultsDiamond({ components, results }) {
           )}
         </div>
         <div
-          //   onClick={handleTopLeft}
           className={
             " text-[#016AAB] font-bold  cursor-pointer font-lighter absolute  w-[20%] md:w-[18%] top-[12%] left-[13%] leading-tight " +
             ((topLeft && " text-[#016AAB]") || "text-slate-400")
@@ -159,12 +113,7 @@ export default function ResultsDiamond({ components, results }) {
             ((topRight && "bg-[#FDB517] ") || "bg-slate-400 ")
           }
         ></div>
-        {/* <div
-          className={
-            "absolute w-[1px] h-[10%] bg-[#FDB517] top-[36%]  right-[20%] " +
-            ((rightCircle && "bg-[#FDB517] ") || "bg-slate-400 ")
-          }
-        ></div> */}
+
         <div
           className={
             "absolute w-[15%] h-[1px] bg-[#FDB517] top-[46%]  right-[13%] " +
@@ -191,12 +140,7 @@ export default function ResultsDiamond({ components, results }) {
             .find((el) => el.DiamondLoc == "rightCircle")
             .Type.toUpperCase()}
         </div>
-        {/* <div
-          className={
-            "absolute w-[1px] h-[10%] bg-[#FDB517] top-[36%]  left-[20%] " +
-            ((leftCircle && "bg-[#FDB517] ") || "bg-slate-400 ")
-          }
-        ></div> */}
+
         <div
           className={
             "absolute w-[23%] h-[1px] bg-[#FDB517] top-[46%]  left-[5%] " +
@@ -212,7 +156,6 @@ export default function ResultsDiamond({ components, results }) {
           )}
         </div>
         <div
-          //   onClick={handleLeftCircle}
           className={
             " text-[#016AAB] font-bold  cursor-pointer font-lighter absolute  w-[23%] md:w-[18%]  top-[46%] left-[5%] leading-tight  " +
             ((leftCircle && " text-[#016AAB]") || " text-slate-400")
@@ -260,10 +203,8 @@ export default function ResultsDiamond({ components, results }) {
             />
           )}
         </div>
-        {/* <div className="absolute  top-[30%] left-[3%] w-[15%] h-[33%] border-2 border-[#016AAB] rounded-full "></div> */}
 
         <div
-          //   onClick={handleTopRight}
           className={
             " font-bold  cursor-pointer font-lighter absolute  w-[20%] h-[10%] md:w-[18%] top-[12%]  right-[5%] text-right leading-tight  " +
             ((topRight && " text-[#016AAB]") || "text-slate-400")
@@ -275,7 +216,6 @@ export default function ResultsDiamond({ components, results }) {
         </div>
 
         <div
-          //   onClick={handleBottomCircle}
           className={
             " text-[#016AAB] font-bold cursor-pointer font-lighter absolute  w-[23%] md:w-[18%] top-[81%] right-[5%] text-right leading-tight " +
             ((bottomCircle && " text-[#016AAB]") || " text-slate-400")

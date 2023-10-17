@@ -1,54 +1,30 @@
-import React, { useState } from "react";
-import questionBank from "../modules/question-bank";
-import Pulsating from "./Utils.jsx/Pulsating";
+import React, { useState, useEffect } from "react";
+import questionBank from "../../modules/question-bank";
 
-export default function Diamond({ handleSelection, test, handleReady }) {
+export default function Diamond({ handleReady, selections, setSelections }) {
   const [topLeft, setTopLeft] = useState(false);
   const [topRight, setTopRight] = useState(false);
   const [rightCircle, setRightCircle] = useState(false);
   const [bottomCircle, setBottomCircle] = useState(false);
   const [leftCircle, setLeftCircle] = useState(false);
   const [middleCircle, setMiddleCircle] = useState(false);
-  const [visible, setVisible] = useState(true);
 
-  function handleTopLeft() {
-    handleSelection("topLeft", !topLeft);
-    setTopLeft((prev) => !prev);
+  function handleDiamondComponentColors(component) {
+    component == "topLeft" && setTopLeft((prev) => !prev);
+    component == "topRight" && setTopRight((prev) => !prev);
+    component == "leftCircle" && setLeftCircle((prev) => !prev);
+    component == "rightCircle" && setRightCircle((prev) => !prev);
+    component == "bottomCircle" && setBottomCircle((prev) => !prev);
+    component == "middleCircle" && setMiddleCircle((prev) => !prev);
   }
 
-  function handleTopRight() {
-    handleSelection("topRight", !topRight);
-    setTopRight((prev) => !prev);
-  }
-
-  function handleRightCircle() {
-    handleSelection("rightCircle", !rightCircle);
-    setRightCircle((prev) => !prev);
-  }
-
-  function handleLeftCircle() {
-    handleSelection("leftCircle", !leftCircle);
-    setLeftCircle((prev) => !prev);
-  }
-
-  function handleBottomCircle() {
-    handleSelection("bottomCircle", !bottomCircle);
-    setBottomCircle((prev) => !prev);
-  }
-
-  function handleMiddleCircle() {
-    handleSelection("middleCircle", !middleCircle);
-    setMiddleCircle((prev) => !prev);
-  }
-
-  function handleSVG(e) {
-    console.log(e.target.id);
-    e.target.id == "topLeftCircle" && handleTopLeft();
-    e.target.id == "topRightCircle" && handleTopRight();
-    e.target.id == "leftCircle" && handleLeftCircle();
-    e.target.id == "rightCircle" && handleRightCircle();
-    e.target.id == "bottomCircle" && handleBottomCircle();
-    e.target.id == "middleCircle" && handleMiddleCircle();
+  function handleSelection(component) {
+    let tempSelections = selections;
+    tempSelections[component] = !tempSelections[component];
+    setSelections(tempSelections);
+    handleDiamondComponentColors(component);
+    // console.log(component);
+    // console.log(selections);
   }
 
   return (
@@ -71,7 +47,7 @@ export default function Diamond({ handleSelection, test, handleReady }) {
           viewBox="0 0 426.4 309.3"
           style={{ enableBackground: "new 0 0 426.4 309.3" }}
           xmlSpace="preserve"
-          onClick={(e) => handleSVG(e)}
+          onClick={(e) => handleSelection(e.target.id)}
         >
           <style
             type="text/css"
@@ -136,8 +112,9 @@ export default function Diamond({ handleSelection, test, handleReady }) {
             points="187.9,47.1 214.7,27.2 241.6,47.1 214.7,60.3 "
           />
           <g>
+            (
             <path
-              id="topLeftCircle"
+              id="topLeft"
               className={
                 "cursor-pointer " +
                 ((topLeft == false && "fill-[#cccccc] hover:fill-[#FFCB18]") ||
@@ -146,9 +123,8 @@ export default function Diamond({ handleSelection, test, handleReady }) {
               }
               d="M103,47.6c4.8,0,8.7-3.9,8.7-8.7c0-4.8-3.9-8.7-8.7-8.7s-8.7,3.9-8.7,8.7C94.3,43.7,98.2,47.6,103,47.6"
             />
-
+            )
             <path
-              id="topLeftRing"
               className={
                 "cursor-pointer " +
                 ((topLeft == false && "fill-[#cccccc] hover:fill-[#FFCB18] ") ||
@@ -159,7 +135,7 @@ export default function Diamond({ handleSelection, test, handleReady }) {
                M103,28.5c-5.7,0-10.4,4.7-10.4,10.4s4.7,10.4,10.4,10.4c5.7,0,10.4-4.7,10.4-10.4S108.7,28.5,103,28.5z"
             />
             <path
-              id="topRightCircle"
+              id="topRight"
               className={
                 "cursor-pointer " +
                 ((topRight == false &&
@@ -170,7 +146,6 @@ export default function Diamond({ handleSelection, test, handleReady }) {
               d="M326.8,47.6c4.8,0,8.7-3.9,8.7-8.7c0-4.8-3.9-8.7-8.7-8.7s-8.7,3.9-8.7,8.7S322,47.6,326.8,47.6"
             />
             <path
-              id="topRightRing"
               className={
                 "cursor-pointer " +
                 ((topRight == false &&
@@ -194,7 +169,6 @@ export default function Diamond({ handleSelection, test, handleReady }) {
               C379.8,109.6,383.7,113.5,388.5,113.5"
             />
             <path
-              id="rightRing"
               className={
                 "cursor-pointer " +
                 ((rightCircle == false &&
@@ -217,7 +191,6 @@ export default function Diamond({ handleSelection, test, handleReady }) {
               d="M39.2,113.5c4.8,0,8.7-3.9,8.7-8.7c0-4.8-3.9-8.7-8.7-8.7s-8.7,3.9-8.7,8.7C30.5,109.6,34.4,113.5,39.2,113.5"
             />
             <path
-              id="leftRing"
               className={
                 "cursor-pointer " +
                 ((leftCircle == false &&
@@ -240,7 +213,6 @@ export default function Diamond({ handleSelection, test, handleReady }) {
               d="M216.1,291c4.8,0,8.7-3.9,8.7-8.7c0-4.8-3.9-8.7-8.7-8.7s-8.7,3.9-8.7,8.7C207.4,287.1,211.3,291,216.1,291"
             />
             <path
-              id="bottomRing"
               className={
                 "cursor-pointer " +
                 ((bottomCircle == false &&
@@ -314,7 +286,6 @@ export default function Diamond({ handleSelection, test, handleReady }) {
           C158.6,188.1,162.5,192,167.2,192"
           />
           <path
-            id="middleRing"
             className={
               ((middleCircle == false &&
                 "fill-[#cccccc] hover:fill-[#FFCB18] ") ||
@@ -331,7 +302,7 @@ export default function Diamond({ handleSelection, test, handleReady }) {
         <div className="absolute w-[25%] h-[1px] bg-[#FDB517] top-[62%] left-[13%] "></div>
 
         <div
-          onClick={handleTopLeft}
+          onClick={() => handleSelection("topLeft")}
           className={
             "md:leading-5 text-[#1290e5] font-bold  cursor-pointer font-lighter absolute  w-[25%] md:w-[20%] top-[5%] -left-3 md:left-0  text-xs md:text-lg " +
             (topLeft && "underline decoration-[#FDB517]")
@@ -343,7 +314,7 @@ export default function Diamond({ handleSelection, test, handleReady }) {
         </div>
 
         <div
-          onClick={handleTopRight}
+          onClick={() => handleSelection("topRight")}
           className={
             "md:leading-5 text-[#1290e5] font-bold  cursor-pointer font-lighter absolute  w-[23%] md:w-[20%] top-[5%]  -right-[3%] text-right text-xs md:text-lg " +
             (topRight && "underline decoration-[#FDB517]")
@@ -354,7 +325,7 @@ export default function Diamond({ handleSelection, test, handleReady }) {
             .Type.toUpperCase()}
         </div>
         <div
-          onClick={handleRightCircle}
+          onClick={() => handleSelection("rightCircle")}
           className={
             "md:leading-5 text-[#1290e5] font-bold cursor-pointer font-lighter absolute  w-[23%] md:w-[20%] top-[50%] md:top-[45%] text-right -right-[6%] text-xs md:text-lg " +
             (rightCircle && "underline decoration-[#FDB517]")
@@ -365,7 +336,7 @@ export default function Diamond({ handleSelection, test, handleReady }) {
             .Type.toUpperCase()}
         </div>
         <div
-          onClick={handleLeftCircle}
+          onClick={() => handleSelection("leftCircle")}
           className={
             "md:leading-5 text-[#1290e5] font-bold  cursor-pointer font-lighter absolute -left-[8%] w-[23%] md:w-[20%] top-[40%] md:top-[38%]  text-xs md:text-lg " +
             (leftCircle && "underline decoration-[#FDB517]")
@@ -376,7 +347,7 @@ export default function Diamond({ handleSelection, test, handleReady }) {
             .Type.toUpperCase()}
         </div>
         <div
-          onClick={handleMiddleCircle}
+          onClick={() => handleSelection("middleCircle")}
           className={
             "md:leading-5 text-[#1290e5] font-bold  cursor-pointer font-lighter absolute  w-[23%] md:w-[20%] top-[62%]  text-xs md:text-lg " +
             (middleCircle && "underline decoration-[#FDB517]")
@@ -387,7 +358,7 @@ export default function Diamond({ handleSelection, test, handleReady }) {
             .Type.toUpperCase()}
         </div>
         <div
-          onClick={handleBottomCircle}
+          onClick={() => handleSelection("bottomCircle")}
           className={
             "md:leading-5 text-[#1290e5] font-bold cursor-pointer font-lighter absolute  w-[23%] md:w-[25%] bottom-[6%] right-[12%] text-right text-xs md:text-lg " +
             (bottomCircle && "underline decoration-[#FDB517]")
@@ -402,12 +373,12 @@ export default function Diamond({ handleSelection, test, handleReady }) {
         </div>
         <div className="absolute w-[25%] h-[1px] bg-[#FDB517] bottom-[6%] right-[22%] "></div>
         <div className="absolute -bottom-2 md:bottom-3 md:bottom-6 l-2">
-          {!test && (
+          {selections && !Object.values(selections).includes(true) && (
             <button className="text-2xl font-lighter w-[100px] outline text-slate-300 disabled ">
               READY
             </button>
           )}
-          {test && (
+          {selections && Object.values(selections).includes(true) && (
             <button
               className="text-2xl font-lighter w-[100px] outline text-[#016AAB] font-bold hover:text-[#0EA8DC] "
               onClick={() => handleReady()}

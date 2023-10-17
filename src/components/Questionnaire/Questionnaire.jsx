@@ -2,92 +2,61 @@ import { useState, useEffect } from "react";
 import "../../index.css";
 import questionBank from "../../modules/question-bank";
 import { useLocation } from "react-router-dom";
-import NavBar from "../NavBar";
+import NavBar from "../Navigation/NavBar";
 import { SpotlightTour, useSpotlight } from "react-spotlight-tour";
 import Spotlight from "react-spotlight-tour/spotlight";
 import SectionComplete from "./SectionCompleted";
 import AllSectionsComplete from "./AllSectionsComplete";
 import Header from "./Header";
 import AssessmentBody from "./AssessmentBody";
-import Results from "./Results/Results";
+import Results from "../Results/Results";
+import categoryList from "../Utils.jsx/CategoryList";
 
 function Questionnaire() {
   const location = useLocation();
 
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [desiredSlide, setDesiredSlide] = useState(0);
-  // const [questions, setQuestions] = useState([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
+  const [currentSliderValue, SetCurrentSliderValuerValue] = useState(0);
+  const [desiredSliderValue, SetDesiredSliderValuerValuerValue] = useState(0);
   const [questionIndex, setQuestionIndex] = useState(0);
-  //   const [selections, setSelections] = useState(state);
-  const [questionNum, setQuestionNum] = useState(
-    []
-    // questionBank[questions[questionIndex]]
-  );
+  const [questionNum, setQuestionNum] = useState([]);
   const [questionList, setQuestionList] = useState([]);
   const [isExploding, setIsExploding] = useState(false);
   const [progress, setProgress] = useState(0);
   const [sectionComplete, setSectionComplete] = useState(false);
-
   const [isOpen, setOpen] = useState(true);
   const [seeResult, setSeeResult] = useState(false);
-
-  // useEffect(() => {}, [questionIndex]);
 
   useEffect(() => {
     window.matchMedia("(min-width: 768px)").matches
       ? window.scrollTo({ top: 112, behavior: "smooth" })
       : window.scrollTo({ top: 72, behavior: "smooth" });
     let tempList = [];
-    if (location.state.topLeft) {
-      tempList = tempList.concat(
-        questionBank.filter((component) => component.DiamondLoc == "topLeft")
-      );
-    }
-    if (location.state.topRight) {
-      tempList = tempList.concat(
-        questionBank.filter((component) => component.DiamondLoc == "topRight")
-      );
-    }
-    if (location.state.rightCircle) {
-      tempList = tempList.concat(
-        questionBank.filter(
-          (component) => component.DiamondLoc == "rightCircle"
-        )
-      );
-    }
-    if (location.state.leftCircle) {
-      tempList = tempList.concat(
-        questionBank.filter((component) => component.DiamondLoc == "leftCircle")
-      );
-    }
-    if (location.state.bottomCircle) {
-      tempList = tempList.concat(
-        questionBank.filter(
-          (component) => component.DiamondLoc == "bottomCircle"
-        )
-      );
-    }
-    if (location.state.middleCircle) {
-      tempList = tempList.concat(
-        questionBank.filter(
-          (component) => component.DiamondLoc == "middleCircle"
-        )
-      );
-    }
-    // console.log({ tempList });
+
+    // filterCategories
+
+    categoryList.map((selectedCategory) => {
+      if (location.state[selectedCategory]) {
+        tempList = tempList.concat(
+          questionBank.filter(
+            (component) => component.DiamondLoc == selectedCategory
+          )
+        );
+      }
+    });
+
     setQuestionList(tempList);
     setQuestionNum(tempList[0]);
     setTimeout(() => setOpen(false), 2500);
     // console.log(location.state);
   }, []);
 
-  function handleCurrent(x) {
-    setCurrentSlide(Number(x));
+  function handleCurrent(sliderValue) {
+    SetCurrentSliderValuerValue(Number(sliderValue));
     // console.log({ x });
   }
 
-  function handleDesired(y) {
-    setDesiredSlide(Number(y));
+  function handleDesired(sliderValue) {
+    SetDesiredSliderValuerValuerValue(Number(sliderValue));
     // console.log({ y });
   }
 
@@ -95,8 +64,8 @@ function Questionnaire() {
     if (questionIndex + 1 == questionList.length) {
       setProgress(1);
       let tempList = questionList;
-      tempList[questionIndex].Current = currentSlide;
-      tempList[questionIndex].Desired = desiredSlide;
+      tempList[questionIndex].Current = currentSliderValue;
+      tempList[questionIndex].Desired = desiredSliderValue;
       setQuestionList(tempList);
       setIsExploding(true);
       // setTimeout(document.getElementById("my_modal_1").showModal(), 1000);
@@ -105,19 +74,19 @@ function Questionnaire() {
     if (
       questionList[questionIndex].Type != questionList[questionIndex + 1].Type
     ) {
-      console.log("New Category");
+      // console.log("New Category");
       // setIsFireworks(true);
       setSectionComplete(true);
       // setTimeout(() => setIsFireworks(false), 3000);
       // return;
     }
     let tempList = questionList;
-    tempList[questionIndex].Current = currentSlide;
-    tempList[questionIndex].Desired = desiredSlide;
+    tempList[questionIndex].Current = currentSliderValue;
+    tempList[questionIndex].Desired = desiredSliderValue;
     setProgress((questionIndex + 1) / questionList.length);
     setQuestionList(tempList);
-    setCurrentSlide(tempList[questionIndex + 1].Current);
-    setDesiredSlide(tempList[questionIndex + 1].Desired);
+    SetCurrentSliderValuerValue(tempList[questionIndex + 1].Current);
+    SetDesiredSliderValuerValuerValue(tempList[questionIndex + 1].Desired);
     setQuestionNum(questionList[questionIndex + 1]);
     setQuestionIndex((prev) => prev + 1);
 
@@ -128,8 +97,8 @@ function Questionnaire() {
     let tempList = questionList;
     // let currentScore = questionBank[questions[questionIndex - 1]];
     // console.log({ currentScore });
-    setCurrentSlide(tempList[questionIndex - 1].Current);
-    setDesiredSlide(tempList[questionIndex - 1].Desired);
+    SetCurrentSliderValuerValue(tempList[questionIndex - 1].Current);
+    SetDesiredSliderValuerValuerValue(tempList[questionIndex - 1].Desired);
     setQuestionNum(questionList[questionIndex - 1]);
     setQuestionIndex((prev) => prev - 1);
 
@@ -138,14 +107,16 @@ function Questionnaire() {
 
   return (
     <>
-      <NavBar></NavBar>
-      <div className="-mt-2.5">
-        <progress
-          className="progress progress-secondary w-screen"
-          value={progress * 100}
-          max="100"
-        ></progress>
-      </div>
+      {!seeResult && <NavBar></NavBar>}
+      {!seeResult && (
+        <div className="-mt-2.5">
+          <progress
+            className="progress progress-secondary w-screen"
+            value={progress * 100}
+            max="100"
+          ></progress>
+        </div>
+      )}
 
       <SpotlightTour
         open={isOpen}
@@ -169,8 +140,8 @@ function Questionnaire() {
             <>
               <Header questionNum={questionNum} />
               <AssessmentBody
-                currentSlide={currentSlide}
-                desiredSlide={desiredSlide}
+                currentSliderValue={currentSliderValue}
+                desiredSliderValue={desiredSliderValue}
                 questionNum={questionNum}
                 questionIndex={questionIndex}
                 handleBack={handleBack}

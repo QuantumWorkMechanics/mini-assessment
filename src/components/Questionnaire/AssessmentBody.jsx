@@ -1,13 +1,13 @@
 import React from "react";
 import { Button } from "@mui/material";
-import RechartBar from "./RechartTest";
+import RechartBar from "./RechartBar";
 import Sliders from "./Sliders";
 import { SpotlightTour, useSpotlight } from "react-spotlight-tour";
 import Spotlight from "react-spotlight-tour/spotlight";
 
 export default function AssessmentBody({
-  currentSlide,
-  desiredSlide,
+  currentSliderValue,
+  desiredSliderValue,
   questionNum,
   questionIndex,
   handleBack,
@@ -30,30 +30,30 @@ export default function AssessmentBody({
       </div>
       <div className="md:hidden p-1 relative mb-2 px-4 mb-8 mt-4">
         <div className="absolute -mt-5 text-sm">
-          {currentSlide == 1 && questionNum.Response_1}
-          {currentSlide == 2 && questionNum.Response_2}
-          {currentSlide == 3 && questionNum.Response_3}
-          {currentSlide == 4 && questionNum.Response_4}
-          {currentSlide == 5 && questionNum.Response_5}
+          {currentSliderValue == 1 && questionNum.Response_1}
+          {currentSliderValue == 2 && questionNum.Response_2}
+          {currentSliderValue == 3 && questionNum.Response_3}
+          {currentSliderValue == 4 && questionNum.Response_4}
+          {currentSliderValue == 5 && questionNum.Response_5}
         </div>
       </div>
       <div className="mt-5 md:flex">
         <div className="md:-mr-10 z-20">
           <Sliders
             handleCurrent={handleCurrent}
-            currentSlide={currentSlide}
+            currentSliderValue={currentSliderValue}
             handleDesired={handleDesired}
-            desiredSlide={desiredSlide}
+            desiredSliderValue={desiredSliderValue}
           ></Sliders>
         </div>
 
         <div className="md:hidden p-1 relative -mt-4 px-4 text-sm">
           <div className="absolute">
-            {desiredSlide == 1 && questionNum.Response_1}
-            {desiredSlide == 2 && questionNum.Response_2}
-            {desiredSlide == 3 && questionNum.Response_3}
-            {desiredSlide == 4 && questionNum.Response_4}
-            {desiredSlide == 5 && questionNum.Response_5}
+            {desiredSliderValue == 1 && questionNum.Response_1}
+            {desiredSliderValue == 2 && questionNum.Response_2}
+            {desiredSliderValue == 3 && questionNum.Response_3}
+            {desiredSliderValue == 4 && questionNum.Response_4}
+            {desiredSliderValue == 5 && questionNum.Response_5}
           </div>
         </div>
         <div className="hidden display h-80 md:flex text-slate-500 flex-row flex-row-reverse md:flex-col justify-between -ml-14 text-xs mt-2">
@@ -68,8 +68,9 @@ export default function AssessmentBody({
           <div
             className={
               "p-1 " +
-              ((currentSlide == 5 && "outline outline-[#09497B] ") || "") +
-              (desiredSlide == 5 && "ring ring-inset ring-[#FDB517]")
+              ((currentSliderValue == 5 && "outline outline-[#09497B] ") ||
+                "") +
+              (desiredSliderValue == 5 && "ring ring-inset ring-[#FDB517]")
             }
           >
             {questionNum.Response_5}
@@ -78,8 +79,9 @@ export default function AssessmentBody({
           <div
             className={
               "p-1 " +
-              ((currentSlide == 4 && "outline outline-[#09497B] ") || "") +
-              (desiredSlide == 4 && "ring ring-inset ring-[#FDB517]")
+              ((currentSliderValue == 4 && "outline outline-[#09497B] ") ||
+                "") +
+              (desiredSliderValue == 4 && "ring ring-inset ring-[#FDB517]")
             }
           >
             {questionNum.Response_4}
@@ -87,8 +89,9 @@ export default function AssessmentBody({
           <div
             className={
               "p-1 " +
-              ((currentSlide == 3 && "outline outline-[#09497B] ") || "") +
-              (desiredSlide == 3 && "ring ring-inset ring-[#FDB517]")
+              ((currentSliderValue == 3 && "outline outline-[#09497B] ") ||
+                "") +
+              (desiredSliderValue == 3 && "ring ring-inset ring-[#FDB517]")
             }
           >
             {questionNum.Response_3}
@@ -96,8 +99,9 @@ export default function AssessmentBody({
           <div
             className={
               "p-1 " +
-              ((currentSlide == 2 && "outline outline-[#09497B] ") || "") +
-              (desiredSlide == 2 && "ring ring-inset ring-[#FDB517]")
+              ((currentSliderValue == 2 && "outline outline-[#09497B] ") ||
+                "") +
+              (desiredSliderValue == 2 && "ring ring-inset ring-[#FDB517]")
             }
           >
             {questionNum.Response_2}
@@ -105,8 +109,9 @@ export default function AssessmentBody({
           <div
             className={
               "p-1 " +
-              ((currentSlide == 1 && "outline outline-[#09497B] ") || "") +
-              (desiredSlide == 1 && "ring ring-inset ring-[#FDB517]")
+              ((currentSliderValue == 1 && "outline outline-[#09497B] ") ||
+                "") +
+              (desiredSliderValue == 1 && "ring ring-inset ring-[#FDB517]")
             }
           >
             {questionNum.Response_1}
@@ -115,8 +120,8 @@ export default function AssessmentBody({
         </div>
         <div className="md:-mt-24 -mt-18 md:flex md:justify-center relative -z-10">
           <RechartBar
-            currentSlide={currentSlide}
-            desiredSlide={desiredSlide}
+            currentSliderValue={currentSliderValue}
+            desiredSliderValue={desiredSliderValue}
           ></RechartBar>
         </div>
       </div>
@@ -134,12 +139,12 @@ export default function AssessmentBody({
           )}
         </div>
         <div ref={spotlightRef2} className="p-2">
-          {currentSlide != 0 && desiredSlide != 0 && (
+          {currentSliderValue != 0 && desiredSliderValue != 0 && (
             <Button variant="outlined" size="large" onClick={handleNext}>
               NEXT
             </Button>
           )}
-          {(currentSlide == 0 || desiredSlide == 0) && (
+          {(currentSliderValue == 0 || desiredSliderValue == 0) && (
             <Button variant="outlined" size="large" disabled>
               NEXT
             </Button>

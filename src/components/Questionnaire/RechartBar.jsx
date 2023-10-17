@@ -1,13 +1,8 @@
 import React, { useState, useEffect } from "react";
 
-import {
-  RadialBarChart,
-  PolarAngleAxis,
-  RadialBar,
-  ResponsiveContainer,
-} from "recharts";
+import { RadialBarChart, RadialBar } from "recharts";
 
-function RechartBar({ currentSlide, desiredSlide }) {
+function RechartBar({ currentSliderValue, desiredSliderValue }) {
   const [data, setData] = useState([
     {
       name: "A",
@@ -31,28 +26,17 @@ function RechartBar({ currentSlide, desiredSlide }) {
     let nextData = [...data];
     (nextData[0] = {
       name: "A",
-      x: currentSlide,
+      x: currentSliderValue,
       fill: "#09497B",
     }),
       (nextData[1] = {
         name: "B",
-        x: desiredSlide,
+        x: desiredSliderValue,
         fill: "#FDB517",
       });
     // console.log(nextData);
     setData(nextData);
-  }, [currentSlide, desiredSlide]);
-
-  // useEffect(() => {
-  //   let nextDesiredData = [...data];
-  //   (nextDesiredData[1] = {
-  //     name: "B",
-  //     x: desiredSlide,
-
-  //   }),
-  //     console.log(nextDesiredData);
-  //   setData(nextDesiredData);
-  // }, [desiredSlide]);
+  }, [currentSliderValue, desiredSliderValue]);
 
   return (
     <RadialBarChart

@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    font-family: "Noto Sans", "Roboto";
+  }
+}
+
 .result-bg {
   background-image: url("../public/GettyImages-675834103.avif");
 
