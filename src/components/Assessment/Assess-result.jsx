@@ -222,7 +222,7 @@ export default function FullDiagnosticResults() {
                           )}
                         {/* <div className="divider w-1/3 ml-14"></div> */}
                         {currentSlide == `${category.category}_${index}` && (
-                          <div className="w-[95vw] py-5 h-[80vh] sticky top-0 bottom-0 bg-white rounded-lg shadow-2xl">
+                          <div className="w-[95vw] py-5 h-[80vh] sticky top-0 bottom-0 bg-white rounded-lg shadow-2xl animate-fade-up animate-once animate-duration-300 animate-ease-linear">
                             <div className=" md:text-3xl ml-14 my-4">
                               {category.category}
                             </div>
@@ -238,7 +238,7 @@ export default function FullDiagnosticResults() {
 
                         {/* <div className="divider w-32 ml-[400px] "></div> */}
                         {currentSlide == `${category.category}_${index}_2` && (
-                          <div className="w-[95vw] py-5 h-[80vh] sticky top-0 bottom-0 bg-white rounded-lg shadow-2xl">
+                          <div className="w-[95vw] py-5 h-[80vh] sticky top-0 bottom-0 bg-white rounded-lg shadow-2xl animate-fade-up animate-once animate-duration-300 animate-ease-linear">
                             <div className=" md:text-3xl ml-14 my-4">
                               {category.category}
                             </div>
