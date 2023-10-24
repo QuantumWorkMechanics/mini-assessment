@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useState } from "react";
 import { Button } from "@mui/material";
 import RechartBar from "./RechartBar";
 import Sliders from "./Sliders";
@@ -15,7 +15,8 @@ export default function AssessmentBody({
   handleCurrent,
   handleDesired,
 }) {
-  const spotlightRef2 = useSpotlight("Press next to continue.", "top");
+  const [spotLight, setSpotLight] = useState(1);
+  // const spotlightRef2 = useSpotlight("Press next to continue.", "top");
   return (
     <>
       <div className="w-1/4 hidden md:flex text-xs md:-ml-5 md:-mb-5 mt-3 font-bold">
@@ -39,6 +40,26 @@ export default function AssessmentBody({
       </div>
       <div className="mt-5 md:flex">
         <div className="md:-mr-10 z-20">
+          {spotLight == 1 && (
+            <>
+              <div className="hidden md:block absolute text-white z-50 text-2xl md:w-72 md:mt-20 ml-20 animate-fade-up animate-once animate-duration-[800ms] animate-ease-linear ">
+                Use the sliders to select your current and desired level
+              </div>
+              <div className=" md:hidden absolute text-white z-50 text-2xl md:w-72 -mt-20 ml-20 animate-fade-up animate-once animate-duration-[800ms] animate-ease-linear ">
+                Tap to select your current and desired level
+              </div>
+              <div
+                onClick={() => setSpotLight((prev) => prev + 1)}
+                className="mt-20 ml-36 md:ml-34 md:mt-64  z-50 absolute bg-white rounded animate-fade-up animate-once animate-delay-[1000ms] animate-duration-[800ms] animate-ease-linear"
+              >
+                <Button>Continue</Button>
+              </div>
+              <div
+                onClick={() => setSpotLight((prev) => prev + 1)}
+                className="pinhole z-30 w-[130px] h-[130px] mt-8 ml-32 md:mt-52 md:ml-32 rounded-full animate-fade-up animate-once animate-duration-[800ms] animate-ease-linear "
+              ></div>
+            </>
+          )}
           <Sliders
             handleCurrent={handleCurrent}
             currentSliderValue={currentSliderValue}
@@ -138,7 +159,7 @@ export default function AssessmentBody({
             </Button>
           )}
         </div>
-        <div ref={spotlightRef2} className="p-2">
+        <div className="p-2">
           {currentSliderValue != 0 && desiredSliderValue != 0 && (
             <Button variant="outlined" size="large" onClick={handleNext}>
               NEXT

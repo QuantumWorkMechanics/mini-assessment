@@ -13,6 +13,12 @@
   font-family: "Noto Sans", "Roboto", "Arial";
 }
 
+.pinhole {
+  position: absolute;
+  box-sizing: border-box;
+  box-shadow: 0 0 0 99999px rgba(0, 0, 0, 0.6);
+}
+
 .result-bg {
   background-image: url("../public/GettyImages-675834103.avif");
 

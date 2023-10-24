@@ -118,44 +118,44 @@ function Questionnaire() {
         </div>
       )}
 
-      <SpotlightTour
+      {/* <SpotlightTour
         open={isOpen}
         onClose={() => setOpen(false)}
         Spotlight={Spotlight}
-      >
-        <div className="h-screen text-primary flex flex-col">
-          {sectionComplete && (
-            <SectionComplete
-              setSectionComplete={setSectionComplete}
-              setSeeResult={setSeeResult}
+      > */}
+      <div className="h-screen text-primary flex flex-col">
+        {sectionComplete && (
+          <SectionComplete
+            setSectionComplete={setSectionComplete}
+            setSeeResult={setSeeResult}
+          />
+        )}
+        {isExploding && (
+          <AllSectionsComplete
+            setIsExploding={setIsExploding}
+            setSeeResult={setSeeResult}
+          />
+        )}
+        {!isExploding && !sectionComplete && !seeResult && (
+          <>
+            <Header questionNum={questionNum} />
+            <AssessmentBody
+              currentSliderValue={currentSliderValue}
+              desiredSliderValue={desiredSliderValue}
+              questionNum={questionNum}
+              questionIndex={questionIndex}
+              handleBack={handleBack}
+              handleNext={handleNext}
+              handleCurrent={handleCurrent}
+              handleDesired={handleDesired}
             />
-          )}
-          {isExploding && (
-            <AllSectionsComplete
-              setIsExploding={setIsExploding}
-              setSeeResult={setSeeResult}
-            />
-          )}
-          {!isExploding && !sectionComplete && !seeResult && (
-            <>
-              <Header questionNum={questionNum} />
-              <AssessmentBody
-                currentSliderValue={currentSliderValue}
-                desiredSliderValue={desiredSliderValue}
-                questionNum={questionNum}
-                questionIndex={questionIndex}
-                handleBack={handleBack}
-                handleNext={handleNext}
-                handleCurrent={handleCurrent}
-                handleDesired={handleDesired}
-              />
-            </>
-          )}
-          {seeResult && (
-            <Results questionList={questionList} categories={location.state} />
-          )}
-        </div>
-      </SpotlightTour>
+          </>
+        )}
+        {seeResult && (
+          <Results questionList={questionList} categories={location.state} />
+        )}
+      </div>
+      {/* </SpotlightTour> */}
     </>
   );
 }

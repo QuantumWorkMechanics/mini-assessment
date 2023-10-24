@@ -113,7 +113,7 @@ export default function Dashboard({
             colorArr={colorArr}
           />
         </div>
-        <div className="col-span-4 row-span-1 bg-white  md:h-full">
+        <div className="col-span-4 row-span-1 bg-white h-[320px] md:h-full">
           <VarianceGraph
             fullForm={typeForm}
             personas={personas}
