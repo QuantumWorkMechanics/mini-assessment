@@ -8,6 +8,11 @@
   }
 }
 
+.recharts-legend-item {
+  font-size: 8pt;
+  font-family: "Noto Sans", "Roboto", "Arial";
+}
+
 .result-bg {
   background-image: url("../public/GettyImages-675834103.avif");
 

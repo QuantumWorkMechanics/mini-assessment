@@ -20,6 +20,7 @@
     "@fontsource/roboto": "^5.0.8",
     "@mui/material": "^5.14.11",
     "@mui/styled-engine-sc": "^5.14.11",
+    "@tidyjs/tidy": "^2.5.2",
     "@typeform/embed-react": "^3.2.0",
     "dotenv": "^16.3.1",
     "html2canvas": "^1.4.1",

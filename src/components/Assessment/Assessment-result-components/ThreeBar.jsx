@@ -7,6 +7,7 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
+  ResponsiveContainer,
 } from "recharts";
 
 export default function ThreeBarChart({ dataKey, dataArr, label, title }) {
@@ -74,7 +75,7 @@ export default function ThreeBarChart({ dataKey, dataArr, label, title }) {
             </BarChart>
           </div>
 
-          <div className=" mx-3 mr-10 w-[75ch] animate-fade-up animate-once animate-duration-300 animate-ease-linear">
+          <div className=" mx-3 mr-10 w-[75ch]">
             <div className="text-xl font-bold">{title}</div>
             <div className="mt-2 font-bold">
               {"Score: " + dataArr[0].AllAvgScore}

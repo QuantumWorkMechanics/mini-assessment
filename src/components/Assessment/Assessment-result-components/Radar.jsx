@@ -15,20 +15,22 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
+import { tidy, leftJoin } from "@tidyjs/tidy";
 
-export default function RadarGraph(personas) {
-  console.log(personas.personas);
+export default function RadarGraph({ personas, mainCategories }) {
+  //   console.log(personas.personas);
   const [data, setData] = useState();
   const colorArr = ["#0EA8DC", "#FFCB18", "#666666"];
 
   useEffect(() => {
+    console.log({ mainCategories });
     function convertJSON(jsonData) {
       let categories = {};
       for (let i = 0; i < jsonData.length; i++) {
-        console.log(jsonData[i]);
+        // console.log(jsonData[i]);
         let persona = jsonData[i].persona;
         let categoriesList = jsonData[i].categories;
-        console.log({ categoriesList });
+        // console.log({ categoriesList });
         for (let j = 0; j < categoriesList.length; j++) {
           let category = categoriesList[j].category;
           let score = categoriesList[j].score;
@@ -40,17 +42,32 @@ export default function RadarGraph(personas) {
       }
       let result = Object.keys(categories).map((category) => {
         let obj = { category: category };
-        Object.keys(categories[category]).forEach((persona) => {
+        // let tempAll;
+        // if (mainCategories) {
+        //   tempAll = mainCategories.filter((category) => {
+        //     console.log({ category });
+        //     return mainCategories.category == category.category;
+        //   });
+        //   console.log({ tempAll });
+        // }
+
+        obj.All = Object.keys(categories[category]).forEach((persona) => {
           obj[persona] = categories[category][persona];
         });
         return obj;
       });
       return result;
     }
-    let tempArr = convertJSON(personas.personas);
-    // tempArr.categories.map((category) => {
-    //   personas.personas.map((persona) => {});
-    console.log({ tempArr });
+    console.log({ personas });
+    let tempArr = convertJSON(personas);
+    if (mainCategories) {
+      let tempCategoriesWithMain = tidy(
+        tempArr,
+        leftJoin(mainCategories, { by: ["category"] })
+      );
+      console.log({ tempCategoriesWithMain });
+    }
+
     setData(tempArr);
   }, []);
 
@@ -59,12 +76,23 @@ export default function RadarGraph(personas) {
       {data && (
         <div className="w-[100%} h-[100%]">
           <ResponsiveContainer>
-            <RadarChart outerRadius={90} width={730} height={250} data={data}>
+            <RadarChart outerRadius={90} data={data}>
               <PolarGrid />
-              <PolarAngleAxis dataKey="category" />
+              <PolarAngleAxis
+                dataKey="category"
+                tick={{ fontSize: 10 }}
+                width={70}
+              />
               <PolarRadiusAxis angle={30} domain={[0, 5]} />
-              {personas.personas.map((persona, index) => {
-                console.log(`key_${persona.persona}`);
+              <Radar
+                name="All Respondents"
+                dataKey="score"
+                stroke="#BDE3F9"
+                fill="#BDE3F9"
+                fillOpacity={0.5}
+              />
+              {personas.map((persona, index) => {
+                // console.log(`key_${persona.persona}`);
                 return (
                   <Radar
                     key={`key_${persona.persona}`}
