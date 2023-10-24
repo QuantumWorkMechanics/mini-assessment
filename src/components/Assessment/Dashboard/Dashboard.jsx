@@ -89,9 +89,9 @@ export default function Dashboard({
               })}
           </div>
         </div>
-        <div className="h-[320px] col-span-4 overflow-visible">
+        <div className="min-h-[320px] col-span-4 overflow-visible">
           <div className="w-[100%] h-[100%] bg-white">
-            <h3 className="absolute m-3  text-slate-600">Overview</h3>
+            <h3 className="absolute ml-3  text-slate-600">Overview</h3>
             {personas && (
               <RadarGraph personas={personas} mainCategories={categories} />
             )}
@@ -121,7 +121,13 @@ export default function Dashboard({
           />
         </div>
         <div className="w-full md:ml-0 col-span-8 row-span-1 min-h-[300px] bg-white row-start-3 col-start-5">
-          {typeForm && typeForm[0] && <BarGraph typeForm={typeForm} />}
+          {typeForm && typeForm[0] && (
+            <BarGraph
+              typeForm={typeForm}
+              categories={categories}
+              personas={personas}
+            />
+          )}
         </div>
         <div className="col-span-12 h-8 bg-[#09497B] rounded-b-lg text-[7pt] text-neutral-200 flex justify-end items-end">
           ©2023 QuanumMechanics
