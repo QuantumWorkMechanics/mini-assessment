@@ -89,7 +89,7 @@ export default function Dashboard({
               })}
           </div>
         </div>
-        <div className="min-h-[320px] col-span-4 overflow-visible">
+        <div className="h-[320px] md:h-full md:min-h-[320px]  col-span-4 overflow-visible">
           <div className="w-[100%] h-[100%] bg-white">
             <h3 className="absolute ml-3  text-slate-600">Overview</h3>
             {personas && (
@@ -113,7 +113,7 @@ export default function Dashboard({
             colorArr={colorArr}
           />
         </div>
-        <div className="col-span-4 bg-white min-h-[300px]">
+        <div className="col-span-4 row-span-1 bg-white  md:h-full">
           <VarianceGraph
             fullForm={typeForm}
             personas={personas}
