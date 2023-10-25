@@ -14,6 +14,7 @@ export default function RadialGraph({ personas, colorArr, dataArr, title }) {
   const [animate, setAnimate] = useState(true);
 
   useEffect(() => {
+    console.log({ personas, colorArr, dataArr, title });
     setTimeout(() => {
       setAnimate(false);
     }, 14500);
@@ -59,6 +60,8 @@ export default function RadialGraph({ personas, colorArr, dataArr, title }) {
                 />
                 {/* <RadialBar data={5} clockWise /> */}
                 {personas.map((el, index) => {
+                  //   console.log(el.persona);
+                  if (!data[0][el.persona]) return;
                   return (
                     <RadialBar
                       name={[el.persona]}
@@ -84,7 +87,11 @@ export default function RadialGraph({ personas, colorArr, dataArr, title }) {
                   verticalAlign="middle"
                   wrapperStyle={style}
                   content={
-                    <RenderLegend personas={personas} colorArr={colorArr} />
+                    <RenderLegend
+                      personas={personas}
+                      colorArr={colorArr}
+                      data={data}
+                    />
                   }
                 />
               </RadialBarChart>

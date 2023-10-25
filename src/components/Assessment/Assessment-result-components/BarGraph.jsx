@@ -86,7 +86,7 @@ export default function BarGraph({ typeForm, categories, personas }) {
           }}
         >
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="title" />
+          <XAxis dataKey="title" tick={false} />
           <YAxis domain={[0, 5]} tick={{ fontSize: 10 }} />
           <Tooltip width={400} content={<TooltipContent />} />
           {/* <Legend /> */}

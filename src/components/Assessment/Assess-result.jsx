@@ -41,15 +41,15 @@ export default function FullDiagnosticResults() {
   };
 
   //   console.log({ requestOptions });
-  const mimir_url = "https://mimir-production.up.railway.app/";
-  //   const mimir_url = "http://localhost:3000/";
+  //   const mimir_url = "https://mimir-production.up.railway.app/";
+  const mimir_url = "http://localhost:3000/";
   async function getData() {
     const responses = await fetch(
       mimir_url + "tf-responses/" + routeParams.tfid,
       requestOptions
     )
       .then((response) => {
-        // console.log(response);
+        // console.log({ response });
         return response;
       })
       .catch((error) => {
@@ -58,7 +58,7 @@ export default function FullDiagnosticResults() {
 
     const dataSet = await responses.json();
 
-    // console.log({ dataSet });
+    console.log({ dataSet });
     return dataSet;
   }
 
