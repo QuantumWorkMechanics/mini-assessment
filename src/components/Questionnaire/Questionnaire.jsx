@@ -3,8 +3,7 @@ import "../../index.css";
 import questionBank from "../../modules/question-bank";
 import { useLocation } from "react-router-dom";
 import NavBar from "../Navigation/NavBar";
-import { SpotlightTour, useSpotlight } from "react-spotlight-tour";
-import Spotlight from "react-spotlight-tour/spotlight";
+
 import SectionComplete from "./SectionCompleted";
 import AllSectionsComplete from "./AllSectionsComplete";
 import Header from "./Header";

@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 // import Ranges from "./Ranges";
-import { SpotlightTour, useSpotlight } from "react-spotlight-tour";
-import Spotlight from "react-spotlight-tour/spotlight";
 
 export default function Sliders({
   handleCurrent,

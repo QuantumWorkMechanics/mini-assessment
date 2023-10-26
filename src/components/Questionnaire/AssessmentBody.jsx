@@ -2,8 +2,6 @@ import { React, useState } from "react";
 import { Button } from "@mui/material";
 import RechartBar from "./RechartBar";
 import Sliders from "./Sliders";
-import { SpotlightTour, useSpotlight } from "react-spotlight-tour";
-import Spotlight from "react-spotlight-tour/spotlight";
 
 export default function AssessmentBody({
   currentSliderValue,

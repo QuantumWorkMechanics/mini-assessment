@@ -22,6 +22,7 @@
     "@mui/styled-engine-sc": "^5.14.11",
     "@tidyjs/tidy": "^2.5.2",
     "@typeform/embed-react": "^3.2.0",
+    "@visx/visx": "^3.4.0",
     "dotenv": "^16.3.1",
     "html2canvas": "^1.4.1",
     "jspdf": "^2.5.1",
@@ -32,9 +33,7 @@
     "react-reveal": "^1.2.2",
     "react-router-dom": "^6.16.0",
     "react-scroll-wheel-handler": "^2.2.0",
-    "react-spotlight-tour": "^1.1.0",
     "react-to-print": "^2.14.15",
-    "react-vis": "^1.12.1",
     "recharts": "^2.8.0",
     "styled-components": "^5.3.11"
   },

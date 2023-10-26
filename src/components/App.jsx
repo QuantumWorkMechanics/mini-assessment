@@ -3,6 +3,7 @@ import Questionnaire from "./Questionnaire/Questionnaire";
 import Selections from "./Selections/Selections";
 import Assessment from "./Assessment/Assessment";
 import FullDiagnosticResults from "./Assessment/Assess-result";
+import WordCloud from "./WordCloud/Wordcloud";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         path="/diagnostic/:tfid"
         element={<FullDiagnosticResults />}
       ></Route>
+      <Route path="/wordcloud/:tfid" element={<WordCloud />}></Route>
     </Routes>
   );
 }
