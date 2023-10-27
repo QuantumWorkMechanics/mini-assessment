@@ -2,26 +2,12 @@ import React, { useState } from "react";
 import { Text } from "@visx/text";
 import { scaleLog } from "@visx/scale";
 import Wordcloud from "@visx/wordcloud/lib/Wordcloud";
-// import { totoAfricaLyrics } from "./text.fixture";
 
 export default function Cloud({ width, height, textString }) {
   const [spiralType, setSpiralType] = useState("archimedean");
   const [withRotation, setWithRotation] = useState(false);
 
   const colors = ["#143059", "#2F6B9A", "#82a6c2"];
-  function wordFreq(text) {
-    const words = text.replace(/\./g, "").split(/\s/);
-    const freqMap = {};
-
-    for (const w of words) {
-      if (!freqMap[w]) freqMap[w] = 0;
-      freqMap[w] += 1;
-    }
-    return Object.keys(freqMap).map((word) => ({
-      text: word,
-      value: freqMap[word],
-    }));
-  }
 
   function getRotationDegree() {
     const rand = Math.random();
@@ -29,13 +15,12 @@ export default function Cloud({ width, height, textString }) {
     return rand * degree;
   }
 
-  const words = wordFreq(textString);
+  const words = [...textString];
 
-  const fontScale = scaleLog({
-    domain: [
-      Math.min(...words.map((w) => w.value)),
-      Math.max(...words.map((w) => w.value)),
-    ],
+  //   console.log({ words });
+
+  let fontScale = scaleLog({
+    domain: [Math.min(1), Math.max(words[0].value)],
     range: [10, 100],
   });
   const fontSizeSetter = (datum) => fontScale(datum.value);
@@ -52,7 +37,7 @@ export default function Cloud({ width, height, textString }) {
           fontSize={fontSizeSetter}
           font={"Impact"}
           padding={2}
-          spiral={spiralType}
+          spiral={"archimedean"}
           rotate={withRotation ? getRotationDegree : 0}
           random={fixedValueGenerator}
         >
