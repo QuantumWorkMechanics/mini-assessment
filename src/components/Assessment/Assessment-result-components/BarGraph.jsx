@@ -13,12 +13,21 @@ import {
   Cell,
   Line,
   ComposedChart,
+  Label,
+  LabelList,
 } from "recharts";
 
-export default function BarGraph({ typeForm, categories, personas }) {
+export default function BarGraph({
+  typeForm,
+  categories,
+  personas,
+  customColor,
+}) {
   //   console.log({ typeForm });
   const [selectedPersona, setSelectedPersona] = useState();
   const [personaIndex, setPersonaIndex] = useState(0);
+  //   let COLORS;
+  //   customColor
 
   const COLORS = [
     "#bee0f9",
@@ -70,6 +79,13 @@ export default function BarGraph({ typeForm, categories, personas }) {
     setPersonaIndex((prev) => prev + num);
   }
 
+  function RenderLabel(props) {
+    console.log({ props });
+    // return entry.title;
+    if (props.value.includes("accuracy in this platform?")) console.log(true);
+    return <div>"Data Accuracy"</div>;
+  }
+
   return (
     <div className="w-[120%] h-[400px] -ml-[15%] md:ml-0 md:w-[100%] ">
       <div className="ml-20 md:ml-3">Average Scores</div>
@@ -86,39 +102,44 @@ export default function BarGraph({ typeForm, categories, personas }) {
           }}
         >
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="title" tick={false} />
+          <XAxis dataKey="title" tick={false}></XAxis>
           <YAxis domain={[0, 5]} tick={{ fontSize: 10 }} />
           <Tooltip width={400} content={<TooltipContent />} />
-          {/* <Legend /> */}
+
           <Bar
+            // label={<RenderLabel />}
             name="category"
             dataKey="AllAvgScore"
-            fill="#0EA8DC"
+            fill={"#0EA8DC"}
             activeBar={<Rectangle fill="pink" stroke="blue" />}
             onClick={(e) => {
               //   console.log({ e });
             }}
           >
-            {" "}
-            {typeForm.map((entry, index) => {
-              let color;
-              categories.map((category, index) => {
-                // console.log({ category, entry });
-                // console.log(typeForm.)
-                entry.category == category.category
-                  ? (color = COLORS[index])
-                  : undefined;
-              });
+            {customColor && (
+              <LabelList
+                angle="90"
+                dataKey="altTitle"
+                fill={"#FDB517"}
+                font="Noto Sans"
+                // content={<RenderLabel />}
+                position="inside"
+              />
+            )}
+            {categories[1] &&
+              typeForm.map((entry, index) => {
+                let color;
+                categories.map((category, index) => {
+                  // console.log({ category, entry });
+                  // console.log(typeForm.)
+                  entry.category == category.category
+                    ? (color = COLORS[index])
+                    : undefined;
+                });
 
-              return <Cell key={`${entry.category}_${index}`} fill={color} />;
-            })}
+                return <Cell key={`${entry.category}_${index}`} fill={color} />;
+              })}
           </Bar>
-          {/* <Bar
-              dataKey="uv"
-              fill="#82ca9d"
-              activeBar={<Rectangle fill="gold" stroke="purple" />}
-            /> */}
-          {/* <Legend content={custom} /> */}
 
           {selectedPersona && (
             <Line strokeWidth={3} dataKey={selectedPersona} stroke={"red"} />
@@ -162,20 +183,21 @@ export default function BarGraph({ typeForm, categories, personas }) {
         </button>
       </div>
       <div className="flex flex-col ml-20 md:ml-14 md:pt-5 md:flex-row text-[6pt] md:text-xs justify-start md:items-center">
-        {categories.map((category, index) => {
-          return (
-            <div
-              className="flex-wrap  flex flex-row mx-3 mb-1 "
-              key={category.category + "legend"}
-            >
+        {!customColor &&
+          categories.map((category, index) => {
+            return (
               <div
-                className="h-2 w-3 mr-2"
-                style={{ background: COLORS[index] }}
-              ></div>
-              <div>{category.category}</div>
-            </div>
-          );
-        })}
+                className="flex-wrap  flex flex-row mx-3 mb-1 "
+                key={category.category + "legend"}
+              >
+                <div
+                  className="h-2 w-3 mr-2"
+                  style={{ background: COLORS[index] }}
+                ></div>
+                <div>{category.category}</div>
+              </div>
+            );
+          })}
       </div>
     </div>
   );
