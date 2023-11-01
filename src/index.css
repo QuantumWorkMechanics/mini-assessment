@@ -27,6 +27,10 @@
   background-repeat: no-repeat;
 }
 
+.recharts-sector {
+  shape-rendering: geometricPrecision;
+}
+
 /* .result-bg:after {
   content: "";
   position: absolute;
