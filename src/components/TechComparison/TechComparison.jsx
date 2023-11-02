@@ -4,6 +4,7 @@ import BarGraph from "../Assessment/Assessment-result-components/BarGraph";
 import FrequencyPie from "./FrequencyPie";
 import NavBar from "../Navigation/NavBar";
 import VerticalBarGraph from "./VerticalBar";
+import LoadSpinner from "../Utils.jsx/LoadSpinner";
 
 export default function FullDiagnosticResults() {
   const routeParams = useParams();
@@ -17,8 +18,8 @@ export default function FullDiagnosticResults() {
   };
 
   //   console.log({ requestOptions });
-  //   const mimir_url = "https://mimir-production.up.railway.app/";
-  const mimir_url = "http://localhost:3000/";
+  const mimir_url = "https://mimir-production.up.railway.app/";
+  //   const mimir_url = "http://localhost:3000/";
   async function getData() {
     const responses = await fetch(
       mimir_url + "tf-techcompare/" + routeParams.tfid,
@@ -52,6 +53,16 @@ export default function FullDiagnosticResults() {
       <div className="bg-[url('/public/dataReview.png')] bg-fixed bg-cover bg-no-repeat">
         <div className="bg-opacity-80  bg-white ">
           <NavBar></NavBar>
+          {!data && (
+            <div className="w-20 flex flex-col gap-6 justify-center items-center h-screen w-screen">
+              <div className="w-20 -mt-20">
+                <LoadSpinner />
+              </div>
+              <div className="animate-fade-up animate-once animate-duration-[800ms] animate-ease-linear">
+                Hang tight... our quantum mechanics are fetching your results...
+              </div>
+            </div>
+          )}
           {data &&
             data.categories.map((el, index) => {
               let tempPersonas = data.personas.map((el) => {
