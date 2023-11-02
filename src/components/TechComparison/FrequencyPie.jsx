@@ -11,19 +11,26 @@ export default function FrequencyPie({ data, colorArr }) {
 
   const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
 
+  const labelStyle = {
+    fontWeight: "600",
+  };
+
   return (
     <div>
-      <PieChart key={`pie_${data.category}`} width={250} height={250}>
-        <Legend layout="vertical" verticalAlign="middle" align="right" />
+      <PieChart key={`pie_${data.category}`} width={300} height={250}>
+        {/* <Legend layout="vertical" verticalAlign="middle" align="right" /> */}
         <Pie
+          innerRadius={60}
           data={dataSet}
           dataKey="score"
           nameKey="choice"
           cx="50%"
           cy="50%"
-          outerRadius={50}
-          fill="#8884d8"
-          label
+          outerRadius={80}
+          fill="#FFF"
+          labelLine={false}
+          label={(entry) => (entry.score ? entry.choice : null)}
+          style={labelStyle}
         >
           {" "}
           {dataSet.map((entry, index) => (
@@ -45,6 +52,9 @@ export default function FrequencyPie({ data, colorArr }) {
             label
           /> */}
       </PieChart>
+      <div className=" text-center text-[#0E6AAD] font-semibold">
+        Frequency of Use
+      </div>
     </div>
   );
 }

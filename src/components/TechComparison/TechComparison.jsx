@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import BarGraph from "../Assessment/Assessment-result-components/BarGraph";
 import FrequencyPie from "./FrequencyPie";
 import NavBar from "../Navigation/NavBar";
+import VerticalBarGraph from "./VerticalBar";
 
 export default function FullDiagnosticResults() {
   const routeParams = useParams();
@@ -44,68 +45,73 @@ export default function FullDiagnosticResults() {
     });
   }, []);
 
-  const colorArr = ["#0E6AAD", "#0EA8DC", "#FFCB18", "#666666"];
+  const colorArr = ["#0E6AAD", "#0EA8DC", "#09497B", "#666666"];
 
   return (
     <>
-      <NavBar></NavBar>
-      {data &&
-        data.categories.map((el, index) => {
-          let tempPersonas = data.personas.map((el) => {
-            return { persona: el };
-          });
-          //   console.log({ tempPersonas });
-          const tempForm = data.fullForm.filter((question) => {
-            return question.category == el;
-          });
-          //   console.log({ tempForm });
-
-          return (
-            <>
-              <div
-                key={`${el}_bar`}
-                className="md:grid md:grid-cols-2 w-screen my-20"
-              >
-                <div className="place-self-center">
-                  <img
-                    className="w-auto h-14"
-                    src={
-                      data.typeForm.fields.filter(
-                        (field) => field.title == el
-                      )[0].attachment.href
-                    }
-                    alt=""
-                  />
-                  <div className="flex flex-col items-end justify-center mr-10">
-                    <div className="text-end  md:w-[50%] place-self-end text-[40pt] text-[#09497B]">
-                      {el}
-                    </div>
-                    {data && (
-                      <FrequencyPie
-                        data={
-                          data.scoredFrequencies.filter(
-                            (item) => item.category == el
-                          )[0]
+      <div className="bg-[url('/public/dataReview.png')] bg-fixed bg-cover bg-no-repeat">
+        <div className="bg-opacity-80  bg-white ">
+          <NavBar></NavBar>
+          {data &&
+            data.categories.map((el, index) => {
+              let tempPersonas = data.personas.map((el) => {
+                return { persona: el };
+              });
+              //   console.log({ tempPersonas });
+              const tempForm = data.fullForm.filter((question) => {
+                return question.category == el;
+              });
+              //   console.log({ tempForm });
+              return (
+                <>
+                  <div className="m-10 pb-14  rounded-lg">
+                    <div className="ml-14 flex justify-start gap-5 ">
+                      <div className="   text-[40pt] text-[#09497B] font-semibold">
+                        {el}
+                      </div>
+                      <img
+                        className="w-auto h-14"
+                        src={
+                          data.typeForm.fields.filter(
+                            (field) => field.title == el
+                          )[0].attachment.href
                         }
-                        colorArr={colorArr}
+                        alt=""
                       />
-                    )}
+                    </div>
+                    <div key={`${el}_bar`} className="w-screen flex ">
+                      <div className="place-self-end">
+                        <div className="">
+                          {data && (
+                            <FrequencyPie
+                              data={
+                                data.scoredFrequencies.filter(
+                                  (item) => item.category == el
+                                )[0]
+                              }
+                              colorArr={colorArr}
+                            />
+                          )}
+                        </div>
+                      </div>
+                      <div className="md:w-[70%] md:h-[400px]  order-first">
+                        <VerticalBarGraph
+                          key={`${el}_composed`}
+                          categories={[el]}
+                          personas={tempPersonas}
+                          typeForm={tempForm}
+                          customColor={"#0E6AAD"}
+                        />
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div className="w-screen md:w-[80%] bg-slate-50 mr-[10%]">
-                  <BarGraph
-                    key={`${el}_composed`}
-                    categories={[el]}
-                    personas={tempPersonas}
-                    typeForm={tempForm}
-                    customColor={"#0E6AAD"}
-                  />
-                </div>
-              </div>
-              <div className="divider"></div>
-            </>
-          );
-        })}
+
+                  <div className="divider bg-[#FDB517] h-2 rounded mx-24"></div>
+                </>
+              );
+            })}
+        </div>
+      </div>
     </>
   );
 }
