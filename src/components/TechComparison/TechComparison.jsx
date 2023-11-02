@@ -51,7 +51,7 @@ export default function FullDiagnosticResults() {
   return (
     <>
       <div className="bg-[url('/public/dataReview.png')] bg-fixed bg-cover bg-no-repeat">
-        <div className="bg-opacity-80  bg-white ">
+        <div className="">
           <NavBar></NavBar>
           {!data && (
             <div className="w-20 flex flex-col gap-6 justify-center items-center h-screen w-screen">
@@ -75,7 +75,7 @@ export default function FullDiagnosticResults() {
               //   console.log({ tempForm });
               return (
                 <>
-                  <div className="m-10 pb-14  rounded-lg">
+                  <div className="m-10 pb-14 pt-4 rounded-lg bg-opacity-90  bg-white ">
                     <div className="ml-14 flex justify-start gap-5 ">
                       <div className="   text-[40pt] text-[#09497B] font-semibold">
                         {el}
