@@ -5,10 +5,12 @@ import FrequencyPie from "./FrequencyPie";
 import NavBar from "../Navigation/NavBar";
 import VerticalBarGraph from "./VerticalBar";
 import LoadSpinner from "../Utils.jsx/LoadSpinner";
+import TechDash from "./TechDash";
 
 export default function FullDiagnosticResults() {
   const routeParams = useParams();
   const [data, setData] = useState();
+  const [parentPersona, setParentPersona] = useState();
 
   const requestOptions = {
     method: "GET",
@@ -48,17 +50,23 @@ export default function FullDiagnosticResults() {
 
   const colorArr = ["#0E6AAD", "#0EA8DC", "#09497B", "#666666"];
 
+  function handleParent(persona) {
+    if (persona == undefined) {
+      setParentPersona(null);
+    } else setParentPersona(persona);
+  }
+
   return (
     <>
       <div className="bg-[url('/public/dataReview.png')] bg-fixed bg-cover bg-no-repeat">
-        <div className="">
+        <div className="-mt-3">
           <NavBar></NavBar>
           {!data && (
             <div className="w-20 flex flex-col gap-6 justify-center items-center h-screen w-screen">
               <div className="w-20 -mt-20">
                 <LoadSpinner />
               </div>
-              <div className="animate-fade-up animate-once animate-duration-[800ms] animate-ease-linear">
+              <div className="px-4 text-md lg:text-2xl text-white animate-fade-up animate-once animate-duration-[800ms] animate-ease-linear">
                 Hang tight... our quantum mechanics are fetching your results...
               </div>
             </div>
@@ -75,8 +83,18 @@ export default function FullDiagnosticResults() {
               //   console.log({ tempForm });
               return (
                 <>
-                  <div className="m-10 pb-14 pt-4 rounded-lg bg-opacity-90  bg-white ">
-                    <div className="ml-14 flex justify-start gap-5 ">
+                  <TechDash
+                    key={`${el}_dashKey`}
+                    data={data}
+                    colorArr={colorArr}
+                    parentPersona={parentPersona}
+                    tempPersonas={tempPersonas}
+                    tempForm={tempForm}
+                    handleParent={handleParent}
+                    el={el}
+                  />
+                  {/* <div className="m-2 md:m-10 pb-14 pt-4 rounded-lg bg-opacity-90  bg-white ">
+                    <div className="ml-14 md:flex md:justify-start gap-5 ">
                       <div className="   text-[40pt] text-[#09497B] font-semibold">
                         {el}
                       </div>
@@ -90,8 +108,8 @@ export default function FullDiagnosticResults() {
                         alt=""
                       />
                     </div>
-                    <div key={`${el}_bar`} className="w-screen flex ">
-                      <div className="place-self-end">
+                    <div key={`${el}_bar`} className="w-screen md:flex ">
+                      <div className="md:place-self-end">
                         <div className="">
                           {data && (
                             <FrequencyPie
@@ -101,23 +119,25 @@ export default function FullDiagnosticResults() {
                                 )[0]
                               }
                               colorArr={colorArr}
+                              persona={parentPersona}
                             />
                           )}
                         </div>
                       </div>
-                      <div className="md:w-[70%] md:h-[400px]  order-first">
+                      <div className=" md:w-[70%] h-[200px] md:h-[400px] -ml-24 md:ml-0 order-first">
                         <VerticalBarGraph
                           key={`${el}_composed`}
                           categories={[el]}
                           personas={tempPersonas}
                           typeForm={tempForm}
                           customColor={"#0E6AAD"}
+                          handleParent={handleParent}
                         />
                       </div>
                     </div>
                   </div>
 
-                  <div className="divider bg-[#FDB517] h-2 rounded mx-24"></div>
+                  <div className="divider bg-[#FDB517] h-2 rounded mx-24"></div> */}
                 </>
               );
             })}
