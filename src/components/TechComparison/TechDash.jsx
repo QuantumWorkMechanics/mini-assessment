@@ -56,11 +56,8 @@ export default function TechDash({
           </div>
           {imgSrc && <img className="w-auto h-8 lg:h-14" src={imgSrc} alt="" />}
         </div>
-        <div
-          key={`${el}_bar`}
-          className="w-screen place-content-start flex flex-col lg:flex-row"
-        >
-          <div className="lg:place-self-end ">
+        <div key={`${el}_bar`} className="w-screen flex flex-col lg:flex-row">
+          <div className="place-self-center md:place-self-start lg:place-self-end ">
             <div className="lg:-ml-12 xl:-ml-4">
               {dataSet && (
                 <FrequencyPie

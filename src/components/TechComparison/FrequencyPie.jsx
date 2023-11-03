@@ -48,7 +48,7 @@ export default function FrequencyPie({
 
   return (
     <div>
-      <div className="w-[315px] h-[250px]">
+      <div className="w-[315px]  h-[250px]">
         <ResponsiveContainer>
           <PieChart width="100%" height={200}>
             <Pie
