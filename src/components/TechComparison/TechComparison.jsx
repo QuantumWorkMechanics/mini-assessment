@@ -94,51 +94,6 @@ export default function FullDiagnosticResults() {
                     handleParent={handleParent}
                     el={el}
                   />
-                  {/* <div className="m-2 md:m-10 pb-14 pt-4 rounded-lg bg-opacity-90  bg-white ">
-                    <div className="ml-14 md:flex md:justify-start gap-5 ">
-                      <div className="   text-[40pt] text-[#09497B] font-semibold">
-                        {el}
-                      </div>
-                      <img
-                        className="w-auto h-14"
-                        src={
-                          data.typeForm.fields.filter(
-                            (field) => field.title == el
-                          )[0].attachment.href
-                        }
-                        alt=""
-                      />
-                    </div>
-                    <div key={`${el}_bar`} className="w-screen md:flex ">
-                      <div className="md:place-self-end">
-                        <div className="">
-                          {data && (
-                            <FrequencyPie
-                              data={
-                                data.scoredFrequencies.filter(
-                                  (item) => item.category == el
-                                )[0]
-                              }
-                              colorArr={colorArr}
-                              persona={parentPersona}
-                            />
-                          )}
-                        </div>
-                      </div>
-                      <div className=" md:w-[70%] h-[200px] md:h-[400px] -ml-24 md:ml-0 order-first">
-                        <VerticalBarGraph
-                          key={`${el}_composed`}
-                          categories={[el]}
-                          personas={tempPersonas}
-                          typeForm={tempForm}
-                          customColor={"#0E6AAD"}
-                          handleParent={handleParent}
-                        />
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="divider bg-[#FDB517] h-2 rounded mx-24"></div> */}
                 </>
               );
             })}

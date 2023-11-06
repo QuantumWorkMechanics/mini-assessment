@@ -52,8 +52,10 @@ export default function TechDash({
 
   return (
     <>
-      {" "}
-      <div className="m-2 md:m-10 pb-14 pt-4 rounded-lg bg-opacity-90  bg-white ">
+      <div
+        key={el + "_dashboard"}
+        className="m-2 md:m-10 pb-14 pt-4 rounded-lg bg-opacity-90  bg-white "
+      >
         <div className="ml-4 md:ml-14 flex flex-col sm:flex-row justify-between justify-start gap-5 mb-3 md:mt-2 mr-4 md:mb-0">
           <div className="flex gap-5 items-center">
             <div className=" text-2xl  lg:text-[40pt] text-[#09497B] font-semibold">
@@ -73,25 +75,47 @@ export default function TechDash({
               (tempForm.length * 100)}
           </div>
         </div>
-        <div key={`${el}_bar`} className="w-screen flex flex-col lg:flex-row">
+        <div key={el + "_bar"} className="w-screen flex flex-col lg:flex-row">
           <div className="flex flex-col justify-between">
             <div className="flex flex-col mt-14 pr-40 pl-3 sm:place-self-end justify-between  text-[#09497B]">
               <div className="font-bold">Respondents</div>
               {data &&
-                tempPersonas.map((persona) => {
+                tempPersonas.map((persona, index) => {
                   //   console.log({ persona });
+
                   let score = data.choices.filter(
                     (choice) => choice.label == el
                   );
+                  let totalScore = 0;
+                  if (tempPersonas.length == index + 1) {
+                    let tempValues = Object.values(score[0]).filter((obj) =>
+                      Number.isInteger(obj)
+                    );
+                    totalScore = tempValues.reduce(function (acc, num) {
+                      return acc + num;
+                    });
+                    // console.log({ totalScore });
+                  }
                   //   console.log({ score });
                   return (
-                    <div
-                      className="flex justify-between"
-                      key={persona.persona + el}
-                    >
-                      <div className="mr-2">{`${persona.persona}:`}</div>
-                      <div>{`${score[0][persona.persona]}`}</div>
-                    </div>
+                    <>
+                      <div
+                        className="flex justify-between"
+                        key={persona.persona + el}
+                      >
+                        <div className="mr-2">{`${persona.persona}:`}</div>
+                        <div>{`${score[0][persona.persona]}`}</div>
+                      </div>
+                      {totalScore > 0 && (
+                        <div
+                          key={el + " total"}
+                          className="flex justify-between text-[#0EA8DC]"
+                        >
+                          <div>Total:</div>
+                          <div>{totalScore}</div>
+                        </div>
+                      )}
+                    </>
                   );
                 })}
             </div>
