@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import { PieChart, Pie, Cell, Legend, ResponsiveContainer } from "recharts";
 
 export default function FrequencyPie({
-  data,
+  //   data,
   colorArr,
-  selectedPersona,
+  //   selectedPersona,
   dataSet,
 }) {
   //   console.log({ dataSet });

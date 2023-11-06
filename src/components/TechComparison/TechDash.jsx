@@ -46,6 +46,8 @@ export default function TechDash({
     setDataSet(tempData);
   }, [selectedPersona]);
 
+  //   console.log({ data });
+
   return (
     <>
       {" "}
@@ -57,15 +59,37 @@ export default function TechDash({
           {imgSrc && <img className="w-auto h-8 lg:h-14" src={imgSrc} alt="" />}
         </div>
         <div key={`${el}_bar`} className="w-screen flex flex-col lg:flex-row">
-          <div className="place-self-center md:place-self-start lg:place-self-end ">
-            <div className="lg:-ml-12 xl:-ml-4">
-              {dataSet && (
-                <FrequencyPie
-                  dataSet={dataSet}
-                  colorArr={colorArr}
-                  selectedPersona={selectedPersona}
-                />
-              )}
+          <div className="flex flex-col justify-between">
+            <div className="flex flex-col mt-14 pr-40 pl-3 sm:place-self-end justify-between  text-[#09497B]">
+              <div className="font-bold">Respondents</div>
+              {data &&
+                tempPersonas.map((persona) => {
+                  console.log({ persona });
+                  let score = data.choices.filter(
+                    (choice) => choice.label == el
+                  );
+                  console.log({ score });
+                  return (
+                    <div
+                      className="flex justify-between"
+                      key={persona.persona + el}
+                    >
+                      <div className="mr-2">{`${persona.persona}:`}</div>
+                      <div>{`${score[0][persona.persona]}`}</div>
+                    </div>
+                  );
+                })}
+            </div>
+            <div className="place-self-center md:place-self-start lg:place-self-end ">
+              <div className="lg:-ml-12 xl:-ml-4">
+                {dataSet && (
+                  <FrequencyPie
+                    dataSet={dataSet}
+                    colorArr={colorArr}
+                    selectedPersona={selectedPersona}
+                  />
+                )}
+              </div>
             </div>
           </div>
           <div className=" md:w-[70%] h-[200px] md:h-[400px] z-50 md:ml-0 order-first ">
