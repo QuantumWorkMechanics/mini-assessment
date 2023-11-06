@@ -54,7 +54,7 @@ export default function TechDash({
     <>
       {" "}
       <div className="m-2 md:m-10 pb-14 pt-4 rounded-lg bg-opacity-90  bg-white ">
-        <div className="md:ml-14 flex justify-between justify-start gap-5 mb-3 md:mt-2 mr-4 md:mb-0">
+        <div className="ml-4 md:ml-14 flex flex-col sm:flex-row justify-between justify-start gap-5 mb-3 md:mt-2 mr-4 md:mb-0">
           <div className="flex gap-5 items-center">
             <div className=" text-2xl  lg:text-[40pt] text-[#09497B] font-semibold">
               {el}
@@ -63,7 +63,7 @@ export default function TechDash({
               <img className="w-auto h-8 lg:h-14" src={imgSrc} alt="" />
             )}
           </div>
-          <div className="text-3xl font-semibold text-[#0EA8DC]">
+          <div className=" text-xl md:text-3xl font-semibold text-[#0EA8DC]">
             <span className="text-[#09497B] font-normal">Overall: </span>
             {Math.floor(
               tempForm.reduce(function (acc, obj) {
