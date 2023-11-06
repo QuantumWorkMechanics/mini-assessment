@@ -76,8 +76,8 @@ export default function TechDash({
           </div>
         </div>
         <div key={el + "_bar"} className="w-screen flex flex-col lg:flex-row">
-          <div className="flex flex-col justify-between">
-            <div className="flex flex-col mt-14 pr-40 pl-3 sm:place-self-end justify-between  text-[#09497B]">
+          <div className="flex flex-col  justify-between items-start">
+            <div className="flex flex-col mt-14 pr-40 pl-3  sm:place-self-end justify-between  text-[#09497B]">
               <div className="font-bold">Respondents</div>
               {data &&
                 tempPersonas.map((persona, index) => {
@@ -119,7 +119,7 @@ export default function TechDash({
                   );
                 })}
             </div>
-            <div className="place-self-center md:place-self-start lg:place-self-end ">
+            <div className="">
               <div className="lg:-ml-12 xl:-ml-4">
                 {dataSet && (
                   <FrequencyPie
