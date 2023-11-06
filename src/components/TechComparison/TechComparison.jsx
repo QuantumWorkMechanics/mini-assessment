@@ -38,7 +38,7 @@ export default function FullDiagnosticResults() {
 
     const dataSet = await responses.json();
 
-    console.log({ dataSet });
+    // console.log({ dataSet });
     return dataSet;
   }
 

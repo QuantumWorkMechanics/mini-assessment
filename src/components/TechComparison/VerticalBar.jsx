@@ -257,7 +257,7 @@ export default function VerticalBarGraph({
 
           <button
             onClick={() => {
-              console.log({ personas, personaIndex });
+              //   console.log({ personas, personaIndex });
               selectedPersona
                 ? setSelectedPersona()
                 : setSelectedPersona(personas[personaIndex].persona);
