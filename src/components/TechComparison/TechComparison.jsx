@@ -21,10 +21,7 @@ export default function FullDiagnosticResults() {
 
   //   console.log({ requestOptions });
   //   console.log(process.emitWarning.NODE_ENV);
-  const mimir_url =
-    import.meta.env.VITE_ENV === "dev"
-      ? "http://localhost:3000/"
-      : "https://mimir-production.up.railway.app/";
+  const mimir_url = "https://mimir-production.up.railway.app/";
   // const mimir_url = "http://localhost:3000/";
   async function getData() {
     const responses = await fetch(
