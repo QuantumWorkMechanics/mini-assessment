@@ -5,6 +5,7 @@ import Assessment from "./Assessment/Assessment";
 import FullDiagnosticResults from "./Assessment/Assess-result";
 import WordCloud from "./WordCloud/Wordcloud";
 import TechComparison from "./TechComparison/TechComparison";
+import CreateForms from "./CreateForms/CreateForms";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       ></Route>
       <Route path="/wordcloud/:tfid" element={<WordCloud />}></Route>
       <Route path="/tech-compare/:tfid" element={<TechComparison />}></Route>
+      <Route path="/create-form" element={<CreateForms />}></Route>
     </Routes>
   );
 }

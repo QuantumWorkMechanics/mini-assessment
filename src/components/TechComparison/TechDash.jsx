@@ -15,7 +15,8 @@ export default function TechDash({
   const [personaIndex, setPersonaIndex] = useState(0);
   const [dataSet, setDataSet] = useState();
   const [imgSrc, setImgSrc] = useState(
-    data.typeForm.fields.filter((field) => field.title == el)[0].attachment.href
+    data.typeForm.fields.filter((field) => field.title == el)[0]?.attachment
+      ?.href || null
   );
 
   //   console.log({ tempForm });
@@ -82,12 +83,13 @@ export default function TechDash({
               {data &&
                 tempPersonas.map((persona, index) => {
                   //   console.log({ persona });
-
+                  //   console.log(data.choices);
                   let score = data.choices.filter(
                     (choice) => choice.label == el
                   );
+                  //   console.log(score[0]);
                   let totalScore = 0;
-                  if (tempPersonas.length == index + 1) {
+                  if (tempPersonas.length == index + 1 && score.length) {
                     let tempValues = Object.values(score[0]).filter((obj) =>
                       Number.isInteger(obj)
                     );
@@ -99,13 +101,15 @@ export default function TechDash({
                   //   console.log({ score });
                   return (
                     <>
-                      <div
-                        className="flex justify-between"
-                        key={persona.persona + el}
-                      >
-                        <div className="mr-2">{`${persona.persona}:`}</div>
-                        <div>{`${score[0][persona.persona]}`}</div>
-                      </div>
+                      {score.length && (
+                        <div
+                          className="flex justify-between"
+                          key={persona.persona + el}
+                        >
+                          <div className="mr-2">{`${persona.persona}:`}</div>
+                          <div>{`${score[0][persona.persona]}`}</div>
+                        </div>
+                      )}
                       {totalScore > 0 && (
                         <div
                           key={el + " total"}

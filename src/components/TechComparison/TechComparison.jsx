@@ -6,6 +6,26 @@ import NavBar from "../Navigation/NavBar";
 import VerticalBarGraph from "./VerticalBar";
 import LoadSpinner from "../Utils.jsx/LoadSpinner";
 import TechDash from "./TechDash";
+// import {
+//   createQuestionGroups,
+//   createLogic,
+//   createFullLogicSet,
+//   createTypeform,
+// } from "../Utils.jsx/questionGroup";
+// import { compList, formPersonaList } from "../Utils.jsx/questionList";
+
+// const compList = [
+//   { component: "Salesforce", componentShort: "salesforce" },
+//   { component: "Hubspot", componentShort: "hubspot" },
+//   { component: "Amp", componentShort: "amp" },
+// ];
+
+// createTypeform("test form", compList, formPersonaList);
+// let fullLogic = createFullLogicSet(compList);
+// let questionGroups = createQuestionGroups(compList);
+// let logic = createLogic(compList);
+
+// console.log({ questionGroups });
 
 export default function FullDiagnosticResults() {
   const routeParams = useParams();
