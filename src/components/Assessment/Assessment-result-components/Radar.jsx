@@ -17,10 +17,18 @@ import {
 } from "recharts";
 import { tidy, leftJoin } from "@tidyjs/tidy";
 
-export default function RadarGraph({ personas, mainCategories }) {
+export default function RadarGraph({ personas, mainCategories, colorArr }) {
   //   console.log(personas.personas);
   const [data, setData] = useState();
-  const colorArr = ["#0EA8DC", "#FFCB18", "#666666"];
+  //   const colorArr = ["#0EA8DC", "#FFCB18", "#666666"];
+  const COLORS = [
+    "#bee0f9",
+    "#1d91da",
+    "#0f4d7d",
+    "#0c2945",
+    "#FFCB18",
+    "#142F55",
+  ];
 
   useEffect(() => {
     console.log({ mainCategories });

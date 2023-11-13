@@ -40,9 +40,18 @@ export default function FullDiagnosticResults() {
     },
   };
 
+  const colorArr = [
+    "#bee0f9",
+    "#1d91da",
+    "#0f4d7d",
+    "#0c2945",
+    "#FFCB18",
+    "#142F55",
+  ];
+
   //   console.log({ requestOptions });
-  const mimir_url = "https://mimir-production.up.railway.app/";
-  //   const mimir_url = "http://localhost:3000/";
+  //   const mimir_url = "https://mimir-production.up.railway.app/";
+  const mimir_url = "http://localhost:3000/";
   async function getData() {
     const responses = await fetch(
       mimir_url + "tf-responses/" + routeParams.tfid,
@@ -119,9 +128,9 @@ export default function FullDiagnosticResults() {
 
   return (
     <>
-      {currentSlide && showDashboard == false && currentSlide == "top" && (
+      {/* {currentSlide && showDashboard == false && currentSlide == "top" && (
         <div className="z-20 absolute h-[5%] ml-[2.5%] rounded-t-lg bg-white bottom-0 w-[95%]"></div>
-      )}
+      )} */}
       {!showDashboard && (
         <div className=" z-30 rounded md:w-8 h-14 bg-[#878787] bg-opacity-30 absolute right-6 bottom-24 text-white text-3xl flex justify-center items-center animate-bounce animate-twice animate-duration-500 animate-ease-linear animate-normal">
           <div className="">
@@ -143,7 +152,7 @@ export default function FullDiagnosticResults() {
         </div>
       )}
 
-      <ReactScrollWheelHandler
+      {/* <ReactScrollWheelHandler
         upHandler={(e) => {
           setScrollNum((prev) =>
             !showDashboard && prev > 0 ? prev - 1 : prev
@@ -157,24 +166,26 @@ export default function FullDiagnosticResults() {
           //   console.log({ scrollNum });
           //   console.log(slides[scrollNum]);
         }}
-      >
-        <div className="w-screen h-auto bg-neutral-200">
-          <div className="sticky top-0 -mt-3 z-50">
-            <NavBar />
-          </div>
-          {showDashboard && dataLoaded && typeForm && typeForm[0] && counts && (
-            <Dashboard
-              personas={personas}
-              categories={categories}
-              typeForm={typeForm}
-              dataLoaded={dataLoaded}
-              personaResponseCounts={counts}
-              rawForm={rawForm}
-            />
-          )}
-          {categories && typeForm && rawForm && (
-            <div className="flex justify-center items-center mt-10 sticky bottom-0">
-              {currentSlide && !showDashboard && currentSlide == "top" && (
+      > */}
+      <div className="w-screen h-auto bg-neutral-200">
+        <div className="sticky top-0 -mt-3 z-50">
+          <NavBar />
+        </div>
+        {showDashboard && dataLoaded && typeForm && typeForm[0] && counts && (
+          <Dashboard
+            personas={personas}
+            categories={categories}
+            typeForm={typeForm}
+            dataLoaded={dataLoaded}
+            personaResponseCounts={counts}
+            rawForm={rawForm}
+            colorArr={colorArr}
+          />
+        )}
+      </div>
+      {/*   {categories && typeForm && rawForm && (
+            // <div className="flex justify-center items-center mt-10 sticky bottom-0">
+           {currentSlide && !showDashboard && currentSlide == "top" && (
                 <>
                   <div className="py-5 bg-white rounded-lg w-[95%] h-[70vh] px-8 animate-fade-up animate-once animate-duration-300 animate-ease-linear shadow-2xl">
                     <h1 className="text-lg md:text-lg text-[#09497B] ml-4 ">
@@ -217,10 +228,10 @@ export default function FullDiagnosticResults() {
                     </div>
                   </div>
                 </>
-              )}
+              )} 
 
-              <div className="hyphens-auto text-justify">
-                {categories &&
+     
+             {categories &&
                   categories[0] &&
                   categories.map((category, index) => {
                     let bottomQuestions = category.questions.slice(0, 3);
@@ -248,7 +259,7 @@ export default function FullDiagnosticResults() {
                               </div>
                             </>
                           )}
-                        {/* <div className="divider w-1/3 ml-14"></div> */}
+                        {/* <div className="divider w-1/3 ml-14"></div> 
                         {currentSlide == `${category.category}_${index}` && (
                           <div className="w-[95vw] py-5 h-[80vh] sticky top-0 bottom-0 bg-white rounded-lg shadow-2xl animate-fade-up animate-once animate-duration-300 animate-ease-linear">
                             <div className=" md:text-3xl ml-14 my-4">
@@ -264,8 +275,8 @@ export default function FullDiagnosticResults() {
                           </div>
                         )}
 
-                        {/* <div className="divider w-32 ml-[400px] "></div> */}
-                        {currentSlide == `${category.category}_${index}_2` && (
+                        {/* <div className="divider w-32 ml-[400px] "></div> 
+                    {currentSlide == `${category.category}_${index}_2` && (
                           <div className="w-[95vw] py-5 h-[80vh] sticky top-0 bottom-0 bg-white rounded-lg shadow-2xl animate-fade-up animate-once animate-duration-300 animate-ease-linear">
                             <div className=" md:text-3xl ml-14 my-4">
                               {category.category}
@@ -279,23 +290,23 @@ export default function FullDiagnosticResults() {
                               />
                             </div>
                           </div>
-                        )}
+                        )} 
                       </div>
-                    );
-                  })}
+                
+                  
               </div>
-            </div>
-          )}
-          {currentSlide != "top" &&
-            scrollNum == slides.length &&
-            scrollNum > 1 && (
-              <div className="flex flex-col justify-center items-center text-[#09497B]">
-                <div className="m-10 text-[50pt] animate-fade-up animate-once animate-duration-800 animate-delay-500 animate-ease-linear animate-normal">
-                  All done!
-                </div>
-                <div className="text-[30pt] animate-fade-up animate-once animate-duration-800 animate-delay-1000 animate-ease-linear animate-normal">
-                  Thank you!
-                </div>
+            </div> 
+        //   )}
+        //   {currentSlide != "top" &&
+        //     scrollNum == slides.length &&
+        //     scrollNum > 1 && (
+        //       <div className="flex flex-col justify-center items-center text-[#09497B]">
+        //         <div className="m-10 text-[50pt] animate-fade-up animate-once animate-duration-800 animate-delay-500 animate-ease-linear animate-normal">
+        //           All done!
+        //         </div>
+        //         <div className="text-[30pt] animate-fade-up animate-once animate-duration-800 animate-delay-1000 animate-ease-linear animate-normal">
+        //           Thank you!
+        //         </div>
                 {/* <div className="absolute z-50 left-[50vw] top-[60vh] ">
                   <ConfettiExplosion
                     force={0.8}
@@ -303,11 +314,11 @@ export default function FullDiagnosticResults() {
                     particleCount={250}
                     width={1600}
                   ></ConfettiExplosion>
-                </div> */}
-              </div>
+                </div> 
+           </div>
             )}
-        </div>
-      </ReactScrollWheelHandler>
+        </div> 
+                    </ReactScrollWheelHandler> */}
     </>
   );
 }

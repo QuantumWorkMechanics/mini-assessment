@@ -49,7 +49,7 @@ export default function TechDash({
     setDataSet(tempData);
   }, [selectedPersona]);
 
-  //   console.log({ data });
+  console.log({ tempPersonas });
 
   return (
     <>
@@ -69,11 +69,12 @@ export default function TechDash({
           <div className=" text-xl md:text-3xl font-semibold text-[#0EA8DC]">
             <span className="text-[#09497B] font-normal">Overall: </span>
             {Math.floor(
-              tempForm.reduce(function (acc, obj) {
+              (tempForm.reduce(function (acc, obj) {
                 return acc + obj.AllAvgScore;
-              }, 0) * 100
-            ) /
-              (tempForm.length * 100)}
+              }, 0) *
+                100) /
+                tempForm.length
+            ) / 100}
           </div>
         </div>
         <div key={el + "_bar"} className="w-screen flex flex-col lg:flex-row">
@@ -82,12 +83,12 @@ export default function TechDash({
               <div className="font-bold">Respondents</div>
               {data &&
                 tempPersonas.map((persona, index) => {
-                  //   console.log({ persona });
-                  //   console.log(data.choices);
+                  console.log({ persona });
+                  console.log(data.choices);
                   let score = data.choices.filter(
                     (choice) => choice.label == el
                   );
-                  //   console.log(score[0]);
+                  console.log(score.length);
                   let totalScore = 0;
                   if (tempPersonas.length == index + 1 && score.length) {
                     let tempValues = Object.values(score[0]).filter((obj) =>
@@ -98,10 +99,10 @@ export default function TechDash({
                     });
                     // console.log({ totalScore });
                   }
-                  //   console.log({ score });
+                  console.log({ score });
                   return (
                     <>
-                      {score.length && (
+                      {score[0] && (
                         <div
                           className="flex justify-between"
                           key={persona.persona + el}

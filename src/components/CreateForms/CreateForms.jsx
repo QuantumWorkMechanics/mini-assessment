@@ -4,6 +4,13 @@ import { createTypeform } from "../Utils.jsx/questionGroup";
 import { compList, formPersonaList } from "../Utils.jsx/questionList";
 import { addItems } from "@tidyjs/tidy";
 import { light } from "@mui/material/styles/createPalette";
+import {
+  strategy,
+  service,
+  data,
+  process,
+  technology,
+} from "../TechComparison/lists";
 
 export default function CreateForms() {
   const [techRaw, setTechRaw] = useState();
@@ -51,6 +58,60 @@ export default function CreateForms() {
     // }
     return { responses, jsonData };
   }
+
+  function createSomeQuestions(questionList, pillar) {
+    return questionList.map((el, index) => {
+      let question = {
+        title: el,
+        ref: "question_" + pillar + index,
+        properties: {
+          start_at_one: true,
+          steps: 5,
+          labels: {
+            left: "Highly Disagree",
+            // center: "Neither satisfied nor dissatisfied",
+            right: "Highly Agree",
+          },
+        },
+        validations: {
+          required: false,
+        },
+        type: "opinion_scale",
+      };
+      return question;
+    });
+  }
+
+  function createGroup(pillar, shortName, list) {
+    console.log({ list });
+    let questions = createSomeQuestions(list, shortName);
+    return {
+      title: pillar,
+      ref: shortName,
+      properties: {
+        button_text: "Continue",
+        show_button: true,
+        fields: questions,
+      },
+      type: "group",
+      layout: {
+        attachment: {
+          type: "image",
+          href: "https://images.typeform.com/images/WMALzu59xbXQ",
+        },
+        type: "stack",
+        viewport_overrides: {},
+      },
+    };
+  }
+
+  const stratGroup = createGroup("Strategy", "strategy", strategy);
+  const serviceGroup = createGroup("Service Design", "service", service);
+  const processGroup = createGroup("Process", "process", process);
+  const dataGroup = createGroup("Data", "data", data);
+  const techGroup = createGroup("Technology", "tech", technology);
+
+  console.log([stratGroup, serviceGroup, processGroup, dataGroup, techGroup]);
 
   async function handleSend() {
     compareForm = createTypeform(formTitle, tech, formPersonas);

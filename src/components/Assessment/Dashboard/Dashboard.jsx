@@ -23,6 +23,7 @@ export default function Dashboard({
   dataLoaded,
   personaResponseCounts,
   rawForm,
+  colorArr,
 }) {
   //   console.log({ typeForm });
   //   console.log({ personas });
@@ -93,7 +94,11 @@ export default function Dashboard({
           <div className="w-[100%] h-[100%] bg-white">
             <h3 className="absolute ml-3  text-slate-600">Overview</h3>
             {personas && (
-              <RadarGraph personas={personas} mainCategories={categories} />
+              <RadarGraph
+                personas={personas}
+                mainCategories={categories}
+                colorArr={colorArr}
+              />
             )}
           </div>
         </div>
