@@ -67,16 +67,17 @@ export default function FullDiagnosticResults() {
 
     const dataSet = await responses.json();
 
-    console.log({ dataSet });
+    // console.log({ dataSet });
     return dataSet;
   }
 
   useEffect(() => {
     getData().then((data) => {
+      console.log({ data });
       let tempForm = orderBy(data.fullForm, [{ AllAvgScore: Number }], "desc");
       //   orderBy(tempForm, "AllAvgScore", "asc");
       tempForm.sort((a, b) => (a.AllAvgScore > b.AllAvgScore ? 1 : -1));
-      console.log({ tempForm });
+      //   console.log({ tempForm });
       let tempCategories = [];
       data.scoredCategories.map((category) => {
         let tempQuestions = tempForm.filter((question) => {
@@ -101,7 +102,7 @@ export default function FullDiagnosticResults() {
         ];
         // console.log({ tempSlides });
       });
-      console.log({ tempForm });
+      //   console.log({ tempForm });
       setSlides(tempSlides);
       //   console.log({ tempCategories });
       setTypeForm(tempForm);
@@ -109,7 +110,7 @@ export default function FullDiagnosticResults() {
       setCategories(tempCategories);
       setRawForm(data.typeForm);
       setFullForm(data.fullForm);
-      console.log(data.personaResponseCounts);
+      //   console.log(data.personaResponseCounts);
       setPersonas(data.scoredPersonas);
       setCounts(data.personaResponseCounts);
       setDataLoaded(true);

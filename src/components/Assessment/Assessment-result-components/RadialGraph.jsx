@@ -9,12 +9,12 @@ import {
 import RenderLegend from "./RenderLegend";
 
 export default function RadialGraph({ personas, colorArr, dataArr, title }) {
-  const [data, setData] = useState([dataArr[0]]);
+  const [data, setData] = useState([dataArr[0].persona]);
   const [dataIndex, setDataIndex] = useState(0);
   const [animate, setAnimate] = useState(true);
 
   useEffect(() => {
-    console.log({ personas, colorArr, dataArr, title });
+    // console.log({ personas, colorArr, dataArr, title });
     setTimeout(() => {
       setAnimate(false);
     }, 14500);
@@ -23,7 +23,7 @@ export default function RadialGraph({ personas, colorArr, dataArr, title }) {
       dataIndex + 1 == dataArr.length
         ? (tempIndex = 0)
         : (tempIndex = dataIndex + 1);
-      setData([dataArr[tempIndex]]);
+      setData([dataArr[tempIndex].persona]);
       setAnimate(true);
       setDataIndex(tempIndex);
     }, 20000);
@@ -60,7 +60,7 @@ export default function RadialGraph({ personas, colorArr, dataArr, title }) {
                 />
                 {/* <RadialBar data={5} clockWise /> */}
                 {personas.map((el, index) => {
-                  //   console.log(el.persona);
+                  //   console.log("persona " + el.persona);
                   if (!data[0][el.persona]) return;
                   return (
                     <RadialBar
@@ -74,6 +74,7 @@ export default function RadialGraph({ personas, colorArr, dataArr, title }) {
                   );
                 })}
                 <RadialBar
+                  //   data={dataArr[0]}
                   name="All"
                   label={{ position: "insideStart", fill: "#fff" }}
                   dataKey="AllAvgScore"
@@ -98,7 +99,7 @@ export default function RadialGraph({ personas, colorArr, dataArr, title }) {
             </ResponsiveContainer>
           </div>
           <div className="absolute text-sm right-10 top-40 text-[#0E6AAD]">
-            {data[0].category}
+            {[dataArr[dataIndex].category]}
           </div>
           <div
             className={
@@ -107,7 +108,7 @@ export default function RadialGraph({ personas, colorArr, dataArr, title }) {
                 " animate-flip-up animate-once animate-duration-[800ms] animate-ease-linear")
             }
           >
-            {data[0].title}
+            {[dataArr[dataIndex].title]}
           </div>
         </div>
       )}

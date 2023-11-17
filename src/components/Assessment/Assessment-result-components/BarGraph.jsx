@@ -23,7 +23,7 @@ export default function BarGraph({
   personas,
   customColor,
 }) {
-  //   console.log({ typeForm });
+  console.log({ typeForm });
   const [selectedPersona, setSelectedPersona] = useState();
   const [personaIndex, setPersonaIndex] = useState(0);
   //   let COLORS;
@@ -142,7 +142,12 @@ export default function BarGraph({
           </Bar>
 
           {selectedPersona && (
-            <Line strokeWidth={3} dataKey={selectedPersona} stroke={"red"} />
+            <Line
+              data={typeForm.map((el) => el.persona)}
+              strokeWidth={3}
+              dataKey={selectedPersona}
+              stroke={"red"}
+            />
           )}
         </ComposedChart>
       </ResponsiveContainer>

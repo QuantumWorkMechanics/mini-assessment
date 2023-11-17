@@ -64,7 +64,7 @@ export default function FullDiagnosticResults() {
 
   useEffect(() => {
     getData().then((data) => {
-      //   console.log({ data });
+      console.log({ data });
       setData(data);
     });
   }, []);

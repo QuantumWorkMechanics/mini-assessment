@@ -16,16 +16,10 @@ export default function VarianceGraph({ fullForm, personas, colorArr }) {
   const [dataSet, setDataSet] = useState();
   const [dataIndex, setDataIndex] = useState(0);
   const [animate, setAnimate] = useState(true);
+  const [questionArr, setQuestionArr] = useState();
   // let dataSet = []
 
   useEffect(() => {
-    // console.log(dataSet.length);
-    // let lengthVar = dataSet.length;
-    // let dataArr = dataSet;
-
-    // setTimeout(() => {
-    //   setAnimate(false);
-    // }, 29800);
     setTimeout(() => {
       if (!dataSet) return;
       console.log({ dataSet, dataIndex });
@@ -45,9 +39,10 @@ export default function VarianceGraph({ fullForm, personas, colorArr }) {
       mutableForm,
       arrange((a, b) => b.variance - a.variance)
     );
-    console.log({ tempFormArr });
+    setQuestionArr(tempFormArr);
+    // console.log({ tempFormArr });
 
-    let highVariance = tempFormArr.slice(0, 10);
+    let highVariance = tempFormArr.slice(0, 3);
     let dataArr = [];
     highVariance.map((question) => {
       let personaItems = {};
@@ -59,9 +54,9 @@ export default function VarianceGraph({ fullForm, personas, colorArr }) {
         return personaItems;
       });
       //   console.log({ personaItems });
-      dataArr = [...dataArr, [personaItems, question, personaItems]];
+      dataArr = [...dataArr, [personaItems, question.persona, personaItems]];
     });
-    console.log({ dataArr });
+    // console.log({ dataArr });
     setDataSet(dataArr);
     setData(dataArr[0]);
     setDataIndex((prev) => prev + 1);
@@ -103,7 +98,7 @@ export default function VarianceGraph({ fullForm, personas, colorArr }) {
                 " animate-flip-up animate-once animate-duration-[800ms] animate-ease-linear")
             }
           >
-            {data[1].title}
+            {questionArr[dataIndex].title}
           </div>
         </>
       )}

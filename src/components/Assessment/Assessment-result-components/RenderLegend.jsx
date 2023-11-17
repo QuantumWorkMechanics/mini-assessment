@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 
 export default function RenderLegend(props) {
   if (!props) return;
-  console.log(props.payload);
+  //   console.log(props.payload);
   return (
     <div>
       {props.personas.map((el, index) => {

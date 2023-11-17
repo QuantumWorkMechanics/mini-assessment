@@ -16,9 +16,9 @@ import {
   Label,
   LabelList,
 } from "recharts";
-import ControlButtons from "./ControlButtons";
+// import ControlButtons from "./ControlButtons";
 
-export default function VerticalBarGraph({
+export default function MaturityBarGraph({
   typeForm,
   categories,
   personas,
@@ -28,21 +28,12 @@ export default function VerticalBarGraph({
   setSelectedPersona,
   selectedPersona,
   personaIndex,
+  dataSet,
 }) {
-  console.log({ typeForm });
+  // console.log({ typeForm });
   //   const [selectedPersona, setSelectedPersona] = useState();
   //   const [personaIndex, setPersonaIndex] = useState(0);
-  const [data, setData] = useState(
-    typeForm.map((el) => {
-      return {
-        ...el.persona,
-        ...el.role,
-        ...el.region,
-        title: el.title,
-        altTitle: el.altTitle,
-      };
-    })
-  );
+  const [data, setData] = useState(dataSet);
   const [dataIndex, setDataIndex] = useState(typeForm);
   //   let COLORS;
   //   customColor
@@ -53,18 +44,20 @@ export default function VerticalBarGraph({
   //     }
   //   }, []);
 
-  useEffect(() => {
-    handleParent(selectedPersona);
-  }, [selectedPersona]);
+  console.log({ dataSet });
 
-  const COLORS = [
-    "#bee0f9",
-    "#1d91da",
-    "#0f4d7d",
-    "#0c2945",
-    "#FFCB18",
-    "#142F55",
-  ];
+  // useEffect(() => {
+  //   handleParent(selectedPersona);
+  // }, [selectedPersona]);
+
+  // const COLORS = [
+  //   "#bee0f9",
+  //   "#1d91da",
+  //   "#0f4d7d",
+  //   "#0c2945",
+  //   "#FFCB18",
+  //   "#142F55",
+  // ];
 
   const TooltipContent = (props) => {
     if (!props.active || !props.payload) {
@@ -72,72 +65,72 @@ export default function VerticalBarGraph({
     }
 
     // const data = props.payload[0].payload;
-    const data = props.payload[0].payload;
+    //   const data = props.payload[0].payload;
+    //   return (
+    //     <div className=" bg-white bg-opacity-80 border-2 text-xs md:text-lg rounded md:p-4 w-[45ch] md:w-[65ch]">
+    //       <ul>
+    //         <li className="font-bold mb-1">
+    //           {data.category}
+    //           {":  "}
+    //           <span className="text-xl text-blue-400">{data.AllAvgScore}</span>
+    //         </li>
+
+    //         <li>{data.title}</li>
+    //       </ul>
+    //     </div>
+    //   );
+    // };
+
+    // function handlePersona(num) {
+    //   // console.log({ personaIndex });
+    //   // console.log(personas.length);
+    //   if (!selectedPersona) return;
+    //   if (personaIndex + num == personas.length) {
+    //     //   console.log(personaIndex);
+    //     setSelectedPersona(personas[0].persona);
+    //     setPersonaIndex(0);
+    //     return;
+    //   }
+    //   if (personaIndex + num < 0) {
+    //     setSelectedPersona(personas[personas.length - 1].persona);
+    //     setPersonaIndex(personas.length - 1);
+    //     return;
+    //   }
+    //   setSelectedPersona(personas[personaIndex + num].persona);
+    //   setPersonaIndex((prev) => prev + num);
+    // }
+
+    //   function RenderLabel(props) {
+    //     console.log({ props });
+    //     // return entry.title;
+    //     if (props.value.includes("accuracy in this platform?")) console.log(true);
+    //     return <div>"Data Accuracy"</div>;
+    //   }
+
+    const labelStyle = {
+      fontWeight: "700",
+      fontSize: "1.2vw",
+    };
+    const mobileStyle = {
+      fontWeight: "700",
+      fontSize: "8pt",
+    };
+
+    // function handleBars(num) {
+    //   // console.log("handleBars");
+    //   const tempIndex = dataIndex + num * 4;
+    //   // console.log({ tempIndex });
+    //   if (tempIndex > typeForm.length || tempIndex < 0) return;
+
+    //   let tempData = typeForm.slice(tempIndex, tempIndex + 4);
+
+    //   setData(tempData);
+    //   setDataIndex((prev) => prev + num * 4);
+    // }
+
     return (
-      <div className=" bg-white bg-opacity-80 border-2 text-xs md:text-lg rounded md:p-4 w-[45ch] md:w-[65ch]">
-        <ul>
-          <li className="font-bold mb-1">
-            {data.category}
-            {":  "}
-            <span className="text-xl text-blue-400">{data.AllAvgScore}</span>
-          </li>
-
-          <li>{data.title}</li>
-        </ul>
-      </div>
-    );
-  };
-
-  function handlePersona(num) {
-    // console.log({ personaIndex });
-    // console.log(personas.length);
-    if (!selectedPersona) return;
-    if (personaIndex + num == personas.length) {
-      //   console.log(personaIndex);
-      setSelectedPersona(personas[0].persona);
-      setPersonaIndex(0);
-      return;
-    }
-    if (personaIndex + num < 0) {
-      setSelectedPersona(personas[personas.length - 1].persona);
-      setPersonaIndex(personas.length - 1);
-      return;
-    }
-    setSelectedPersona(personas[personaIndex + num].persona);
-    setPersonaIndex((prev) => prev + num);
-  }
-
-  //   function RenderLabel(props) {
-  //     console.log({ props });
-  //     // return entry.title;
-  //     if (props.value.includes("accuracy in this platform?")) console.log(true);
-  //     return <div>"Data Accuracy"</div>;
-  //   }
-
-  const labelStyle = {
-    fontWeight: "700",
-    fontSize: "1.2vw",
-  };
-  const mobileStyle = {
-    fontWeight: "700",
-    fontSize: "8pt",
-  };
-
-  function handleBars(num) {
-    // console.log("handleBars");
-    const tempIndex = dataIndex + num * 4;
-    // console.log({ tempIndex });
-    if (tempIndex > typeForm.length || tempIndex < 0) return;
-
-    let tempData = typeForm.slice(tempIndex, tempIndex + 4);
-
-    setData(tempData);
-    setDataIndex((prev) => prev + num * 4);
-  }
-
-  return (
-    <>
-      <div className=" h-full  md:ml-0  ">
+      <>
+        {/* <div className=" h-full  md:ml-0  "> */}
         {/* <div className="ml-20 md:ml-3">Average Scores</div> */}
         {/* {screen.width < 550 && (
           <>
@@ -157,14 +150,14 @@ export default function VerticalBarGraph({
           </>
         )} */}
 
-        <div className=" flex md:hidden absolute left-[10%] mt-2 ml-2">
+        {/* <div className=" flex md:hidden absolute left-[10%] mt-2 ml-2">
           {selectedPersona && (
             <div className="h-1 w-4 bg-red-600 place-self-center mr-1"></div>
           )}
           <div className="text-[#0f4d7d] text-sm md:text-lg place-self-center mr-2 font-bold">
             {selectedPersona ? selectedPersona : "All Respondents"}
           </div>
-        </div>
+        </div> */}
 
         <div className="h-full -ml-7 md:ml-0 w-[100%]">
           <ResponsiveContainer width="100%" height="100%">
@@ -200,7 +193,7 @@ export default function VerticalBarGraph({
               <Bar
                 // label={<RenderLabel />}
                 name="category"
-                dataKey="AllAvgScore"
+                dataKey="value"
                 fill={"#0E6AAD"}
                 activeBar={<Rectangle fill="pink" stroke="blue" />}
                 onClick={(e) => {
@@ -246,7 +239,7 @@ export default function VerticalBarGraph({
             </ComposedChart>
           </ResponsiveContainer>
         </div>
-        <div className="-mt-32 w-screen pr-2 -ml-1 absolute flex text-lg justify-between">
+        {/* <div className="-mt-32 w-screen pr-2 -ml-1 absolute flex text-lg justify-between">
           <button
             onClick={() => handleBars(-1)}
             className="md:hidden  z-50 p-2 text-white  bg-[#999999] bg-opacity-80"
@@ -331,8 +324,8 @@ export default function VerticalBarGraph({
             >
               {">"}
             </button>
-          </div>
-          {/* <ControlButtons
+          </div> */}
+        {/* <ControlButtons
             selectedItem={selectedPersona}
             items={personas}
             item="persona"
@@ -340,7 +333,7 @@ export default function VerticalBarGraph({
             itemIndex={personaIndex}
             handler={handlePersona}
           /> */}
-        </div>
+        {/* </div>
 
         <div className="flex flex-col ml-20 md:ml-14 md:pt-5 md:flex-row text-[6pt] md:text-xs justify-start md:items-center">
           {!customColor &&
@@ -359,7 +352,8 @@ export default function VerticalBarGraph({
               );
             })}
         </div>
-      </div>
-    </>
-  );
+      </div> */}
+      </>
+    );
+  };
 }

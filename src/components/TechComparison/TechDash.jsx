@@ -45,7 +45,7 @@ export default function TechDash({
         };
         return tempDatum;
       });
-    // console.log({ tempData });
+    console.log({ tempData });
     setDataSet(tempData);
   }, [selectedPersona]);
 
@@ -55,7 +55,7 @@ export default function TechDash({
     <>
       <div
         key={el + "_dashboard"}
-        className="m-2 md:m-10 pb-14 pt-4 rounded-lg bg-opacity-90  bg-white "
+        className="m-2 md:m-10 pb-14 pt-4 rounded-lg bg-opacity-90  bg-white"
       >
         <div className="ml-4 md:ml-14 flex flex-col sm:flex-row justify-between justify-start gap-5 mb-3 md:mt-2 mr-4 md:mb-0">
           <div className="flex gap-5 items-center">
@@ -77,18 +77,22 @@ export default function TechDash({
             ) / 100}
           </div>
         </div>
-        <div key={el + "_bar"} className="w-screen flex flex-col lg:flex-row">
-          <div className="flex flex-col  justify-between items-start">
-            <div className="flex flex-col mt-14 pr-40 pl-3  sm:place-self-end justify-between  text-[#09497B]">
+        <div
+          key={el + "_bar"}
+          className="w-screen flex flex-col justify-between lg:flex-row"
+        >
+          <div className="flex flex-col  justify-between ">
+            <div className="flex flex-col mt-14 pr-40 pl-3 sm:place-self-end justify-between  text-[#09497B]">
               <div className="font-bold">Respondents</div>
               {data &&
                 tempPersonas.map((persona, index) => {
-                  console.log({ persona });
+                  console.log({ el });
                   console.log(data.choices);
                   let score = data.choices.filter(
-                    (choice) => choice.label == el
+                    (choice) => choice.label.trim() == el.trim()
                   );
-                  console.log(score.length);
+                  console.log({ score });
+                  if (score.length > 0) console.log(score.length);
                   let totalScore = 0;
                   if (tempPersonas.length == index + 1 && score.length) {
                     let tempValues = Object.values(score[0]).filter((obj) =>
@@ -99,7 +103,7 @@ export default function TechDash({
                     });
                     // console.log({ totalScore });
                   }
-                  console.log({ score });
+                  //   console.log({ score });
                   return (
                     <>
                       {score[0] && (
@@ -125,7 +129,7 @@ export default function TechDash({
                 })}
             </div>
             <div className="">
-              <div className="lg:-ml-12 xl:-ml-4">
+              <div className="">
                 {dataSet && (
                   <FrequencyPie
                     dataSet={dataSet}
@@ -136,7 +140,7 @@ export default function TechDash({
               </div>
             </div>
           </div>
-          <div className=" md:w-[70%] h-[200px] md:h-[400px] z-50 md:ml-0 order-first ">
+          <div className=" md:w-[40%] h-[200px] md:h-[400px] z-50 md:ml-0 order-first ">
             <VerticalBarGraph
               key={`${el}_composed`}
               categories={[el]}
