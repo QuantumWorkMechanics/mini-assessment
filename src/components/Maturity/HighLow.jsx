@@ -34,8 +34,8 @@ export default function HighLow({
       return b[keyValue] - a[keyValue];
     });
     setLocalData(tempData.slice(0, num));
-    console.log({ localData });
-    console.log({ tempData });
+    // console.log({ localData });
+    // console.log({ tempData });
   }, [dataSet]);
 
   return (

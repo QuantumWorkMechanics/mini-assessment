@@ -21,6 +21,8 @@ import {
 import HighLow from "./HighLow";
 import RadarMaturity from "./RadarMaturity";
 import ModalBar from "./ModalBar";
+import ModalCategories from "./ModalCategories";
+import Controls from "./Controls";
 
 export default function Maturity() {
   const [rawData, setRawData] = useState();
@@ -71,11 +73,12 @@ export default function Maturity() {
   const ALLCOLOR = "#0E6AAD";
   const FILTER1COLOR = "#FFCB18";
   const FILTER2COLOR = "#0EA8DC";
+  g;
 
   //   console.log({ requestOptions });
   //   console.log(process.emitWarning.NODE_ENV);
-  //   const mimir_url = "https://mimir-production.up.railway.app/";
-  const mimir_url = "http://localhost:3000/";
+  const mimir_url = "https://mimir-production.up.railway.app/";
+  //   const mimir_url = "http://localhost:3000/";
   async function getData() {
     const responses = await fetch(
       mimir_url + "tf-responses/" + routeParams.tfid,
@@ -135,8 +138,10 @@ export default function Maturity() {
           ...datum,
           category: question[0].category.trim(),
           title: question[0].title.trim(),
+          persona: datum.persona.trim(),
         };
       });
+      console.log({ joinedDataArr });
       setPersonas(data.personas);
       setRegions(data.regions);
       setRoles(data.roles);
@@ -165,8 +170,16 @@ export default function Maturity() {
   }
 
   function getFilterCounts(filterSet) {
-    let filteredData = [...demoData];
-    let filteredData2 = [...demoData];
+    const demoData2 = demoData.map((el) => {
+      el.persona = el.persona.replace(
+        ": (Executive, Business Development, Marketing or Communication)",
+        ""
+      );
+      return el;
+    });
+    console.log({ demoData2 });
+    let filteredData = [...demoData2];
+    let filteredData2 = [...demoData2];
     if (filterSet.persona)
       filteredData = filteredData.filter(
         (el) => el.persona == filterSet.persona
@@ -189,6 +202,7 @@ export default function Maturity() {
     let tempFilters = { ...filterSet };
     let count1 = filteredData.length;
     let count2 = filteredData2.length;
+    console.log({ filteredData, filteredData2, tempFilters });
 
     if (filterSet.persona || filterSet.role || filterSet.region) {
       tempFilters.count = count1;
@@ -297,214 +311,35 @@ export default function Maturity() {
       }
       return el;
     });
-    console.log({ newArr });
+    // console.log({ newArr });
     return newArr;
   }
 
   return (
     <div>
-      {/* <button
-        className="m-2 bg-blue-400 text-white p-2 rounded"
-        onClick={() => runFilters(filters)}
-        //   onClick={() => handleAddFilter()}
-      >
-        Run Filters
-      </button> */}
-      {/* <button
-        className="m-2 bg-blue-400 text-white p-2 rounded"
-        onClick={() => handleClearFilters()}
-      >
-        Clear Filter 1
-      </button>
-
-      <button
-        className="m-2 bg-blue-400 text-white p-2 rounded"
-        onClick={() => handleClearFilters("2")}
-      >
-        Clear Filter 2
-      </button> */}
-      <div className="flex items-center">
-        <div className="rounded-t p-4 border-4 border-b-0 mt-4 mx-4 bg-slate-300 ">
-          <div>CONTROL CENTER</div>
-          <div className="font-bold text-sm ml-4">Filter Set 1</div>
-          <div className="flex -mt-4 ml-2">
-            <div className="flex items-center mx-2">
-              <button
-                className="bg-blue-400 text-white p-2 rounded-l"
-                onClick={() =>
-                  handleFilter("persona", personas, setPersonas, "left")
-                }
-              >
-                {"<"}
-              </button>
-              <div className="border bg-blue-400 p-2 text-white">Personas</div>
-              <button
-                className="bg-blue-400 text-white p-2 rounded-r"
-                onClick={() =>
-                  handleFilter("persona", personas, setPersonas, "right")
-                }
-              >
-                {">"}
-              </button>
-            </div>
-            <div className="flex items-center m-2">
-              <button
-                className="bg-blue-400 text-white p-2 rounded-l"
-                onClick={() => handleFilter("role", roles, setRoles, "left")}
-              >
-                {"<"}
-              </button>
-              <div className="border bg-blue-400 p-2 text-white">Roles</div>
-              <button
-                className="bg-blue-400 text-white p-2 rounded-r"
-                onClick={() => handleFilter("role", roles, setRoles, "right")}
-              >
-                {">"}
-              </button>
-            </div>
-            <div className="flex items-center m-2">
-              <button
-                className="bg-blue-400 text-white p-2 rounded-l"
-                onClick={() =>
-                  handleFilter("region", regions, setRegions, "left")
-                }
-              >
-                {"<"}
-              </button>
-              <div className="border bg-blue-400 p-2 text-white">Regions</div>
-              <button
-                className="bg-blue-400 text-white p-2 rounded-r"
-                onClick={() =>
-                  handleFilter("region", regions, setRegions, "right")
-                }
-              >
-                {">"}
-              </button>
-              <button
-                className="m-2 bg-red-400 text-white p-2 rounded"
-                onClick={() => handleClearFilters()}
-              >
-                Clear
-              </button>
-            </div>
-          </div>
-        </div>
-        {dataSet && (
-          <>
-            <div className={"h-1 w-8 bg-[#FFCB18]"}></div>
-
-            <div>
-              <span className="text-2xl text-[#FFCB18] font-bold px-2">
-                {filters.count && filters.count + " "}
-              </span>
-              {(filters.persona
-                ? filters.persona + " Respondents "
-                : "Respondents ") +
-                (filters.role ? "who are " + filters.role : "") +
-                (filters.region ? " from " + filters.region : "")}
-            </div>
-          </>
-        )}
-      </div>
-      {/* <div>
-        <span className="font-semibold">Filters:</span>
-        {filters.persona && <div>{"Persona: " + filters.persona}</div>}
-        {filters.role && <div>{"Role: " + filters.role}</div>}
-        {filters.region && <div>{"Role: " + filters.region}</div>}
-      </div> */}
-      <div className="flex items-center">
-        <div className="rounded-b p-4 border-4 -mt-6 border-t-0 mx-4 bg-slate-300">
-          <div className="font-bold text-sm ml-4">Filter Set 2</div>
-          <div className="flex -mt-4 ml-2">
-            <div className="flex items-center m-2">
-              <button
-                className="bg-blue-400 text-white p-2 rounded-l"
-                onClick={() =>
-                  handleFilter("persona2", personas2, setPersonas2, "left")
-                }
-              >
-                {"<"}
-              </button>
-              <div className="border bg-blue-400 p-2 text-white">Personas</div>
-              <button
-                className="bg-blue-400 text-white p-2 rounded-r"
-                onClick={() =>
-                  handleFilter("persona2", personas2, setPersonas2, "right")
-                }
-              >
-                {">"}
-              </button>
-            </div>
-            <div className="flex items-center m-2">
-              <button
-                className="bg-blue-400 text-white p-2 rounded-l"
-                onClick={() => handleFilter("role2", roles2, setRoles2, "left")}
-              >
-                {"<"}
-              </button>
-              <div className="border bg-blue-400 p-2 text-white">Roles</div>
-              <button
-                className="bg-blue-400 text-white p-2 rounded-r"
-                onClick={() =>
-                  handleFilter("role2", roles2, setRoles2, "right")
-                }
-              >
-                {">"}
-              </button>
-            </div>
-            <div className="flex items-center m-2">
-              <button
-                className="bg-blue-400 text-white p-2 rounded-l"
-                onClick={() =>
-                  handleFilter("region2", regions2, setRegions2, "left")
-                }
-              >
-                {"<"}
-              </button>
-              <div className="border bg-blue-400 p-2 text-white">Regions</div>
-              <button
-                className="bg-blue-400 text-white p-2 rounded-r"
-                onClick={() =>
-                  handleFilter("region2", regions2, setRegions2, "right")
-                }
-              >
-                {">"}
-              </button>
-              <button
-                className="m-2 bg-red-400 text-white p-2 rounded"
-                onClick={() => handleClearFilters("2")}
-              >
-                Clear
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {dataSet && (
-          <>
-            <div className={"h-1 w-8 bg-[#0EA8DC]"}></div>
-
-            <div>
-              <span className="text-2xl text-[#0EA8DC] font-bold px-2">
-                {filters.count2 && filters.count2 + " "}
-              </span>
-              {(filters.persona2
-                ? filters.persona2 + " Respondents "
-                : "Respondents ") +
-                (filters.role2 ? "who are " + filters.role2 : "") +
-                (filters.region2 ? " from " + filters.region2 : "")}
-            </div>
-          </>
-        )}
-      </div>
-      {/* <div>
-        <span className="font-semibold">Filters:</span>
-        {filters.persona2 && <div>{"Persona: " + filters.persona2}</div>}
-        {filters.role2 && <div>{"Role: " + filters.role2}</div>}
-        {filters.region2 && <div>{"Role: " + filters.region2}</div>}
-      </div> */}
       {dataSet && (
-        <div className="h-80 w-full mt-10">
+        <Controls
+          personas2={personas2}
+          setPersonas={setPersonas}
+          setRegions2={setRegions2}
+          setRoles2={setRoles2}
+          personas={personas}
+          setPersonas2={setPersonas2}
+          handleFilter={handleFilter}
+          roles={roles}
+          roles2={roles2}
+          setRoles={setRoles}
+          regions={regions}
+          regions2={regions2}
+          setRegions={setRegions}
+          handleClearFilters={handleClearFilters}
+          filters={filters}
+          dataSet={dataSet}
+        />
+      )}
+
+      {dataSet && (
+        <div className="h-80 w-full mt-28">
           <h3
             className="text-2xl font-semibold ml-14"
             style={{ color: ALLCOLOR }}
@@ -550,6 +385,7 @@ export default function Maturity() {
                 onClick={(e) => {
                   //   console.log({ e });
                   setCurrentModal(e.payload);
+                  console.log({ e });
                   document.getElementById("question-modal").showModal();
                 }}
               />
@@ -774,14 +610,36 @@ export default function Maturity() {
         })} */}
       <dialog id="question-modal" className="modal">
         {currentModal && (
-          <div className="modal-box w-full max-w-[90vw] max-h-full mt-14 h-full">
+          <div className="modal-box w-full max-w-full max-h-full h-full">
             <form method="dialog">
               {/* if there is a button in form, it will close the modal */}
-              <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+              <button className="z-50 btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
                 ✕
               </button>
             </form>
-            <div className="bg-[#BDE3F9] w-3/5 p-10 ml-14 mt-10 mb-4">
+
+            {/* {dataSet && (
+              <Controls
+                personas2={personas2}
+                setPersonas={setPersonas}
+                setRegions2={setRegions2}
+                setRoles2={setRoles2}
+                personas={personas}
+                setPersonas2={setPersonas2}
+                handleFilter={handleFilter}
+                roles={roles}
+                roles2={roles2}
+                setRoles={setRoles}
+                regions={regions}
+                regions2={regions2}
+                setRegions={setRegions}
+                handleClearFilters={handleClearFilters}
+                filters={filters}
+                dataSet={dataSet}
+              />
+            )} */}
+
+            <div className="bg-[#BDE3F9] w-3/5 p-10 ml-14 mt-24 mb-4">
               <div className="font-bold text-xs">Question:</div>
               <h3
                 className="font-semibold text-2xl   leading-10 bg-[#BDE3F9] "
@@ -990,16 +848,36 @@ export default function Maturity() {
         )}
       </dialog>
       <dialog id="category-modal" className="modal">
-        <div className="modal-box w-full max-w-[90vw] max-h-full mt-14 h-[90vh]">
+        <div className="modal-box w-full max-w-[100vw] max-h-full h-[100vh]">
           <form method="dialog">
             {/* if there is a button in form, it will close the modal */}
-            <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+            <button className="z-50 btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
               ✕
             </button>
           </form>
-          <div className="w-fullh-full ">
+          {dataSet && (
+            <Controls
+              personas2={personas2}
+              setPersonas={setPersonas}
+              setRegions2={setRegions2}
+              setRoles2={setRoles2}
+              personas={personas}
+              setPersonas2={setPersonas2}
+              handleFilter={handleFilter}
+              roles={roles}
+              roles2={roles2}
+              setRoles={setRoles}
+              regions={regions}
+              regions2={regions2}
+              setRegions={setRegions}
+              handleClearFilters={handleClearFilters}
+              filters={filters}
+              dataSet={dataSet}
+            />
+          )}
+          <div className="w-full h-full ">
             {dataSet && demoData && filters && rawData && (
-              <RadarMaturity
+              <ModalCategories
                 color2={FILTER1COLOR}
                 color={ALLCOLOR}
                 color3={FILTER2COLOR}

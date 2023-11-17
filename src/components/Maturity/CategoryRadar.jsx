@@ -28,7 +28,7 @@ export default function RadarMaturity({
       dataSet,
       groupBy(["category"], [summarize({ [keyVal]: mean(keyVal) })])
     );
-    console.log({ keyVal, tempData });
+    // console.log({ keyVal, tempData });
     setLocalData(tempData);
   }, [dataSet]);
 
