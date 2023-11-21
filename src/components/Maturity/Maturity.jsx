@@ -35,11 +35,11 @@ export default function Maturity() {
   const [currentQuestion, setCurrentQuestion] = useState();
   const [demoData, setDemoData] = useState();
 
-  const [filters2, setFilters2] = useState({
-    persona: false,
-    role: false,
-    region: false,
-  });
+  //   const [filters2, setFilters2] = useState({
+  //     persona: false,
+  //     role: false,
+  //     region: false,
+  //   });
 
   const [persona, setPersona] = useState();
   const [role, setRole] = useState();
@@ -73,7 +73,6 @@ export default function Maturity() {
   const ALLCOLOR = "#0E6AAD";
   const FILTER1COLOR = "#FFCB18";
   const FILTER2COLOR = "#0EA8DC";
-  g;
 
   //   console.log({ requestOptions });
   //   console.log(process.emitWarning.NODE_ENV);
@@ -153,6 +152,12 @@ export default function Maturity() {
       tempDataSet.map((el) => {
         el.value = Math.floor(el.value * 10) / 10;
       });
+      let tempCount = data.demoData.length;
+      console.log({ tempCount });
+      let tempFilter = { ...filters };
+      tempFilter.count = tempCount;
+      tempFilter.count2 = tempCount;
+      setFilters(tempFilter);
       setDataSet(tempDataSet);
       setRawData(joinedDataArr);
       setInitialData(tempDataSet);
@@ -287,7 +292,7 @@ export default function Maturity() {
     tempFilters["persona" + filter] = false;
     tempFilters["region" + filter] = false;
     tempFilters["role" + filter] = false;
-    tempFilters["count" + filter] = false;
+    tempFilters["count" + filter] = demoData.length;
     setFilters(tempFilters);
     // console.log({ filters });
     runFilters(tempFilters);

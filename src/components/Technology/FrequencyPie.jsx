@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { PieChart, Pie, Cell, Legend, ResponsiveContainer } from "recharts";
 
-export default function FrequencyPie({
-  //   data,
+export default function TechFrequencyPie({
   colorArr,
-  //   selectedPersona,
+  tech,
+  title,
+  titleColor,
   dataSet,
 }) {
-  console.log({ dataSet });
+  // console.log({ dataSet, tech });
   //   const [dataSet, setDataSet] = useState(
   //     data.choices.map((el) => {
   //       let tempDatum = { choice: el, score: data[el].all ? data[el].all : 0 };
@@ -48,20 +49,24 @@ export default function FrequencyPie({
 
   return (
     <div>
-      <div className="w-[315px]  h-[250px]">
+      <div className="w-[200px]  h-[200px]">
         <ResponsiveContainer>
-          <PieChart width="100%" height={200}>
+          <PieChart
+            width="100%"
+            height="100%"
+            margin={{ top: 5, right: 5, bottom: 5, left: 25 }}
+          >
             <Pie
-              innerRadius={40}
+              innerRadius={0}
               data={dataSet}
-              dataKey="score"
+              dataKey="n"
               nameKey="choice"
               cx="50%"
               cy="50%"
-              outerRadius={60}
+              outerRadius={30}
               fill="#FFF"
               labelLine={false}
-              label={(entry) => (entry.score ? entry.choice : null)}
+              label={(entry) => (entry.n ? entry.answer : null)}
               style={labelStyle}
             >
               {" "}
@@ -86,8 +91,11 @@ export default function FrequencyPie({
           </PieChart>
         </ResponsiveContainer>
       </div>
-      <div className="lg:ml-0 ml-20 lg:text-center text-[#0E6AAD] font-semibold">
-        Frequency of Use
+      <div className="flex items-center gap-2">
+        <div className="w-3 h-3" style={{ backgroundColor: titleColor }}></div>
+        <div className=" lg:text-center text-[#0E6AAD] font-semibold">
+          {title}
+        </div>
       </div>
     </div>
   );

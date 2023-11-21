@@ -20,13 +20,13 @@ export default function Controls({
 }) {
   return (
     <div className="z-40 sticky top-0">
-      <div className="grid grid-cols-6 gap-4 p-2 bg-slate-200">
-        <div className="col-span-2 flex items-center ">
-          <div className="">
+      <div className="grid grid-cols-2 gap-4 p-2 bg-slate-200">
+        <div className=" flex items-center ">
+          <div className="grow">
             <div className="h-4">
               <div className="font-bold text-sm ml-4">Filter Set 1</div>
             </div>
-            <div className="flex  ml-2 flex-wrap">
+            <div className="flex  ml-2 flex-wrap ">
               <div className="flex items-center mx-2 ">
                 <button
                   type="button"
@@ -87,35 +87,33 @@ export default function Controls({
                 >
                   {">"}
                 </button>
-                <button
-                  type="button"
-                  className="m-2 bg-red-400 text-white p-2 rounded"
-                  onClick={() => handleClearFilters()}
-                >
-                  Clear
-                </button>
               </div>
+              <button
+                type="button"
+                className="m-2 bg-red-400 text-white p-2 rounded"
+                onClick={() => handleClearFilters()}
+              >
+                Clear
+              </button>
+            </div>
+          </div>
+
+          <div className="basis-1/3">
+            <div className="flex items-center text-sm h-full">
+              <div className={"h-3 w-3 bg-[#FFCB18] "}></div>
+              <span className="text-2xl  font-bold px-2">
+                {filters.count && filters.count + " "}
+              </span>
+              {(filters.persona
+                ? filters.persona + " Respondents "
+                : "Respondents ") +
+                (filters.role ? "who are " + filters.role : "") +
+                (filters.region ? " from " + filters.region : "")}
             </div>
           </div>
         </div>
-        {dataSet && (
-          <>
-            <div className="">
-              <div className="flex items-center text-sm h-full">
-                <div className={"h-3 w-3 bg-[#FFCB18] "}></div>
-                <span className="text-2xl  font-bold px-2">
-                  {filters.count && filters.count + " "}
-                </span>
-                {(filters.persona
-                  ? filters.persona + " Respondents "
-                  : "Respondents ") +
-                  (filters.role ? "who are " + filters.role : "") +
-                  (filters.region ? " from " + filters.region : "")}
-              </div>
-            </div>
-          </>
-        )}
-        <div className=" col-span-2 flex items-center">
+
+        <div className=" flex items-center">
           <div className="">
             <div className="font-bold text-sm ml-4">Filter Set 2</div>
             <div className="flex ml-2 flex-wrap">
@@ -183,34 +181,31 @@ export default function Controls({
                 >
                   {">"}
                 </button>
-                <button
-                  type="button"
-                  className="m-2 bg-red-400 text-white p-2 rounded"
-                  onClick={() => handleClearFilters("2")}
-                >
-                  Clear
-                </button>
               </div>
+              <button
+                type="button"
+                className="m-2 bg-red-400 text-white p-2 rounded"
+                onClick={() => handleClearFilters("2")}
+              >
+                Clear
+              </button>
+            </div>
+          </div>
+
+          <div className="basis-1/3">
+            <div className="flex items-center text-sm h-full">
+              <div className={"h-3 w-3 bg-[#0EA8DC] "}></div>
+              <span className="text-2xl  font-bold px-2">
+                {filters.count2 && filters.count2 + " "}
+              </span>
+              {(filters.persona2
+                ? filters.persona2 + " Respondents "
+                : "Respondents ") +
+                (filters.role2 ? "who are " + filters.role2 : "") +
+                (filters.region2 ? " from " + filters.region2 : "")}
             </div>
           </div>
         </div>
-        {dataSet && (
-          <>
-            <div className="w-1/8">
-              <div className="flex items-center text-sm h-full">
-                <div className={"h-3 w-3 bg-[#0EA8DC] "}></div>
-                <span className="text-2xl  font-bold px-2">
-                  {filters.count2 && filters.count2 + " "}
-                </span>
-                {(filters.persona2
-                  ? filters.persona2 + " Respondents "
-                  : "Respondents ") +
-                  (filters.role2 ? "who are " + filters.role2 : "") +
-                  (filters.region2 ? " from " + filters.region2 : "")}
-              </div>
-            </div>
-          </>
-        )}
       </div>
     </div>
   );
