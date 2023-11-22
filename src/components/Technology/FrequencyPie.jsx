@@ -8,38 +8,6 @@ export default function TechFrequencyPie({
   titleColor,
   dataSet,
 }) {
-  // console.log({ dataSet, tech });
-  //   const [dataSet, setDataSet] = useState(
-  //     data.choices.map((el) => {
-  //       let tempDatum = { choice: el, score: data[el].all ? data[el].all : 0 };
-  //       return tempDatum;
-  //     })
-  //   );
-
-  //   useEffect(() => {
-  //     console.log({ selectedPersona, dataSet });
-  //   }, [selectedPersona]);
-
-  //   useState(() => {
-  //     console.log("pie");
-  //     let tempData;
-  //     if (!selectedPersona) {
-  //       tempData = data.choices.map((el) => {
-  //         let tempDatum = { choice: el, score: data[el].all ? data[el].all : 0 };
-  //         return tempDatum;
-  //       });
-  //     } else
-  //       tempData = data.choices.map((el) => {
-  //         let tempDatum = {
-  //           choice: el,
-  //           score: data[el][selectedPersona] ? data[el][selectedPersona] : 0,
-  //         };
-  //         return tempDatum;
-  //       });
-  //     console.log({ tempData });
-  //     setDataSet(tempData);
-  //   }, [selectedPersona]);
-
   const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
 
   const labelStyle = {
@@ -48,7 +16,7 @@ export default function TechFrequencyPie({
   };
 
   return (
-    <div>
+    <div className="h-[250px] flex flex-col justify-between">
       <div className="w-[200px]  h-[200px]">
         <ResponsiveContainer>
           <PieChart
@@ -77,23 +45,12 @@ export default function TechFrequencyPie({
                 />
               ))}
             </Pie>
-            {/* <Pie
-                    data={data02}
-                    dataKey="value"
-                    nameKey="name"
-                    cx="50%"
-                    cy="50%"
-                    innerRadius={60}
-                    outerRadius={80}
-                    fill="#82ca9d"
-                    label
-                  /> */}
           </PieChart>
         </ResponsiveContainer>
       </div>
       <div className="flex items-center gap-2">
         <div className="w-3 h-3" style={{ backgroundColor: titleColor }}></div>
-        <div className=" lg:text-center text-[#0E6AAD] font-semibold">
+        <div className=" lg:text-center text-[#0E6AAD] text-xs font-semibold w-40">
           {title}
         </div>
       </div>

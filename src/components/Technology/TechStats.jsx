@@ -16,7 +16,11 @@ import {
 } from "recharts";
 import TechFrequencyPie from "./FrequencyPie";
 import { tidy, groupBy, summarize, mean, count } from "@tidyjs/tidy";
-import { getPercentOf, getAverages } from "../Utils.jsx/Functions";
+import {
+  getPercentOf,
+  getAverages,
+  filterByItemAndQuestion,
+} from "../Utils.jsx/Functions";
 import TableRow from "./TableRow";
 
 export default function TechStats({
@@ -124,16 +128,6 @@ export default function TechStats({
       return temp;
     });
     return tempPersonas;
-  }
-
-  function filterByItemAndQuestion(itemName, itemValue, arr, question) {
-    if (itemValue == false) return arr;
-    let tempFiltered = arr.filter(
-      (arrItem) => arrItem[itemName] == itemValue && arrItem.title == question
-    );
-    return tempFiltered.map((el) => {
-      return { ...el, audience: itemValue };
-    });
   }
 
   function getFilteredItems(itemList, itemName, arr) {
@@ -355,7 +349,7 @@ export default function TechStats({
       filterTwo: filteredData2,
     };
     setFilterData(tempFilteredSets);
-    console.log({ tempFilteredSets });
+    // console.log({ tempFilteredSets });
 
     filteredData = getAverages(filteredData);
     filteredData2 = getAverages(filteredData2);
@@ -379,7 +373,7 @@ export default function TechStats({
       }
       return el;
     });
-    console.log({ tempData });
+    // console.log({ tempData });
     setDataSet(tempData);
     // setFilters(tempFilters);
   }
@@ -577,7 +571,13 @@ export default function TechStats({
                   dataSet={filteredFrequencies.frequency1}
                   colorArr={colorArr}
                   tech={tech}
-                  title="Filter 1"
+                  title={
+                    (filters.persona
+                      ? filters.persona + " Respondents "
+                      : "Respondents ") +
+                    (filters.role ? "who are " + filters.role : "") +
+                    (filters.region ? " from " + filters.region : "")
+                  }
                   titleColor={FILTER1COLOR}
                 />
               )}
@@ -588,7 +588,13 @@ export default function TechStats({
                   dataSet={filteredFrequencies.frequency2}
                   colorArr={colorArr}
                   tech={tech}
-                  title="Filter 2"
+                  title={
+                    (filters.persona2
+                      ? filters.persona2 + " Respondents "
+                      : "Respondents ") +
+                    (filters.role2 ? "who are " + filters.role2 : "") +
+                    (filters.region2 ? " from " + filters.region2 : "")
+                  }
                   titleColor={FILTER2COLOR}
                 />
               )}
@@ -672,63 +678,7 @@ export default function TechStats({
                     </td>
                   </tr>
                 )}
-                {/* {filterData &&
-                  filterData.filterOne.length > 0 &&
-                  currentTab && (
-                    <tr>
-                      <td>
-                        {" "}
-                        <div
-                          className="w-3 h-3 "
-                          style={{ backgroundColor: FILTER1COLOR }}
-                        ></div>
-                      </td>
-                      <td>
-                        {" "}
-                        {(filters.persona
-                          ? filters.persona + " Respondents "
-                          : "Respondents ") +
-                          (filters.role ? "who are " + filters.role : "") +
-                          (filters.region ? " from " + filters.region : "")}
-                      </td>
-                      <td>
-                        {
-                          getAverages(
-                            filterData.filterOne.filter((datum) => {
-                              //   console.log({ currentTab, datum });
-                              return datum.title == currentTab;
-                            })
-                          )[0].value
-                        }
-                      </td>
-                      <td>
-                        {getPercentOf(
-                          "lte",
-                          filterData.filterOne.filter((datum) => {
-                            //   console.log({ currentTab, datum });
-                            return datum.title == currentTab;
-                          })
-                        ) + "%"}
-                      </td>
-                      <td>
-                        {getPercentOf(
-                          "gte",
-                          filterData.filterOne.filter((datum) => {
-                            //   console.log({ currentTab, datum });
-                            return datum.title == currentTab;
-                          })
-                        ) + "%"}
-                      </td>
-                      <td>
-                        {
-                          filterData.filterOne.filter((datum) => {
-                            //   console.log({ currentTab, datum });
-                            return datum.title == currentTab;
-                          }).length
-                        }
-                      </td>
-                    </tr>
-                  )} */}
+
                 {filterData && filterData.filterOne.length && (
                   <TableRow
                     title={
@@ -767,7 +717,7 @@ export default function TechStats({
                       rawData,
                       currentTab
                     );
-                    console.log({ currentList });
+
                     return (
                       <TableRow
                         key={"tr_" + item}
@@ -788,7 +738,7 @@ export default function TechStats({
                       rawData,
                       currentTab
                     );
-                    console.log({ currentList });
+
                     return (
                       <TableRow
                         key={"tr_" + item}
@@ -809,7 +759,7 @@ export default function TechStats({
                       rawData,
                       currentTab
                     );
-                    console.log({ currentList });
+
                     return (
                       <TableRow
                         key={"tr_" + item}

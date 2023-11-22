@@ -1,4 +1,11 @@
 import React, { useState, useEffect } from "react";
+import {
+  getCategoryBreakout,
+  ALLCOLOR,
+  FILTER1COLOR,
+  FILTER2COLOR,
+} from "../Utils.jsx/Functions";
+
 import { tidy, groupBy, summarize, mean } from "@tidyjs/tidy";
 import {
   ResponsiveContainer,
@@ -9,6 +16,7 @@ import {
   PolarRadiusAxis,
   Legend,
 } from "recharts";
+import PillarOverview from "./PillarOverview";
 // import { divide } from "lodash";
 // import { getLinearProgressUtilityClass } from "@mui/material";
 
@@ -28,10 +36,11 @@ export default function ModalCategories({
   roles,
   regions,
   categories,
+  categoryBreakout,
 }) {
   const [localData, setLocalData] = useState();
   const [localFilters, setLocalFilters] = useState(filters);
-  const [currentTab, setCurrentTab] = useState("all");
+  const [currentTab, setCurrentTab] = useState();
   const [filterOne, setFilterOne] = useState();
   const [filterTwo, setFilterTwo] = useState();
   const [tabIndex, setTabIndex] = useState();
@@ -110,29 +119,13 @@ export default function ModalCategories({
   }
 
   useEffect(() => {
-    let tempData = tidy(
-      dataSet,
-      groupBy(
-        ["category"],
-        [
-          summarize({
-            value: mean(keyVal),
-            value2: mean(keyVal2),
-            value3: mean(keyVal3),
-          }),
-        ]
-      )
-    );
-    tempData = tempData.map((el) => {
-      if (el.value != undefined) el.value = Math.floor(el.value * 10) / 10;
-      if (el.value2 != undefined) el.value2 = Math.floor(el.value2 * 10) / 10;
-      if (el.value3 != undefined) el.value3 = Math.floor(el.value3 * 10) / 10;
-      return el;
-    });
+    let tempData = getCategoryBreakout(dataSet);
 
     setLocalData(tempData);
+    setCurrentTab(tempData[0].category);
+    setTabIndex(0);
     const highLowDataSet = createDataSet();
-    // console.log({ highLowDataSet });
+
     setHighLowVals(highLowDataSet);
   }, [dataSet]);
 
@@ -148,34 +141,7 @@ export default function ModalCategories({
     }
   }, [filters]);
 
-  //   useEffect(() => {
-  //     setCount((prev) => prev + 1);
-  //   }, [currentTab]);
-
-  //   useEffect(() => {
-  //     if (currentTab == "all") return;
-  //     let tempData = rawData.filter((el) => {
-  //       return el.category == currentTab;
-  //     });
-  //     tempData = tidy(
-  //       tempData,
-  //       groupBy(
-  //         ["response_id"],
-  //         [
-  //           summarize({
-  //             value: mean("score"),
-  //           }),
-  //         ]
-  //       )
-  //     );
-  //     let percent =
-  //       (tempData.filter((el) => el.value >= 4).length / tempData.length) * 100;
-  //     console.log({ percent });
-  //     console.log({ tempData });
-  //   }, [currentTab]);
   function runLocalFilters(filterSet, filterName) {
-    // console.log({ rawData });
-    // console.log({ filterSet });
     let filteredData = [...rawData];
     let filteredData2 = [...rawData];
     if (filterSet.persona)
@@ -227,69 +193,22 @@ export default function ModalCategories({
           (tempData.filter((el) => el.value <= 2).length / tempData.length) *
           100);
 
-    // console.log({ percent });
-    // console.log({ tempData });
     return Math.floor(percent * 10) / 10;
   }
 
   return (
     <>
-      <div className="min-h-[400px] min-w-[400px] h-[400px]">
-        {localData && (
-          <ResponsiveContainer>
-            <RadarChart
-              outerRadius={90}
-              width="100%"
-              height="100%"
-              data={localData}
-            >
-              <PolarGrid />
-              <PolarAngleAxis
-                dataKey="category"
-                tick={{ fontSize: 10 }}
-                width={70}
-              />
-              <PolarRadiusAxis angle={30} domain={[0, 5]} />
-              <Radar
-                //   name="All Respondents"
-                dataKey="value"
-                stroke={color}
-                strokeWidth={4}
-                fill={color}
-                fillOpacity={0.2}
-              />
-              <Radar
-                //   name="All Respondents"
-                dataKey="value2"
-                stroke={color2}
-                fill={color2}
-                strokeWidth={4}
-                fillOpacity={0.2}
-              />
-              <Radar
-                //   name="All Respondents"
-                dataKey="value3"
-                stroke={color3}
-                fill={color3}
-                strokeWidth={4}
-                fillOpacity={0.2}
-              />
-            </RadarChart>
-          </ResponsiveContainer>
-        )}
-      </div>
+      <PillarOverview
+        dataSet={dataSet}
+        ALLCOLOR={ALLCOLOR}
+        FILTER1COLOR={FILTER1COLOR}
+        FILTER2COLOR={FILTER2COLOR}
+        categoryBreakout={categoryBreakout}
+      />
       {type == "category" && localData && currentTab && count + 1 > 0 && (
         <>
           <div className="w-screen">
             <div className="tabs min-w-full">
-              <a
-                className={
-                  "tab tab-lifted " + (currentTab == "all" && "tab-active")
-                }
-                onClick={() => setCurrentTab("all")}
-              >
-                All Pillars
-              </a>
               {localData.map((datum, index) => {
                 return (
                   <a
@@ -307,7 +226,6 @@ export default function ModalCategories({
                   </a>
                 );
               })}
-              {/* <span className="grow border-b border-base-300"></span> */}
             </div>
           </div>
           {currentTab == "all" && (
@@ -424,7 +342,7 @@ export default function ModalCategories({
                       {getPercentOf("lte", rawData, currentTab) + "%"}
                     </td>
 
-                    <th>{demoData.length}</th>
+                    <td>{demoData.length}</td>
                   </tr>
                   {localData[tabIndex].value2 != undefined &&
                     filterOne != undefined && (
