@@ -44,7 +44,7 @@ export default function MaturityBarGraph({
   //     }
   //   }, []);
 
-  console.log({ dataSet });
+  // console.log({ dataSet });
 
   // useEffect(() => {
   //   handleParent(selectedPersona);

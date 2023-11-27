@@ -3,63 +3,18 @@ import { useParams } from "react-router-dom";
 import { tidy, groupBy, summarize, mean, TMath, count } from "@tidyjs/tidy";
 import { ALLCOLOR, FILTER1COLOR, FILTER2COLOR } from "../Utils.jsx/Functions";
 import TechStats from "./TechStats";
-import {
-  BarChart,
-  Bar,
-  Rectangle,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
-  Cell,
-  Line,
-  ComposedChart,
-  Label,
-  LabelList,
-} from "recharts";
+import LoadSpinner from "../Utils.jsx/LoadSpinner";
 
 export default function Technology({ TFID }) {
   const [rawData, setRawData] = useState();
-  const [initialData, setInitialData] = useState();
   const [dataSet, setDataSet] = useState();
-  const [dataSet2, setDataSet2] = useState();
-  const [personas2, setPersonas2] = useState();
-  const [roles2, setRoles2] = useState();
-  const [regions2, setRegions2] = useState();
-  const [currentQuestion, setCurrentQuestion] = useState();
-  const [demoData, setDemoData] = useState();
-  const [localTFID, setLocalTFID] = useState();
-
-  const [filters2, setFilters2] = useState({
-    persona: false,
-    role: false,
-    region: false,
-  });
-
-  const [persona, setPersona] = useState();
-  const [role, setRole] = useState();
-  const [region, setRegion] = useState();
-  const [filterArray, setFilterArray] = useState();
   const routeParams = useParams();
   const [personas, setPersonas] = useState();
   const [roles, setRoles] = useState();
   const [regions, setRegions] = useState();
   const [categories, setCategories] = useState();
-  const [category, setCategory] = useState();
-  const [currentModal, setCurrentModal] = useState();
+
   const [frequencies, setFrequencies] = useState();
-  const [filters, setFilters] = useState({
-    persona: false,
-    role: false,
-    region: false,
-    count: false,
-    persona2: false,
-    role2: false,
-    region2: false,
-    count2: false,
-  });
 
   const requestOptions = {
     method: "GET",
@@ -136,7 +91,7 @@ export default function Technology({ TFID }) {
             )
             .trim(),
         };
-      }, []);
+      });
 
       let tempFrequencies = joinedDataArr.filter((el) =>
         el.formRef.includes("frequency")
@@ -146,35 +101,29 @@ export default function Technology({ TFID }) {
         (el) => !el.formRef.includes("frequency")
       );
 
-      //   console.log({ tempFrequencies, ratings });
-      //   console.log(data.personas);
-
+      let tempDataSet = getAverages(ratings);
+      setDataSet(tempDataSet);
       setPersonas(data.personas);
       setRegions(data.regions);
       setRoles(data.roles);
-      setPersonas2(data.personas);
-      setRegions2(data.regions);
-      setRoles2(data.roles);
       setCategories(data.categories.map((el) => el.trim()));
-      let tempDataSet = getAverages(ratings);
-
       setFrequencies(tempFrequencies);
-      //   console.log({ tempDataSet });
-      setDataSet(tempDataSet);
       setRawData(ratings);
-      setInitialData(tempDataSet);
-      setDemoData(data.demoData);
     });
   }, []);
 
   return (
     <>
       <div className="">
+        {!dataSet && (
+          <div className="">
+            <LoadSpinner />
+          </div>
+        )}
         {dataSet &&
           rawData &&
           frequencies != undefined &&
           personas != undefined &&
-          demoData &&
           categories &&
           categories.map((el, index) => {
             let thisData = rawData.filter((datum) => datum.category == el);
@@ -195,7 +144,6 @@ export default function Technology({ TFID }) {
                   rawPersonas={personas}
                   rawRegions={regions}
                   rawRoles={roles}
-                  localDemoData={demoData}
                 />
               );
             else return <></>;

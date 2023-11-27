@@ -22,7 +22,6 @@ export default function Overview({
   setCurrentModal,
   categoryBreakout,
   currentModal,
-  demoData,
   filters,
   rawData,
   regions,
@@ -38,12 +37,11 @@ export default function Overview({
         <div className="h-full border-y-2 mb-10">
           <QuestionBreakout
             currentModal={currentModal}
-            demoData={demoData}
             filters={filters}
             regions={regions}
             roles={roles}
             personas={personas}
-            rawData={rawData}
+            rawData={rawData.filter((el) => el.formRef == currentModal.formRef)}
             setCurrentModal={setCurrentModal}
             dataSet={dataSet}
           />

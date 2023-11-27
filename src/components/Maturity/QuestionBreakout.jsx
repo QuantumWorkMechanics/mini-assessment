@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import { getAverages } from "../Utils.jsx/Functions";
 import { ALLCOLOR, FILTER1COLOR, FILTER2COLOR } from "../Utils.jsx/Functions";
 import ModalBar from "./ModalBar";
+import { tidy, distinct } from "@tidyjs/tidy";
 
 export default function QuestionBreakout({
   currentModal,
-  demoData,
   filters,
   regions,
   roles,
@@ -73,7 +73,9 @@ export default function QuestionBreakout({
                             )[0].value
                           }
                         </td>
-                        <td>{demoData.length}</td>
+                        <td>
+                          {tidy(rawData, distinct(["response_id"])).length}
+                        </td>
                       </tr>
                       <tr>
                         <td className="flexitems-center ">

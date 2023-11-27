@@ -1,53 +1,32 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { tidy, groupBy, summarize, mean, TMath } from "@tidyjs/tidy";
 import {
   getCategoryBreakout,
   getAverages,
   ALLCOLOR,
   FILTER1COLOR,
   FILTER2COLOR,
+  runDynamicFilter,
+  addCountsToFilters,
+  addAndAverageFilteredData,
 } from "../Utils.jsx/Functions";
-import MaturityBarGraph from "./MABar";
-import {
-  BarChart,
-  Bar,
-  Rectangle,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
-  Cell,
-  Line,
-  ComposedChart,
-  Label,
-  LabelList,
-} from "recharts";
-import HighLow from "./HighLow";
-import RadarMaturity from "./RadarMaturity";
-import ModalBar from "./ModalBar";
+import { tidy, distinct } from "@tidyjs/tidy";
 import ModalCategories from "./ModalCategories";
 import Controls from "./Controls";
 import Overview from "./Overview";
 import HighOrLow from "./HighOrLow";
-import QuestionModal from "./QuestionModal";
 import Technology from "../Technology/Technology";
+import LoadSpinner from "../Utils.jsx/LoadSpinner";
 
 export default function Maturity() {
   const [rawData, setRawData] = useState();
   const [initialData, setInitialData] = useState();
   const [dataSet, setDataSet] = useState();
-
   const [personas2, setPersonas2] = useState();
   const [roles2, setRoles2] = useState();
   const [regions2, setRegions2] = useState();
-
-  const [demoData, setDemoData] = useState();
   const [maSubsection, setmaSubsection] = useState("overview");
   const [categoryBreakout, setCategoryBreakout] = useState();
-
   const routeParams = useParams();
   const [personas, setPersonas] = useState();
   const [roles, setRoles] = useState();
@@ -146,16 +125,15 @@ export default function Maturity() {
       tempDataSet.map((el) => {
         el.value = Math.floor(el.value * 10) / 10;
       });
-      let tempCount = data.demoData.length;
 
       let tempFilter = { ...filters };
-      tempFilter.count = tempCount;
-      tempFilter.count2 = tempCount;
+      tempFilter.count = tidy(joinedDataArr, distinct("response_id")).length;
+      tempFilter.count2 = tidy(joinedDataArr, distinct("response_id")).length;
       setFilters(tempFilter);
       setDataSet(tempDataSet);
       setRawData(joinedDataArr);
       setInitialData(tempDataSet);
-      setDemoData(data.demoData);
+
       let tempCat = getCategoryBreakout(tempDataSet);
 
       setCategoryBreakout(tempCat);
@@ -170,113 +148,65 @@ export default function Maturity() {
     runFilters(tempFilters);
   }
 
-  function getFilterCounts(filterSet) {
-    const demoData2 = demoData.map((el) => {
-      el.persona = el.persona.replace(
-        ": (Executive, Business Development, Marketing or Communication)",
-        ""
-      );
-      return el;
-    });
+  //   function getFilterCounts(filterSet) {
+  //     const demoData2 = demoData.map((el) => {
+  //       el.persona = el.persona.replace(
+  //         ": (Executive, Business Development, Marketing or Communication)",
+  //         ""
+  //       );
+  //       return el;
+  //     });
 
-    let filteredData = [...demoData2];
-    let filteredData2 = [...demoData2];
-    if (filterSet.persona)
-      filteredData = filteredData.filter(
-        (el) => el.persona == filterSet.persona
-      );
-    if (filterSet.role)
-      filteredData = filteredData.filter((el) => el.role == filterSet.role);
-    if (filterSet.region)
-      filteredData = filteredData.filter((el) => el.region == filterSet.region);
+  //     const filterList = ["persona", "role", "region"];
+  //     let tempFilteredData = runDynamicFilter(filterList, filterSet, demoData2);
+  //     let tempFilters = { ...filterSet };
 
-    if (filterSet.persona2)
-      filteredData2 = filteredData2.filter(
-        (el) => el.persona == filterSet.persona2
-      );
-    if (filterSet.role2)
-      filteredData2 = filteredData2.filter((el) => el.role == filterSet.role2);
-    if (filterSet.region2)
-      filteredData2 = filteredData2.filter(
-        (el) => el.region == filterSet.region2
-      );
-    let tempFilters = { ...filterSet };
-    let count1 = filteredData.length;
-    let count2 = filteredData2.length;
+  //     if (filterSet.persona || filterSet.role || filterSet.region) {
+  //       tempFilters.count = tempFilteredData.filterOne.length;
+  //     }
+  //     if (filterSet.persona2 || filterSet.role2 || filterSet.region2) {
+  //       tempFilters.count2 = tempFilteredData.filterTwo.length;
+  //     }
 
-    if (filterSet.persona || filterSet.role || filterSet.region) {
-      tempFilters.count = count1;
-    }
-
-    if (filterSet.persona2 || filterSet.role2 || filterSet.region2) {
-      tempFilters.count2 = count2;
-    }
-    setFilters(tempFilters);
-  }
+  //     setFilters(tempFilters);
+  //   }
 
   async function runFilters(filterSet) {
-    let filteredData = [...rawData];
-    let filteredData2 = [...rawData];
-    if (filterSet.persona)
-      filteredData = filteredData.filter(
-        (el) => el.persona == filterSet.persona
-      );
-    if (filterSet.role)
-      filteredData = filteredData.filter((el) => el.role == filterSet.role);
-    if (filterSet.region)
-      filteredData = filteredData.filter((el) => el.region == filterSet.region);
+    let tempFilterSet = { ...filterSet };
+    let filterList = ["persona", "role", "region"];
+    const tempFilter = runDynamicFilter(filterList, filterSet, rawData);
+    console.log({ tempFilter });
+    const filteredData = getAverages(tempFilter.filterOne);
+    const filteredData2 = getAverages(tempFilter.filterTwo);
+    tempFilterSet = addCountsToFilters(tempFilterSet, tempFilter);
 
-    if (filterSet.persona2)
-      filteredData2 = filteredData2.filter(
-        (el) => el.persona == filterSet.persona2
-      );
-    if (filterSet.role2)
-      filteredData2 = filteredData2.filter((el) => el.role == filterSet.role2);
-    if (filterSet.region2)
-      filteredData2 = filteredData2.filter(
-        (el) => el.region == filterSet.region2
-      );
+    // let tempData = [...initialData];
+    // if (filterSet.persona || filterSet.role || filterSet.region) {
+    //   tempData = addFilteredData("value2", filteredData, tempData);
+    // }
 
-    filteredData = getAverages(filteredData);
-    filteredData2 = getAverages(filteredData2);
-    getFilterCounts(filterSet);
-
-    let tempData = [...initialData];
-    if (filterSet.persona || filterSet.role || filterSet.region) {
-      tempData = addFilteredData("value2", filteredData, tempData);
-    }
-
-    if (filterSet.persona2 || filterSet.role2 || filterSet.region2) {
-      tempData = addFilteredData("value3", filteredData2, tempData);
-    }
-    tempData.map((el) => {
-      if (el.value2) {
-        el.value2 = Math.floor(el.value2 * 10) / 10;
-      }
-      if (el.value3) {
-        el.value3 = Math.floor(el.value3 * 10) / 10;
-      }
-      return el;
-    });
+    // if (filterSet.persona2 || filterSet.role2 || filterSet.region2) {
+    //   tempData = addFilteredData("value3", filteredData2, tempData);
+    // }
+    // tempData.map((el) => {
+    //   if (el.value2) {
+    //     el.value2 = Math.floor(el.value2 * 10) / 10;
+    //   }
+    //   if (el.value3) {
+    //     el.value3 = Math.floor(el.value3 * 10) / 10;
+    //   }
+    //   return el;
+    // });
+    let tempData = addAndAverageFilteredData(
+      initialData,
+      filterSet,
+      filteredData,
+      filteredData2
+    );
     setDataSet(tempData);
     let tempCat = getCategoryBreakout(tempData);
     setCategoryBreakout(tempCat);
-    // setFilters(tempFilters);
-  }
-
-  function addFilteredData(keyName, dataToAdd, initialDataSet) {
-    let dataArr = [...initialDataSet];
-
-    return dataArr.map((el) => {
-      let thisValue = dataToAdd.filter((datum) => {
-        return datum.formRef == el.formRef;
-      });
-
-      return {
-        ...el,
-        [keyName]: thisValue[0] != undefined ? thisValue[0].value : null,
-      };
-    });
+    setFilters(tempFilterSet);
   }
 
   function handleClearFilters(filter = "") {
@@ -284,31 +214,10 @@ export default function Maturity() {
     tempFilters["persona" + filter] = false;
     tempFilters["region" + filter] = false;
     tempFilters["role" + filter] = false;
-    tempFilters["count" + filter] = demoData.length;
+    tempFilters["count" + filter] = false;
     setFilters(tempFilters);
 
     runFilters(tempFilters);
-  }
-
-  function handleClearOneFilter(filterName) {
-    let tempFilters = { ...filters };
-    tempFilters[filterName] = false;
-    setFilters(tempFilters);
-    runFilters(tempFilters);
-  }
-
-  function roundAverages(arr) {
-    let newArr = arr.map((el) => {
-      if (el.value2) {
-        el.value2 = Math.floor(el.value2 * 10) / 10;
-      }
-      if (el.value3) {
-        el.value3 = Math.floor(el.value3 * 10) / 10;
-      }
-      return el;
-    });
-
-    return newArr;
   }
 
   return (
@@ -336,6 +245,7 @@ export default function Maturity() {
           Technology
         </div>
       </div>
+      {!dataSet && <LoadSpinner />}
       {currentSection == "technology" && <Technology TFID={TFID} />}
       {currentSection == "maturity" && (
         <>
@@ -402,7 +312,6 @@ export default function Maturity() {
               setCurrentModal={setCurrentModal}
               categoryBreakout={categoryBreakout}
               currentModal={currentModal}
-              demoData={demoData}
               filters={filters}
               regions={regions}
               roles={roles}
@@ -433,20 +342,10 @@ export default function Maturity() {
               rawData={rawData}
             />
           )}
-          <QuestionModal
-            currentModal={currentModal}
-            demoData={demoData}
-            filters={filters}
-            regions={regions}
-            roles={roles}
-            personas={personas}
-            rawData={rawData}
-            setCurrentModal={setCurrentModal}
-          />
 
           {maSubsection == "pillar" && (
             <div className="w-full h-full ">
-              {dataSet && demoData && filters && rawData && (
+              {dataSet && filters && rawData && (
                 <ModalCategories
                   color2={FILTER1COLOR}
                   color={ALLCOLOR}
@@ -457,7 +356,6 @@ export default function Maturity() {
                   keyVal3="value3"
                   type="category"
                   filters={filters}
-                  demoData={demoData}
                   rawData={rawData}
                   personas={personas}
                   roles={roles}

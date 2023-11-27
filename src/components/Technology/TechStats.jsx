@@ -15,11 +15,16 @@ import {
   Label,
 } from "recharts";
 import TechFrequencyPie from "./FrequencyPie";
-import { tidy, groupBy, summarize, mean, count } from "@tidyjs/tidy";
+import { tidy, groupBy, summarize, mean, count, distinct } from "@tidyjs/tidy";
 import {
   getPercentOf,
   getAverages,
   filterByItemAndQuestion,
+  runDynamicFilter,
+  addFilteredData,
+  addCountsToFilters,
+  runFrequencyFilters,
+  addAndAverageFilteredData,
 } from "../Utils.jsx/Functions";
 import TableRow from "./TableRow";
 
@@ -32,37 +37,20 @@ export default function TechStats({
   rawPersonas,
   rawRegions,
   rawRoles,
-  localDemoData,
+
   tech,
 }) {
   const [rawData, setRawData] = useState();
   const [initialData, setInitialData] = useState();
   const [dataSet, setDataSet] = useState();
-  const [dataSet2, setDataSet2] = useState();
   const [personas2, setPersonas2] = useState();
   const [roles2, setRoles2] = useState();
   const [regions2, setRegions2] = useState();
-  const [currentQuestion, setCurrentQuestion] = useState();
-  const [demoData, setDemoData] = useState();
   const [filteredFrequencies, setFilteredFrequencies] = useState();
-
-  const [filters2, setFilters2] = useState({
-    persona: false,
-    role: false,
-    region: false,
-  });
   const [currentTab, setCurrentTab] = useState();
-  const [persona, setPersona] = useState();
-  const [role, setRole] = useState();
-  const [region, setRegion] = useState();
-  const [filterArray, setFilterArray] = useState();
-  //   const routeParams = useParams();
   const [personas, setPersonas] = useState();
   const [roles, setRoles] = useState();
   const [regions, setRegions] = useState();
-  const [categories, setCategories] = useState();
-  const [category, setCategory] = useState();
-  const [currentModal, setCurrentModal] = useState();
   const [questions, setQuestions] = useState();
   const [filterData, setFilterData] = useState();
   const [filters, setFilters] = useState({
@@ -86,9 +74,9 @@ export default function TechStats({
       setDataSet(tempDataSet);
     });
 
-    // console.log({ tempDataSet });
+    // console.log({ localDemoData });
 
-    setDemoData(localDemoData);
+    // setDemoData(localDemoData);
     setInitialData(tempDataSet);
 
     let tempPersonas = getLocalDemos(rawPersonas, "persona", data);
@@ -101,11 +89,13 @@ export default function TechStats({
     let tempRegions = getLocalDemos(rawRegions, "region", data);
     setRegions(tempRegions);
     setRegions2(tempRegions);
-    let tempCount = localDemoData.length;
+
+    // console.log({ newTempCount });
+    // let tempCount = localDemoData.length;
     // console.log({ tempCount });
     let tempFilter = { ...filters };
-    tempFilter.count = tempCount;
-    tempFilter.count2 = tempCount;
+    tempFilter.count = tidy(data, distinct(["response_id"])).length;
+    tempFilter.count2 = tidy(data, distinct(["response_id"])).length;
     const tempQuestions = getQuestions(data);
     setQuestions(tempQuestions);
     // console.log({ questions });
@@ -130,86 +120,30 @@ export default function TechStats({
     return tempPersonas;
   }
 
-  function getFilteredItems(itemList, itemName, arr) {
-    let tempItems = [];
-    let tempItem;
-    itemList.map((listItem) => {
-      tempItem = filterByItem(itemName, listItem, arr);
-      tempItems = [...tempItems, ...tempItem];
-    });
-    // console.log({ tempItems });
-    return tempItems;
-  }
+  //   function getFilteredItems(itemList, itemName, arr) {
+  //     let tempItems = [];
+  //     let tempItem;
+  //     itemList.map((listItem) => {
+  //       tempItem = filterByItem(itemName, listItem, arr);
+  //       tempItems = [...tempItems, ...tempItem];
+  //     });
+  //     // console.log({ tempItems });
+  //     return tempItems;
+  //   }
 
-  function getResponseNo(itemName, itemVal, arr) {
-    // console.log({ itemName, itemVal, arr });
-    let tempArr = arr.filter((el) => {
-      return el[itemName] == itemVal;
-    });
-    if (tempArr.length == 0) return tempArr.length;
-    tempArr = tidy(
-      tempArr,
-      groupBy(["response_id"], [summarize({ value: mean("score") })])
-    );
-    // console.log({ tempArr });
-    return tempArr.length;
-  }
-
-  function createDataSet(categories) {
-    let personaData = getItemValues(personas, "persona", categories, rawData);
-
-    let roleData = getItemValues(roles, "role", categories, rawData);
-
-    let regionData = getItemValues(regions, "region", categories, rawData);
-
-    let combined = [...personaData, ...roleData, ...regionData];
-
-    return combined;
-  }
-
-  function getItemValues(items, itemName, categories, dataArr) {
-    // console.log({ items, itemName, categories, dataArr });
-    // if (!items.isArray) return;
-    let tempArr = items.map((el, index) => {
-      let responseNo = getResponseNo(itemName, el, dataArr);
-      let tempItem = { audience: el, responseNo };
-      categories.map((cat) => {
-        let elData = dataArr.filter((datum) => {
-          //   console.log({ cat, itemName, el });
-          return datum.formRef == cat.formRef && datum[itemName] == el;
-        });
-        // console.log({ elData });
-        // let averages = elData.filter((datum2) => (datum2[itemName] = el));
-        let averages = tidy(
-          elData,
-          groupBy(
-            ["formRef", "title"],
-            [
-              summarize({
-                value: mean("score"),
-              }),
-            ]
-          )
-        );
-        tempItem = {
-          ...tempItem,
-          formRef: averages[0].formRef,
-          title: averages[0].title,
-        };
-        // console.log(averages);
-        tempItem.average = elData.length
-          ? Math.floor(averages[0].value * 10) / 10
-          : null;
-        tempItem.high = elData.length ? getPercentOf("gte", elData) : null;
-        tempItem.low = elData.length ? getPercentOf("lte", elData) : null;
-
-        return tempItem;
-      });
-      return tempItem;
-      //   console.log({ tempItem });
-    });
-    return tempArr;
-  }
+  //   function getResponseNo(itemName, itemVal, arr) {
+  //     // console.log({ itemName, itemVal, arr });
+  //     let tempArr = arr.filter((el) => {
+  //       return el[itemName] == itemVal;
+  //     });
+  //     if (tempArr.length == 0) return tempArr.length;
+  //     tempArr = tidy(
+  //       tempArr,
+  //       groupBy(["response_id"], [summarize({ value: mean("score") })])
+  //     );
+  //     // console.log({ tempArr });
+  //     return tempArr.length;
+  //   }
 
   function handleFilter(filterName, arr, setArr, operator = "toggle") {
     // console.log("I got clicked");
@@ -235,163 +169,33 @@ export default function TechStats({
     let tempFilters = { ...filters };
     tempFilters[filter] = value;
     setFilters(tempFilters);
-    // console.log({ tempFilters, regions });
-    // console.log({ filter });
+
     runFilters(tempFilters);
   }
 
-  function getFilterCounts(filterSet) {
-    const demoData2 = demoData.map((el) => {
-      el.persona = el.persona.replace(
-        ": (Executive, Business Development, Marketing or Communication)",
-        ""
-      );
-      return el;
-    });
-    // console.log({ demoData2 });
-    let filteredData = [...demoData2];
-    let filteredData2 = [...demoData2];
-    if (filterSet.persona)
-      filteredData = filteredData.filter(
-        (el) => el.persona == filterSet.persona
-      );
-    if (filterSet.role)
-      filteredData = filteredData.filter((el) => el.role == filterSet.role);
-    if (filterSet.region)
-      filteredData = filteredData.filter((el) => el.region == filterSet.region);
-
-    if (filterSet.persona2)
-      filteredData2 = filteredData2.filter(
-        (el) => el.persona == filterSet.persona2
-      );
-    if (filterSet.role2)
-      filteredData2 = filteredData2.filter((el) => el.role == filterSet.role2);
-    if (filterSet.region2)
-      filteredData2 = filteredData2.filter(
-        (el) => el.region == filterSet.region2
-      );
-    let tempFilters = { ...filterSet };
-    let count1 = filteredData.length;
-    let count2 = filteredData2.length;
-    // console.log({ filteredData, filteredData2, tempFilters });
-
-    if (filterSet.persona || filterSet.role || filterSet.region) {
-      tempFilters.count = count1;
-    }
-    // console.log({ filteredData2 });
-    if (filterSet.persona2 || filterSet.role2 || filterSet.region2) {
-      tempFilters.count2 = count2;
-    }
-    setFilters(tempFilters);
-  }
-
-  function runFrequencyFilters(filterSet) {
-    // console.log({ filterSet, frequencies });
-
-    let filteredData = [...frequencies];
-    let filteredData2 = [...frequencies];
-    if (filterSet.persona)
-      filteredData = filteredData.filter(
-        (el) => el.persona == filterSet.persona
-      );
-    if (filterSet.role)
-      filteredData = filteredData.filter((el) => el.role == filterSet.role);
-    if (filterSet.region)
-      filteredData = filteredData.filter((el) => el.region == filterSet.region);
-
-    if (filterSet.persona2)
-      filteredData2 = filteredData2.filter(
-        (el) => el.persona == filterSet.persona2
-      );
-    if (filterSet.role2)
-      filteredData2 = filteredData2.filter((el) => el.role == filterSet.role2);
-    if (filterSet.region2)
-      filteredData2 = filteredData2.filter(
-        (el) => el.region == filterSet.region2
-      );
-
-    let tempFreq = { frequency1: false, frequency2: false };
-    if (filterSet.persona || filterSet.role || filterSet.region) {
-      tempFreq.frequency1 = tidy(filteredData, count("answer"));
-    }
-    if (filterSet.persona2 || filterSet.role2 || filterSet.region2) {
-      tempFreq.frequency2 = tidy(filteredData2, count("answer"));
-    }
-
-    // console.log({ tempFreq });
-    setFilteredFrequencies(tempFreq);
-  }
-
   async function runFilters(filterSet) {
-    let filteredData = [...rawData];
-    let filteredData2 = [...rawData];
-    if (filterSet.persona)
-      filteredData = filteredData.filter(
-        (el) => el.persona == filterSet.persona
-      );
-    if (filterSet.role)
-      filteredData = filteredData.filter((el) => el.role == filterSet.role);
-    if (filterSet.region)
-      filteredData = filteredData.filter((el) => el.region == filterSet.region);
+    const filterList = ["persona", "role", "region"];
+    let tempFilters = { ...filterSet };
 
-    if (filterSet.persona2)
-      filteredData2 = filteredData2.filter(
-        (el) => el.persona == filterSet.persona2
-      );
-    if (filterSet.role2)
-      filteredData2 = filteredData2.filter((el) => el.role == filterSet.role2);
-    if (filterSet.region2)
-      filteredData2 = filteredData2.filter(
-        (el) => el.region == filterSet.region2
-      );
-    let tempFilteredSets = {
-      filterOne: filteredData,
-      filterTwo: filteredData2,
-    };
+    let tempFilteredSets = runDynamicFilter(filterList, filterSet, rawData);
     setFilterData(tempFilteredSets);
-    // console.log({ tempFilteredSets });
 
-    filteredData = getAverages(filteredData);
-    filteredData2 = getAverages(filteredData2);
+    tempFilters = addCountsToFilters(tempFilters, tempFilteredSets);
+    setFilters(tempFilters);
 
-    getFilterCounts(filterSet);
-    runFrequencyFilters(filterSet);
+    let tempFreq = runFrequencyFilters(filterSet, filterList, frequencies);
+    setFilteredFrequencies(tempFreq);
 
-    let tempData = [...initialData];
-    if (filterSet.persona || filterSet.role || filterSet.region) {
-      tempData = addFilteredData("value2", filteredData, tempData);
-    }
-    if (filterSet.persona2 || filterSet.role2 || filterSet.region2) {
-      tempData = addFilteredData("value3", filteredData2, tempData);
-    }
-    tempData.map((el) => {
-      if (el.value2) {
-        el.value2 = Math.floor(el.value2 * 10) / 10;
-      }
-      if (el.value3) {
-        el.value3 = Math.floor(el.value3 * 10) / 10;
-      }
-      return el;
-    });
-    // console.log({ tempData });
+    const filteredData = getAverages(tempFilteredSets.filterOne);
+    const filteredData2 = getAverages(tempFilteredSets.filterTwo);
+
+    let tempData = addAndAverageFilteredData(
+      initialData,
+      filterSet,
+      filteredData,
+      filteredData2
+    );
     setDataSet(tempData);
-    // setFilters(tempFilters);
-  }
-
-  function addFilteredData(keyName, dataToAdd, initialDataSet) {
-    let dataArr = [...initialDataSet];
-    // console.log({ dataToAdd });
-    return dataArr.map((el) => {
-      let thisValue = dataToAdd.filter((datum) => {
-        // console.log({ datum, el });
-        return datum.formRef == el.formRef;
-      });
-
-      return {
-        ...el,
-        [keyName]: thisValue[0] != undefined ? thisValue[0].value : null,
-      };
-    });
   }
 
   function handleClearFilters(filter = "") {
@@ -405,36 +209,6 @@ export default function TechStats({
     runFilters(tempFilters);
   }
 
-  function handleClearOneFilter(filterName) {
-    let tempFilters = { ...filters };
-    tempFilters[filterName] = false;
-    setFilters(tempFilters);
-    runFilters(tempFilters);
-  }
-
-  function handleStats() {
-    let questions = tidy(rawData, count("formRef"));
-    let statistics = createDataSet(questions);
-
-    // console.log({ questions, statistics });
-  }
-
-  function roundAverages(arr) {
-    let newArr = arr.map((el) => {
-      //   console.log({ el });
-      if (el.value2) {
-        el.value2 = Math.floor(el.value2 * 10) / 10;
-      }
-      if (el.value3) {
-        el.value3 = Math.floor(el.value3 * 10) / 10;
-      }
-      return el;
-    });
-    // console.log({ newArr });
-    return newArr;
-  }
-
-  //   console.log({ data, frequencies });
   return (
     <div className="">
       <Controls
@@ -464,13 +238,6 @@ export default function TechStats({
             >
               {tech}
             </h3>
-            {/* <button
-              className="bg-blue-400 text-white p-2 rounded"
-              type="button"
-              onClick={handleStats}
-            >
-              Show Statistics
-            </button> */}
           </div>
           <div className="flex items-center">
             <div className="m-14 h-80 w-1/3">
@@ -495,42 +262,16 @@ export default function TechStats({
                     tickCount={6}
                     tick={{ fontSize: 10 }}
                   />
-                  <XAxis
-                    //   dataKey="title"
-                    //   label="none"
-                    type="category"
-                    tick={false}
-                    scale="band"
-                  ></XAxis>
-                  {/* <Tooltip /> */}
-                  {/* <Legend /> */}
-                  {/* <LabelList /> */}
-                  <Bar
-                    // isAnimationActive={false}
-                    // data={initialData}
-                    // fill={"#0E6AAD"}
-                    label={"title"}
-                    //   legend
-                    //   name={"title"}
-                    dataKey={"value"}
-                    fill={ALLCOLOR}
-                    onClick={(e) => {
-                      //   console.log({ e });
-                      setCurrentModal(e.payload);
-                      // console.log({ e });
-                      document.getElementById("question-modal").showModal();
-                    }}
-                  >
+                  <XAxis type="category" tick={false} scale="band"></XAxis>
+
+                  <Bar label={"title"} dataKey={"value"} fill={ALLCOLOR}>
                     {" "}
                     <LabelList
-                      // angle="90"
                       dataKey="title"
                       fill={"#0E6AAD"}
                       font="Noto Sans"
                       style={{ fontSize: "11pt" }}
-                      // style={screen.width > 550 ? labelStyle : mobileStyle}
                       width={80}
-                      // content={<RenderLabel />}
                       position="bottom"
                     />
                   </Bar>

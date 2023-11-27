@@ -6,7 +6,7 @@ import {
   FILTER2COLOR,
 } from "../Utils.jsx/Functions";
 
-import { tidy, groupBy, summarize, mean } from "@tidyjs/tidy";
+import { tidy, groupBy, summarize, mean, distinct } from "@tidyjs/tidy";
 import {
   ResponsiveContainer,
   RadarChart,
@@ -30,7 +30,6 @@ export default function ModalCategories({
   color3,
   type,
   filters,
-  demoData,
   rawData,
   personas,
   roles,
@@ -140,6 +139,8 @@ export default function ModalCategories({
       setLocalFilters(filters);
     }
   }, [filters]);
+
+  console.log({ rawData });
 
   function runLocalFilters(filterSet, filterName) {
     let filteredData = [...rawData];
@@ -257,7 +258,7 @@ export default function ModalCategories({
                     <th>{localData[2].value}</th>
                     <th>{localData[3].value}</th>
                     <th>{localData[4].value}</th>
-                    <th>{demoData.length}</th>
+                    <th>{tidy(rawData, distinct("response_id")).length}</th>
                   </tr>
                   {localData[0].value2 != undefined && (
                     <tr>
@@ -342,7 +343,7 @@ export default function ModalCategories({
                       {getPercentOf("lte", rawData, currentTab) + "%"}
                     </td>
 
-                    <td>{demoData.length}</td>
+                    <td>{tidy(rawData, distinct(["response_id"])).length}</td>
                   </tr>
                   {localData[tabIndex].value2 != undefined &&
                     filterOne != undefined && (
