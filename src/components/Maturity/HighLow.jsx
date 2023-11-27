@@ -71,7 +71,7 @@ export default function HighLow({
                     bottom: 5,
                   }}
                 >
-                  <CartesianGrid strokeDasharray="3 3" />
+                  <CartesianGrid stroke="#f5f5f5" />
                   <YAxis
                     axisLine={false}
                     type="number"
