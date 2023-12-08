@@ -35,24 +35,23 @@ export default function Results({ questionList, categories, setSeeResult }) {
   }
 
   useEffect(() => {
-    // let tempResults = { ...categories };
-    // let tempCurrent = 0;
-    // let tempDesired = 0;
+    let tempResults = { ...categories };
+    let categoryCurrent;
+    let categoryDesired;
     // let tempSlidesArr = ["diamond"];
 
-    // categoryList.map((selectedCategory) => {
-    //   if (categories[selectedCategory]) {
-    //     tempCurrent = findAvg(selectedCategory, "current", questionList);
-    //     tempDesired = findAvg(selectedCategory, "desired", questionList);
-    //     tempResults[selectedCategory] = {
-    //       current: tempCurrent,
-    //       desired: tempDesired,
-    //     };
-    //     tempSlidesArr.push(selectedCategory);
-    //   }
+    categoryList.map((selectedCategory) => {
+      if (categories[selectedCategory]) {
+        categoryCurrent = findAvg(selectedCategory, "current", questionList);
+        categoryDesired = findAvg(selectedCategory, "desired", questionList);
+        tempResults[selectedCategory] = {
+          current: categoryCurrent,
+          desired: categoryDesired,
+        };
+      }
 
-    //   // console.log(tempObj);
-    // });
+      // console.log(tempObj);
+    });
 
     // let tempTotal = 0;
     // let tempTotalCurrent = 0;
@@ -70,7 +69,7 @@ export default function Results({ questionList, categories, setSeeResult }) {
     let tempDesired = returnAvg(questionList, "Desired");
     setCurrentTotal(tempCurrent);
     setDesiredTotal(tempDesired);
-    // setResults(tempResults);
+    setResults(tempResults);
     // setSlides(tempSlidesArr);
   }, []);
 
