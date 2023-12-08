@@ -17,12 +17,12 @@ export default function LaunchForm({
   const [showButton, setShowButton] = useState(false);
 
   useEffect(() => {
-    console.log({ continueAssessment });
+    // console.log({ continueAssessment });
     if (continueAssessment == true) {
-      console.log("ran Effect");
+      // console.log("ran Effect");
       setShowButton(true);
     } else {
-      console.log("no Effect");
+      // console.log("no Effect");
       setShowButton(false);
     }
   }, [continueAssessment]);

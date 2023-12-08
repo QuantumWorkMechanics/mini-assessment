@@ -14,7 +14,7 @@ export default function Overall({
       (total >= 3 && total < 4 && "Intermediate") ||
       (total >= 4 && "Advanced")
   );
-  console.log({ total });
+  //   console.log({ total });
 
   return (
     <div className="p-5 flex flex-col items-end">
@@ -34,7 +34,7 @@ export default function Overall({
           <div className=" text-sm hyphens-auto pl-8  mt-4 text-[#666666] leading-6  w-[46ch]">
             {
               resultsList.filter((el) => {
-                console.log({ el, resultLookup });
+                // console.log({ el, resultLookup });
                 return el.type == resultLookup;
               })[0][level.toLowerCase()]
             }

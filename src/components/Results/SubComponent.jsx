@@ -26,7 +26,7 @@ export default function SubComponent({ data }) {
   let current = returnAvg(data, "Current");
   let desired = returnAvg(data, "Desired");
   let dataSet = [{ current, desired }];
-  console.log(data[0].Type.toLowerCase());
+  // console.log(data[0].Type.toLowerCase());
 
   function getDataSet(data) {
     let tempData = tidy(
@@ -40,7 +40,7 @@ export default function SubComponent({ data }) {
   }
 
   function customLabel({ payload, x, y, textAnchor, stroke, radius }) {
-    console.log({ payload });
+    // console.log({ payload });
     if (payload != undefined)
       return (
         <g className="recharts-layer ">

@@ -200,6 +200,14 @@ export default async function fillForm(
   const pdfResults = await pdfDoc.save();
   const blob = new Blob([pdfResults], { type: "application/pdf" });
   const url = URL.createObjectURL(blob);
-  window.open(url);
+  // window.open(url);
+  const link = document.createElement("a");
+  link.href = url;
+  link.setAttribute("download", "Maturity Results.pdf");
+
+  document.body.appendChild(link);
+
+  link.click();
+
   setIsLoading(false);
 }

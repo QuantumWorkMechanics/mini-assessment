@@ -62,7 +62,7 @@ export default function Results({ questionList, categories, setSeeResult }) {
     //   tempTotalDesired = tempTotalDesired + el.Desired;
     // });
 
-    console.log({ questionList });
+    // console.log({ questionList });
     // console.log({ tempTotal, tempTotalCurrent, tempTotalDesired });
     // console.log({ tempObj, tempArr });
     let tempCurrent = returnAvg(questionList, "Current");
@@ -91,16 +91,12 @@ export default function Results({ questionList, categories, setSeeResult }) {
         <div className="text-[30pt] ml-4 md:ml-40 md:text-[60pt] place-self-center  animate-fade-up animate-duration-700 animate-delay-500">
           Maturity
         </div>
-        <div className="md:ml-40 h-1 md:w-1/4 bg-[#FDB517] "></div>
+        <div className="md:ml-40 h-1 md:w-1/4 bg-[#FDB517] animate-fade-up animate-duration-700 animate-delay-500"></div>
         <div className="md:hidden block w-full flex justify-center">
-          <img
-            src="../../../public/dataReview.png"
-            alt=""
-            className="w-[500px]  h-auto "
-          />
+          <img src={dataReview} alt="" className="w-[500px]  h-auto " />
         </div>
         <div className="w-screen md:flex justify-center">
-          <div className="animate-fade-up animate-duration-700 animate-delay-1500">
+          <div className="animate-fade-up animate-duration-700 animate-delay-1000">
             {currentTotal && (
               <div className="md:mt-10  ">
                 <Overall
@@ -125,17 +121,22 @@ export default function Results({ questionList, categories, setSeeResult }) {
 
           <div
             id="diamond-visible"
-            className="  block w-screen md:w-[700px] h-auto  animate-fade-up animate-once 
-            animate-duration-[600ms] animate-delay-1800  text-xs md:text-md lg:text-[1rem] xl:text-lg "
+            className="  block w-screen md:w-[700px] h-auto   text-xs md:text-md lg:text-[1rem] xl:text-lg "
           >
-            <div className=" mt-28 w-[380px]  md:w-[600px] md:p-4 md:px-10 ">
+            <div
+              className=" mt-28 w-[380px]  md:w-[600px] md:p-4 md:px-10 animate-fade-up animate-once 
+            animate-duration-700 animate-delay-1000 "
+            >
               <ResultsDiamond
                 components={categories}
                 results={results}
                 idModifier={""}
               />
             </div>
-            <div className="hidden md:flex w-full justify-center">
+            <div
+              className="hidden md:flex w-full justify-center animate-fade-up animate-once 
+            animate-duration-700ms animate-delay-1000"
+            >
               <img
                 src={dataReview}
                 alt=""
@@ -149,7 +150,7 @@ export default function Results({ questionList, categories, setSeeResult }) {
             (el) => el.DiamondLoc == category
           );
           let tempAvg = returnAvg(tempQuestions, "Current");
-          console.log({ tempQuestions, category });
+          // console.log({ tempQuestions, category });
           // console.log(categories[category]);
           if (
             tempQuestions[0] &&
