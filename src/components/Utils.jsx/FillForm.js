@@ -4,7 +4,8 @@ import { findAvg } from "./Functions";
 import html2canvas from "html2canvas";
 import { resultsList } from "../../modules/question-bank";
 import { tidy, summarize, mean } from "@tidyjs/tidy";
-// import fs from "fs";
+import overview from "../../assets/Overview.pdf";
+import component from "../../assets/Component.pdf";
 
 export default async function fillForm(
   categories,
@@ -34,12 +35,10 @@ export default async function fillForm(
   // );
   const pngURL = imgDiamond.toDataURL();
 
-  const formURL = "../../public/Overview.pdf";
-  const formPDF = await fetch(formURL).then((res) => res.arrayBuffer());
-  const componentURL = "../../../public/Component.pdf";
-  const componentPDF = await fetch(componentURL).then((res) =>
-    res.arrayBuffer()
-  );
+  // const formURL = "../../assets/Overview.pdf";
+  const formPDF = await fetch(overview).then((res) => res.arrayBuffer());
+  // const componentURL = "../../assets/Component.pdf";
+  const componentPDF = await fetch(component).then((res) => res.arrayBuffer());
 
   const pdfDoc = await PDFDocument.load(formPDF);
 

@@ -14,6 +14,7 @@ import Overall from "./Overall";
 import SubComponent from "./SubComponent";
 import { returnAvg } from "../Utils.jsx/Functions";
 import LoadSpinner from "../Utils.jsx/LoadSpinner";
+import dataReview from "../../assets/dataReview.png";
 
 export default function Results({ questionList, categories, setSeeResult }) {
   const [results, setResults] = useState({});
@@ -137,7 +138,7 @@ export default function Results({ questionList, categories, setSeeResult }) {
             </div>
             <div className="hidden md:flex w-full justify-center">
               <img
-                src="../../../public/dataReview.png"
+                src={dataReview}
                 alt=""
                 className="w-[500px] mt-56 h-auto "
               />
