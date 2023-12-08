@@ -12,8 +12,9 @@ export default function AssessmentBody({
   handleNext,
   handleCurrent,
   handleDesired,
+  spotLight,
+  setSpotLight,
 }) {
-  const [spotLight, setSpotLight] = useState(1);
   // const spotlightRef2 = useSpotlight("Press next to continue.", "top");
   return (
     <>
@@ -48,7 +49,7 @@ export default function AssessmentBody({
               </div>
               <div
                 onClick={() => setSpotLight((prev) => prev + 1)}
-                className="mt-20 ml-36 md:ml-34 md:mt-64  z-50 absolute bg-white rounded animate-fade-up animate-once animate-delay-[1000ms] animate-duration-[800ms] animate-ease-linear"
+                className="mt-20 ml-36 md:ml-34 md:mt-64  z-50 absolute bg-white rounded animate-fade-up animate-once  animate-duration-[800ms] animate-ease-linear"
               >
                 <Button>Continue</Button>
               </div>

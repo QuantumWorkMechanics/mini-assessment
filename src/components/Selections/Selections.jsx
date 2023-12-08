@@ -3,7 +3,7 @@ import diamondFooter from "../../assets/Diamond-2.jpg";
 import Diamond from "./Diamond";
 import NavBar from "../Navigation/NavBar";
 import { useNavigate } from "react-router-dom";
-import questionBank from "../../modules/question-bank";
+import { questionBank } from "../../modules/question-bank";
 
 export default function Selections() {
   const navigate = useNavigate();

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import questionBank from "../../modules/question-bank";
+import { questionBank } from "../../modules/question-bank";
 
 export default function Diamond({ handleReady, selections, setSelections }) {
   const [topLeft, setTopLeft] = useState(false);

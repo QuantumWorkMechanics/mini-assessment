@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "../../index.css";
-import questionBank from "../../modules/question-bank";
+import { questionBank, resultsList } from "../../modules/question-bank";
 import { useLocation } from "react-router-dom";
 import NavBar from "../Navigation/NavBar";
 
@@ -24,6 +24,7 @@ function Questionnaire() {
   const [sectionComplete, setSectionComplete] = useState(false);
   const [isOpen, setOpen] = useState(true);
   const [seeResult, setSeeResult] = useState(false);
+  const [spotLight, setSpotLight] = useState(1);
 
   useEffect(() => {
     window.matchMedia("(min-width: 768px)").matches
@@ -139,6 +140,8 @@ function Questionnaire() {
           <>
             <Header questionNum={questionNum} />
             <AssessmentBody
+              spotLight={spotLight}
+              setSpotLight={setSpotLight}
               currentSliderValue={currentSliderValue}
               desiredSliderValue={desiredSliderValue}
               questionNum={questionNum}
@@ -151,7 +154,11 @@ function Questionnaire() {
           </>
         )}
         {seeResult && (
-          <Results questionList={questionList} categories={location.state} />
+          <Results
+            questionList={questionList}
+            categories={location.state}
+            setSeeResult={setSeeResult}
+          />
         )}
       </div>
       {/* </SpotlightTour> */}

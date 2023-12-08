@@ -12,7 +12,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-function SmallBar({ current, desired }) {
+function SmallBar({ current, desired, animation }) {
   const [data, setData] = useState([
     {
       name: "A",
@@ -63,7 +63,7 @@ function SmallBar({ current, desired }) {
   return (
     <ResponsiveContainer width="100%" height="100%">
       <BarChart width={150} height={40} data={data}>
-        <Bar dataKey="x" />
+        <Bar dataKey="x" isAnimationActive={animation} />
       </BarChart>
     </ResponsiveContainer>
   );

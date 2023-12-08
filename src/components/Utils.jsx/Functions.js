@@ -4,6 +4,19 @@ export const ALLCOLOR = "#0E6AAD";
 export const FILTER1COLOR = "#FFCB18";
 export const FILTER2COLOR = "#0EA8DC";
 
+export function findAvg(location, type, questionList) {
+  let loc = questionList.filter((el) => el.DiamondLoc == location);
+  // console.log({ loc });
+  let total = loc.reduce(function (accumulator, answer) {
+    return accumulator + (type == "current" ? answer.Current : answer.Desired);
+  }, 0);
+  // console.log({ total });
+  return Math.floor((total / loc[0].Of) * 10) / 10;
+}
+
+export const lorem =
+  "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia, cumque asperiores quasiducimus modi tenetur quas aliquid laudantium fuganulla ex illum. Reiciendis sit aspernatur ad rem molestias, quaerat laudantium.";
+
 export function getCategoryBreakout(dataSet) {
   let tempData = tidy(
     dataSet,
@@ -25,6 +38,13 @@ export function getCategoryBreakout(dataSet) {
     return el;
   });
   return tempData;
+}
+
+export function returnAvg(arr, component) {
+  let tempArr = arr.filter((el) => el[component] != 0);
+  let datum = tidy(tempArr, summarize({ value: mean(component) }));
+  //   console.log({ datum });
+  return Math.floor(datum[0].value * 10) / 10;
 }
 
 export function filterByItemAndQuestion(

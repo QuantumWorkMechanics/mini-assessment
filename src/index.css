@@ -19,13 +19,13 @@
   box-shadow: 0 0 0 99999px rgba(0, 0, 0, 0.6);
 }
 
-.result-bg {
+/* .result-bg {
   background-image: url("../public/GettyImages-675834103.avif");
 
   background-position: 30% 50%;
   background-sice: cover;
   background-repeat: no-repeat;
-}
+} */
 
 .recharts-sector {
   shape-rendering: geometricPrecision;

@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from "react";
-import questionBank from "../../modules/question-bank";
+import { questionBank } from "../../modules/question-bank";
 import SmallBar from "./SmallBar";
 import { Button } from "@mui/material";
 
 import DiamondSVG from "./DiamondSVG";
 
-export default function ResultsDiamond({ components, results }) {
+export default function ResultsDiamond({
+  components,
+  results,
+  idModifier,
+  animation,
+}) {
   const [topLeft, setTopLeft] = useState(false);
   const [topRight, setTopRight] = useState(false);
   const [rightCircle, setRightCircle] = useState(false);
@@ -21,13 +26,13 @@ export default function ResultsDiamond({ components, results }) {
     setMiddleCircle(components.middleCircle);
     setBottomCircle(components.bottomCircle);
 
-    console.log({ components });
-    console.log({ results });
+    // console.log({ components });
+    // console.log({ results });
   }, []);
 
   return (
     <>
-      <div className="relative">
+      <div className="relative" id={"diamond-svg" + idModifier}>
         <div className="flex justify-center z-10">
           <div className="w-1/2 mt-[8%]">
             <DiamondSVG
@@ -53,9 +58,13 @@ export default function ResultsDiamond({ components, results }) {
             ((middleCircle && "bg-[#FDB517] ") || "bg-slate-400 ")
           }
         ></div>
-        <div className="absolute w-[15%] h-[25%] bottom-[20%] left-[12%]">
+        <div
+          className="absolute w-[15%] h-[25%] bottom-[20%] left-[12%]"
+          id={"middleCircle" + idModifier}
+        >
           {results.middleCircle && (
             <SmallBar
+              animation={animation}
               current={results.middleCircle.current}
               desired={results.middleCircle.desired}
             />
@@ -83,9 +92,13 @@ export default function ResultsDiamond({ components, results }) {
             ((topLeft && "bg-[#FDB517] ") || "bg-slate-400 ")
           }
         ></div>
-        <div className="absolute w-[15%] h-[25%] -top-[13%] left-[12%]">
+        <div
+          className="absolute w-[15%] h-[25%] -top-[13%] left-[12%]"
+          id={"topLeft" + idModifier}
+        >
           {results.topLeft && (
             <SmallBar
+              animation={animation}
               current={results.topLeft.current}
               desired={results.topLeft.desired}
             />
@@ -120,10 +133,14 @@ export default function ResultsDiamond({ components, results }) {
             ((rightCircle && "bg-[#FDB517] ") || "bg-slate-400 ")
           }
         ></div>
-        <div className="absolute w-[15%] h-[25%] top-[21%] right-[8%]">
+        <div
+          className="absolute w-[15%] h-[25%] top-[21%] right-[8%]"
+          id={"rightCircle" + idModifier}
+        >
           {" "}
           {results.rightCircle && (
             <SmallBar
+              animation={animation}
               current={results.rightCircle.current}
               desired={results.rightCircle.desired}
             />
@@ -147,9 +164,13 @@ export default function ResultsDiamond({ components, results }) {
             ((leftCircle && "bg-[#FDB517] ") || "bg-slate-400 ")
           }
         ></div>
-        <div className="absolute w-[15%] h-[25%] top-[21%] left-[4%] z-10 ">
+        <div
+          className="absolute w-[15%] h-[25%] top-[21%] left-[4%] z-10 "
+          id={"leftCircle" + idModifier}
+        >
           {results.leftCircle && (
             <SmallBar
+              animation={animation}
               current={results.leftCircle.current}
               desired={results.leftCircle.desired}
             />
@@ -184,20 +205,28 @@ export default function ResultsDiamond({ components, results }) {
           }
         ></div>
 
-        <div className="absolute w-[15%] h-[25%] -top-[13%] right-[0%]">
+        <div
+          className="absolute w-[15%] h-[25%] -top-[13%] right-[0%] "
+          id={"topRight" + idModifier}
+        >
           {" "}
           {results.topRight && (
             <SmallBar
+              animation={animation}
               current={results.topRight.current}
               desired={results.topRight.desired}
             />
           )}
         </div>
 
-        <div className="absolute w-[15%] h-[25%] bottom-[20%] right-[0%]">
+        <div
+          className="absolute w-[15%] h-[25%] bottom-[20%] right-[0%]"
+          id={"bottomCircle" + idModifier}
+        >
           {" "}
           {results.bottomCircle && (
             <SmallBar
+              animation={animation}
               current={results.bottomCircle.current}
               desired={results.bottomCircle.desired}
             />
