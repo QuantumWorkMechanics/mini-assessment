@@ -6,6 +6,7 @@ import { resultsList } from "../../modules/question-bank";
 import { tidy, summarize, mean } from "@tidyjs/tidy";
 import overview from "../../assets/Overview.pdf";
 import component from "../../assets/Component.pdf";
+import noto from "../../assets/NotoSans-VariableFont_wdth,wght.ttf";
 
 export default async function fillForm(
   categories,
@@ -42,8 +43,8 @@ export default async function fillForm(
 
   const pdfDoc = await PDFDocument.load(formPDF);
 
-  const fontUrl = "../../../public/NotoSans-VariableFont_wdth,wght.ttf";
-  const fontBytes = await fetch(fontUrl).then((res) => res.arrayBuffer());
+  // const fontUrl = "../../../public/NotoSans-VariableFont_wdth,wght.ttf";
+  const fontBytes = await fetch(noto).then((res) => res.arrayBuffer());
   const pngImg = await pdfDoc.embedPng(pngURL);
 
   pdfDoc.registerFontkit(fontkit);
