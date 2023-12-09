@@ -61,9 +61,9 @@ export default async function fillForm(
   const currentTitle = form.getTextField("current_title");
   function setLevel(total) {
     if (total < 2) return "Starting";
-    if (total >= 2 && currentTotal < 3) return "Developing";
-    if (total >= 2 && currentTotal < 3) return "Intermediate";
-    if (total > 4) return "Advanced";
+    if (total >= 2 && total < 3) return "Developing";
+    if (total >= 3 && total < 4) return "Intermediate";
+    if (total >= 4) return "Advanced";
   }
   let tempTitle = setLevel(currentTotal);
   currentTitle.setText(tempTitle);
@@ -74,8 +74,8 @@ export default async function fillForm(
   textField1.updateAppearances(customFont);
 
   const desiredTitle = form.getTextField("desired_title");
-  tempTitle = setLevel(desiredTotal);
-  desiredTitle.setText(tempTitle);
+  let tempTitleText = setLevel(desiredTotal);
+  desiredTitle.setText(tempTitleText);
 
   const textField2 = form.getTextField("text_field2");
   textField2.setText(resultsList[0][tempTitle.toLowerCase()]);
@@ -126,8 +126,8 @@ export default async function fillForm(
       currentScore.updateAppearances(thisFont);
 
       const currentTitle = thisForm.getTextField("current_title");
-      let tempTitle = setLevel(current);
-      currentTitle.setText(tempTitle);
+      let tempCurrentTitle = setLevel(current);
+      currentTitle.setText(tempCurrentTitle);
 
       let tempResultsList = resultsList.filter((el) => {
         return el.type == compName.toLowerCase();
@@ -144,8 +144,8 @@ export default async function fillForm(
       desiredScore.updateAppearances(thisFont);
 
       const desiredTitle = thisForm.getTextField("desired_title");
-      tempTitle = setLevel(desired);
-      desiredTitle.setText(tempTitle);
+      let tempDesiredTitle = setLevel(desired);
+      desiredTitle.setText(tempDesiredTitle);
 
       const textField2 = thisForm.getTextField("text_field2");
       // console.log({ tempResultsList });
@@ -173,17 +173,18 @@ export default async function fillForm(
       const existingPage = pages[0];
       // const imgY = existingPage.getHeight() - imgHeight;
       existingPage.drawImage(pngImg, {
-        x: existingPage.getWidth() / 2 + 30,
-        y: existingPage.getHeight() - imgHeight - 220,
+        x: existingPage.getWidth() / 2 + 10,
+        y: existingPage.getHeight() - imgHeight - 200,
         width: 250,
         height: 150,
       });
 
+      console.log(pngImg2);
       existingPage.drawImage(pngImg2, {
-        x: existingPage.getWidth() / 2 + 30,
-        y: 220,
-        width: 300,
-        height: 150,
+        x: existingPage.getWidth() / 2 + 10,
+        y: 240,
+        width: 250,
+        height: 125,
       });
       const tempDoc = await pdfDoc.copyPages(compDoc, [0]);
       pdfDoc.addPage(tempDoc[0]);

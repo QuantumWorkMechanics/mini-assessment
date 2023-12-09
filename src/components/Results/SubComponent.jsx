@@ -51,10 +51,9 @@ export default function SubComponent({ data }) {
             y={y}
             className="recharts-text recharts-polar-angle-axis-tick-value"
             textAnchor={textAnchor}
-            fontSize={10}
+            fontSize={14}
             fontFamily="Noto Sans"
             color="#666666"
-            width={90}
           >
             <tspan x={x} dy="0em">
               {payload.value}
@@ -107,13 +106,13 @@ export default function SubComponent({ data }) {
 
           <div
             id={data[0].Type + "_radar"}
-            className="block w-[550px] md:w-[700px] h-[300px] md:mt-60  pr-20 "
+            className="block w-[400px] md:w-[600px] h-[180px] md:h-[300px] md:mt-72 md:ml-10"
           >
             <ResponsiveContainer width="100%" height="100%">
               <RadarChart
-                cx="50%"
+                cx="45%"
                 cy="50%"
-                outerRadius="50%"
+                outerRadius="90%"
                 data={getDataSet(data)}
               >
                 <PolarGrid />
