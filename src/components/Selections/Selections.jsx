@@ -3,7 +3,7 @@ import diamondFooter from "../../assets/Diamond-2.jpg";
 import Diamond from "./Diamond";
 import NavBar from "../Navigation/NavBar";
 import { useNavigate } from "react-router-dom";
-import { questionBank } from "../../modules/question-bank";
+import { questionBank, categoriesList } from "../../modules/question-bank";
 
 export default function Selections() {
   const navigate = useNavigate();
@@ -75,11 +75,13 @@ export default function Selections() {
                   Begin by selecting which worktech competencies you woud like
                   to asses.
                 </div>
-                <div className="hidden md:block text-white font-light ">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Ipsum dolorem saepe accusantium consequatur quidem
-                  consequuntur vitae officia, possimus sit aspernatur debitis
-                  dolor aperiam! Facere, ipsa maxime.
+                <div className="flex justify-center mr-8">
+                  <div className="place self-center bg-white h-[2px] w-20 mt-2"></div>
+                </div>
+                <div className="hidden md:block text-white font-light mt-5 hyphens-auto">
+                  Click begin to start evaluating your workforce maturity.
+                  Select all the dimensions you would like to explore for your
+                  organization.
                 </div>
               </div>
             </div>
@@ -106,11 +108,11 @@ export default function Selections() {
           <div className="md:grid md:grid-cols-2 md:grid-rows-1 flex flex-col-reverse ">
             <div className="w-[80%] mx-[10%] flex flex-col  items-center justify-around">
               <div className="text-3xl font-light ml-10% text-[#09497B] p-4">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Learn more about the diamond model of maturity.
               </div>
-              <div className="bg-slate-200">
+              <div className="bg-slate-200 p-4">
                 <ul>
-                  <li className="text-sm p-2">
+                  <li className="text-sm p-2 leading-6">
                     <span className="font-bold text-[#0EA8DC] text-md">
                       {" "}
                       {
@@ -119,10 +121,10 @@ export default function Selections() {
                       }
                     </span>
                     {" - " +
-                      questionBank.find((el) => el.DiamondLoc == "topLeft")
-                        .Description}
+                      categoriesList.find((el) => el.DiamondLoc == "topLeft")
+                        .description}
                   </li>
-                  <li className="text-sm p-2">
+                  <li className="text-sm p-2 mt-3 leading-6">
                     <span className="font-bold text-[#0EA8DC] text-md">
                       {" "}
                       {
@@ -131,10 +133,10 @@ export default function Selections() {
                       }
                     </span>{" "}
                     {" - " +
-                      questionBank.find((el) => el.DiamondLoc == "topRight")
-                        .Description}
+                      categoriesList.find((el) => el.DiamondLoc == "topRight")
+                        .description}
                   </li>
-                  <li className="text-sm p-2">
+                  <li className="text-sm p-2 mt-3 leading-6">
                     <span className="font-bold text-[#0EA8DC] text-md">
                       {
                         questionBank.find(
@@ -143,10 +145,11 @@ export default function Selections() {
                       }
                     </span>{" "}
                     {" - " +
-                      questionBank.find((el) => el.DiamondLoc == "rightCircle")
-                        .Description}
+                      categoriesList.find(
+                        (el) => el.DiamondLoc == "rightCircle"
+                      ).description}
                   </li>
-                  <li className="text-sm p-2">
+                  <li className="text-sm p-2 mt-3 leading-6">
                     <span className="font-bold text-[#0EA8DC] text-md">
                       {
                         questionBank.find((el) => el.DiamondLoc == "leftCircle")
@@ -154,10 +157,10 @@ export default function Selections() {
                       }
                     </span>{" "}
                     {" - " +
-                      questionBank.find((el) => el.DiamondLoc == "leftCircle")
-                        .Description}
+                      categoriesList.find((el) => el.DiamondLoc == "leftCircle")
+                        .description}
                   </li>
-                  <li className="text-sm p-2">
+                  <li className="text-sm p-2 mt-3 leading-6">
                     <span className="font-bold text-[#0EA8DC] text-md">
                       {
                         questionBank.find(
@@ -166,10 +169,11 @@ export default function Selections() {
                       }
                     </span>{" "}
                     {" - " +
-                      questionBank.find((el) => el.DiamondLoc == "middleCircle")
-                        .Description}
+                      categoriesList.find(
+                        (el) => el.DiamondLoc == "middleCircle"
+                      ).description}
                   </li>
-                  <li className="text-sm p-2">
+                  <li className="text-sm p-2 mt-3 leading-6">
                     <span className="font-bold text-[#0EA8DC] text-md">
                       {
                         questionBank.find(
@@ -178,8 +182,9 @@ export default function Selections() {
                       }
                     </span>{" "}
                     {" - " +
-                      questionBank.find((el) => el.DiamondLoc == "bottomCircle")
-                        .Description}
+                      categoriesList.find(
+                        (el) => el.DiamondLoc == "bottomCircle"
+                      ).description}
                   </li>
                 </ul>
               </div>

@@ -88,6 +88,7 @@ function Questionnaire() {
     SetCurrentSliderValuerValue(tempList[questionIndex + 1].Current);
     SetDesiredSliderValuerValuerValue(tempList[questionIndex + 1].Desired);
     setQuestionNum(questionList[questionIndex + 1]);
+    console.log(questionList[questionIndex + 1]);
     setQuestionIndex((prev) => prev + 1);
 
     // console.log(questionNum);
@@ -101,7 +102,7 @@ function Questionnaire() {
     SetDesiredSliderValuerValuerValue(tempList[questionIndex - 1].Desired);
     setQuestionNum(questionList[questionIndex - 1]);
     setQuestionIndex((prev) => prev - 1);
-
+    console.log(questionList[questionIndex - 1]);
     console.log(questionList);
   }
 
@@ -138,7 +139,12 @@ function Questionnaire() {
         )}
         {!isExploding && !sectionComplete && !seeResult && (
           <>
-            <Header questionNum={questionNum} />
+            <Header
+              questionNum={questionNum}
+              count={
+                questionList.filter((el) => el.Type == questionNum.Type).length
+              }
+            />
             <AssessmentBody
               spotLight={spotLight}
               setSpotLight={setSpotLight}

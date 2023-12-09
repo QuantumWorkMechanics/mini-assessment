@@ -51,7 +51,12 @@ export default function AssessmentBody({
                 onClick={() => setSpotLight((prev) => prev + 1)}
                 className="mt-20 ml-36 md:ml-34 md:mt-64  z-50 absolute bg-white rounded animate-fade-up animate-once  animate-duration-[800ms] animate-ease-linear"
               >
-                <Button>Continue</Button>
+                <button
+                  className="p-3 "
+                  // style={{ fontFamily: "Gibson Light" "Noto Sans","Arial" }}
+                >
+                  Continue
+                </button>
               </div>
               <div
                 onClick={() => setSpotLight((prev) => prev + 1)}

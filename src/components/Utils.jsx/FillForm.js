@@ -68,19 +68,42 @@ export default async function fillForm(
   let tempTitle = setLevel(currentTotal);
   currentTitle.setText(tempTitle);
 
-  const textField1 = form.getTextField("text_field1");
-  textField1.setText(resultsList[0][tempTitle.toLowerCase()]);
-  textField1.setFontSize(8);
-  textField1.updateAppearances(customFont);
+  function fillTextField(form, textField, text, font = "none", fontSize = 0) {
+    const field = form.getTextField(textField);
+    field.setText(text);
+    if (fontSize > 0) field.setFontSize(fontSize);
+    if (font != "none") field.updateAppearances(font);
+  }
 
-  const desiredTitle = form.getTextField("desired_title");
-  let tempTitleText = setLevel(desiredTotal);
-  desiredTitle.setText(tempTitleText);
+  fillTextField(
+    form,
+    "text_field1",
+    resultsList[0][tempTitle.toLowerCase()],
+    customFont,
+    8
+  );
 
-  const textField2 = form.getTextField("text_field2");
-  textField2.setText(resultsList[0][tempTitle.toLowerCase()]);
-  textField2.setFontSize(8);
-  textField2.updateAppearances(customFont);
+  fillTextField(form, "desired_title", setLevel(desiredTotal), "none");
+  fillTextField(
+    form,
+    "text_field2",
+    resultsList[0][setLevel(desiredTotal).toLowerCase()],
+    customFont,
+    8
+  );
+  // const textField1 = form.getTextField("text_field1");
+  // textField1.setText(resultsList[0][tempTitle.toLowerCase()]);
+  // textField1.setFontSize(8);
+  // textField1.updateAppearances(customFont);
+
+  // const desiredTitle = form.getTextField("desired_title");
+  // let tempTitleText = setLevel(desiredTotal);
+  // desiredTitle.setText(tempTitleText);
+
+  // const textField2 = form.getTextField("text_field2");
+  // textField2.setText(resultsList[0][tempTitleText.toLowerCase()]);
+  // textField2.setFontSize(8);
+  // textField2.updateAppearances(customFont);
 
   form.flatten();
   const imgWidth = 285;
@@ -101,57 +124,47 @@ export default async function fillForm(
   async function createComponentPage(diamondLoc) {
     if (categories[diamondLoc]) {
       const compDoc = await PDFDocument.load(componentPDF);
-      const compList = questionList.filter((el) => el.DiamondLoc == diamondLoc);
-      const compName = compList[0].Type;
-
-      const current = findAvg(diamondLoc, "current", questionList).toString();
-      const desired = findAvg(diamondLoc, "desired", questionList).toString();
 
       compDoc.registerFontkit(fontkit);
       const thisFont = await compDoc.embedFont(fontBytes);
+
+      const compList = questionList.filter((el) => el.DiamondLoc == diamondLoc);
+      const compName = compList[0].Type;
+      const current = findAvg(diamondLoc, "current", questionList).toString();
+      const desired = findAvg(diamondLoc, "desired", questionList).toString();
+
       const thisForm = compDoc.getForm();
-      // const componentField1 = thisForm.getTextField("component_field1");
-      // componentField1.setText("Here is some text for " + compName);
-      // componentField1.setFontSize(11);
-      // componentField1.updateAppearances(thisFont);
 
-      const componentTitle = thisForm.getTextField("component_title");
-      componentTitle.setText(compName);
-      componentTitle.setFontSize(18);
-      componentTitle.updateAppearances(thisFont);
+      fillTextField(thisForm, "component_title", compName);
 
-      const currentScore = thisForm.getTextField("current");
-      currentScore.setText(current);
-      currentScore.setFontSize(18);
-      currentScore.updateAppearances(thisFont);
+      fillTextField(thisForm, "current", current);
 
-      const currentTitle = thisForm.getTextField("current_title");
-      let tempCurrentTitle = setLevel(current);
-      currentTitle.setText(tempCurrentTitle);
+      fillTextField(thisForm, "current_title", setLevel(current));
 
       let tempResultsList = resultsList.filter((el) => {
         return el.type == compName.toLowerCase();
       });
-      const textField1 = thisForm.getTextField("text_field1");
-      // console.log({ tempResultsList });
-      textField1.setText(tempResultsList[0][tempTitle.toLowerCase()]);
-      textField1.setFontSize(8);
-      textField1.updateAppearances(thisFont);
 
-      const desiredScore = thisForm.getTextField("desired");
-      desiredScore.setText(desired);
-      desiredScore.setFontSize(18);
-      desiredScore.updateAppearances(thisFont);
+      let currentLevel = setLevel(current);
 
-      const desiredTitle = thisForm.getTextField("desired_title");
-      let tempDesiredTitle = setLevel(desired);
-      desiredTitle.setText(tempDesiredTitle);
+      fillTextField(
+        thisForm,
+        "text_field1",
+        tempResultsList[0][currentLevel.toLowerCase()],
+        thisFont
+      );
 
-      const textField2 = thisForm.getTextField("text_field2");
-      // console.log({ tempResultsList });
-      textField2.setText(tempResultsList[0][tempTitle.toLowerCase()]);
-      textField2.setFontSize(8);
-      textField2.updateAppearances(thisFont);
+      fillTextField(thisForm, "desired", desired, thisFont, 18);
+
+      fillTextField(thisForm, "desired_title", setLevel(desired), thisFont, 18);
+
+      fillTextField(
+        thisForm,
+        "text_field2",
+        tempResultsList[0][setLevel(desired).toLowerCase()],
+        thisFont,
+        8
+      );
 
       thisForm.flatten();
 

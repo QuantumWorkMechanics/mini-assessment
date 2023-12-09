@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Header({ questionNum }) {
+export default function Header({ questionNum, count }) {
   return (
     <>
       <header>
@@ -14,7 +14,7 @@ export default function Header({ questionNum }) {
       </header>
       <div className="md:ml-40 md:bg-[#bde1f7] w-fit p-4">
         <div className="md:mt-2  md:-mb-1 md:ml-4 font-bold text-slate-600 text-sm md:text-md">
-          Question {questionNum.Number} of {questionNum.Of}
+          Question {questionNum.Number} of {count}
         </div>
         <h3 className=" font-bold text-lg md:text-2xl">
           {questionNum.Dimension}

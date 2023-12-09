@@ -26,10 +26,6 @@ export default function Results({ questionList, categories, setSeeResult }) {
   const [continueAssessment, setContinueAssessment] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  // const printRef = useRef();
-
-  // console.log({ questionList, categories });
-
   function handleForm() {
     setShowForm(true);
   }
@@ -38,7 +34,6 @@ export default function Results({ questionList, categories, setSeeResult }) {
     let tempResults = { ...categories };
     let categoryCurrent;
     let categoryDesired;
-    // let tempSlidesArr = ["diamond"];
 
     categoryList.map((selectedCategory) => {
       if (categories[selectedCategory]) {
@@ -49,22 +44,8 @@ export default function Results({ questionList, categories, setSeeResult }) {
           desired: categoryDesired,
         };
       }
-
-      // console.log(tempObj);
     });
 
-    // let tempTotal = 0;
-    // let tempTotalCurrent = 0;
-    // let tempTotalDesired = 0;
-    // questionList.map((el) => {
-    //   tempTotal = tempTotal + 5;
-    //   tempTotalCurrent = tempTotalCurrent + el.Current;
-    //   tempTotalDesired = tempTotalDesired + el.Desired;
-    // });
-
-    // console.log({ questionList });
-    // console.log({ tempTotal, tempTotalCurrent, tempTotalDesired });
-    // console.log({ tempObj, tempArr });
     let tempCurrent = returnAvg(questionList, "Current");
     let tempDesired = returnAvg(questionList, "Desired");
     setCurrentTotal(tempCurrent);
@@ -75,22 +56,12 @@ export default function Results({ questionList, categories, setSeeResult }) {
 
   returnAvg(questionList, "Current");
 
-  // function handleCurrentSlide(num) {
-  //   if (currentSlide + num >= 0 && currentSlide + num < slides.length) {
-  //     let tempNum = currentSlide;
-  //     tempNum = tempNum + num;
-  //     setCurrentSlide(tempNum);
-  //     // forceUpdate();
-  //     // console.log(tempNum);
-  //   }
-  // }
-
   return (
     <>
       <div className="order-last  md:absolute   ">
-        <div className="text-[30pt] ml-4 md:ml-40 md:text-[60pt] place-self-center  animate-fade-up animate-duration-700 animate-delay-500">
+        <h1 className="text-[30pt] ml-4 md:ml-40 md:text-[60pt] place-self-center  animate-fade-up animate-duration-700 animate-delay-500">
           Maturity
-        </div>
+        </h1>
         <div className="md:ml-40 h-1 md:w-1/4 bg-[#FDB517] animate-fade-up animate-duration-700 animate-delay-500"></div>
         <div className="md:hidden block w-full flex justify-center">
           <img src={dataReview} alt="" className="w-[500px]  h-auto " />
@@ -150,8 +121,6 @@ export default function Results({ questionList, categories, setSeeResult }) {
             (el) => el.DiamondLoc == category
           );
           let tempAvg = returnAvg(tempQuestions, "Current");
-          // console.log({ tempQuestions, category });
-          // console.log(categories[category]);
           if (
             tempQuestions[0] &&
             tempQuestions[0].Current == 0 &&
@@ -169,11 +138,6 @@ export default function Results({ questionList, categories, setSeeResult }) {
             )
           );
         })}
-        {/* {categories.topLeft && (
-          <SubComponent
-            data={questionList.filter((el) => el.DiamondLoc == "topLeft")}
-          />
-        )} */}
         <div className="h-40 w-full"></div>
       </div>
 
@@ -191,17 +155,6 @@ export default function Results({ questionList, categories, setSeeResult }) {
         </div>
       </div>
 
-      {/* {slides[currentSlide] != "diamond" && (
-        <div className="absolute animate-fade-left animate-once animate-duration-700">
-          <ResultComponent
-            // component={slides[currentSlide]}
-            slides={slides}
-            currentSlide={currentSlide}
-            questionList={questionList}
-          />
-        </div>
-      )} */}
-
       <div id="launch-form" className="  fixed w-screen  right- bottom-0">
         <LaunchForm
           setShowForm={setShowForm}
@@ -217,31 +170,6 @@ export default function Results({ questionList, categories, setSeeResult }) {
         />
       </div>
       {isLoading && <LoadSpinner />}
-
-      {/* <div className="hidden px-2 text-white items-center text-[50pt] fixed h-[70px] w-screen bottom-0 md:hidden bg-[#999999] flex flex-row justify-between">
-        <div
-          className="bg-[#878787 h-14]"
-          onClick={() => {
-            handleCurrentSlide(-1);
-          }}
-        >
-          {"< "}
-        </div>
-        <button
-          onClick={() => fillForm(categories, questionList)}
-          className="text-xl rounded p-2 border text-white bg-[#3cacf4] "
-        >
-          GET PDF
-        </button>
-        <div
-          onClick={() => {
-            handleCurrentSlide(1);
-          }}
-        >
-          {" >"}
-        </div>
-      </div> */}
-      {/* </div> */}
 
       {showForm && (
         <div>
