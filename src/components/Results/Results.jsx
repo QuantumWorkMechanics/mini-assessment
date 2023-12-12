@@ -25,10 +25,11 @@ export default function Results({ questionList, categories, setSeeResult }) {
   const [showForm, setShowForm] = useState(false);
   const [continueAssessment, setContinueAssessment] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [progress, setProgress] = useState(0);
 
-  function handleForm() {
-    setShowForm(true);
-  }
+  // function handleForm() {
+  //   setShowForm(true);
+  // }
 
   useEffect(() => {
     let tempResults = { ...categories };
@@ -66,7 +67,7 @@ export default function Results({ questionList, categories, setSeeResult }) {
         <div className="md:hidden block w-full flex justify-center">
           <img src={dataReview} alt="" className="w-[500px]  h-auto " />
         </div>
-        <div className="w-screen md:flex justify-center">
+        <div className="w-screen md:flex justify-center xl:justify-around">
           <div className="animate-fade-up animate-duration-700 animate-delay-1000">
             {currentTotal && (
               <div className="md:mt-10  ">
@@ -166,10 +167,23 @@ export default function Results({ questionList, categories, setSeeResult }) {
           currentTotal={currentTotal}
           desiredTotal={desiredTotal}
           setIsLoading={setIsLoading}
+          setProgress={setProgress}
           // handleDownloadPDF={handleDownloadPDF}
         />
       </div>
-      {isLoading && <LoadSpinner />}
+      {isLoading && (
+        <div className="fixed bottom-[30vh] w-full bg-neutral-50">
+          <LoadSpinner />
+          <div className="w-full flex justify-center">
+            <div className="w-[500px] h-4 rounded-full bg-slate-300 mb-14">
+              <div
+                className="h-4 rounded-full bg-[#FDB517]"
+                style={{ width: progress.toString() + "%" }}
+              ></div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {showForm && (
         <div>

@@ -40,26 +40,23 @@ export default function SubComponent({ data }) {
   }
 
   function customLabel({ payload, x, y, textAnchor, stroke, radius }) {
-    // console.log({ payload });
+    console.log({ payload });
     if (payload != undefined)
       return (
-        <g className="recharts-layer ">
-          <text
-            radius={radius}
-            stroke={stroke}
-            x={x}
-            y={y}
-            className="recharts-text recharts-polar-angle-axis-tick-value"
-            textAnchor={textAnchor}
-            fontSize={14}
-            fontFamily="Noto Sans"
-            color="#666666"
-          >
-            <tspan x={x} dy="0em">
-              {payload.value}
-            </tspan>
-          </text>
-        </g>
+        <text
+          radius={radius}
+          stroke={stroke}
+          x={x}
+          y={y}
+          className="recharts-text recharts-polar-angle-axis-tick-value"
+          textAnchor={textAnchor}
+          fontSize={16}
+          fontFamily="Noto Sans"
+          color="#666666"
+          width={50}
+        >
+          {payload.value}
+        </text>
       );
   }
 
@@ -69,7 +66,7 @@ export default function SubComponent({ data }) {
       <h2 className="ml-4 md:ml-40 mt-14 text-3xl font-light underline decoration-[#FDB517]">
         {data[0].Type}
       </h2>
-      <div className="md:flex items-center justify-center">
+      <div className="md:flex items-center justify-center xl:justify-around">
         {data && (
           <div>
             <div className=" mt-5">
@@ -118,13 +115,17 @@ export default function SubComponent({ data }) {
                 <PolarGrid />
                 <PolarAngleAxis
                   dataKey="Dimension"
-                  tick={customLabel}
+                  // tick={customLabel}
                 ></PolarAngleAxis>
-                <PolarRadiusAxis
-                  angle={30}
-                  domain={[0, 5]}
-                  label={customLabel}
-                ></PolarRadiusAxis>
+                <PolarRadiusAxis angle={30} domain={[0, 5]}>
+                  {/* <Label
+                    style={{ width: 35 }}
+                    // width={35}
+                    // content={customLabel}
+                    textanchor="start"
+                    // vertifcalanchor="start"
+                  /> */}
+                </PolarRadiusAxis>
                 <Radar
                   name="Current"
                   dataKey="Current"

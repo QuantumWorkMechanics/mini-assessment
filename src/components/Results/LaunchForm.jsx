@@ -13,6 +13,7 @@ export default function LaunchForm({
   currentTotal,
   desiredTotal,
   setIsLoading,
+  setProgress,
 }) {
   const [showButton, setShowButton] = useState(false);
 
@@ -63,7 +64,8 @@ export default function LaunchForm({
               questionList,
               currentTotal,
               desiredTotal,
-              setIsLoading
+              setIsLoading,
+              setProgress
             );
           }}
           className="bg-[#0E6AAD] text-white  text-xl p-4 flex items-center font-semibold rounded h-10 shadow-lg"

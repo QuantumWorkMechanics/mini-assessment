@@ -13,37 +13,26 @@ export default async function fillForm(
   questionList,
   currentTotal,
   desiredTotal,
-  setIsLoading
+  setIsLoading,
+  setProgress
 ) {
-  // Object.keys(categories).map((key) => {
-  //   console.log(categories[key]);
-  //   if (categories[key]) {
-  //     console.log(key);
-  //   }
-  // });
-  // document.getElementById("diamond-png").style.display = "block";
   const imgInput = document.getElementById("diamond-png");
   const imgDiamond = await html2canvas(imgInput, {
-    // onclone: function (clonedDoc) {
-    //   console.log("element: " + clonedDoc.getElementById("diamond-png"));
-    //   clonedDoc.getElementById("diamond-png").style.display = "block";
-    // },
     scale: 3,
   });
-  // setTimeout(
-  //   () => (document.getElementById("diamond-png").style.display = "none"),
-  //   50
-  // );
+
+  setProgress(25);
+
   const pngURL = imgDiamond.toDataURL();
 
   // const formURL = "../../assets/Overview.pdf";
   const formPDF = await fetch(overview).then((res) => res.arrayBuffer());
   // const componentURL = "../../assets/Component.pdf";
+
   const componentPDF = await fetch(component).then((res) => res.arrayBuffer());
 
   const pdfDoc = await PDFDocument.load(formPDF);
 
-  // const fontUrl = "../../../public/NotoSans-VariableFont_wdth,wght.ttf";
   const fontBytes = await fetch(noto).then((res) => res.arrayBuffer());
   const pngImg = await pdfDoc.embedPng(pngURL);
 
@@ -91,19 +80,6 @@ export default async function fillForm(
     customFont,
     8
   );
-  // const textField1 = form.getTextField("text_field1");
-  // textField1.setText(resultsList[0][tempTitle.toLowerCase()]);
-  // textField1.setFontSize(8);
-  // textField1.updateAppearances(customFont);
-
-  // const desiredTitle = form.getTextField("desired_title");
-  // let tempTitleText = setLevel(desiredTotal);
-  // desiredTitle.setText(tempTitleText);
-
-  // const textField2 = form.getTextField("text_field2");
-  // textField2.setText(resultsList[0][tempTitleText.toLowerCase()]);
-  // textField2.setFontSize(8);
-  // textField2.updateAppearances(customFont);
 
   form.flatten();
   const imgWidth = 285;
@@ -120,6 +96,8 @@ export default async function fillForm(
     width: imgWidth,
     height: imgHeight,
   });
+
+  setProgress(40);
 
   async function createComponentPage(diamondLoc) {
     if (categories[diamondLoc]) {
@@ -205,16 +183,23 @@ export default async function fillForm(
   }
 
   await createComponentPage("topRight");
+
   await createComponentPage("rightCircle");
+  setProgress(50);
+
   await createComponentPage("bottomCircle");
+  setProgress(60);
   await createComponentPage("leftCircle");
+  setProgress(70);
   await createComponentPage("topLeft");
+  setProgress(80);
   await createComponentPage("middleCircle");
+  setProgress(90);
 
   const pdfResults = await pdfDoc.save();
   const blob = new Blob([pdfResults], { type: "application/pdf" });
   const url = URL.createObjectURL(blob);
-  // window.open(url);
+  setProgress(100);
   const link = document.createElement("a");
   link.href = url;
   link.setAttribute("download", "Maturity Results.pdf");
@@ -224,4 +209,5 @@ export default async function fillForm(
   link.click();
 
   setIsLoading(false);
+  setProgress(0);
 }
