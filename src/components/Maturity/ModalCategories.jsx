@@ -88,7 +88,7 @@ export default function ModalCategories({
 
         // console.log(averages);
         tempItem[cat + "_average"] = elData.length
-          ? Math.floor(averages[0].value * 10) / 10
+          ? averages[0].value.toFixed(1)
           : null;
         tempItem[cat + "_high"] = elData.length
           ? getPercentOf("gte", elData, cat)
