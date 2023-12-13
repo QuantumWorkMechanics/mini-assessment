@@ -31,10 +31,11 @@ export function getCategoryBreakout(dataSet) {
       ]
     )
   );
+  console.log({ tempData });
   tempData = tempData.map((el) => {
-    if (el.value != undefined) el.value = el.value.toFixed(1);
-    if (el.value2 != undefined) el.value2 = el.value2.toFixed(1);
-    if (el.value3 != undefined) el.value3 = el.value3.toFixed(1);
+    if (el.value != undefined) el.value = roundToTenth(el.value);
+    if (el.value2 != undefined) el.value2 = roundToTenth(el.value2);
+    if (el.value3 != undefined) el.value3 = roundToTenth(el.value3);
     return el;
   });
   return tempData;
@@ -44,7 +45,7 @@ export function returnAvg(arr, component) {
   let tempArr = arr.filter((el) => el[component] != 0);
   let datum = tidy(tempArr, summarize({ value: mean(component) }));
   //   console.log({ datum });
-  return datum[0].value.toFixed(1);
+  return roundToTenth(datum[0].value);
 }
 
 export function filterByItemAndQuestion(
@@ -73,9 +74,14 @@ export function getAverages(arr) {
     )
   );
   return tempAvg.map((el) => {
-    el.value = el.value.toFixed(1);
+    el.value = roundToTenth(el.value);
+    // console.log(el.value);
     return el;
   });
+}
+
+export function roundToTenth(item) {
+  return Number(item.toFixed(1));
 }
 
 export function getPercentOf(operator, arr) {
@@ -88,7 +94,7 @@ export function getPercentOf(operator, arr) {
     : (percent =
         (tempArr.filter((el) => el.score <= 2).length / tempArr.length) * 100);
 
-  return percent.toFixed(1);
+  return roundToTenth(percent);
 }
 
 export function runDynamicFilter(filterList, filterSet, rawData) {
@@ -156,10 +162,11 @@ export function addAndAverageFilteredData(
   }
   tempData.map((el) => {
     if (el.value2) {
-      el.value2 = el.value2.toFixed(1);
+      const val2 = roundToTenth(el.value2);
+      el.value2 = val2;
     }
     if (el.value3) {
-      el.value3 = el.value3.toFixed(1);
+      el.value3 = roundToTenth(el.value3);
     }
     return el;
   });

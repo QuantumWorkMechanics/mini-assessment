@@ -16,6 +16,7 @@ import {
   PolarRadiusAxis,
   Legend,
 } from "recharts";
+import { roundToTenth } from "../Utils.jsx/Functions";
 import PillarOverview from "./PillarOverview";
 // import { divide } from "lodash";
 // import { getLinearProgressUtilityClass } from "@mui/material";
@@ -88,7 +89,7 @@ export default function ModalCategories({
 
         // console.log(averages);
         tempItem[cat + "_average"] = elData.length
-          ? averages[0].value.toFixed(1)
+          ? roundToTenth(averages[0].value)
           : null;
         tempItem[cat + "_high"] = elData.length
           ? getPercentOf("gte", elData, cat)

@@ -7,6 +7,7 @@ export default function PillarOverview({
 
   categoryBreakout,
 }) {
+  console.log({ categoryBreakout });
   return (
     <div className="h-[400px] flex justify-around">
       <div className="h-[350px] w-1/3 flex flex-col items-center ">

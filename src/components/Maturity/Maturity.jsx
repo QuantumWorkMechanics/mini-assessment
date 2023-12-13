@@ -122,9 +122,9 @@ export default function Maturity() {
       setRoles2(data.roles);
       setCategories(data.categories);
       let tempDataSet = getAverages(joinedDataArr);
-      tempDataSet.map((el) => {
-        el.value = Math.floor(el.value * 10) / 10;
-      });
+      // tempDataSet.map((el) => {
+      //   el.value = Math.floor(el.value * 10) / 10;
+      // });
 
       let tempFilter = { ...filters };
       tempFilter.count = tidy(joinedDataArr, distinct("response_id")).length;
