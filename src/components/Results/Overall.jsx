@@ -22,7 +22,7 @@ export default function Overall({
         {title + ": "}
         <span className="text-3xl font-semibold" style={{ color: totalColor }}>
           {" "}
-          {Math.floor(total)}
+          {total}
         </span>
       </div>
       {level && (

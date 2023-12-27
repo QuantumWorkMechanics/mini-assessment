@@ -11,7 +11,7 @@ export function findAvg(location, type, questionList) {
     return accumulator + (type == "current" ? answer.Current : answer.Desired);
   }, 0);
   // console.log({ total });
-  return Math.floor((total / loc[0].Of) * 10) / 10;
+  return roundToTenth(total / loc.length);
 }
 
 export const lorem =
@@ -31,7 +31,7 @@ export function getCategoryBreakout(dataSet) {
       ]
     )
   );
-  console.log({ tempData });
+  //   console.log({ tempData });
   tempData = tempData.map((el) => {
     if (el.value != undefined) el.value = roundToTenth(el.value);
     if (el.value2 != undefined) el.value2 = roundToTenth(el.value2);
@@ -43,8 +43,9 @@ export function getCategoryBreakout(dataSet) {
 
 export function returnAvg(arr, component) {
   let tempArr = arr.filter((el) => el[component] != 0);
+  //   console.log({ tempArr, arr });
   let datum = tidy(tempArr, summarize({ value: mean(component) }));
-  //   console.log({ datum });
+  //   console.log(roundToTenth(datum[0].value));
   return roundToTenth(datum[0].value);
 }
 
@@ -81,7 +82,7 @@ export function getAverages(arr) {
 }
 
 export function roundToTenth(item) {
-  return Number(item.toFixed(1));
+  if (item) return Number(item.toFixed(1));
 }
 
 export function getPercentOf(operator, arr) {

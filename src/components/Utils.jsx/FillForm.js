@@ -204,7 +204,7 @@ export default async function fillForm(
   link.href = url;
   link.setAttribute("download", "Maturity Results.pdf");
 
-  document.body.appendChild(link);
+  document.getElementById("pdf-download").appendChild(link);
 
   link.click();
 

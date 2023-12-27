@@ -52,7 +52,7 @@ export default function Results({ questionList, categories, setSeeResult }) {
     setCurrentTotal(tempCurrent);
     setDesiredTotal(tempDesired);
     setResults(tempResults);
-    // setSlides(tempSlidesArr);
+    console.log({ tempCurrent });
   }, []);
 
   returnAvg(questionList, "Current");
@@ -172,7 +172,10 @@ export default function Results({ questionList, categories, setSeeResult }) {
         />
       </div>
       {isLoading && (
-        <div className="fixed bottom-[30vh] w-full bg-neutral-50">
+        <div
+          id="pdf-download"
+          className="fixed bottom-[30vh] w-full bg-neutral-50"
+        >
           <LoadSpinner />
           <div className="w-full flex justify-center">
             <div className="w-[500px] h-4 rounded-full bg-slate-300 mb-14">
