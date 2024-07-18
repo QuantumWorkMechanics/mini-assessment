@@ -1,3 +1,0 @@
-animate-jump-in animate-duration-700 animate-delay-500
-animate-jump-in animate-duration-700 animate-delay-700
-animate-fade animate-once animate-duration-200 animate-delay-[1500ms]

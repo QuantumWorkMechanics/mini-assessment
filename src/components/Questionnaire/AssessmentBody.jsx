@@ -15,7 +15,7 @@ export default function AssessmentBody({
   spotLight,
   setSpotLight,
 }) {
-  // const spotlightRef2 = useSpotlight("Press next to continue.", "top");
+  
   return (
     <>
       <div className="w-1/4 hidden md:flex text-xs md:-ml-5 md:-mb-5 mt-3 font-bold">
@@ -53,7 +53,7 @@ export default function AssessmentBody({
               >
                 <button
                   className="p-3 "
-                  // style={{ fontFamily: "Gibson Light" "Noto Sans","Arial" }}
+           
                 >
                   Continue
                 </button>

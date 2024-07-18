@@ -3,19 +3,11 @@ import fontkit from "@pdf-lib/fontkit";
 import { findAvg } from "./Functions";
 import html2canvas from "html2canvas";
 import { resultsList } from "../../modules/question-bank";
-import { tidy, summarize, mean } from "@tidyjs/tidy";
 import overview from "../../assets/Overview.pdf";
 import component from "../../assets/Component.pdf";
 import noto from "../../assets/NotoSans-VariableFont_wdth,wght.ttf";
 
-export default async function fillForm(
-  categories,
-  questionList,
-  currentTotal,
-  desiredTotal,
-  setIsLoading,
-  setProgress
-) {
+export default async function fillForm(categories, questionList, currentTotal, desiredTotal, setIsLoading, setProgress) {
   const imgInput = document.getElementById("diamond-png");
   const imgDiamond = await html2canvas(imgInput, {
     scale: 3,
@@ -25,14 +17,9 @@ export default async function fillForm(
 
   const pngURL = imgDiamond.toDataURL();
 
-  // const formURL = "../../assets/Overview.pdf";
   const formPDF = await fetch(overview).then((res) => res.arrayBuffer());
-  // const componentURL = "../../assets/Component.pdf";
-
   const componentPDF = await fetch(component).then((res) => res.arrayBuffer());
-
   const pdfDoc = await PDFDocument.load(formPDF);
-
   const fontBytes = await fetch(noto).then((res) => res.arrayBuffer());
   const pngImg = await pdfDoc.embedPng(pngURL);
 
@@ -64,32 +51,17 @@ export default async function fillForm(
     if (font != "none") field.updateAppearances(font);
   }
 
-  fillTextField(
-    form,
-    "text_field1",
-    resultsList[0][tempTitle.toLowerCase()],
-    customFont,
-    8
-  );
+  fillTextField(form, "text_field1", resultsList[0][tempTitle.toLowerCase()], customFont, 8);
 
   fillTextField(form, "desired_title", setLevel(desiredTotal), "none");
-  fillTextField(
-    form,
-    "text_field2",
-    resultsList[0][setLevel(desiredTotal).toLowerCase()],
-    customFont,
-    8
-  );
+  fillTextField(form, "text_field2", resultsList[0][setLevel(desiredTotal).toLowerCase()], customFont, 8);
 
   form.flatten();
   const imgWidth = 285;
-
   const imgHeight = 126.3;
-  // console.log({ imgWidth, imgHeight });
 
   const pages = pdfDoc.getPages();
   const existingPage = pages[0];
-  // const imgY = existingPage.getHeight() - imgHeight;
   existingPage.drawImage(pngImg, {
     x: existingPage.getWidth() - imgWidth - 50,
     y: existingPage.getHeight() - imgHeight - 180,
@@ -105,7 +77,6 @@ export default async function fillForm(
 
       compDoc.registerFontkit(fontkit);
       const thisFont = await compDoc.embedFont(fontBytes);
-
       const compList = questionList.filter((el) => el.DiamondLoc == diamondLoc);
       const compName = compList[0].Type;
       const current = findAvg(diamondLoc, "current", questionList).toString();
@@ -114,9 +85,7 @@ export default async function fillForm(
       const thisForm = compDoc.getForm();
 
       fillTextField(thisForm, "component_title", compName);
-
       fillTextField(thisForm, "current", current);
-
       fillTextField(thisForm, "current_title", setLevel(current));
 
       let tempResultsList = resultsList.filter((el) => {
@@ -125,24 +94,10 @@ export default async function fillForm(
 
       let currentLevel = setLevel(current);
 
-      fillTextField(
-        thisForm,
-        "text_field1",
-        tempResultsList[0][currentLevel.toLowerCase()],
-        thisFont
-      );
-
+      fillTextField(thisForm, "text_field1", tempResultsList[0][currentLevel.toLowerCase()], thisFont);
       fillTextField(thisForm, "desired", desired, thisFont, 18);
-
       fillTextField(thisForm, "desired_title", setLevel(desired), thisFont, 18);
-
-      fillTextField(
-        thisForm,
-        "text_field2",
-        tempResultsList[0][setLevel(desired).toLowerCase()],
-        thisFont,
-        8
-      );
+      fillTextField(thisForm, "text_field2", tempResultsList[0][setLevel(desired).toLowerCase()], thisFont, 8);
 
       thisForm.flatten();
 
@@ -152,17 +107,15 @@ export default async function fillForm(
         scale: 3,
       });
       const imgBar2 = await html2canvas(compEl2, { scale: 3 });
-      // console.log({ imgBar });
       const barURL = imgBar.toDataURL();
       const barURL2 = imgBar2.toDataURL();
       const pngImg = await compDoc.embedPng(barURL);
       const pngImg2 = await compDoc.embedPng(barURL2);
-      const imgWidth = 250;
       const imgHeight = 150;
 
       const pages = compDoc.getPages();
       const existingPage = pages[0];
-      // const imgY = existingPage.getHeight() - imgHeight;
+
       existingPage.drawImage(pngImg, {
         x: existingPage.getWidth() / 2 + 10,
         y: existingPage.getHeight() - imgHeight - 200,
@@ -170,7 +123,6 @@ export default async function fillForm(
         height: 150,
       });
 
-      console.log(pngImg2);
       existingPage.drawImage(pngImg2, {
         x: existingPage.getWidth() / 2 + 10,
         y: 240,
@@ -183,10 +135,8 @@ export default async function fillForm(
   }
 
   await createComponentPage("topRight");
-
   await createComponentPage("rightCircle");
   setProgress(50);
-
   await createComponentPage("bottomCircle");
   setProgress(60);
   await createComponentPage("leftCircle");

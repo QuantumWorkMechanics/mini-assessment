@@ -19,37 +19,12 @@
   box-shadow: 0 0 0 99999px rgba(0, 0, 0, 0.6);
 }
 
-/* .result-bg {
-  background-image: url("../public/GettyImages-675834103.avif");
-
-  background-position: 30% 50%;
-  background-sice: cover;
-  background-repeat: no-repeat;
-} */
-
 .recharts-sector {
   shape-rendering: geometricPrecision;
 }
 
-/* .result-bg:after {
-  content: "";
-  position: absolute;
-  bottom: -25%;
-  left: 20%;
-  height: 55%;
-  width: 60%;
-  overflow: hidden;
-  background: #ffffff;
-  transform: translateY(-10%) rotate(-70deg);
-  z-index: -20;
-} */
-
 .frame-bg {
-  background-image: linear-gradient(
-    100deg,
-    #22313f 70%,
-    #f4f4f4 calc(70% + 2px)
-  );
+  background-image: linear-gradient(100deg, #22313f 70%, #f4f4f4 calc(70% + 2px));
 }
 
 body {

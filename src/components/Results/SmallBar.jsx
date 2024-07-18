@@ -1,16 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import {
-  BarChart,
-  Bar,
-  // Cell,
-  // XAxis,
-  // YAxis,
-  // CartesianGrid,
-  // Tooltip,
-  // Legend,
-  ResponsiveContainer,
-} from "recharts";
+import { BarChart, Bar, ResponsiveContainer } from "recharts";
 
 function SmallBar({ current, desired, animation }) {
   const [data, setData] = useState([
@@ -33,7 +23,6 @@ function SmallBar({ current, desired, animation }) {
   ]);
 
   useEffect(() => {
-    // console.log(currentSlide);
     let nextData = [...data];
     (nextData[0] = {
       name: "A",
@@ -45,20 +34,8 @@ function SmallBar({ current, desired, animation }) {
         x: desired,
         fill: "#FDB517",
       });
-    // console.log(nextData);
     setData(nextData);
   }, []);
-
-  // useEffect(() => {
-  //   let nextDesiredData = [...data];
-  //   (nextDesiredData[1] = {
-  //     name: "B",
-  //     x: desiredSlide,
-
-  //   }),
-  //     console.log(nextDesiredData);
-  //   setData(nextDesiredData);
-  // }, [desiredSlide]);
 
   return (
     <ResponsiveContainer width="100%" height="100%">

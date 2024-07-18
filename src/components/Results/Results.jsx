@@ -1,15 +1,9 @@
-import React, { useState, useEffect, useRef } from "react";
-import ResultComponent from "./ResultComponent";
-import SmallBar from "./SmallBar";
+import React, { useState, useEffect } from "react";
 import ResultsDiamond from "./ResultsDiamond";
 import LaunchForm from "./LaunchForm";
-import html2canvas from "html2canvas";
-import { jsPDF } from "jspdf";
 import PDFResult from "./PDFResult";
 import categoryList from "../Utils.jsx/CategoryList";
 import { findAvg } from "../Utils.jsx/Functions";
-import fillForm from "../Utils.jsx/FillForm.js";
-import { lorem } from "../Utils.jsx/Functions";
 import Overall from "./Overall";
 import SubComponent from "./SubComponent";
 import { returnAvg } from "../Utils.jsx/Functions";
@@ -18,18 +12,12 @@ import dataReview from "../../assets/dataReview.png";
 
 export default function Results({ questionList, categories, setSeeResult }) {
   const [results, setResults] = useState({});
-  // const [slides, setSlides] = useState(["diamond"]);
-  // const [currentSlide, setCurrentSlide] = useState(0);
   const [currentTotal, setCurrentTotal] = useState();
   const [desiredTotal, setDesiredTotal] = useState();
   const [showForm, setShowForm] = useState(false);
   const [continueAssessment, setContinueAssessment] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [progress, setProgress] = useState(0);
-
-  // function handleForm() {
-  //   setShowForm(true);
-  // }
 
   useEffect(() => {
     let tempResults = { ...categories };
@@ -52,7 +40,6 @@ export default function Results({ questionList, categories, setSeeResult }) {
     setCurrentTotal(tempCurrent);
     setDesiredTotal(tempDesired);
     setResults(tempResults);
-    console.log({ tempCurrent });
   }, []);
 
   returnAvg(questionList, "Current");
@@ -71,88 +58,48 @@ export default function Results({ questionList, categories, setSeeResult }) {
           <div className="animate-fade-up animate-duration-700 animate-delay-1000">
             {currentTotal && (
               <div className="md:mt-10  ">
-                <Overall
-                  title="Overall"
-                  total={currentTotal}
-                  content={lorem}
-                  resultLookup="all"
-                />
+                <Overall title="Overall" total={currentTotal} resultLookup="all" />
               </div>
             )}
             {desiredTotal && (
               <div className="col-start-1 md:mt-28 ">
-                <Overall
-                  title="My Goal"
-                  total={desiredTotal}
-                  content={lorem}
-                  resultLookup="all"
-                />
+                <Overall title="My Goal" total={desiredTotal} resultLookup="all" />
               </div>
             )}
           </div>
 
-          <div
-            id="diamond-visible"
-            className="  block w-screen md:w-[700px] h-auto   text-xs md:text-md lg:text-[1rem] xl:text-lg "
-          >
+          <div id="diamond-visible" className="  block w-screen md:w-[700px] h-auto   text-xs md:text-md lg:text-[1rem] xl:text-lg ">
             <div
               className=" mt-28 w-[380px]  md:w-[600px] md:p-4 md:px-10 animate-fade-up animate-once 
             animate-duration-700 animate-delay-1000 "
             >
-              <ResultsDiamond
-                components={categories}
-                results={results}
-                idModifier={""}
-              />
+              <ResultsDiamond components={categories} results={results} idModifier={""} />
             </div>
             <div
               className="hidden md:flex w-full justify-center animate-fade-up animate-once 
             animate-duration-700ms animate-delay-1000"
             >
-              <img
-                src={dataReview}
-                alt=""
-                className="w-[500px] mt-56 h-auto "
-              />
+              <img src={dataReview} alt="" className="w-[500px] mt-56 h-auto " />
             </div>
           </div>
         </div>
         {Object.keys(categories).map((category) => {
-          let tempQuestions = questionList.filter(
-            (el) => el.DiamondLoc == category
-          );
+          let tempQuestions = questionList.filter((el) => el.DiamondLoc == category);
           let tempAvg = returnAvg(tempQuestions, "Current");
-          if (
-            tempQuestions[0] &&
-            tempQuestions[0].Current == 0 &&
-            continueAssessment == false
-          ) {
+          if (tempQuestions[0] && tempQuestions[0].Current == 0 && continueAssessment == false) {
             setContinueAssessment(true);
           }
           return (
             categories[category] &&
-            tempAvg > 0 && (
-              <SubComponent
-                key={"sub-comp-" + category}
-                data={questionList.filter((el) => el.DiamondLoc == category)}
-              />
-            )
+            tempAvg > 0 && <SubComponent key={"sub-comp-" + category} data={questionList.filter((el) => el.DiamondLoc == category)} />
           );
         })}
         <div className="h-40 w-full"></div>
       </div>
 
       <div>
-        <div
-          id="diamond-png"
-          className="absolute -mt-[1400px] block w-[800px] h-auto   text-lg "
-        >
-          <ResultsDiamond
-            animation={false}
-            components={categories}
-            results={results}
-            idModifier={"Bar"}
-          />
+        <div id="diamond-png" className="absolute -mt-[1400px] block w-[800px] h-auto   text-lg ">
+          <ResultsDiamond animation={false} components={categories} results={results} idModifier={"Bar"} />
         </div>
       </div>
 
@@ -172,17 +119,11 @@ export default function Results({ questionList, categories, setSeeResult }) {
         />
       </div>
       {isLoading && (
-        <div
-          id="pdf-download"
-          className="fixed bottom-[30vh] w-full bg-neutral-50"
-        >
+        <div id="pdf-download" className="fixed bottom-[30vh] w-full bg-neutral-50">
           <LoadSpinner />
           <div className="w-full flex justify-center">
             <div className="w-[500px] h-4 rounded-full bg-slate-300 mb-14">
-              <div
-                className="h-4 rounded-full bg-[#FDB517]"
-                style={{ width: progress.toString() + "%" }}
-              ></div>
+              <div className="h-4 rounded-full bg-[#FDB517]" style={{ width: progress.toString() + "%" }}></div>
             </div>
           </div>
         </div>

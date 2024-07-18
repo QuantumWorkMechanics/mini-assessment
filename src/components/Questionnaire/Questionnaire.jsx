@@ -22,31 +22,28 @@ function Questionnaire() {
   const [isExploding, setIsExploding] = useState(false);
   const [progress, setProgress] = useState(0);
   const [sectionComplete, setSectionComplete] = useState(false);
-  const [isOpen, setOpen] = useState(true);
+  // const [isOpen, setOpen] = useState(true);
   const [seeResult, setSeeResult] = useState(false);
   const [spotLight, setSpotLight] = useState(1);
 
   useEffect(() => {
-    window.matchMedia("(min-width: 768px)").matches
-      ? window.scrollTo({ top: 112, behavior: "smooth" })
-      : window.scrollTo({ top: 72, behavior: "smooth" });
+    //Scroll if using navbar for better visibility
+    // window.matchMedia("(min-width: 768px)").matches
+    //   ? window.scrollTo({ top: 112, behavior: "smooth" })
+    //   : window.scrollTo({ top: 72, behavior: "smooth" });
     let tempList = [];
 
     // filterCategories
 
     categoryList.map((selectedCategory) => {
       if (location.state[selectedCategory]) {
-        tempList = tempList.concat(
-          questionBank.filter(
-            (component) => component.DiamondLoc == selectedCategory
-          )
-        );
+        tempList = tempList.concat(questionBank.filter((component) => component.DiamondLoc == selectedCategory));
       }
     });
 
     setQuestionList(tempList);
     setQuestionNum(tempList[0]);
-    setTimeout(() => setOpen(false), 2500);
+    // setTimeout(() => setOpen(false), 2500);
     // console.log(location.state);
   }, []);
 
@@ -71,15 +68,11 @@ function Questionnaire() {
       // setTimeout(document.getElementById("my_modal_1").showModal(), 1000);
       return;
     }
-    if (
-      questionList[questionIndex].Type != questionList[questionIndex + 1].Type
-    ) {
-      // console.log("New Category");
-      // setIsFireworks(true);
+
+    if (questionList[questionIndex].Type != questionList[questionIndex + 1].Type) {
       setSectionComplete(true);
-      // setTimeout(() => setIsFireworks(false), 3000);
-      // return;
     }
+
     let tempList = questionList;
     tempList[questionIndex].Current = currentSliderValue;
     tempList[questionIndex].Desired = desiredSliderValue;
@@ -88,7 +81,7 @@ function Questionnaire() {
     SetCurrentSliderValuerValue(tempList[questionIndex + 1].Current);
     SetDesiredSliderValuerValuerValue(tempList[questionIndex + 1].Desired);
     setQuestionNum(questionList[questionIndex + 1]);
-    console.log(questionList[questionIndex + 1]);
+    // console.log(questionList[questionIndex + 1]);
     setQuestionIndex((prev) => prev + 1);
 
     // console.log(questionNum);
@@ -102,49 +95,23 @@ function Questionnaire() {
     SetDesiredSliderValuerValuerValue(tempList[questionIndex - 1].Desired);
     setQuestionNum(questionList[questionIndex - 1]);
     setQuestionIndex((prev) => prev - 1);
-    console.log(questionList[questionIndex - 1]);
-    console.log(questionList);
+    // console.log(questionList[questionIndex - 1]);
+    // console.log(questionList);
   }
 
   return (
     <>
-      {!seeResult && <NavBar></NavBar>}
       {!seeResult && (
         <div className="-mt-2.5">
-          <progress
-            className="progress progress-secondary w-screen"
-            value={progress * 100}
-            max="100"
-          ></progress>
+          <progress className="progress progress-secondary w-screen" value={progress * 100} max="100"></progress>
         </div>
       )}
-
-      {/* <SpotlightTour
-        open={isOpen}
-        onClose={() => setOpen(false)}
-        Spotlight={Spotlight}
-      > */}
       <div className="h-screen text-primary flex flex-col">
-        {sectionComplete && (
-          <SectionComplete
-            setSectionComplete={setSectionComplete}
-            setSeeResult={setSeeResult}
-          />
-        )}
-        {isExploding && (
-          <AllSectionsComplete
-            setIsExploding={setIsExploding}
-            setSeeResult={setSeeResult}
-          />
-        )}
+        {sectionComplete && <SectionComplete setSectionComplete={setSectionComplete} setSeeResult={setSeeResult} />}
+        {isExploding && <AllSectionsComplete setIsExploding={setIsExploding} setSeeResult={setSeeResult} />}
         {!isExploding && !sectionComplete && !seeResult && (
           <>
-            <Header
-              questionNum={questionNum}
-              count={
-                questionList.filter((el) => el.Type == questionNum.Type).length
-              }
-            />
+            <Header questionNum={questionNum} count={questionList.filter((el) => el.Type == questionNum.Type).length} />
             <AssessmentBody
               spotLight={spotLight}
               setSpotLight={setSpotLight}
@@ -159,15 +126,8 @@ function Questionnaire() {
             />
           </>
         )}
-        {seeResult && (
-          <Results
-            questionList={questionList}
-            categories={location.state}
-            setSeeResult={setSeeResult}
-          />
-        )}
+        {seeResult && <Results questionList={questionList} categories={location.state} setSeeResult={setSeeResult} />}
       </div>
-      {/* </SpotlightTour> */}
     </>
   );
 }

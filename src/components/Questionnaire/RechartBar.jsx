@@ -22,7 +22,6 @@ function RechartBar({ currentSliderValue, desiredSliderValue }) {
   ]);
 
   useEffect(() => {
-    // console.log(currentSlide);
     let nextData = [...data];
     (nextData[0] = {
       name: "A",
@@ -34,18 +33,11 @@ function RechartBar({ currentSliderValue, desiredSliderValue }) {
         x: desiredSliderValue,
         fill: "#FDB517",
       });
-    // console.log(nextData);
     setData(nextData);
   }, [currentSliderValue, desiredSliderValue]);
 
   return (
-    <RadialBarChart
-      width={400}
-      height={400}
-      data={data}
-      innerRadius="20%"
-      outerRadius="70%"
-    >
+    <RadialBarChart width={400} height={400} data={data} innerRadius="20%" outerRadius="70%">
       <RadialBar minAngle={30} dataKey="x" clockWise />
     </RadialBarChart>
   );

@@ -14,7 +14,7 @@ export default function PDFResult({ components, results }) {
       "FontFamily Style Noto Sans",
       "url(https://fonts.gstatic.com/s/notosans/v32/o-0NIpQlx3QUlC5A4PNjXhFVZNyBx2pqPA.woff2)"
     );
-    // const readyFont = await document.fonts.ready;
+
     document.fonts.add(fontFile);
 
     fontFile.load();
@@ -26,30 +26,6 @@ export default function PDFResult({ components, results }) {
   const handleDownloadPDF = useReactToPrint({
     content: () => printRef.current,
   });
-
-  //   const handleDownloadPDF = async () => {
-  // window.scrollTo(0, 0);
-  // const element = document.getElementById("pdf-wrapper");
-  // const element =
-  // const canvas = await html2canvas(element, {
-  //   width: 1000,
-  //   height: 3600,
-  //   logging: true,
-  //   profile: true,
-  //   useCORS: true,
-  //   allowTaint: true,
-  //   scrollY: -window.scrollY,
-  //   foreignObjectRendering: true,
-  // });
-  // const data = canvas.toDataURL("image/png");
-  // const pdf = new jsPDF();
-  // const imgProperties = pdf.getImageProperties(data);
-  // const pdfWidth = pdf.internal.pageSize.getWidth();
-  // const pdfHeight = (imgProperties.height * pdfWidth) / imgProperties.width;
-  // pdf.addImage(data, "PNG", 0, 0, pdfWidth, pdfHeight);
-  // pdf.save("print.pdf");
-
-  //   };
 
   return (
     <div>
