@@ -9,6 +9,23 @@ export default function Diamond({ handleReady, selections, setSelections }) {
   const [bottomCircle, setBottomCircle] = useState(false);
   const [leftCircle, setLeftCircle] = useState(false);
   const [middleCircle, setMiddleCircle] = useState(false);
+  const [tf_hidden, setTfHidden] = useState({
+    leadership: false,
+    extended_workforce: false,
+    planning: false,
+    productivity: false,
+    talent_aquisition: false,
+    talent_management: false,
+  });
+
+  const COMPONENT_MAP = {
+    topLeft: "leadership",
+    topRight: "extended_workforce",
+    rightCircle: "planning",
+    bottomCircle: "productivity",
+    leftCircle: "talent_aquisition",
+    middleCircle: "talent_management",
+  };
 
   function handleDiamondComponentColors(component) {
     component == "topLeft" && setTopLeft((prev) => !prev);
@@ -22,6 +39,10 @@ export default function Diamond({ handleReady, selections, setSelections }) {
   function handleSelection(component) {
     let tempSelections = selections;
     tempSelections[component] = !tempSelections[component];
+    let tempHidden = tf_hidden;
+    tempHidden[COMPONENT_MAP[component]] = !tempHidden[COMPONENT_MAP[component]];
+    setTfHidden(tempHidden);
+    console.log(tf_hidden);
     setSelections(tempSelections);
     handleDiamondComponentColors(component);
   }
@@ -271,6 +292,7 @@ export default function Diamond({ handleReady, selections, setSelections }) {
           )}
           {selections && Object.values(selections).includes(true) && (
             <PopupButton
+              hidden={tf_hidden}
               onSubmit={() => handleReady()}
               id="JU5OyH4T"
               style={{ fontSize: 20 }}
