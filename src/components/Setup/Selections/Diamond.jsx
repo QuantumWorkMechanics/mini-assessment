@@ -293,7 +293,10 @@ export default function Diamond({ handleReady, selections, setSelections }) {
           {selections && Object.values(selections).includes(true) && (
             <PopupButton
               hidden={tf_hidden}
-              onSubmit={() => handleReady()}
+              onSubmit={(event) => {
+                console.log({ event });
+                handleReady();
+              }}
               id="JU5OyH4T"
               style={{ fontSize: 20 }}
               className="my-button btn btn-outline text-sm md:text-[#09497B]"

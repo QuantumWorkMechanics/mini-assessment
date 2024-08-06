@@ -1,8 +1,9 @@
 import React from "react";
 import { Button } from "@mui/material";
 import Realistic from "react-canvas-confetti/dist/presets/realistic";
+import { PopupButton } from "@typeform/embed-react";
 
-export default function AllSectionsComplete({ setSeeResult, setIsExploding }) {
+export default function AllSectionsComplete({ setSeeResult, setIsExploding, tfHidden }) {
   return (
     <>
       <div className="absolute z-50 left-[50vw] top-[60vh] ">
@@ -16,16 +17,33 @@ export default function AllSectionsComplete({ setSeeResult, setIsExploding }) {
         Click below to see your results.
       </div>
       <div className="w-[150px] place-self-center mt-24 animate-fade animate-once animate-duration-400 animate-delay-[1600ms]">
-        <Button
+        {/* <Button
           variant="outlined"
           size="large"
           onClick={() => {
-            setSeeResult(true);
-            setIsExploding(false);
+            createPopup("JU5OyH4T", { hidden: tfHidden });
+            // setSeeResult(true);
+            // setIsExploding(false);
           }}
         >
           See Results
-        </Button>
+        </Button> */}
+        <PopupButton
+          hidden={tfHidden}
+          //   onSubmit={() => handleReady()}
+          id="JU5OyH4T"
+          autoClose={true}
+          style={{ fontSize: 16 }}
+          className="my-button btn btn-outline text-sm md:text-[#09497B]"
+          onSubmit={(event) => {
+            console.log(event);
+            setSeeResult(true);
+            setIsExploding(false);
+          }}
+          onQuestionChanged={(event) => console.log(event)}
+        >
+          See Results
+        </PopupButton>
       </div>
     </>
   );

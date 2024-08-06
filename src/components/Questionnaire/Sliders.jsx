@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-export default function Sliders({ handleCurrent, handleDesired, currentSliderValue, desiredSliderValue }) {
+export default function Sliders({ handleCurrent, handleDesired, currentSliderValue, desiredSliderValue, handleSlider }) {
   return (
     <>
       <div className="md:place-self-start md:my-40 flex flex-col md:flex-row justify-center md:justify-start p-6 md:p-0">
@@ -15,7 +15,7 @@ export default function Sliders({ handleCurrent, handleDesired, currentSliderVal
               max={5}
               className="bg-white md:w-80 md:-rotate-90 range range-xs range-primary"
               step="1"
-              onChange={(e) => handleCurrent(e.target.value)}
+              onChange={(e) => handleSlider(e.target.value, "Current")}
             />
             <div className="z-20"></div>
           </div>
@@ -34,11 +34,11 @@ export default function Sliders({ handleCurrent, handleDesired, currentSliderVal
                 max={5}
                 className="bg-white  md:w-80 md:-rotate-90 range range-xs range-secondary"
                 step="1"
-                onChange={(e) => handleDesired(e.target.value)}
+                onChange={(e) => handleSlider(e.target.value, "Desired")}
               />
               <div className="flex justify-between w-full h-full md:-rotate-90 md:ml-8 pointer-events-none md:-mt-9 p-2">
                 <div className=""></div>
-                <div className="w-1 h-6 bg-slate-400 rounded"></div>
+                {/* <div className="w-1 h-6 bg-slate-400 rounded"></div> */}
                 <div className="w-1 h-6 bg-slate-400 rounded"></div>
                 <div className="w-1 h-6 bg-slate-400 rounded"></div>
                 <div className="w-1 h-6 bg-slate-400 rounded"></div>
