@@ -12,9 +12,18 @@ const COMPONENT_MAP = {
   "Performance Management System": "pm",
 };
 
-export function scoreDiagnostic(diagnostic, type = "Small") {
+export function scoreDiagnostic(diagnostic) {
   let numericSet = diagnostic.filter((q) => q.fieldType == "Slider Field");
-
+  let type;
+  //console.log(diagnostic[-1]);
+  const SIZE_RESPONSE = diagnostic.filter((x) => x.Dimension == "Organization Size")[0].selections;
+  if (SIZE_RESPONSE.includes("Small")) {
+    type = "Small";
+  } else if (SIZE_RESPONSE.includes("Medium")) {
+    type = "Medium";
+  } else {
+    type = "Large";
+  }
   let currentAvg = numericSet.reduce((acc, val) => acc + parseInt(val.Current), 0) / numericSet.length;
   let desiredAvg = numericSet.reduce((acc, val) => acc + parseInt(val.Desired), 0) / numericSet.length;
   let tempKey = getLevelKey(currentAvg, desiredAvg);
@@ -32,7 +41,7 @@ export function scoreDiagnostic(diagnostic, type = "Small") {
       result.dimensionResults = [...result.dimensionResults, temp];
     }
   }
-  console.log(result);
+  return result;
 }
 
 function getDimensionResult(dimension, diagnostic, type) {
@@ -63,7 +72,15 @@ function getDimensionResult(dimension, diagnostic, type) {
   //   console.log(resultKey);
   //   console.log(results[COMPONENT_MAP[dimension]].filter((r) => r.Type == type)[0][resultKey]);
 
-  let tempResult = { title: resultKey, result: results[COMPONENT_MAP[dimension]].filter((r) => r.Type == type)[0][resultKey], current, desired };
+  let tempResult = {
+    title: resultKey,
+    result: results[COMPONENT_MAP[dimension]].filter((r) => r.Type == type)[0][resultKey],
+    current,
+    desired,
+    dimension,
+    currentLevel,
+    desiredLevel,
+  };
   //   tempResult.Current = current;
   //   tempResult.Desired = desired;
   //return the result and score
@@ -94,4 +111,4 @@ function getLevelKey(current, desired) {
   return desiredLevel == currentLevel ? `Staying at ${desiredLevel} level` : `${currentLevel} to ${desiredLevel}`;
 }
 
-scoreDiagnostic(mockResults);
+//scoreDiagnostic(mockResults);

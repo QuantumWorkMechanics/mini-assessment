@@ -90,6 +90,7 @@ export const questionBank = [
     errorMessage: "Your desired level cannot be smaller than the current level.",
     selections: [],
     max: 0,
+    other: "",
   },
   {
     question: "How would you rate the integration and use of skills in your HR processes and technology?",
@@ -107,6 +108,7 @@ export const questionBank = [
     errorMessage: "Your desired level cannot be smaller than the current level.",
     selections: [],
     max: 0,
+    other: "",
   },
   {
     question: "What are the near term top 3 strategic talent priorities for your organization?",
@@ -133,9 +135,10 @@ export const questionBank = [
     Response_3: "",
     Response_4: "",
     fieldType: "Multi-Select",
-    errorMessage: "Please select 3 priorities",
+    errorMessage: "Please select exactly 3 priorities",
     selections: [],
-    max: "3",
+    other: "",
+    max: 3,
   },
   {
     question: "What is your organization readiness for these priorities?",
@@ -153,6 +156,7 @@ export const questionBank = [
     errorMessage: "Slider Field",
     selections: [],
     max: 0,
+    other: "",
   },
   {
     question: "How widely are the above HR technologies adopted and utilized by HR and business teams?",
@@ -170,6 +174,7 @@ export const questionBank = [
     errorMessage: "Your desired level cannot be smaller than the current level.",
     selections: [],
     max: 0,
+    other: "",
   },
   {
     question: "What is the level of adoption by HR & business for the above HR Technologies?",
@@ -228,6 +233,7 @@ export const questionBank = [
     errorMessage: "Your desired level cannot be smaller than the current level.",
     selections: [],
     max: 0,
+    other: "",
   },
   {
     question:
@@ -266,6 +272,7 @@ export const questionBank = [
     errorMessage: "Please select at least one value",
     selections: [],
     max: null,
+    other: "",
   },
   {
     question: "How would you rate your organization's capability to implement and manage these HR processes and technologies?",
@@ -283,6 +290,7 @@ export const questionBank = [
     errorMessage: "Your desired level cannot be smaller than the current level.",
     selections: [],
     max: 0,
+    other: "",
   },
   {
     question: "Is your organization currently leveraging artificial intelligence (AI) in its operations?",
@@ -300,6 +308,7 @@ export const questionBank = [
     errorMessage: "Your desired level cannot be smaller than the current level.",
     selections: [],
     max: 0,
+    other: "",
   },
   {
     question: "How would you assess the maturity of the digital experience offered by your HR ecosystem?",
@@ -317,6 +326,7 @@ export const questionBank = [
     errorMessage: "Your desired level cannot be smaller than the current level.",
     selections: [],
     max: 0,
+    other: "",
   },
   {
     question: "How do you assess the effectiveness of data utilization in HR decision-making within your organization?",
@@ -334,6 +344,7 @@ export const questionBank = [
     errorMessage: "Your desired level cannot be smaller than the current level.",
     selections: [],
     max: 0,
+    other: "",
   },
   {
     question: "Please assess the maturity of your Workforce Planning System.",
@@ -352,6 +363,7 @@ export const questionBank = [
     errorMessage: "Your desired level cannot be smaller than the current level.",
     selections: [],
     max: 0,
+    other: "",
   },
   {
     question: "What is your Workforce Planning System? (select all that apply)",
@@ -383,6 +395,7 @@ export const questionBank = [
     errorMessage: "Please select at least one value",
     selections: [],
     max: null,
+    other: "",
   },
   {
     question: "Please evaluate the maturity of your Vendor Management System (Contingent Worker)",
@@ -400,6 +413,7 @@ export const questionBank = [
     errorMessage: "Your desired level cannot be smaller than the current level.",
     selections: [],
     max: 0,
+    other: "",
   },
   {
     question: "What is your Vendor Management System? (select all that apply)",
@@ -431,6 +445,7 @@ export const questionBank = [
     errorMessage: "Please select at least one value",
     selections: [],
     max: null,
+    other: "",
   },
   {
     question: "Please assess the maturity of your Talent Acquisition Systems (CRM, ATS, Career Sites etc.)",
@@ -449,6 +464,7 @@ export const questionBank = [
     errorMessage: "Your desired level cannot be smaller than the current level.",
     selections: [],
     max: 0,
+    other: "",
   },
   {
     question: "Which systems are used for Talent Acquisition? (select all that apply)",
@@ -480,6 +496,7 @@ export const questionBank = [
     errorMessage: "Please select at least one value",
     selections: [],
     max: null,
+    other: "",
   },
   {
     question:
@@ -501,6 +518,7 @@ export const questionBank = [
     errorMessage: "Your desired level cannot be smaller than the current level.",
     selections: [],
     max: 0,
+    other: "",
   },
   {
     question: "Which systems are used for Talent Management? (select all that apply)",
@@ -532,6 +550,7 @@ export const questionBank = [
     errorMessage: "Please select at least one value",
     selections: [],
     max: null,
+    other: "",
   },
   {
     question:
@@ -552,6 +571,7 @@ export const questionBank = [
     errorMessage: "Your desired level cannot be smaller than the current level.",
     selections: [],
     max: 0,
+    other: "",
   },
   {
     question: "Which systems are used for Learning & Development? (select all that apply)",
@@ -583,6 +603,7 @@ export const questionBank = [
     errorMessage: "Please select at least one value",
     selections: [],
     max: null,
+    other: "",
   },
   {
     question: "Please assess the maturity of your Performance Management Systems.",
@@ -603,6 +624,7 @@ export const questionBank = [
     errorMessage: "Your desired level cannot be smaller than the current level.",
     selections: [],
     max: 0,
+    other: "",
   },
   {
     question: "What is your Performance Management System? (select all that apply)",
@@ -634,6 +656,25 @@ export const questionBank = [
     errorMessage: "Please select at least one value",
     selections: [],
     max: null,
+    other: "",
+  },
+  {
+    question: "Please select your region:",
+    Type: "",
+    Current: 0,
+    Desired: 0,
+    Number: 25,
+    Of: 15,
+    Dimension: "Organization Size",
+    Response_1: ["NA", "LATAM", "EMEA", "APAC"],
+    Response_2: "",
+    Response_3: "",
+    Response_4: "",
+    fieldType: "Single Select",
+    errorMessage: "Please select exactly one value",
+    selections: [],
+    max: null,
+    other: "",
   },
   {
     question: "How Large is your organization?",
@@ -651,5 +692,6 @@ export const questionBank = [
     errorMessage: "Please select exactly one value",
     selections: [],
     max: null,
+    other: "",
   },
 ];

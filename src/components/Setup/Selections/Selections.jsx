@@ -82,7 +82,7 @@ export default function Selections({ setData }) {
                 </ul>
               </div>
             </div>
-            <div className="p-6 ml-3  md:mr-2 z-50 md:mt-20 md:-mr-2">
+            <div className="md:p-6 ml-3  md:mr-2 z-50 md:mt-20 md:-mr-2">
               <DiamondNew setReady={setReady} handleReady={handleReady} selections={selections} setSelections={setSelections}></DiamondNew>
             </div>
           </div>

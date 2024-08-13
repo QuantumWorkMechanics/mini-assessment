@@ -1,23 +1,11 @@
 import React, { useState, useEffect } from "react";
-import {
-  ResponsiveContainer,
-  RadarChart,
-  PolarGrid,
-  PolarAngleAxis,
-  PolarRadiusAxis,
-  Radar,
-  Legend,
-  Label,
-  BarChart,
-  Tooltip,
-  CartesianGrid,
-  XAxis,
-  YAxis,
-  Bar,
-  Rectangle,
-} from "recharts";
+import { ResponsiveContainer, Legend, BarChart, CartesianGrid, XAxis, YAxis, Bar, LabelList } from "recharts";
 
-export default function SubBarGraph({ dataSet }) {
+export default function SubBarGraph({ dataSet, result }) {
+  console.log(dataSet);
+
+  const COLORS = ["#09497B", "#FDB517"];
+
   return (
     <ResponsiveContainer width="100%" height="100%">
       <BarChart
@@ -34,11 +22,15 @@ export default function SubBarGraph({ dataSet }) {
         }}
       >
         <CartesianGrid stroke="#f5f5f5" />
-        <YAxis axisLine={false} type="number" domain={[0, 5]} tickInterval={1} tickCount={6} tick={{ fontSize: 10 }} />
-        <XAxis dataKey="title" type="category" tick={false} scale="band"></XAxis>
+        <YAxis axisLine={false} type="number" domain={[0, 5]} tickInterval={1} tickCount={0} tick={{ fontSize: 10 }} />
+        <XAxis align="right" dataKey="name" type="category" scale="band"></XAxis>
         <Legend />
-        <Bar name="Current" label={name} dataKey="current" fill="#09497B" />
-        <Bar name="Desired" dataKey="desired" fill="#FDB517" />
+        <Bar dataKey="currAvg" name="Current" fill={COLORS[0]}>
+          <LabelList dataKey="currLabel" position="top"></LabelList>
+        </Bar>
+        <Bar dataKey="desAvg" name="Desired" fill={COLORS[1]}>
+          <LabelList dataKey="desLabel" position="top"></LabelList>
+        </Bar>
       </BarChart>
     </ResponsiveContainer>
   );
