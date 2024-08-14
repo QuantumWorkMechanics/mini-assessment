@@ -46,7 +46,7 @@ export default function Selections({ setData }) {
                 </h1>
               </div>
               <div className="w-[80%] md:w-[60%] place-self-center">
-                <div className="text-xl pb-2 ">Begin by selecting which worktech competencies you woud like to asses.</div>
+                <div className="text-xl pb-2 ">Begin by selecting which worktech competencies you woud like to assess.</div>
                 <div className="flex justify-center mr-8">
                   <div className="place self-center bg-white h-[2px] w-20 mt-2"></div>
                 </div>
@@ -92,7 +92,7 @@ export default function Selections({ setData }) {
             </h1>
 
             <h2 className="text-xl pb-2 text-white font-extralight text-[16pt] leading-10">
-              Click on the diamond components to select the worktech competencies you woud like to asses.
+              Click on the diamond components to select the worktech competencies you woud like to assess.
             </h2>
             {!ready && (
               <button
