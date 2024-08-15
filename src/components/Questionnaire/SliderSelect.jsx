@@ -34,7 +34,7 @@ export default function SliderSelect({
 
   return (
     <>
-      <h2 className="text-xl text-center pt-8 md:mx-40">{currentQuestion.question}</h2>
+      <h2 className="text-xl md:min-h-20 text-center pt-8 md:mx-40">{currentQuestion.question}</h2>
       <div className="w-1/4 hidden md:flex text-xs md:-ml-5 md:-mb-5 mt-3 font-bold pt-6">
         <div className="ml-40  flex items-center pl-5 py-4">
           <div className="w-[10px] bg-[#09497B] h-[10px] rounded-full mr-2"></div>
@@ -180,6 +180,7 @@ export default function SliderSelect({
           isActive={currentQuestion.Current > 0 && currentQuestion.Desired > 0 && currentQuestion.Desired > currentQuestion.Current}
           isAutoAdvance={isAutoAdvance}
           setIsAutoAdvance={setIsAutoAdvance}
+          showAutoAdvance={true}
         />
       </div>
       {/* <div className="w-screen flex -mt-80 md:mt-0 justify-between md:justify-center ">

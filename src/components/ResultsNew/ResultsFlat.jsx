@@ -9,6 +9,7 @@ import Divider from "../Utils.jsx/Divider";
 import { BUSINESS_STRATEGY, WHATS_NEXT } from "./results-copy";
 import ResultsRadar from "./ResultsRadar";
 import ResultsSubResult from "./ResultsSubResult";
+import SpeedometerOne from "../Utils.jsx/SpeedometerOne";
 
 const DIMENSIONS = [
   "HR Ecosystem Maturity",
@@ -25,6 +26,8 @@ function ResultsFlat({ diagnostic, selections }) {
   const [desired, setDesired] = useState();
   const [orgResults, setOrgResults] = useState();
   const [ready, setReady] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
     setTimeout(() => {
@@ -33,8 +36,8 @@ function ResultsFlat({ diagnostic, selections }) {
       setResults(diagnostic);
       setDimensionResults(tempResults.dimensionResults);
       //   console.log((tempResults.currentAvg / 4) * 100);
-      setCurrent((tempResults.currentAvg / 4) * 100);
-      setDesired((tempResults.desiredAvg / 4) * 100);
+      setCurrent(tempResults.currentAvg);
+      setDesired(tempResults.desiredAvg);
       setOrgResults(tempResults.orgResults);
       console.log(tempResults);
       setReady(true);
@@ -60,14 +63,17 @@ function ResultsFlat({ diagnostic, selections }) {
 
           <div className="flex items-center px-40 h-1/3">{orgResults.result}</div>
 
-          <div className="flex justify-center items-center font-semibold text-lg">
+          <div className="flex justify-center gap-8 items-center font-semibold text-lg">
             <div className="flex flex-col items-center">
-              <GaugeChartOne gaugeVal={current} />
+              {/* <GaugeChartOne gaugeVal={current} /> */}
               <div>Current</div>
+              <SpeedometerOne gaugeVal={current} />
             </div>
             <div className="flex flex-col items-center">
-              <GaugeChartOne gaugeVal={desired} />
-              <div>Desired</div>
+              <div>
+                Desired<span className=" absolute mt-40 ml-40 text-xs">* based on your selections.</span>
+              </div>
+              <SpeedometerOne gaugeVal={desired} />
             </div>
           </div>
           <Divider text={BUSINESS_STRATEGY.title} />

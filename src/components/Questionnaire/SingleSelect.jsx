@@ -13,15 +13,15 @@ function SingleSelect({ currentQuestion, handleSingleSelect, handleNext, count, 
         <Header currentQuestion={currentQuestion} count={count} questionIndex={questionIndex} />
 
         <div className="flex flex-col justify-center items-center md:w-full">
-          <h2 className="text-xl p-4 pt-10 pl-8 pr-8">{currentQuestion.question}</h2>
-          <div className="flex flex-col justify-center items-center gap-2 md:w-full  ">
+          <h2 className="text-xl h-40 p-4 pt-10 pl-8 pr-8">{currentQuestion.question}</h2>
+          <div className="flex flex-col justify-center items-center gap-1 md:w-full  ">
             {currentQuestion.Response_1.map((choice, i) => {
               let item = choice.replace("-", "").trim();
               // let isSelected = questionNum.selections.indexOf(item) > -1;
               return (
                 <div
                   className={
-                    "cursor-pointer w-72  p-2 rounded-md  hover:bg-blue-200 border-2 " +
+                    "cursor-pointer w-72  p-1 rounded  hover:bg-blue-200 border-2 " +
                     (!currentQuestion.selections && item != currentQuestion.selections && "  bg-blue-50 ") +
                     (currentQuestion.selections && item == currentQuestion.selections && " text-white bg-[#09497B] ")
                   }
@@ -43,14 +43,17 @@ function SingleSelect({ currentQuestion, handleSingleSelect, handleNext, count, 
               );
             })}
           </div>
-          <Controls
-            handleBack={handleBack}
-            handleNext={handleNext}
-            questionIndex={questionIndex}
-            isActive={typeof currentQuestion.selections == "string"}
-            isAutoAdvance={isAutoAdvance}
-            setIsAutoAdvance={setIsAutoAdvance}
-          />
+          <div className="mt-6">
+            <Controls
+              handleBack={handleBack}
+              handleNext={handleNext}
+              questionIndex={questionIndex}
+              isActive={typeof currentQuestion.selections == "string"}
+              isAutoAdvance={isAutoAdvance}
+              setIsAutoAdvance={setIsAutoAdvance}
+              showAutoAdvance={false}
+            />
+          </div>
           {/* <div onClick={handleNext} className="btn bg-[#FFCB18]  mt-10">
               NEXT
             </div> */}

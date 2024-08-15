@@ -1,4 +1,6 @@
 import { mockResults } from "../../modules/results/mock-results";
+import LaunchForm from "../Results/LaunchForm";
+import LaunchPDF from "./LaunchPDF";
 import ResultsFlat from "./ResultsFlat";
 
 function ResultsTesting2() {
@@ -18,6 +20,7 @@ function ResultsTesting2() {
           diagnostic={mockResults}
         />
       </div>
+      <LaunchPDF />
     </div>
   );
 }

@@ -24,8 +24,8 @@ export function scoreDiagnostic(diagnostic) {
   } else {
     type = "Large";
   }
-  let currentAvg = numericSet.reduce((acc, val) => acc + parseInt(val.Current), 0) / numericSet.length;
-  let desiredAvg = numericSet.reduce((acc, val) => acc + parseInt(val.Desired), 0) / numericSet.length;
+  let currentAvg = Math.round(numericSet.reduce((acc, val) => acc + parseInt(val.Current), 0) / numericSet.length);
+  let desiredAvg = Math.round(numericSet.reduce((acc, val) => acc + parseInt(val.Desired), 0) / numericSet.length);
   let tempKey = getLevelKey(currentAvg, desiredAvg);
   let tempResult = { title: tempKey, result: results[`${type.toLowerCase()}_org`][Math.floor(Math.random() * 10)][tempKey] };
   // console.log(currentAvg, desiredAvg);
@@ -87,14 +87,14 @@ function getDimensionResult(dimension, diagnostic, type) {
   return tempResult;
 }
 
-function getLevel(num) {
-  let level;
-  for (let i = 0; i < 4; i++) {
-    if (num < LEVEL_CUTOFFS[i]) {
-      level = i + 1;
-      break;
-    }
-  }
+function getLevel(level) {
+  // let level;
+  // for (let i = 0; i < 4; i++) {
+  //   if (num < LEVEL_CUTOFFS[i]) {
+  //     level = i + 1;
+  //     break;
+  //   }
+  // }
   if (level == 1) return "Basic";
   if (level == 2) return "Emerging";
   if (level == 3) return "Mature";

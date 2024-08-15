@@ -1,203 +1,39 @@
 import ReactSpeedometer from "react-d3-speedometer";
 import GaugeComponent from "react-gauge-component";
+import SpeedometerOne from "./SpeedometerOne";
+import { useEffect, useState } from "react";
+import { mockResults } from "../../modules/results/mock-results";
+import { scoreDiagnostic } from "../../modules/results/scoring-service";
 
 function Speedometer() {
+  const [results, setResults] = useState();
+  const [dimensionResults, setDimensionResults] = useState();
+  const [current, setCurrent] = useState();
+  const [desired, setDesired] = useState();
+  const [orgResults, setOrgResults] = useState();
+  const [ready, setReady] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    setTimeout(() => {
+      //console.log({ diagnostic });
+      const tempResults = scoreDiagnostic(mockResults);
+      setResults(mockResults);
+      setDimensionResults(tempResults.dimensionResults);
+      //   console.log((tempResults.currentAvg / 4) * 100);
+      setCurrent(parseInt(tempResults.currentAvg));
+      console.log(tempResults.currentAvg);
+      setDesired(tempResults.desiredAvg);
+      setOrgResults(tempResults.orgResults);
+      console.log(tempResults);
+      setReady(true);
+    }, 2500);
+  }, []);
   return (
-    <div className="flex flex-col">
-      <div className="flex">
-        <ReactSpeedometer
-          minValue={0}
-          maxValue={4}
-          segments={4}
-          value={3.4}
-          customSegmentLabels={[
-            {
-              text: "BASIC",
-              fontSize: 10,
-              position: "OUTSIDE",
-              color: "#999999",
-            },
-            {
-              text: "EMERGING",
-              fontSize: 10,
-              position: "OUTSIDE",
-              color: "#999999",
-            },
-            {
-              text: "MATURE",
-              fontSize: 10,
-              position: "OUTSIDE",
-              color: "#999999",
-            },
-            {
-              text: "LEADER",
-              fontSize: 10,
-              position: "OUTSIDE",
-              color: "#999999",
-            },
-          ]}
-        />
-        <ReactSpeedometer
-          minValue={0}
-          maxValue={4}
-          segments={4}
-          value={2.5}
-          customSegmentLabels={[
-            {
-              text: "BASIC",
-              fontSize: "10",
-              position: "INSIDE",
-              color: "#fff",
-            },
-            {
-              text: "EMERGING",
-              fontSize: "10",
-              position: "INSIDE",
-              color: "#fff",
-            },
-            {
-              text: "MATURE",
-              fontSize: "10",
-              position: "INSIDE",
-              color: "#0EA8DC",
-            },
-            {
-              text: "LEADER",
-              fontSize: "10",
-              position: "INSIDE",
-              color: "#0EA8DC",
-            },
-          ]}
-        />
-      </div>
-      <div className="flex">
-        <GaugeComponent
-          style={{ width: "20%" }}
-          value={30}
-          type="radial"
-          labels={{
-            valueLabel: { formatTextValue: (value) => value / 25 },
-            tickLabels: {
-              defaultTickValueConfig: { hide: true },
-              type: "inner",
-              ticks: [
-                { value: 0 },
-                { value: 10 },
-                { value: 20 },
-                { value: 30 },
-                { value: 40 },
-                { value: 50 },
-                { value: 60 },
-                { value: 70 },
-                { value: 80 },
-                { value: 90 },
-              ],
-              valueConfig: {
-                formatTextValue: (val) => {
-                  val % 20 == 0 ? ["BASIC", "EMERGING", "MATURE", "LEADER"][val / 20 - 1] : "";
-                },
-              },
-            },
-          }}
-          arc={{
-            colorArray: ["#EA4228", "#5BE12C"],
-            subArcs: [{}, {}, {}, {}],
-            padding: 0.02,
-            width: 0.3,
-          }}
-          pointer={{
-            color: "#ff4d00",
-            elastic: true,
-            animationDelay: 0,
-            width: 10,
-            length: 0.8,
-          }}
-        />
-        <GaugeComponent
-          style={{ width: "25%" }}
-          value={60}
-          type="grafana"
-          labels={{
-            valueLabel: { formatTextValue: (value) => value / 25 },
-            tickLabels: {
-              defaultTickValueConfig: { hide: true },
-              type: "inner",
-              ticks: [
-                { value: 0 },
-                { value: 10 },
-                { value: 20 },
-                { value: 30 },
-                { value: 40 },
-                { value: 50 },
-                { value: 60 },
-                { value: 70 },
-                { value: 80 },
-                { value: 90 },
-              ],
-              valueConfig: {
-                formatTextValue: (val) => {
-                  val % 20 == 0 ? ["BASIC", "EMERGING", "MATURE", "LEADER"][val / 20 - 1] : "";
-                },
-              },
-            },
-          }}
-          arc={{
-            colorArray: ["#EA4228", "#5BE12C"],
-            subArcs: [{}, {}, {}, {}],
-            padding: 0.02,
-            width: 0.3,
-          }}
-          pointer={{
-            color: "#ff4d00",
-            elastic: true,
-            animationDelay: 0,
-            width: 10,
-            length: 0.8,
-          }}
-        />
-        <GaugeComponent
-          style={{ width: "25%" }}
-          value={3}
-          type="semicircle"
-          labels={{
-            valueLabel: { formatTextValue: (value) => value / 25 },
-            tickLabels: {
-              defaultTickValueConfig: { hide: true },
-              type: "inner",
-              ticks: [
-                { value: 0 },
-                { value: 10 },
-                { value: 20 },
-                { value: 30 },
-                { value: 40 },
-                { value: 50 },
-                { value: 60 },
-                { value: 70 },
-                { value: 80 },
-                { value: 90 },
-              ],
-              valueConfig: {
-                formatTextValue: (val) => {
-                  val % 20 == 0 ? ["BASIC", "EMERGING", "MATURE", "LEADER"][val / 20 - 1] : "";
-                },
-              },
-            },
-          }}
-          arc={{
-            colorArray: ["#EA4228", "#5BE12C"],
-            subArcs: [{}, {}, {}, {}],
-            padding: 0.02,
-            width: 0.3,
-          }}
-          pointer={{
-            color: "#ff4d00",
-            elastic: true,
-            animationDelay: 0,
-            width: 10,
-            length: 0.8,
-          }}
-        />
-      </div>
+    <div>
+      {current && current > 0 && <SpeedometerOne gaugeVal={current} />}
+      {desired && desired > 0 && <SpeedometerOne gaugeVal={desired} />}
     </div>
   );
 }

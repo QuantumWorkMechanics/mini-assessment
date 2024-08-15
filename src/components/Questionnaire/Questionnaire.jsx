@@ -243,6 +243,7 @@ function Questionnaire() {
                   <MultiSelect
                     handleOther={handleOther}
                     handleNext={handleNext}
+                    handleBack={handleBack}
                     handleMultiSelect={handleMultiSelect}
                     currentQuestion={currentQuestion}
                     count={questionList.length}
