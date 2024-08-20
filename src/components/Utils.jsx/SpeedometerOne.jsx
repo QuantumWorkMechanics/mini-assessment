@@ -13,6 +13,7 @@ function SpeedometerOne(gaugeVal) {
     <div>
       {gaugeVal && (
         <ReactSpeedometer
+          height={190}
           minValue={0.5}
           maxValue={4.5}
           segments={4}

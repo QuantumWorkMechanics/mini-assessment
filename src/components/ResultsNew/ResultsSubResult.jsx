@@ -2,8 +2,9 @@ import Divider from "../Utils.jsx/Divider";
 import categoryList from "../Utils.jsx/CategoryList";
 import { useState } from "react";
 import SubBarGraph from "../Results/subBarGraph";
+import Box from "../Utils.jsx/Box";
 
-const DIMENSION_TEXT = {
+export const DIMENSION_TEXT = {
   "Extended Workforce": {
     title: "Extended Workforce",
     display: "Extended Workforce",
@@ -41,11 +42,14 @@ function ResultsSubResult({ result }) {
     <>
       <div className="flex flex-col gap-8">
         <Divider text={result.dimension}> </Divider>
-        <div className="px-40">
-          The bellow recommendations and Benefits are tailored for to enhance your {result.dimension}. These strategies are designed to help your
-          organization optimize {DIMENSION_TEXT[result.dimension].display}, improve skills management, and support strategic business objectives.
-        </div>
-        <div id={result.dimension + "_bar"} className="w-[250px] h-[250px] md:h-[200px] md:w-[400px] mt-20 flex flex-col place-self-center">
+        <Box>
+          <h3 className="md:hidden text-2xl py-4">{result.dimension}</h3>
+          <div>
+            `The bellow recommendations and Benefits are tailored for to enhance your ${result.dimension}. These strategies are designed to help your
+            organization optimize ${DIMENSION_TEXT[result.dimension].display}, improve skills management, and support strategic business objectives.`
+          </div>
+        </Box>
+        <div id={result.dimension + "_bar"} className="-mt-[1500%] h-[200px] w-[400px] md:mt-20 flex flex-col place-self-center">
           <SubBarGraph
             dataSet={[
               {
@@ -60,8 +64,24 @@ function ResultsSubResult({ result }) {
             result={result}
           />
         </div>
-        <h3 className="px-40 font-bold">Recommendations:</h3>
-        <div className="flex flex-col px-40">
+        <div className="md:hidden w-[250px] h-[250px] md:h-[200px] md:w-[400px] mt-20 flex flex-col place-self-center">
+          <SubBarGraph
+            dataSet={[
+              {
+                currentName: "Current",
+                currAvg: result.current,
+                currLabel: result.currentLevel,
+                desiredName: "Desired",
+                desAvg: result.desired,
+                desLabel: result.desiredLevel,
+              },
+            ]}
+            result={result}
+          />
+        </div>
+
+        <div className="flex flex-col px-40" className="bg-slate-200 flex flex-col md:mx-20 md:my-8 p-10 gap-2 border border-[#999999] shadow">
+          <h3 className="font-bold text-xl">Recommendations:</h3>
           {result.result.Recommendations.map((rec, i) => {
             return (
               <div key={`rec_${i}`}>
@@ -70,7 +90,7 @@ function ResultsSubResult({ result }) {
               </div>
             );
           })}
-          <h3 className="font-bold py-8">Benefits:</h3>
+          <h3 className="font-bold text-xl pt-6">Benefits:</h3>
           {result.result.Benefits.map((rec, i) => {
             return (
               <div key={`ben_${i}`}>

@@ -28,6 +28,7 @@ import img8 from "../../assets/image8.jpeg";
 import img9 from "../../assets/image6.jpeg";
 import ResultsFlat from "../ResultsNew/ResultsFlat";
 import useTimeout from "../Utils.jsx/useTimeout";
+import ResultsFull from "../ResultsNew/ResultsFull";
 
 const IMAGES = [img1, img2, img3, img4, img5, img6, img7, img8, img9];
 
@@ -278,10 +279,12 @@ function Questionnaire() {
         </>
       )}
       {seeResult && questionList && (
-        // <div className=" w-screen h-screen flex flex-col text-center pt-20">Coming Soon</div>
-        <div className="overflow-scroll">
-          <ResultsFlat diagnostic={questionList} selections={location.state} />
-        </div>
+        <>
+          {/* // <div className=" w-screen h-screen flex flex-col text-center pt-20">Coming Soon</div> */}
+          <div className="overflow-scroll">
+            <ResultsFull diagnostic={questionList} selections={location.state} />
+          </div>
+        </>
       )}
     </>
   );
