@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 export default function Sliders({ handleCurrent, handleDesired, currentSliderValue, desiredSliderValue, handleSlider }) {
   return (
     <>
-      <div className="md:place-self-start md:my-40 flex flex-col md:flex-row justify-center md:justify-start -mt-6 md:mt-0 px-6 md:p-0">
+      <div className=" md:place-self-start md:my-40 flex flex-col md:flex-row  justify-center md:justify-start -mt-6 md:mt-0 px-6 md:p-0">
         <div className="m-4 text-slate-600 md:hidden text-xs mb-1">Current Level</div>
         <div className=" md:-mr-20">
           <div className=" ">
@@ -48,10 +48,10 @@ export default function Sliders({ handleCurrent, handleDesired, currentSliderVal
           </div>
         </div>
         <div className="md:hidden text-xs text-[#878787] flex flex-row flex-row-reverse justify-between w-full -ml-1">
-          <div>BASIC</div>
+          <div>LEADER</div>
           <div></div>
           <div></div>
-          <div className="pl-2">LEADER</div>
+          <div className="pl-2">BASIC</div>
           <div></div>
         </div>
       </div>

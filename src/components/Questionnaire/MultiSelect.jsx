@@ -73,7 +73,7 @@ function MultiSelect({
         <Header currentQuestion={currentQuestion} count={count} questionIndex={questionIndex} />
         <div className="flex">
           <div className="flex flex-col justify-center items-center">
-            <h2 className="text-xl text-center min-h-28 font-light pt-10 pl-8 pr-8">{currentQuestion.question}</h2>
+            <h2 className="text-xl text-center min-h-28  pt-10 pl-8 pr-8">{currentQuestion.question}</h2>
             <div className="md:grid md:grid-cols-2 p-10 pb-0 md:grid-flow-row flex flex-col gap-1 md:w-full  ">
               {isError && <div className="absolute ml-24 tooltip tooltip-open" data-tip={currentQuestion.errorMessage}></div>}
 

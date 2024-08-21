@@ -25,7 +25,7 @@ const DIMENSIONS = [
   "Digital HR Transformation",
 ];
 
-function ResultsFlat({ diagnostic, selections }) {
+function ResultsFlat({ diagnostic }) {
   const [results, setResults] = useState();
   const [dimensionResults, setDimensionResults] = useState();
   const [current, setCurrent] = useState();
@@ -52,32 +52,36 @@ function ResultsFlat({ diagnostic, selections }) {
 
   return (
     <>
-      <div id="flat-result" className="h-screen flex flex-col items-center justify-center">
+      <div id="flat-result" className="h-screen flex flex-col items-center justify-center overflow-x-contain">
         {!results && <LoadSpinner text={"...fetching results"} />}
         {ready && (
           <div className="flex flex-col h-screen w-screen ">
-            <img className="z-50 hidden md:block md:absolute md:-mt-8 overflow-show md:w-[300px]  bg-[#09497B] " src={logo} alt="" />
-            <h1 className="z-40 overflow-show text-[#FDB517] font-bold text-xl md:text-[30pt] bg-[#09497B] text-center pt-28 md:pt-10">
+            <div className="w-screen bg-[#09497B] ">
+              <img className="z-50 hidden md:block  md:-mt-8 overflow-show md:w-[300px] overflow-show " src={logo} alt="" />
+            </div>
+            <h1 className="z-40 overflow-show text-[#FDB517] font-bold text-xl md:text-[30pt] bg-[#09497B] text-center pt-28 md:pt-0">
               {BUSINESS_STRATEGY.title}{" "}
             </h1>
-            <div className="flex flex-col md:flex-row bg-[#09497B] text-white items-center p-2 md:p-0">
+            <div className="flex flex-col md:gap-4 xl:gap-10 md:flex-row bg-[#09497B] text-white xl:justify-around items-center p-2 md:pl-20 md:pr-20 xl:pl-40 xl:pr-40">
               <div className="md:w-1/2 ">
                 {/* <h1 className="text-2xl md:pt-10 text-center animate-fade-up font-semibold">WORFORCE AGILITY DIAGNOSTIC</h1> */}
-                <div className="flex items-center py-4 px-4 md:px-20  md:mt-10 md:text-2xl font-light">
+                <div className="flex items-center py-4 px-4 md:p-0 text-justify md:mt-10 md:text-2xl font-light">
                   Thank you for completing the diagnostic. Your responses provide valuable insights that will help us tailor solutions to advance your
                   HR technology capabilities and align them with your strategic goals. Below, you'll find the maturity results for your HR tech
                   ecosystem and a detailed analysis for the selected tech stack area(s).{" "}
                 </div>
               </div>
               <div className="order-first md:order-last justify-center w-full md:w-1/2 my-14">
-                <DiamondResults selections={selections} />
+                <DiamondResults />
               </div>
             </div>
 
             <div className="bg-[#09497B]">
-              <div className="bg-slate-200 flex flex-col md:mx-20 md:my-8 p-10 gap-10 border border-black-2 shadow-md">
-                <div className="flex items-center ">{orgResults.result}</div>
-              </div>
+              {/* <div className="bg-slate-200 flex text-justify flex-col md:mx-20 md:my-8 p-10 gap-10 border border-black-2 shadow-md"> */}
+              <Box>
+                <div className="flex items-center text-justify">{orgResults.result}</div>
+              </Box>
+              {/* </div> */}
             </div>
             <div className="flex flex-col md:flex-row justify-around  items-center font-semibold text-lg bg-[#09497B] p-6">
               <div id="current-speedometer" className="flex flex-col items-center">
@@ -92,7 +96,7 @@ function ResultsFlat({ diagnostic, selections }) {
                 <SpeedometerFive gaugeVal={desired} />
               </div>
             </div>
-            <div className="m-5 md:m-14 ">
+            <div className="m-5 md:m-14 overflow-x-contain w-full">
               <ResultsRadar
                 customLabel={false}
                 data={diagnostic.filter((question) => {
@@ -102,33 +106,34 @@ function ResultsFlat({ diagnostic, selections }) {
             </div>
             <Divider text={BUSINESS_STRATEGY.title} />
             <Box>
-              <h3 className="md:hidden text-2xl py-4">{BUSINESS_STRATEGY.title} </h3>
+              <h3 className="md:hidden text-2xl py-4 text-justify">{BUSINESS_STRATEGY.title} </h3>
               <div>{BUSINESS_STRATEGY.text}</div>
             </Box>
             {dimensionResults && dimensionResults.map((result) => <ResultsSubResult key={`${result.dimension}`} result={result} />)}
             <Divider text={"What's NEXT?"} />
-            <div className=" bg-slate-200 flex flex-col md:mx-20 md:my-8 p-10 gap-10 border border-[#999999] shadow">
-              <div>
-                Evolving your HR technology stack is a complex process that requires careful planning, strategic alignment, and seamless execution.
-                Here’s how <strong>QuantumWork Advisory</strong> can help you navigate this journey:{" "}
+            <Box className=" bg-slate-200 flex flex-col md:mx-20 md:my-8 p-10 gap-10 border border-[#999999] shadow">
+              <div className="w-full">
+                <div>
+                  Evolving your HR technology stack is a complex process that requires careful planning, strategic alignment, and seamless execution.
+                  Here’s how <strong>QuantumWork Advisory</strong> can help you navigate this journey:{" "}
+                </div>
+                <div className="py-6">
+                  {WHATS_NEXT.map((el, i) => {
+                    return (
+                      <div className="py-1" key={`next_${i}`}>
+                        <strong>{el.title}</strong>
+                        <div className="pl-4">{el.text[0]}</div>
+                        <div className="pl-4">{el.text[1]}</div>
+                      </div>
+                    );
+                  })}
+                </div>
+                <div className="font-semibold">
+                  By partnering with us, your organization will benefit from our deep expertise, strategic insights, and proven methodologies,
+                  ensuring your HR technology evolves effectively and supports your long-term business success. Email us at info@quantumwork.com{" "}
+                </div>
               </div>
-              <div className="py-6">
-                {WHATS_NEXT.map((el, i) => {
-                  return (
-                    <div className="py-1" key={`next_${i}`}>
-                      <strong>{el.title}</strong>
-
-                      <div className="pl-4">{el.text[0]}</div>
-                      <div className="pl-4">{el.text[1]}</div>
-                    </div>
-                  );
-                })}
-              </div>
-              <div className="font-semibold">
-                By partnering with us, your organization will benefit from our deep expertise, strategic insights, and proven methodologies, ensuring
-                your HR technology evolves effectively and supports your long-term business success. Email us at info@quantumwork.com{" "}
-              </div>
-            </div>
+            </Box>
             <div className="mt-40">&copy{new Date().getFullYear}QunatumWork Advisory</div>
           </div>
         )}

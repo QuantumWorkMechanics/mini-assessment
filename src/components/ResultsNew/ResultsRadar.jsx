@@ -79,8 +79,8 @@ export default function ResultsRadar({ data, customLabel }) {
   return (
     <>
       <div className="md:flex items-center justify-center xl:justify-around">
-        <div className="flex flex-col">
-          <div id={data[0].Type + "_radar"} className="-mt-[1000%] md:block w-[1000px] h-[300px] md:mt-10 md:ml-10 overflow-visible">
+        <div className="flex items-center justify-center">
+          <div id={data[0].Type + "_radar"} className="absolute md:static -mt-[1000%] md:flex md:flex-col  w-[1000px] h-[300px] md:mt-10 md:ml-10 ">
             <ResponsiveContainer width="100%" height="100%">
               <RadarChart cx="45%" cy="50%" outerRadius="90%" data={getDataSet(data)}>
                 <PolarGrid strokeWidth={3} />
@@ -112,13 +112,15 @@ export default function ResultsRadar({ data, customLabel }) {
               </RadarChart>
             </ResponsiveContainer>
           </div>
+        </div>
+        <div className="md:hidden flex items-center justify-center overflow-hidden ">
           <div
-            style={{ overflow: "visible" }}
+            // style={{ overflow: "visible" }}
             // id={data[0].Type + "_radar"}
-            className="my-14 block md:hidden w-screen   md:w-[1000px] h-[180px] md:h-[300px] md:mt-10 md:ml-10 overflow-visible"
+            className="my-14 block  w-full  h-[180px] md:h-[300px] md:mt-10 md:ml-10 "
           >
             <ResponsiveContainer width="110%" height="120%" overflow={"visible"}>
-              <RadarChart cx="45%" cy="60%" outerRadius="130%" data={getDataSet(data)} margin={{ top: 73, right: 0, left: 0 }}>
+              <RadarChart cx="45%" cy="60%" outerRadius="130%" data={getDataSet(data)} margin={{ top: 73, right: 0, left: -10 }}>
                 <PolarGrid strokeWidth={2} />
                 {customLabel && (
                   <PolarAngleAxis

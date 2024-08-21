@@ -56,8 +56,8 @@ export default function SliderSelect({
           {/* {currentSliderValue == 5 && questionNum.Response_5} */}
         </div>
       </div>
-      <div className="mt-5 md:items-center flex  flex-col md:flex md:flex-row">
-        <div className="md:mt-40 md:-mr-10 z-20">
+      <div className="mt-5 md:items-center flex md:w-screen flex-col md:flex md:flex-row">
+        <div className="md:mt-40 md:-mr-10 z-20 md:w-1/3">
           {spotLight == 1 && (
             <>
               <div className="hidden md:block absolute text-white z-50 text-2xl md:w-72  ml-20 animate-fade-up animate-once animate-duration-[800ms] animate-ease-linear ">
@@ -78,14 +78,24 @@ export default function SliderSelect({
               ></div>
             </>
           )}
-          {isError && <div className=" absolute ml-24 tooltip tooltip-open w-40" data-tip={"Desired Level cannot be less than Current Level."}></div>}
-          <Sliders
-            handleSlider={handleSlider}
-            handleCurrent={handleCurrent}
-            currentSliderValue={currentSliderValue}
-            handleDesired={handleDesired}
-            desiredSliderValue={desiredSliderValue}
-          ></Sliders>
+          {isError && <div className=" ml-24 tooltip tooltip-open w-40" data-tip={"Desired Level cannot be less than Current Level."}></div>}
+          <div className="md:flex items-center">
+            <Sliders
+              handleSlider={handleSlider}
+              handleCurrent={handleCurrent}
+              currentSliderValue={currentSliderValue}
+              handleDesired={handleDesired}
+              desiredSliderValue={desiredSliderValue}
+            ></Sliders>
+            <div className="-mt-40 hidden display h-80 md:flex md:-ml-28 text-xs text-slate-500 flex-row flex-row-reverse md:flex-col justify-between -ml-20 text-xs ">
+              {/* <div>Level 5</div> */}
+              <div>LEADER</div>
+              <div>MATURE</div>
+              <div>EMERGING</div>
+              <div className="mb-4">BASIC</div>
+              <div></div>
+            </div>
+          </div>
         </div>
 
         <div className="overflow-scroll border m-2 md:border-none  h-24 md:hidden relative  px-2 text-sm">
@@ -99,64 +109,45 @@ export default function SliderSelect({
           </div>
         </div>
 
-        <div className="hidden display h-80 md:flex text-xs text-slate-500 flex-row flex-row-reverse md:flex-col justify-between -ml-20 text-xs ">
-          {/* <div>Level 5</div> */}
-          <div>LEADER</div>
-          <div>MATURE</div>
-          <div>EMERGING</div>
-          <div className="mb-4">BASIC</div>
-          <div></div>
-        </div>
-
-        <div className=" hidden h-80 flex flex-col md:flex justify-between ml-10 text-slate-700 text-xs md:w-[120%]">
-          {/* <div
-            className={
-              "p-1 " +
-              ((currentSliderValue == 5 && "outline outline-[#09497B] ") ||
-                "") +
-              (desiredSliderValue == 5 && "ring ring-inset ring-[#FDB517]")
-            }
-          >
-            {questionNum.Response_5}
-          </div> */}
-
-          <div
-            className={
-              "p-1 w-fit " +
-              ((currentSliderValue == 4 && "outline outline-[#09497B] ") || "") +
-              (desiredSliderValue == 4 && "ring ring-inset ring-[#FDB517]")
-            }
-          >
-            {currentQuestion.Response_4.slice(0, CHAR_LIMIT)}
+        <div className="flex w-1/2">
+          <div className=" hidden h-80 flex flex-col md:flex justify-between ml-10 text-slate-700 text-xs md:w-[120%]">
+            <div
+              className={
+                "p-1 w-fit " +
+                ((currentSliderValue == 4 && "outline outline-[#09497B] ") || "") +
+                (desiredSliderValue == 4 && "ring ring-inset ring-[#FDB517]")
+              }
+            >
+              {currentQuestion.Response_4.slice(0, CHAR_LIMIT)}
+            </div>
+            <div
+              className={
+                "p-1 w-fit " +
+                ((currentSliderValue == 3 && " outline outline-[#09497B] ") || "") +
+                (desiredSliderValue == 3 && " ring ring-inset ring-[#FDB517]")
+              }
+            >
+              {currentQuestion.Response_3.slice(0, CHAR_LIMIT)}
+            </div>
+            <div
+              className={
+                "p-1 w-fit " +
+                ((currentSliderValue == 2 && "outline outline-[#09497B] ") || "") +
+                (desiredSliderValue == 2 && "ring ring-inset ring-[#FDB517]")
+              }
+            >
+              {currentQuestion.Response_2.slice(0, CHAR_LIMIT)}
+            </div>
+            <div
+              className={
+                "p-1 w-fit " +
+                ((currentSliderValue == 1 && "outline outline-[#09497B] ") || "") +
+                (desiredSliderValue == 1 && "ring ring-inset ring-[#FDB517]")
+              }
+            >
+              {currentQuestion.Response_1.slice(0, CHAR_LIMIT)}
+            </div>
           </div>
-          <div
-            className={
-              "p-1 w-fit " +
-              ((currentSliderValue == 3 && " outline outline-[#09497B] ") || "") +
-              (desiredSliderValue == 3 && " ring ring-inset ring-[#FDB517]")
-            }
-          >
-            {currentQuestion.Response_3.slice(0, CHAR_LIMIT)}
-          </div>
-          <div
-            className={
-              "p-1 w-fit " +
-              ((currentSliderValue == 2 && "outline outline-[#09497B] ") || "") +
-              (desiredSliderValue == 2 && "ring ring-inset ring-[#FDB517]")
-            }
-          >
-            {currentQuestion.Response_2.slice(0, CHAR_LIMIT)}
-          </div>
-          <div
-            className={
-              "p-1 w-fit " +
-              ((currentSliderValue == 1 && "outline outline-[#09497B] ") || "") +
-              (desiredSliderValue == 1 && "ring ring-inset ring-[#FDB517]")
-            }
-          >
-            {currentQuestion.Response_1.slice(0, CHAR_LIMIT)}
-          </div>
-          <div></div>
         </div>
         <div className="md:hidden block  md:mt-4">
           <Controls
@@ -168,11 +159,11 @@ export default function SliderSelect({
             setIsAutoAdvance={setIsAutoAdvance}
           />
         </div>
-        <div className="-mt-20  md:-mt-24 md:flex md:justify-end relative -z-10">
+        <div className="md:place-self-end -mt-20 md:w-1/3 md:-mt-24 md:flex md:justify-end relative -z-10">
           <RechartBar currentSliderValue={currentSliderValue} desiredSliderValue={desiredSliderValue}></RechartBar>
         </div>
       </div>
-      <div className="hidden md:block md:mt-4">
+      <div className="hidden md:block md:mt-4 md:w-1/4 ml-3 ">
         <Controls
           handleBack={handleBack}
           handleNext={handleNext}

@@ -44,9 +44,9 @@ function ResultsSubResult({ result }) {
         <Divider text={result.dimension}> </Divider>
         <Box>
           <h3 className="md:hidden text-2xl py-4">{result.dimension}</h3>
-          <div>
-            `The bellow recommendations and Benefits are tailored for to enhance your ${result.dimension}. These strategies are designed to help your
-            organization optimize ${DIMENSION_TEXT[result.dimension].display}, improve skills management, and support strategic business objectives.`
+          <div className="text-justify">
+            {`The bellow recommendations and Benefits are tailored for to enhance your ${result.dimension}. These strategies are designed to help your
+            organization optimize ${DIMENSION_TEXT[result.dimension].display}, improve skills management, and support strategic business objectives.`}
           </div>
         </Box>
         <div id={result.dimension + "_bar"} className="-mt-[1500%] h-[200px] w-[400px] md:mt-20 flex flex-col place-self-center">
@@ -80,26 +80,26 @@ function ResultsSubResult({ result }) {
           />
         </div>
 
-        <div className="flex flex-col px-40" className="bg-slate-200 flex flex-col md:mx-20 md:my-8 p-10 gap-2 border border-[#999999] shadow">
-          <h3 className="font-bold text-xl">Recommendations:</h3>
+        <Box className="bg-slate-200 flex flex-col md:mx-20 md:my-8 p-10 gap-2 border border-[#999999] shadow">
+          <h3 className="font-bold text-xl w-full">Recommendations:</h3>
           {result.result.Recommendations.map((rec, i) => {
             return (
-              <div key={`rec_${i}`}>
+              <div className="w-full" key={`rec_${i}`}>
                 <span className="font-bold">{rec.split(":")[0]}:</span>
                 {rec.split(":")[1]}
               </div>
             );
           })}
-          <h3 className="font-bold text-xl pt-6">Benefits:</h3>
+          <h3 className="font-bold text-xl pt-6 w-full">Benefits:</h3>
           {result.result.Benefits.map((rec, i) => {
             return (
-              <div key={`ben_${i}`}>
-                <span className="font-bold">{rec.split(":")[0]}:</span>
+              <div className="w-full" key={`ben_${i}`}>
+                <span className="font-bold w-full">{rec.split(":")[0]}:</span>
                 {rec.split(":")[1]}
               </div>
             );
           })}
-        </div>
+        </Box>
       </div>
     </>
   );
