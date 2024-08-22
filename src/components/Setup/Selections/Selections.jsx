@@ -67,56 +67,45 @@ export default function Selections({ setData }) {
         </>
       )}
       {showDiamond && (
-        <div className="bg-[#074D7D] w-screen min-h-screen animate-fade-up animate-duration-[600ms] animate-delay-[800ms] animate-ease-linear">
-          <div className=" md:float-right md:w-[65%] flex flex-col-reverse ">
-            <div className="z-30 w-[80%] mx-[10%] flex  md:block flex-col  items-center justify-around">
-              {/* <div className="text-3xl font-light ml-10% text-[#09497B] p-4">Learn more about the diamond model of maturity.</div> */}
-              <div className="bg-slate-200 p-4 hidden">
-                <ul className="">
-                  {categoriesList.map((el, i) => (
-                    <div key={`li_${el.DiamondLoc}${i}`} className="text-sm p-2 leading-6">
-                      <span className="font-bold text-[#0EA8DC] text-md"> {el.Type}</span>
-                      {" - " + el.description}
-                    </div>
-                  ))}
-                </ul>
+        <div className="bg-[#074D7D] min-h-screen  w-screen">
+          <h1 className="text-3xl md:text-[40pt] text-[#FDB517]  font-bold text-center pt-10">WORKFORCE AGILITY DIAGNOTIC TOOL</h1>
+          <div className="bg-[#074D7D] flex md:justify-center md:flex-row-reverse flex-col items-center w-screen animate-fade-up animate-duration-[600ms] animate-delay-[800ms] animate-ease-linear">
+            <div className="w-1/2">
+              <div className="md:p-6 ml-3  md:mr-2 z-50 md:mt-20 md:-mr-2  ">
+                <DiamondNew setReady={setReady} handleReady={handleReady} selections={selections} setSelections={setSelections}></DiamondNew>
               </div>
             </div>
-            <div className="md:p-6 ml-3  md:mr-2 z-50 md:mt-20 md:-mr-2">
-              <DiamondNew setReady={setReady} handleReady={handleReady} selections={selections} setSelections={setSelections}></DiamondNew>
+            <div className="w-1/2 md:p-20 ">
+              <h1 className="text-2xl p-4 leading-10 md:pb-8  md:text-[25pt] text-white font-extralight animate-flip-up animate-delay-[1200ms]">
+                Design your new world of work
+              </h1>
+              <h2 className="text-md px-4 text-justify pt-0 pb-2 text-white font-extralight md:text-[16pt] md:leading-10">
+                Click on the diamond components to select the worktech competencies you woud like to assess.
+              </h2>
+              {!ready && (
+                <button
+                  className="text-2xl m-4 font-lighter w-[100px] btn btn-disabled  text-[#016AAB] bg-white font-semibold hover:text-[#0EA8DC] "
+                  onClick={() => handleReady()}
+                >
+                  READY
+                </button>
+              )}
+              {ready && (
+                <button
+                  className="text-2xl m-4 font-lighter w-[100px] btn btn-outline text-[#016AAB] bg-white font-semibold hover:text-[#0EA8DC] "
+                  onClick={() => handleReady()}
+                >
+                  READY
+                </button>
+              )}
+              {/* {selectedComp == "none" && <div>test</div>} */}
+              {/* {categoriesList.map((el, i) => (
+                <div key={`li_${el.DiamondLoc}${i}`} className=" hidden text-sm p-2 leading-6">
+                  <span className="font-bold text-[#0EA8DC] text-md"> {el.Type}</span>
+                  {" - " + el.description}
+                </div>
+              ))} */}
             </div>
-          </div>
-          <div className="w-full p-20">
-            <h1 className="text-[25pt] pb-8  md:text-[40pt] text-white font-extralight animate-flip-up animate-delay-[1200ms]">
-              Design your new world of work
-            </h1>
-
-            <h2 className="text-xl pb-2 text-white font-extralight text-[16pt] leading-10">
-              Click on the diamond components to select the worktech competencies you woud like to assess.
-            </h2>
-            {!ready && (
-              <button
-                className="text-2xl font-lighter w-[100px] btn btn-disabled  text-[#016AAB] bg-white font-semibold hover:text-[#0EA8DC] "
-                onClick={() => handleReady()}
-              >
-                READY
-              </button>
-            )}
-            {ready && (
-              <button
-                className="text-2xl font-lighter w-[100px] btn btn-outline text-[#016AAB] bg-white font-semibold hover:text-[#0EA8DC] "
-                onClick={() => handleReady()}
-              >
-                READY
-              </button>
-            )}
-            {/* {selectedComp == "none" && <div>test</div>} */}
-            {/* {categoriesList.map((el, i) => (
-              <div key={`li_${el.DiamondLoc}${i}`} className=" hidden text-sm p-2 leading-6">
-                <span className="font-bold text-[#0EA8DC] text-md"> {el.Type}</span>
-                {" - " + el.description}
-              </div>
-            ))} */}
           </div>
         </div>
       )}

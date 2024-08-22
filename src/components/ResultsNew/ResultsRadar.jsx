@@ -80,7 +80,7 @@ export default function ResultsRadar({ data, customLabel }) {
     <>
       <div className="md:flex items-center justify-center xl:justify-around">
         <div className="flex items-center justify-center">
-          <div id={data[0].Type + "_radar"} className="absolute md:static -mt-[1000%] md:flex md:flex-col  w-[1000px] h-[300px] md:mt-10 md:ml-10 ">
+          <div id={data[0].Type + "_radar"} className="absolute md:static -mt-[2500%] md:flex md:flex-col  w-[1000px] h-[300px] md:mt-10 md:ml-10 ">
             <ResponsiveContainer width="100%" height="100%">
               <RadarChart cx="45%" cy="50%" outerRadius="90%" data={getDataSet(data)}>
                 <PolarGrid strokeWidth={3} />

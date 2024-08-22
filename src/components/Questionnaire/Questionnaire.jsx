@@ -215,7 +215,7 @@ function Questionnaire() {
             <progress className="progress progress-secondary w-screen" value={progress * 100} max="100"></progress>
           </div>
 
-          <div className="h-screen text-primary flex ">
+          <div className="h-screen text-primary flex-col md:flex-row flex w-screen">
             {sectionComplete && <SectionComplete setSectionComplete={setSectionComplete} setSeeResult={setSeeResult} />}
             {!isExploding && !sectionComplete && (
               <>
@@ -241,18 +241,20 @@ function Questionnaire() {
                 </div>
 
                 {currentQuestion.fieldType == "Multi-Select" && (
-                  <MultiSelect
-                    handleOther={handleOther}
-                    handleNext={handleNext}
-                    handleBack={handleBack}
-                    handleMultiSelect={handleMultiSelect}
-                    currentQuestion={currentQuestion}
-                    count={questionList.length}
-                    questionIndex={questionIndex}
-                    img={IMAGES[imageIndex]}
-                    isAutoAdvance={isAutoAdvance}
-                    setIsAutoAdvance={setIsAutoAdvance}
-                  />
+                  <div className="flex max-sm:flex-col ">
+                    <MultiSelect
+                      handleOther={handleOther}
+                      handleNext={handleNext}
+                      handleBack={handleBack}
+                      handleMultiSelect={handleMultiSelect}
+                      currentQuestion={currentQuestion}
+                      count={questionList.length}
+                      questionIndex={questionIndex}
+                      img={IMAGES[imageIndex]}
+                      isAutoAdvance={isAutoAdvance}
+                      setIsAutoAdvance={setIsAutoAdvance}
+                    />
+                  </div>
                 )}
 
                 {currentQuestion.fieldType == "Single Select" && (
@@ -281,7 +283,7 @@ function Questionnaire() {
       {seeResult && questionList && (
         <>
           {/* // <div className=" w-screen h-screen flex flex-col text-center pt-20">Coming Soon</div> */}
-          <div className="overflow-scroll">
+          <div className="">
             <ResultsFull diagnostic={questionList} selections={location.state} />
           </div>
         </>

@@ -68,86 +68,84 @@ function MultiSelect({
   }
 
   return (
-    <>
+    <div className="md:flex w-screen">
       <div className="md:w-1/2">
         <Header currentQuestion={currentQuestion} count={count} questionIndex={questionIndex} />
-        <div className="flex">
-          <div className="flex flex-col justify-center items-center">
-            <h2 className="text-xl text-center min-h-28  pt-10 pl-8 pr-8">{currentQuestion.question}</h2>
-            <div className="md:grid md:grid-cols-2 p-10 pb-0 md:grid-flow-row flex flex-col gap-1 md:w-full  ">
-              {isError && <div className="absolute ml-24 tooltip tooltip-open" data-tip={currentQuestion.errorMessage}></div>}
 
-              {currentQuestion.Response_1.map((choice, i) => {
-                let item = choice.replace("-", "").trim();
+        <div className="flex flex-col justify-center items-center">
+          <h2 className="text-xl text-center min-h-28  pt-10 pl-8 pr-8">{currentQuestion.question}</h2>
+          <div className="md:grid md:grid-cols-2 p-6 pb-0 md:grid-flow-row flex flex-col gap-1 justify-center ">
+            {isError && <div className="absolute ml-24 tooltip tooltip-open" data-tip={currentQuestion.errorMessage}></div>}
 
-                if (item.includes("other") || item.includes("Other")) {
-                  return;
-                }
-                // let isSelected = questionNum.selections.indexOf(item) > -1;
-                return (
-                  <div className=" hover:bg-slate-200 md:w-58 form control   border-2 rounded" key={`btn_${choice}_${i}`}>
-                    <label className="label cursor-pointer flex justify-start gap-3 p-1 ">
-                      <input
-                        onChange={() => {
-                          let temp = currentQuestion.selections;
-                          handleSelection(item, temp);
-                          // if (`#${item}_check`)
-                          console.log(item);
-                        }}
-                        id={`${item}_check`}
-                        type="checkbox"
-                        checked={currentQuestion.selections.includes(item)}
-                        className="checkbox checkbox-primary"
-                      />
-                      <span className="">{item.split("(")[0]}</span>
-                    </label>
-                  </div>
-                );
-              })}
+            {currentQuestion.Response_1.map((choice, i) => {
+              let item = choice.replace("-", "").trim();
 
-              {hasOther && (
-                <div className=" hover:bg-slate-200  md:w-58 form control   border-2 rounded">
+              if (item.includes("other") || item.includes("Other")) {
+                return;
+              }
+              // let isSelected = questionNum.selections.indexOf(item) > -1;
+              return (
+                <div className=" hover:bg-slate-200  md:max-w-72 form control   border-2 rounded" key={`btn_${choice}_${i}`}>
                   <label className="label cursor-pointer flex justify-start gap-3 p-1 ">
                     <input
                       onChange={() => {
-                        document.getElementById("my_modal_1").showModal();
+                        let temp = currentQuestion.selections;
+                        handleSelection(item, temp);
                         // if (`#${item}_check`)
+                        console.log(item);
                       }}
-                      checked={currentQuestion.other}
+                      id={`${item}_check`}
                       type="checkbox"
+                      checked={currentQuestion.selections.includes(item)}
                       className="checkbox checkbox-primary"
                     />
-                    <span className="">{currentQuestion.other ? "Other: " + currentQuestion.other : "Other (Please Specify)"}</span>
+                    <span className="">{item.split("(")[0]}</span>
                   </label>
-                  <OtherPopup other={currentQuestion.other} setOther={handleOther} />
                 </div>
-              )}
-            </div>
-            <div className="mt-6">
-              <Controls
-                handleBack={handleBack}
-                handleNext={handleNext}
-                questionIndex={questionIndex}
-                isActive={currentQuestion.selections.length > 0 || currentQuestion.other}
-                isAutoAdvance={isAutoAdvance}
-                setIsAutoAdvance={setIsAutoAdvance}
-                showAutoAdvance={false}
-              />
-            </div>
-            {/* <div onClick={handleNext} className="btn  bg-[#FFCB18] border-slate-300 shadow-sm mt-4">
+              );
+            })}
+
+            {hasOther && (
+              <div className=" hover:bg-slate-200  md:w-58 form control   border-2 rounded">
+                <label className="label cursor-pointer flex justify-start gap-3 p-1 ">
+                  <input
+                    onChange={() => {
+                      document.getElementById("my_modal_1").showModal();
+                      // if (`#${item}_check`)
+                    }}
+                    checked={currentQuestion.other}
+                    type="checkbox"
+                    className="checkbox checkbox-primary"
+                  />
+                  <span className="">{currentQuestion.other ? "Other: " + currentQuestion.other : "Other (Please Specify)"}</span>
+                </label>
+                <OtherPopup other={currentQuestion.other} setOther={handleOther} />
+              </div>
+            )}
+          </div>
+          <div className="mt-6">
+            <Controls
+              handleBack={handleBack}
+              handleNext={handleNext}
+              questionIndex={questionIndex}
+              isActive={currentQuestion.selections.length > 0 || currentQuestion.other}
+              isAutoAdvance={isAutoAdvance}
+              setIsAutoAdvance={setIsAutoAdvance}
+              showAutoAdvance={false}
+            />
+          </div>
+          {/* <div onClick={handleNext} className="btn  bg-[#FFCB18] border-slate-300 shadow-sm mt-4">
               NEXT
             </div> */}
-          </div>
         </div>
       </div>
-      <>
-        <div className="hidden md:block md:min-w-1/2 md:w-1/2  mt-2 right-0 fixed">
-          <img src={img} className=" object-center object-cover  h-screen " alt="" />
-        </div>
 
-        <img src={logo} className="hidden md:block fixed w-[280px] bottom-0 right-1" alt="" />
-      </>
-    </>
+      <div className="hidden md:block md:min-w-1/2 md:w-1/2  mt-2 right-0 fixed">
+        <img src={img} className=" object-center object-cover  h-screen " alt="" />
+      </div>
+
+      <img src={logo} className="hidden md:block fixed w-[280px] bottom-0 right-1" alt="" />
+    </div>
   );
 }
 

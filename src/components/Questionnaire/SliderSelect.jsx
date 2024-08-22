@@ -34,7 +34,7 @@ export default function SliderSelect({
 
   return (
     <>
-      <h2 className="text-xl md:min-h-20 text-center pt-8 md:mx-40">{currentQuestion.question}</h2>
+      <h2 className="text-xl md:min-h-20 text-center px-2 pt-8 md:mx-40">{currentQuestion.question}</h2>
       <div className="w-1/4 hidden md:flex text-xs md:-ml-5 md:-mb-5 mt-3 font-bold pt-6">
         <div className="ml-40  flex items-center pl-5 py-4">
           <div className="w-[10px] bg-[#09497B] h-[10px] rounded-full mr-2"></div>
@@ -46,7 +46,7 @@ export default function SliderSelect({
         </div>
       </div>
 
-      <div className="overflow-scroll border m-2 md:border-none  h-24 md:hidden p-1 relative  px-2 mb-8 mt-4">
+      <div className="overflow-y-scroll border bg-slate-100  md:border-none  w-screen h-24 md:hidden p-2 relative  px-2 mb-8 mt-4">
         <div className="absolute text-sm">
           {currentSliderValue == 0 && <div className="text-slate-400">Use the sliders to see more:</div>}
           {currentSliderValue == 1 && currentQuestion.Response_1}
@@ -56,7 +56,7 @@ export default function SliderSelect({
           {/* {currentSliderValue == 5 && questionNum.Response_5} */}
         </div>
       </div>
-      <div className="mt-5 md:items-center flex md:w-screen flex-col md:flex md:flex-row">
+      <div className="mt-5 md:items-center flex md:w-screen  flex-col md:flex md:flex-row">
         <div className="md:mt-40 md:-mr-10 z-20 md:w-1/3">
           {spotLight == 1 && (
             <>
@@ -70,11 +70,11 @@ export default function SliderSelect({
                 onClick={() => setSpotLight((prev) => prev + 1)}
                 className="mt-20 ml-36 md:ml-34 md:mt-44  z-50 absolute bg-white rounded animate-fade-up animate-once  animate-duration-[800ms] animate-ease-linear"
               >
-                <button className="p-3 ">Continue</button>
+                <button className="-mt-2 p-3 ">Continue</button>
               </div>
               <div
                 onClick={() => setSpotLight((prev) => prev + 1)}
-                className="pinhole z-30 w-[130px] h-[130px] mt-8 ml-32 md:mt-32 md:ml-32 rounded-full animate-fade-up animate-once animate-duration-[800ms] animate-ease-linear "
+                className="pinhole z-30 w-[130px] h-[130px] mt-8 ml-32 md:mt-28 md:ml-32 rounded-full animate-fade-up animate-once animate-duration-[800ms] animate-ease-linear "
               ></div>
             </>
           )}
@@ -98,8 +98,8 @@ export default function SliderSelect({
           </div>
         </div>
 
-        <div className="overflow-scroll border m-2 md:border-none  h-24 md:hidden relative  px-2 text-sm">
-          <div className="absolute">
+        <div className="overflow-scroll pr-4 border bg-slate-100 h-24 md:hidden relative  px-2 text-sm">
+          <div className="absolute ">
             {desiredSliderValue == 0 && <div className="text-slate-400">Use the sliders to see more:</div>}
             {desiredSliderValue == 1 && currentQuestion.Response_1}
             {desiredSliderValue == 2 && currentQuestion.Response_2}
@@ -163,7 +163,7 @@ export default function SliderSelect({
           <RechartBar currentSliderValue={currentSliderValue} desiredSliderValue={desiredSliderValue}></RechartBar>
         </div>
       </div>
-      <div className="hidden md:block md:mt-4 md:w-1/4 ml-3 ">
+      <div className="hidden md:block w-[screen]  ">
         <Controls
           handleBack={handleBack}
           handleNext={handleNext}
@@ -200,7 +200,7 @@ export default function SliderSelect({
           )}
         </div> 
       </div>*/}
-      <img src={logo} className="fixed w-[200px] md:w-[300px] overflow-hidden pl-2 right-0 -bottom-10 md:bottom-0" />
+      <img src={logo} className="md:fixed w-[200px] md:w-[300px] overflow-hidden pl-2 right-0 -bottom-10 md:bottom-0" />
     </>
   );
 }

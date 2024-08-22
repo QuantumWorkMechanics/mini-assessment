@@ -9,6 +9,8 @@ export default function LaunchPDF({ setIsLoading, setProgress, results }) {
         <button
           onClick={() => {
             // setIsLoading(true);
+            console.log("running");
+            //  document.getElementById("HR Ecosystem Maturity_radar").classList.remove("max-sm:hidden");
             createPDF(setIsLoading, setProgress, results);
           }}
           className="bg-[#0E6AAD] text-white  text-xl p-4 flex items-center font-semibold rounded h-10 shadow-lg"

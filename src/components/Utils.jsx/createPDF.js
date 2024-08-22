@@ -3,9 +3,9 @@ import fontkit from "@pdf-lib/fontkit";
 import { findAvg } from "./Functions";
 import html2canvas from "html2canvas";
 import { resultsList } from "../../modules/question-bank";
-import overview from "../../assets/overall7.pdf";
-import component from "../../assets/component.pdf";
-import next from "../../assets/next.pdf";
+import overview from "../../assets/Overall-v2.pdf";
+import component from "../../assets/Components-v2.pdf";
+import next from "../../assets/Next-v2.pdf";
 import noto from "../../assets/NotoSans-VariableFont_wdth,wght.ttf";
 import notoBold from "../../assets/NotoSans-Bold.ttf";
 import { DIMENSION_TEXT } from "../ResultsNew/ResultsSubResult";
@@ -20,6 +20,7 @@ const STATIC_TEXT = {
 };
 
 export default async function createPDF(setIsLoading, setProgress, results) {
+  console.log("creatingPDF");
   const imgInput = document.getElementById("flat-result");
   const imgDiamond = await html2canvas(imgInput, {
     scale: 3,
@@ -44,6 +45,7 @@ export default async function createPDF(setIsLoading, setProgress, results) {
   const desiredDialPNG = imgDesiredDial.toDataURL();
 
   const radarSVG = document.getElementById("HR Ecosystem Maturity_radar");
+
   const radarImg = await html2canvas(radarSVG, {
     scale: 6,
     backgroundColor: null,
@@ -94,7 +96,7 @@ export default async function createPDF(setIsLoading, setProgress, results) {
   // pages[0].drawText(STATIC_TEXT.title, {});
 
   const TEXT_SIZE = 11;
-  const DIV_TEXT_SIZE = 18;
+  const DIV_TEXT_SIZE = 22;
   const SUBHEADER_SIZE = 12;
 
   //style fields
@@ -178,9 +180,25 @@ export default async function createPDF(setIsLoading, setProgress, results) {
     // if (categories[diamondLoc]) {
     console.log({ result });
     const compDoc = await PDFDocument.load(componentPDF);
+    console.log(result.dimension + "_bar");
+    const barEl = document.getElementById(result.dimension + "_bar");
+
+    // const compEl2 = document.getElementById(compName + "_radar");
+    console.log({ barEl });
+    const barImg = await html2canvas(barEl, {
+      scale: 3,
+      // height: 1,
+      // width: 20,
+      backgroundColor: "white",
+    });
+    console.log({ barImg });
+    console.log("hmtl2canvas ran on bar");
+
+    // const imgBar2 = await html2canvas(compEl2, { scale: 3 });
 
     compDoc.registerFontkit(fontkit);
     const thisFont = await compDoc.embedFont(fontBytes);
+    const boldFont = await compDoc.embedFont(boldFontBytes);
     // const compList = questionList.filter((el) => el.DiamondLoc == diamondLoc);
     // const compName = compList[0].Type;
     // const current = findAvg(diamondLoc, "current", questionList).toString();
@@ -219,6 +237,7 @@ export default async function createPDF(setIsLoading, setProgress, results) {
 
     [compRec1, compRec2, compRec3, compBenefit1, compBenefit2, compBenefit3].map((x) => setText(x));
 
+    compTitle.updateAppearances(boldFont);
     // fillTextField(thisForm, "component_title", compName);
     // fillTextField(thisForm, "current", current);
     // fillTextField(thisForm, "current_title", setLevel(current));
@@ -235,26 +254,22 @@ export default async function createPDF(setIsLoading, setProgress, results) {
     // fillTextField(thisForm, "text_field2", tempResultsList[0][setLevel(desired).toLowerCase()], thisFont, 8);
 
     componentForm.flatten();
-
-    const barEl = document.getElementById(result.dimension + "_bar");
-    // const compEl2 = document.getElementById(compName + "_radar");
-    const barImg = await html2canvas(barEl, {
-      scale: 3,
-      // height: 1,
-      // width: 20,
-      backgroundColor: "white",
-    });
-    // const imgBar2 = await html2canvas(compEl2, { scale: 3 });
-    const barURL = barImg.toDataURL();
+    console.log("flattened");
+    const barURL = barImg.toDataURL("image/png");
+    console.log({ barURL });
+    console.log("bar to URL");
     // const barURL2 = imgBar2.toDataURL();
     const barPNG = await compDoc.embedPng(barURL);
+
+    console.log("bar to PNG");
     // const pngImg2 = await compDoc.embedPng(barURL2);
     // const imgHeight = 150;
-
+    const barEmbed = await compDoc.embedPng(barURL);
+    console.log("embedded");
     const pages = compDoc.getPages();
     const existingPage = pages[0];
 
-    existingPage.drawImage(barPNG, {
+    existingPage.drawImage(barEmbed, {
       // x: existingPage.getWidth() / 2 + 10,
       // y: existingPage.getHeight() - imgHeight - 200,
       x: 140,
@@ -265,6 +280,8 @@ export default async function createPDF(setIsLoading, setProgress, results) {
       // width: existingPage.getWidth(),
       // height: existingPage.getHeight(),
     });
+
+    console.log("added component image");
 
     //   existingPage.drawImage(pngImg2, {
     //     x: existingPage.getWidth() / 2 + 10,
@@ -321,6 +338,8 @@ export default async function createPDF(setIsLoading, setProgress, results) {
   const nextDoc = await PDFDocument.load(nextPDF);
   const tempDoc = await pdfDoc.copyPages(nextDoc, [0]);
   pdfDoc.addPage(tempDoc[0]);
+
+  console.log("created PDF");
 
   const pdfResults = await pdfDoc.save();
   const blob = new Blob([pdfResults], { type: "application/pdf" });

@@ -16,6 +16,7 @@ import SpeedometerFour from "../Utils.jsx/SpeedometerFour";
 import SpeedometerFive from "../Utils.jsx/SpeedometerFive";
 import Box from "../Utils.jsx/Box";
 import LaunchPDF from "./LaunchPDF";
+import businessImg from "../../assets/image18.jpg";
 
 const DIMENSIONS = [
   "HR Ecosystem Maturity",
@@ -59,7 +60,7 @@ function ResultsFlat({ diagnostic }) {
             <div className="w-screen bg-[#09497B] ">
               <img className="z-50 hidden md:block  md:-mt-8 overflow-show md:w-[300px] overflow-show " src={logo} alt="" />
             </div>
-            <h1 className="z-40 overflow-show text-[#FDB517] font-bold text-xl md:text-[30pt] bg-[#09497B] text-center pt-28 md:pt-0">
+            <h1 className="z-40 overflow-show text-[#FDB517] font-bold text-3xl md:text-[30pt] bg-[#09497B] text-center pt-28 md:pt-0 -mb-1">
               {BUSINESS_STRATEGY.title}{" "}
             </h1>
             <div className="flex flex-col md:gap-4 xl:gap-10 md:flex-row bg-[#09497B] text-white xl:justify-around items-center p-2 md:pl-20 md:pr-20 xl:pl-40 xl:pr-40">
@@ -105,12 +106,15 @@ function ResultsFlat({ diagnostic }) {
               />
             </div>
             <Divider text={BUSINESS_STRATEGY.title} />
+
             <Box>
               <h3 className="md:hidden text-2xl py-4 text-justify">{BUSINESS_STRATEGY.title} </h3>
               <div>{BUSINESS_STRATEGY.text}</div>
             </Box>
+            <img className="md:hidden" src={businessImg} alt="" />
             {dimensionResults && dimensionResults.map((result) => <ResultsSubResult key={`${result.dimension}`} result={result} />)}
             <Divider text={"What's NEXT?"} />
+
             <Box className=" bg-slate-200 flex flex-col md:mx-20 md:my-8 p-10 gap-10 border border-[#999999] shadow">
               <div className="w-full">
                 <div>

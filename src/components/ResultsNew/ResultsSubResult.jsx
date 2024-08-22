@@ -40,6 +40,21 @@ function ResultsSubResult({ result }) {
 
   return (
     <>
+      <div id={result.dimension + "_bar"} aria-hidden="true" className="absolute -mt-[2500%] h-[200px] w-[400px]  flex flex-col place-self-center">
+        <SubBarGraph
+          dataSet={[
+            {
+              currentName: "Current",
+              currAvg: result.current,
+              currLabel: result.currentLevel,
+              desiredName: "Desired",
+              desAvg: result.desired,
+              desLabel: result.desiredLevel,
+            },
+          ]}
+          result={result}
+        />
+      </div>
       <div className="flex flex-col gap-8">
         <Divider text={result.dimension}> </Divider>
         <Box>
@@ -49,22 +64,8 @@ function ResultsSubResult({ result }) {
             organization optimize ${DIMENSION_TEXT[result.dimension].display}, improve skills management, and support strategic business objectives.`}
           </div>
         </Box>
-        <div id={result.dimension + "_bar"} className="-mt-[1500%] h-[200px] w-[400px] md:mt-20 flex flex-col place-self-center">
-          <SubBarGraph
-            dataSet={[
-              {
-                currentName: "Current",
-                currAvg: result.current,
-                currLabel: result.currentLevel,
-                desiredName: "Desired",
-                desAvg: result.desired,
-                desLabel: result.desiredLevel,
-              },
-            ]}
-            result={result}
-          />
-        </div>
-        <div className="md:hidden w-[250px] h-[250px] md:h-[200px] md:w-[400px] mt-20 flex flex-col place-self-center">
+
+        <div className=" w-[350px] h-[250px] md:h-[200px] md:w-[400px] mt-20 flex flex-col place-self-center">
           <SubBarGraph
             dataSet={[
               {

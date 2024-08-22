@@ -9,6 +9,7 @@ import ResultsTesting2 from "./ResultsNew/ResultsTesting2";
 import PopupTest from "./Questionnaire/PopupTest";
 import Speedometer from "./Utils.jsx/Speedometer";
 import Radial from "./Utils.jsx/Radial";
+import TestHSForm from "./Questionnaire/TestHSForm";
 
 function App() {
   const [data, setData] = useState();
@@ -22,6 +23,7 @@ function App() {
       <Route path="/modal-test" element={<PopupTest />} />
       <Route path="/speedometer" element={<Speedometer />} />
       <Route path="/radial" element={<Radial />} />
+      <Route path="/test-form" element={<TestHSForm />} />
     </Routes>
   );
 }
