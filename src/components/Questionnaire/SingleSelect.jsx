@@ -13,8 +13,8 @@ function SingleSelect({ currentQuestion, handleSingleSelect, handleNext, count, 
         <Header currentQuestion={currentQuestion} count={count} questionIndex={questionIndex} />
 
         <div className="flex flex-col justify-center items-center md:w-full">
-          <h2 className="text-xl h-40 p-4 pt-10 pl-8 pr-8">{currentQuestion.question}</h2>
-          <div className="flex flex-col justify-center items-center gap-1 md:w-full  ">
+          <h2 className="text-md md:text-xl h-40 p-4 pt-10 pl-8 pr-8">{currentQuestion.question}</h2>
+          <div className="flex flex-col justify-center items-center gap-1 md:w-full max-sm:-m-28  max-sm:h-[320px]">
             {currentQuestion.Response_1.map((choice, i) => {
               let item = choice.replace("-", "").trim();
               // let isSelected = questionNum.selections.indexOf(item) > -1;
@@ -43,7 +43,7 @@ function SingleSelect({ currentQuestion, handleSingleSelect, handleNext, count, 
               );
             })}
           </div>
-          <div className="mt-6">
+          <div className="mt-6 max-sm:w-screen">
             <Controls
               handleBack={handleBack}
               handleNext={handleNext}

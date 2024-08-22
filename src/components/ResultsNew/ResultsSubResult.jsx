@@ -40,7 +40,11 @@ function ResultsSubResult({ result }) {
 
   return (
     <>
-      <div id={result.dimension + "_bar"} aria-hidden="true" className="absolute -mt-[2500%] h-[200px] w-[400px]  flex flex-col place-self-center">
+      <div
+        id={result.dimension + "_bar"}
+        aria-hidden="true"
+        className="overflow-clip absolute -mt-[2500%] h-[200px] w-[400px]  flex flex-col place-self-center"
+      >
         <SubBarGraph
           dataSet={[
             {

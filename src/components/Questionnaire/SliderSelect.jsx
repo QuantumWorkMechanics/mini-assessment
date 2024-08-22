@@ -34,7 +34,7 @@ export default function SliderSelect({
 
   return (
     <>
-      <h2 className="text-xl md:min-h-20 text-center px-2 pt-8 md:mx-40">{currentQuestion.question}</h2>
+      <h2 className="text-md max-sm:h-24 md:text-xl md:min-h-20 text-center px-2 pt-6 md:pt-8 md:mx-40">{currentQuestion.question}</h2>
       <div className="w-1/4 hidden md:flex text-xs md:-ml-5 md:-mb-5 mt-3 font-bold pt-6">
         <div className="ml-40  flex items-center pl-5 py-4">
           <div className="w-[10px] bg-[#09497B] h-[10px] rounded-full mr-2"></div>

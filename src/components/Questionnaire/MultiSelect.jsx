@@ -30,6 +30,9 @@ function MultiSelect({
   </label>
 </div> */
   }
+
+  console.log(currentQuestion.question.length);
+
   function handleSelection(item, currentSelections) {
     const maxSel = currentQuestion.max;
     console.log({ maxSel, currentQuestion });
@@ -73,8 +76,16 @@ function MultiSelect({
         <Header currentQuestion={currentQuestion} count={count} questionIndex={questionIndex} />
 
         <div className="flex flex-col justify-center items-center">
-          <h2 className="text-xl text-center min-h-28  pt-10 pl-8 pr-8">{currentQuestion.question}</h2>
-          <div className="md:grid md:grid-cols-2 p-6 pb-0 md:grid-flow-row flex flex-col gap-1 justify-center ">
+          <h2
+            className={
+              "max-sm:h-28  text-md md:text-xl text-center min-h-28 max-sm:pt-2 md:pt-10 pl-8 pr-8" +
+              (currentQuestion.question.length > 150 && " max-sm:text-sm ") +
+              (currentQuestion.question.length > 200 && " max-sm:text-xs ")
+            }
+          >
+            {currentQuestion.question}
+          </h2>
+          <div className="max-sm:h-[316px] max-sm:w-full max-sm:mx-2 max-sm:border pt-10 max-sm:overflow-y-scroll md:grid md:grid-cols-2 p-6 pb-0 md:grid-flow-row flex flex-col gap-1 justify-center ">
             {isError && <div className="absolute ml-24 tooltip tooltip-open" data-tip={currentQuestion.errorMessage}></div>}
 
             {currentQuestion.Response_1.map((choice, i) => {
@@ -85,7 +96,7 @@ function MultiSelect({
               }
               // let isSelected = questionNum.selections.indexOf(item) > -1;
               return (
-                <div className=" hover:bg-slate-200  md:max-w-72 form control   border-2 rounded" key={`btn_${choice}_${i}`}>
+                <div className=" hover:bg-slate-200  max-w-72 form control   border-2 rounded" key={`btn_${choice}_${i}`}>
                   <label className="label cursor-pointer flex justify-start gap-3 p-1 ">
                     <input
                       onChange={() => {
@@ -106,7 +117,7 @@ function MultiSelect({
             })}
 
             {hasOther && (
-              <div className=" hover:bg-slate-200  md:w-58 form control   border-2 rounded">
+              <div className=" hover:bg-slate-200 max-w-72 md:w-58 form control   border-2 rounded">
                 <label className="label cursor-pointer flex justify-start gap-3 p-1 ">
                   <input
                     onChange={() => {
@@ -123,7 +134,7 @@ function MultiSelect({
               </div>
             )}
           </div>
-          <div className="mt-6">
+          <div className="mt-6 max-sm:w-full">
             <Controls
               handleBack={handleBack}
               handleNext={handleNext}

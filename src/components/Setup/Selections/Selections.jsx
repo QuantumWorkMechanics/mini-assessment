@@ -40,12 +40,12 @@ export default function Selections({ setData }) {
         <>
           <div className="bg-[#09497B] h-[130vh] flex flex-col animate-fade-up animate-duration-[600ms] animate-delay-[600ms] animate-ease-linear">
             <div className="w-screen h-[90vh] md:h-[60vh] md:grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-1 text-white  mt-[40px] pl-[10%] md:pl-0 py-2 ">
-              <div className=" w-[80%] md:w-[60%] md:place-self-center">
-                <h1 className="text-[25pt] pb-4 md:text-[40pt] text-white font-extralight animate-flip-up animate-delay-[1200ms]">
+              <div className="z-50 w-full md:w-[60%] md:place-self-center">
+                <h1 className=" text-[25pt] pb-6 md:text-[40pt] text-white font-extralight animate-flip-up animate-delay-[1200ms]">
                   Design your new world of work
                 </h1>
               </div>
-              <div className="w-[80%] md:w-[60%] place-self-center">
+              <div className=" z-40 w-[80%] md:w-[60%] place-self-center">
                 <div className="text-xl pb-2 ">Begin by selecting which worktech competencies you woud like to assess.</div>
                 <div className="flex justify-center mr-8">
                   <div className="place self-center bg-white h-[2px] w-20 mt-2"></div>
@@ -68,14 +68,15 @@ export default function Selections({ setData }) {
       )}
       {showDiamond && (
         <div className="bg-[#074D7D] min-h-screen  w-screen">
-          <h1 className="text-3xl md:text-[40pt] text-[#FDB517]  font-bold text-center pt-10">WORKFORCE AGILITY DIAGNOTIC TOOL</h1>
-          <div className="bg-[#074D7D] flex md:justify-center md:flex-row-reverse flex-col items-center w-screen animate-fade-up animate-duration-[600ms] animate-delay-[800ms] animate-ease-linear">
-            <div className="w-1/2">
-              <div className="md:p-6 ml-3  md:mr-2 z-50 md:mt-20 md:-mr-2  ">
+          <h1 className="z-50 text-3xl pb-6 md:text-[40pt] text-[#FDB517]  font-bold text-center pt-10">WORKFORCE AGILITY DIAGNOTIC TOOL</h1>
+          <div className="z-40 bg-[#074D7D] flex md:justify-center md:flex-row-reverse flex-col items-center w-screen animate-fade-up animate-duration-[600ms] animate-delay-[800ms] animate-ease-linear">
+            <div className="w-full md:w-1/2">
+              <div className="md:p-6 ml-3  z-50 md:mt-20 md:-mr-2  ">
+                <div className="absolute"></div>
                 <DiamondNew setReady={setReady} handleReady={handleReady} selections={selections} setSelections={setSelections}></DiamondNew>
               </div>
             </div>
-            <div className="w-1/2 md:p-20 ">
+            <div className="w-full md:w-1/2 md:p-20 ">
               <h1 className="text-2xl p-4 leading-10 md:pb-8  md:text-[25pt] text-white font-extralight animate-flip-up animate-delay-[1200ms]">
                 Design your new world of work
               </h1>

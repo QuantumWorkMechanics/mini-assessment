@@ -5,7 +5,7 @@ import createPDF from "../Utils.jsx/createPdf";
 export default function LaunchPDF({ setIsLoading, setProgress, results }) {
   return (
     <>
-      <div id={"pdf-download"} className="bg-neutral-50 p-2  flex justify-center items-center border rounded border-#0e416c gap-4 overflow-x-contain">
+      <div id={"pdf-download"} className="bg-neutral-50 p-2  flex justify-center items-center border rounded border-#0e416c gap-4 overflow-x-clip">
         <button
           onClick={() => {
             // setIsLoading(true);

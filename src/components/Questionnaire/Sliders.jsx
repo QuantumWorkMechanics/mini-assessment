@@ -4,7 +4,7 @@ export default function Sliders({ handleCurrent, handleDesired, currentSliderVal
   return (
     <>
       <div className=" md:place-self-start md:my-40 flex flex-col md:flex-row  justify-center md:justify-start -mt-6 md:mt-0 px-4 md:p-0">
-        <div className="m-4 text-slate-600 md:hidden text-xs mb-1">Current Level</div>
+        <div className="mx-4 max-sm:-mt-1 text-slate-600 md:hidden text-xs mb-1">Current Level</div>
         <div className=" md:-mr-20">
           <div className=" ">
             <input

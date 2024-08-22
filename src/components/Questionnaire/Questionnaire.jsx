@@ -211,7 +211,7 @@ function Questionnaire() {
     <>
       {!seeResult && (
         <>
-          <div className="-mt-2.5 fixed">
+          <div className="-mt-2.5 fixed overflow-x-clip">
             <progress className="progress progress-secondary w-screen" value={progress * 100} max="100"></progress>
           </div>
 

@@ -8,6 +8,12 @@
   }
 }
 
+html,
+body {
+  max-width: 100% !important;
+  overflow-x: clip !important;
+}
+
 .recharts-legend-item {
   font-size: 8pt;
   font-family: "Noto Sans", "Roboto", "Arial";
