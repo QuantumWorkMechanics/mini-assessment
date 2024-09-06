@@ -17,6 +17,7 @@ import SpeedometerFive from "../Utils.jsx/SpeedometerFive";
 import Box from "../Utils.jsx/Box";
 import LaunchPDF from "./LaunchPDF";
 import businessImg from "../../assets/image18.jpg";
+import businessImg2 from "../../assets/image5.jpeg";
 
 const DIMENSIONS = [
   "HR Ecosystem Maturity",
@@ -32,6 +33,7 @@ function ResultsFlat({ diagnostic }) {
   const [current, setCurrent] = useState();
   const [desired, setDesired] = useState();
   const [orgResults, setOrgResults] = useState();
+  const [orgResults2, setOrgResults2] = useState();
   const [ready, setReady] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [progress, setProgress] = useState(0);
@@ -46,6 +48,7 @@ function ResultsFlat({ diagnostic }) {
       setCurrent(tempResults.currentAvg);
       setDesired(tempResults.desiredAvg);
       setOrgResults(tempResults.orgResults);
+      setOrgResults2(tempResults.orgResults2);
       console.log(tempResults);
       setReady(true);
     }, 2500);
@@ -61,7 +64,7 @@ function ResultsFlat({ diagnostic }) {
               <img className="z-50 hidden md:block  md:-mt-8 overflow-show md:w-[300px] overflow-show " src={logo} alt="" />
             </div>
             <h1 className="z-40 overflow-show text-[#FDB517] font-bold text-3xl md:text-[30pt] bg-[#09497B] text-center pt-28 md:pt-0 -mb-1">
-              {BUSINESS_STRATEGY.title}{" "}
+              Workforce Agility Diagnostic
             </h1>
             <div className="flex flex-col md:gap-4 xl:gap-10 md:flex-row bg-[#09497B] text-white xl:justify-around items-center p-2 md:pl-20 md:pr-20 xl:pl-40 xl:pr-40">
               <div className="md:w-1/2 ">
@@ -108,16 +111,22 @@ function ResultsFlat({ diagnostic }) {
             <Divider text={BUSINESS_STRATEGY.title} />
 
             <Box>
-              <h3 className="md:hidden text-2xl py-4 text-justify">{BUSINESS_STRATEGY.title} </h3>
-              <div>{BUSINESS_STRATEGY.text}</div>
+              <h3 className="md:hidden text-2xl py-4 text-center">{BUSINESS_STRATEGY.title} </h3>
+              <div className="text-justify">{orgResults2.result}</div>
             </Box>
-            <img className="md:hidden" src={businessImg} alt="" />
+            <div className="md:hidden h-96">
+              <img className="h-full object-contain" src={businessImg} alt="Two men and two women in a modern office looking at charts." />
+            </div>
             {dimensionResults && dimensionResults.map((result) => <ResultsSubResult key={`${result.dimension}`} result={result} />)}
+            <div className="md:hidden h-96">
+              <img className="h-full object-contain" src={businessImg2} alt="Two men and two women in a modern office looking at charts." />
+            </div>
             <Divider text={"What's NEXT?"} />
 
             <Box className=" bg-slate-200 flex flex-col md:mx-20 md:my-8 p-10 gap-10 border border-[#999999] shadow">
               <div className="w-full">
-                <div>
+                <h3 className="md:hidden text-2xl py-4 text-center">What's NEXT?</h3>
+                <div className="text-justify">
                   Evolving your HR technology stack is a complex process that requires careful planning, strategic alignment, and seamless execution.
                   Here’s how <strong>QuantumWork Advisory</strong> can help you navigate this journey:{" "}
                 </div>
@@ -142,6 +151,7 @@ function ResultsFlat({ diagnostic }) {
           </div>
         )}
       </div>
+
       {/* <div className="bottom-0 fixed w-screen justify-center">
         {results && <LaunchPDF progress={progress} setProgress={setProgress} results={results} />}
       </div> */}

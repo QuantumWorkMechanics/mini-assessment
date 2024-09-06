@@ -1,0 +1,90 @@
+"filename", "language", "JavaScript", "JSON", "XML", "JavaScript JSX", "CSS", "comment", "blank", "total"
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/App.css", "CSS", 0, 0, 0, 0, 40, 0, 7, 47
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/assets/diamond-3.0.svg", "XML", 0, 0, 173, 0, 0, 1, 1, 175
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/assets/diamond_with_circles.svg", "XML", 0, 0, 70, 0, 0, 1, 2, 73
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/App.jsx", "JavaScript JSX", 0, 0, 0, 29, 0, 0, 3, 32
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/Navigation/NavBar.jsx", "JavaScript JSX", 0, 0, 0, 9, 0, 0, 2, 11
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/Questionnaire/AllSectionsComplete.jsx", "JavaScript JSX", 0, 0, 0, 62, 0, 62, 6, 130
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/Questionnaire/Header.jsx", "JavaScript JSX", 0, 0, 0, 18, 0, 2, 3, 23
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/Questionnaire/HubSpotForm.jsx", "JavaScript JSX", 0, 0, 0, 78, 0, 12, 8, 98
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/Questionnaire/MultiSelect.jsx", "JavaScript JSX", 0, 0, 0, 138, 0, 13, 14, 165
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/Questionnaire/OtherPopup.jsx", "JavaScript JSX", 0, 0, 0, 23, 0, 1, 3, 27
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/Questionnaire/PopupTest.jsx", "JavaScript JSX", 0, 0, 0, 14, 0, 0, 3, 17
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/Questionnaire/Questionnaire.jsx", "JavaScript JSX", 0, 0, 0, 248, 0, 16, 32, 296
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/Questionnaire/RechartBar.jsx", "JavaScript JSX", 0, 0, 0, 41, 0, 0, 6, 47
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/Questionnaire/SectionCompleted.jsx", "JavaScript JSX", 0, 0, 0, 35, 0, 0, 4, 39
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/Questionnaire/SingleSelect.jsx", "JavaScript JSX", 0, 0, 0, 57, 0, 11, 6, 74
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/Questionnaire/SliderSelect.jsx", "JavaScript JSX", 0, 0, 0, 171, 0, 29, 7, 207
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/Questionnaire/Sliders.jsx", "JavaScript JSX", 0, 0, 0, 55, 0, 3, 3, 61
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/Questionnaire/TestHSForm.jsx", "JavaScript JSX", 0, 0, 0, 44, 0, 23, 6, 73
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/Questionnaire/styleHS.css", "CSS", 0, 0, 0, 0, 445, 0, 13, 458
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/Results/DiamondSVG.jsx", "JavaScript JSX", 0, 0, 0, 230, 0, 0, 2, 232
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/Results/LaunchForm.jsx", "JavaScript JSX", 0, 0, 0, 51, 0, 0, 4, 55
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/Results/Overall.jsx", "JavaScript JSX", 0, 0, 0, 33, 0, 0, 4, 37
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/Results/PDFResult.jsx", "JavaScript JSX", 0, 0, 0, 40, 0, 0, 8, 48
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/Results/Results.jsx", "JavaScript JSX", 0, 0, 0, 128, 0, 1, 11, 140
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/Results/ResultsDiamond.jsx", "JavaScript JSX", 0, 0, 0, 127, 0, 3, 13, 143
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/Results/SmallBar.jsx", "JavaScript JSX", 0, 0, 0, 43, 0, 0, 7, 50
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/Results/SubBarGraph.jsx", "JavaScript JSX", 0, 0, 0, 34, 0, 0, 4, 38
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/Results/SubComponent.jsx", "JavaScript JSX", 0, 0, 0, 88, 0, 1, 5, 94
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/ResultsNew/DiamondResults.jsx", "JavaScript JSX", 0, 0, 0, 493, 0, 39, 8, 540
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/ResultsNew/LaunchPDF.jsx", "JavaScript JSX", 0, 0, 0, 21, 0, 1, 2, 24
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/ResultsNew/ResultsFlat.jsx", "JavaScript JSX", 0, 0, 0, 145, 0, 8, 10, 163
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/ResultsNew/ResultsFull.jsx", "JavaScript JSX", 0, 0, 0, 29, 0, 0, 5, 34
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/ResultsNew/ResultsLoadSpin.jsx", "JavaScript JSX", 0, 0, 0, 14, 0, 0, 3, 17
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/ResultsNew/ResultsNew.jsx", "JavaScript JSX", 0, 0, 0, 49, 0, 1, 6, 56
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/ResultsNew/ResultsRadar.jsx", "JavaScript JSX", 0, 0, 0, 124, 0, 29, 9, 162
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/ResultsNew/ResultsSubResult.jsx", "JavaScript JSX", 0, 0, 0, 104, 0, 0, 7, 111
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/ResultsNew/ResultsTesting.jsx", "JavaScript JSX", 0, 0, 0, 12, 0, 0, 3, 15
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/ResultsNew/ResultsTesting2.jsx", "JavaScript JSX", 0, 0, 0, 21, 0, 17, 5, 43
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/ResultsNew/results-copy.js", "JavaScript", 48, 0, 0, 0, 0, 0, 2, 50
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/ResultsNew/test.js", "JavaScript", 157, 0, 0, 0, 0, 0, 1, 158
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/Setup/Form/Form.jsx", "JavaScript JSX", 0, 0, 0, 16, 0, 0, 3, 19
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/Setup/Form/form-question-types/Choice.jsx", "JavaScript JSX", 0, 0, 0, 16, 0, 0, 2, 18
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/Setup/Landing.jsx", "JavaScript JSX", 0, 0, 0, 14, 0, 0, 4, 18
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/Setup/Selections/Diamond.jsx", "JavaScript JSX", 0, 0, 0, 304, 0, 3, 9, 316
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/Setup/Selections/DiamondNew.jsx", "JavaScript JSX", 0, 0, 0, 518, 0, 10, 8, 536
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/Setup/Selections/Selections.jsx", "JavaScript JSX", 0, 0, 0, 99, 0, 11, 6, 116
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/Utils.jsx/Box.jsx", "JavaScript JSX", 0, 0, 0, 10, 0, 0, 2, 12
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/Utils.jsx/CategoryList.js", "JavaScript", 9, 0, 0, 0, 0, 0, 2, 11
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/Utils.jsx/Controls.jsx", "JavaScript JSX", 0, 0, 0, 54, 0, 5, 3, 62
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/Utils.jsx/Divider.jsx", "JavaScript JSX", 0, 0, 0, 11, 0, 0, 3, 14
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/Utils.jsx/FillForm.js", "JavaScript", 131, 0, 0, 0, 0, 0, 33, 164
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/Utils.jsx/Functions.js", "JavaScript", 19, 0, 0, 0, 0, 0, 5, 24
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/Utils.jsx/GaugeChartOne.jsx", "JavaScript JSX", 0, 0, 0, 49, 0, 5, 3, 57
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/Utils.jsx/LoadSpinner.jsx", "JavaScript JSX", 0, 0, 0, 11, 0, 0, 2, 13
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/Utils.jsx/NotoSans-Black-normal.js", "JavaScript", 2, 0, 0, 0, 0, 6, 1, 9
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/Utils.jsx/Radial.jsx", "JavaScript JSX", 0, 0, 0, 114, 0, 6, 4, 124
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/Utils.jsx/Speedometer.jsx", "JavaScript JSX", 0, 0, 0, 36, 0, 2, 4, 42
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/Utils.jsx/SpeedometerFive.jsx", "JavaScript JSX", 0, 0, 0, 44, 0, 6, 4, 54
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/Utils.jsx/SpeedometerFour.jsx", "JavaScript JSX", 0, 0, 0, 42, 0, 6, 4, 52
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/Utils.jsx/SpeedometerOne.jsx", "JavaScript JSX", 0, 0, 0, 45, 0, 6, 4, 55
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/Utils.jsx/SpeedometerThree.jsx", "JavaScript JSX", 0, 0, 0, 42, 0, 6, 4, 52
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/Utils.jsx/SpeedometerTwo.jsx", "JavaScript JSX", 0, 0, 0, 45, 0, 6, 4, 55
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/Utils.jsx/TextGenAI.jsx", "JavaScript JSX", 0, 0, 0, 29, 0, 7, 8, 44
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/Utils.jsx/createPDF.js", "JavaScript", 213, 0, 0, 0, 0, 96, 55, 364
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/Utils.jsx/useTimeout.js", "JavaScript", 16, 0, 0, 0, 0, 0, 1, 17
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/index.css", "CSS", 0, 0, 0, 0, 280, 63, 33, 376
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/main.jsx", "JavaScript JSX", 0, 0, 0, 20, 0, 0, 2, 22
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/modules/Scrubber.jsx", "JavaScript JSX", 0, 0, 0, 8, 0, 1, 3, 12
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/modules/form-questions.js", "JavaScript", 33, 0, 0, 0, 0, 0, 1, 34
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/modules/question-bank-v2.js", "JavaScript", 663, 0, 0, 0, 0, 0, 4, 667
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/modules/question-bank-v3-scrubbed.js", "JavaScript", 678, 0, 0, 0, 0, 18, 2, 698
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/modules/question-bank.js", "JavaScript", 734, 0, 0, 0, 0, 0, 4, 738
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/modules/question-scrubber.js", "JavaScript", 40, 0, 0, 0, 0, 1, 5, 46
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/modules/questions-raw.js", "JavaScript", 339, 0, 0, 0, 0, 0, 1, 340
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/modules/results/large_ent.json", "JSON", 0, 122, 0, 0, 0, 0, 1, 123
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/modules/results/lms.json", "JSON", 0, 41, 0, 0, 0, 0, 1, 42
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/modules/results/medium_ent.json", "JSON", 0, 122, 0, 0, 0, 0, 1, 123
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/modules/results/mock-results.js", "JavaScript", 309, 0, 0, 0, 0, 0, 1, 310
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/modules/results/pm.json", "JSON", 0, 41, 0, 0, 0, 0, 1, 42
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/modules/results/results-old.js", "JavaScript", 2674, 0, 0, 0, 0, 0, 1, 2675
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/modules/results/results-scrubber.js", "JavaScript", 45, 0, 0, 0, 0, 25, 6, 76
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/modules/results/results.jsx", "JavaScript JSX", 0, 0, 0, 13070, 0, 0, 2, 13072
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/modules/results/scoring-service.js", "JavaScript", 92, 0, 0, 0, 0, 18, 14, 124
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/modules/results/small_ent.json", "JSON", 0, 122, 0, 0, 0, 0, 1, 123
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/modules/results/ta.json", "JSON", 0, 41, 0, 0, 0, 0, 1, 42
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/modules/results/tm.json", "JSON", 0, 41, 0, 0, 0, 0, 1, 42
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/modules/results/vms.json", "JSON", 0, 41, 0, 0, 0, 0, 1, 42
+"/Users/ianhrydziuszko/work-repos/mini-assess-v2/src/modules/results/wp.json", "JSON", 0, 41, 0, 0, 0, 0, 0, 41
+"Total", "-", 6202, 612, 243, 17405, 765, 581, 513, 26321

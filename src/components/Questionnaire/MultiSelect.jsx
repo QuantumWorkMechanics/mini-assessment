@@ -85,7 +85,7 @@ function MultiSelect({
           >
             {currentQuestion.question}
           </h2>
-          <div className="max-sm:h-[316px] max-sm:w-full max-sm:mx-2 max-sm:border pt-10 max-sm:overflow-y-scroll md:grid md:grid-cols-2 p-6 pb-0 md:grid-flow-row flex flex-col gap-1 justify-center ">
+          <div className="max-sm:h-[316px] max-sm:bg-slate-100 max-sm:w-full max-sm:mx-2 max-sm:border max-sm:pb-4 pt-10 max-sm:overflow-y-scroll md:grid md:grid-cols-2 p-6 pb-0 md:grid-flow-row flex flex-col gap-1 md:justify-center ">
             {isError && <div className="absolute ml-24 tooltip tooltip-open" data-tip={currentQuestion.errorMessage}></div>}
 
             {currentQuestion.Response_1.map((choice, i) => {
@@ -95,8 +95,9 @@ function MultiSelect({
                 return;
               }
               // let isSelected = questionNum.selections.indexOf(item) > -1;
+              console.log(currentQuestion.Response_1.length);
               return (
-                <div className=" hover:bg-slate-200  max-w-72 form control   border-2 rounded" key={`btn_${choice}_${i}`}>
+                <div className=" hover:bg-slate-200  max-w-72 form control bg-white  border-2 rounded max-sm:mt-0 " key={`btn_${choice}_${i}`}>
                   <label className="label cursor-pointer flex justify-start gap-3 p-1 ">
                     <input
                       onChange={() => {
@@ -117,7 +118,7 @@ function MultiSelect({
             })}
 
             {hasOther && (
-              <div className=" hover:bg-slate-200 max-w-72 md:w-58 form control   border-2 rounded">
+              <div className=" hover:bg-slate-200 max-w-72 md:w-58 form control  bg-white border-2 rounded">
                 <label className="label cursor-pointer flex justify-start gap-3 p-1 ">
                   <input
                     onChange={() => {
@@ -152,7 +153,7 @@ function MultiSelect({
       </div>
 
       <div className="hidden md:block md:min-w-1/2 md:w-1/2  mt-2 right-0 fixed">
-        <img src={img} className=" object-center object-cover  h-screen " alt="" />
+        <img src={img} className=" object-center object-cover  h-screen " alt={currentQuestion.img_aria} />
       </div>
 
       <img src={logo} className="hidden md:block fixed w-[280px] bottom-0 right-1" alt="" />

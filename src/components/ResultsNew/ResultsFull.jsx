@@ -4,6 +4,7 @@ import LaunchForm from "../Results/LaunchForm";
 import LaunchPDF from "./LaunchPDF";
 import ResultsFlat from "./ResultsFlat";
 import { scoreDiagnostic } from "../../modules/results/scoring-service";
+import ResultsLoadSpin from "./ResultsLoadSpin";
 
 function ResultsFull({ diagnostic, selections }) {
   const [results, setResults] = useState();
@@ -24,6 +25,7 @@ function ResultsFull({ diagnostic, selections }) {
       <div className="bottom-0 fixed w-screen justify-center">
         {results && <LaunchPDF progress={progress} setProgress={setProgress} setIsLoading={setIsLoading} results={results} />}
       </div>
+      {isLoading && <ResultsLoadSpin isLoading={isLoading} progress={progress} />}
     </div>
   );
 }

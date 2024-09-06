@@ -22,7 +22,8 @@ export default function Selections({ setData }) {
   });
 
   // useEffect(() => {
-  //   document.querySelector("body").style.backgroundColor = "#09497B";
+  //   // document.querySelector("body").style.backgroundColor = "#09497B";
+
   // }, []);
 
   function handleStart() {
@@ -68,7 +69,7 @@ export default function Selections({ setData }) {
       )}
       {showDiamond && (
         <div className="bg-[#074D7D] min-h-screen  w-screen">
-          <h1 className="z-50 text-3xl pb-6 md:text-[40pt] text-[#FDB517]  font-bold text-center pt-10">WORKFORCE AGILITY DIAGNOTIC TOOL</h1>
+          <h1 className="z-50 text-3xl pb-6 md:text-[40pt] text-[#FDB517]  font-bold text-center pt-10">WORKFORCE AGILITY DIAGNOSTIC TOOL</h1>
           <div className="z-40 bg-[#074D7D] flex md:justify-center md:flex-row-reverse flex-col items-center w-screen animate-fade-up animate-duration-[600ms] animate-delay-[800ms] animate-ease-linear">
             <div className="w-full md:w-1/2">
               <div className="md:p-6 ml-3  z-50 md:mt-20 md:-mr-2  ">
@@ -83,6 +84,7 @@ export default function Selections({ setData }) {
               <h2 className="text-md px-4 text-justify pt-0 pb-2 text-white font-extralight md:text-[16pt] md:leading-10">
                 Click on the diamond components to select the worktech competencies you woud like to assess.
               </h2>
+              <div className="self-end text-xs text-white font-light px-4">*HR, IS and EP selected by default.</div>
               {!ready && (
                 <button
                   className="text-2xl m-4 font-lighter w-[100px] btn btn-disabled  text-[#016AAB] bg-white font-semibold hover:text-[#0EA8DC] "

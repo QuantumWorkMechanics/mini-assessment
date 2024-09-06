@@ -175,6 +175,8 @@ form textarea {
 
 .hs-richtext {
   text-align: justify;
+  padding-left: 0.7rem;
+  padding-right: 0.7rem;
 }
 
 form input:focus,

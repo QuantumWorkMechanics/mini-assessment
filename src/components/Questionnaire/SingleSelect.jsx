@@ -4,7 +4,7 @@ import logo from "../../assets/colorLogo.png";
 import Header from "./Header";
 import Controls from "../Utils.jsx/Controls";
 
-function SingleSelect({ currentQuestion, handleSingleSelect, handleNext, count, questionIndex, handleBack, isAutoAdvance, setIsAutoAdvance }) {
+function SingleSelect({ currentQuestion, handleSingleSelect, handleNext, count, questionIndex, handleBack, isAutoAdvance, setIsAutoAdvance, img }) {
   const colNumTailwind = Math.min(Math.floor(currentQuestion.Response_1.length / 3), 3);
 
   return (
@@ -61,7 +61,7 @@ function SingleSelect({ currentQuestion, handleSingleSelect, handleNext, count, 
       </div>
       <>
         <div className="hidden md:block min-w-1/2 mt-2">
-          <img src={img7} className="h-screen object-cover fixed" alt="" />
+          <img src={img} className="h-screen object-cover fixed" alt={currentQuestion.img_aria} />
         </div>
 
         <img src={logo} className="hidden md:block fixed w-[280px] bottom-0 right-1" alt="" />

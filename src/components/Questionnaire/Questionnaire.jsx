@@ -26,11 +26,12 @@ import img5 from "../../assets/image18.jpg";
 import img6 from "../../assets/image5.jpeg";
 import img8 from "../../assets/image8.jpeg";
 import img9 from "../../assets/image6.jpeg";
+import img10 from "../../assets/image11.jpeg";
 import ResultsFlat from "../ResultsNew/ResultsFlat";
 import useTimeout from "../Utils.jsx/useTimeout";
 import ResultsFull from "../ResultsNew/ResultsFull";
 
-const IMAGES = [img1, img2, img3, img4, img5, img6, img7, img8, img9];
+const IMAGES = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10];
 
 function Questionnaire() {
   const location = useLocation();
@@ -50,12 +51,16 @@ function Questionnaire() {
   const [imageIndex, setImgageIndex] = useState(0);
   const [isAutoAdvance, setIsAutoAdvance] = useState(false);
   const [isError, setIsError] = useState(false);
+  const [noOfQuestions, setNoOfQuestions] = useState(false);
 
   useEffect(() => {
     //Scroll if using navbar for better visibility
     // window.matchMedia("(min-width: 768px)").matches
     //   ? window.scrollTo({ top: 112, behavior: "smooth" })
     //   : window.scrollTo({ top: 72, behavior: "smooth" });
+    //setQuestionList([]);
+    //window.history.replaceState();
+    // window.history.replaceState({}, "");
     let tempList = questionBank.filter((el) => {
       let test = categoriesList.map((x) => x.Type);
       // console.log(test);
@@ -90,9 +95,15 @@ function Questionnaire() {
       return a.Number - b.Number;
     });
     console.log(tempList);
+    tempList.map((el, i) => {
+      tempList[i].Current = 0;
+      tempList[i].Desired = 0;
+      tempList[i].selections = [];
+    });
 
     setQuestionList(tempList);
     setCurrentQuestion(tempList[0]);
+    setNoOfQuestions(tempList.length);
   }, []);
 
   function handleSlider(sliderValue, sliderType) {
@@ -107,12 +118,12 @@ function Questionnaire() {
 
     updateQuestionState(temp);
 
-    if (isAutoAdvance && checkForAutoAdvance(sliderType, sliderValue)) {
-      //  console.log("handling current");
-      setTimeout(() => {
-        handleNext();
-      }, 900);
-    }
+    // if (isAutoAdvance && checkForAutoAdvance(sliderType, sliderValue)) {
+    //   //  console.log("handling current");
+    //   setTimeout(() => {
+    //     handleNext();
+    //   }, 900);
+    // }
   }
 
   function checkForAutoAdvance(sliderType, sliderValue) {
@@ -209,7 +220,7 @@ function Questionnaire() {
 
   return (
     <>
-      {!seeResult && (
+      {!seeResult && !isExploding && (
         <>
           <div className="-mt-2.5 fixed overflow-x-clip">
             <progress className="progress progress-secondary w-screen" value={progress * 100} max="100"></progress>
@@ -222,7 +233,7 @@ function Questionnaire() {
                 <div>
                   {currentQuestion.fieldType == "Slider Field" && (
                     <>
-                      <Header currentQuestion={currentQuestion} count={questionList.length} questionIndex={questionIndex} />
+                      <Header currentQuestion={currentQuestion} count={noOfQuestions} questionIndex={questionIndex} />
                       <SliderSelect
                         spotLight={spotLight}
                         setSpotLight={setSpotLight}
@@ -248,9 +259,9 @@ function Questionnaire() {
                       handleBack={handleBack}
                       handleMultiSelect={handleMultiSelect}
                       currentQuestion={currentQuestion}
-                      count={questionList.length}
+                      count={noOfQuestions}
                       questionIndex={questionIndex}
-                      img={IMAGES[imageIndex]}
+                      img={IMAGES[currentQuestion.img_index]}
                       isAutoAdvance={isAutoAdvance}
                       setIsAutoAdvance={setIsAutoAdvance}
                     />
@@ -263,22 +274,22 @@ function Questionnaire() {
                     handleBack={handleBack}
                     handleSingleSelect={handleSingleSelect}
                     currentQuestion={currentQuestion}
-                    count={questionList.length}
+                    count={noOfQuestions}
                     questionIndex={questionIndex}
-                    img={IMAGES[imageIndex]}
+                    img={IMAGES[currentQuestion.img_index]}
                     isAutoAdvance={isAutoAdvance}
                     setIsAutoAdvance={setIsAutoAdvance}
                   />
                 )}
               </>
             )}
-            {isExploding && (
-              <div className="flex flex-col justify-center items-center w-screen">
-                <AllSectionsComplete setIsExploding={setIsExploding} setSeeResult={setSeeResult} tfHidden={tfHidden} />
-              </div>
-            )}
           </div>
         </>
+      )}{" "}
+      {isExploding && (
+        <div id="complete-message-wrapper" className="flex flex-col justify-center items-center w-screen">
+          <AllSectionsComplete setIsExploding={setIsExploding} setSeeResult={setSeeResult} tfHidden={tfHidden} />
+        </div>
       )}
       {seeResult && questionList && (
         <>

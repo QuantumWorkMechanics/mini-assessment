@@ -1,0 +1,33 @@
+Date : 2024-08-23 16:59:56
+Directory : /Users/ianhrydziuszko/work-repos/mini-assess-v2/src/modules/results
+Total : 7 files,  -2495 codes, -20 comments, -20 blanks, all -2535 lines
+
+Languages
++----------------+------------+------------+------------+------------+------------+
+| language       | files      | code       | comment    | blank      | total      |
++----------------+------------+------------+------------+------------+------------+
+| JavaScript JSX |          1 |         -8 |         -1 |         -3 |        -12 |
+| JavaScript     |          6 |     -2,487 |        -19 |        -17 |     -2,523 |
++----------------+------------+------------+------------+------------+------------+
+
+Directories
++------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                     | files      | code       | comment    | blank      | total      |
++------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                        |          7 |     -2,495 |        -20 |        -20 |     -2,535 |
+| ..                                                                                       |          7 |     -2,495 |        -20 |        -20 |     -2,535 |
++------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| filename                                                                                 | language       | code       | comment    | blank      | total      |
++------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| /Users/ianhrydziuszko/work-repos/mini-assess-v2/src/modules/Scrubber.jsx                 | JavaScript JSX |         -8 |         -1 |         -3 |        -12 |
+| /Users/ianhrydziuszko/work-repos/mini-assess-v2/src/modules/form-questions.js            | JavaScript     |        -33 |          0 |         -1 |        -34 |
+| /Users/ianhrydziuszko/work-repos/mini-assess-v2/src/modules/question-bank-v2.js          | JavaScript     |       -663 |          0 |         -4 |       -667 |
+| /Users/ianhrydziuszko/work-repos/mini-assess-v2/src/modules/question-bank-v3-scrubbed.js | JavaScript     |       -678 |        -18 |         -2 |       -698 |
+| /Users/ianhrydziuszko/work-repos/mini-assess-v2/src/modules/question-bank.js             | JavaScript     |       -734 |          0 |         -4 |       -738 |
+| /Users/ianhrydziuszko/work-repos/mini-assess-v2/src/modules/question-scrubber.js         | JavaScript     |        -40 |         -1 |         -5 |        -46 |
+| /Users/ianhrydziuszko/work-repos/mini-assess-v2/src/modules/questions-raw.js             | JavaScript     |       -339 |          0 |         -1 |       -340 |
+| Total                                                                                    |                |     -2,495 |        -20 |        -20 |     -2,535 |
++------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+

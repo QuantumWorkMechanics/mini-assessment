@@ -24,13 +24,22 @@ export default function SliderSelect({
   const CHAR_LIMIT = 300;
 
   useEffect(() => {
-    if (desiredSliderValue > 0 && currentSliderValue > desiredSliderValue) {
-      setIsError(true);
+    if (isError) {
+      setIsError(false);
+    } else {
+      if (desiredSliderValue > 0 && currentSliderValue >= desiredSliderValue) {
+        setIsError(true);
+      }
+    }
+  }, [currentSliderValue, desiredSliderValue]);
+
+  useEffect(() => {
+    if (isError) {
       setTimeout(() => {
         setIsError(false);
       }, 3000);
     }
-  }, [currentSliderValue, desiredSliderValue]);
+  }, [isError]);
 
   return (
     <>
@@ -48,7 +57,7 @@ export default function SliderSelect({
 
       <div className="overflow-y-scroll border bg-slate-100  md:border-none  w-screen h-24 md:hidden p-2 relative  px-2 mb-8 mt-4">
         <div className="absolute text-sm">
-          {currentSliderValue == 0 && <div className="text-slate-400">Use the sliders to see more:</div>}
+          {currentSliderValue == 0 && <div className="text-slate-400">Tap below to see more:</div>}
           {currentSliderValue == 1 && currentQuestion.Response_1}
           {currentSliderValue == 2 && currentQuestion.Response_2}
           {currentSliderValue == 3 && currentQuestion.Response_3}
@@ -78,7 +87,15 @@ export default function SliderSelect({
               ></div>
             </>
           )}
-          {isError && <div className=" ml-24 tooltip tooltip-open w-40" data-tip={"Desired Level cannot be less than Current Level."}></div>}
+
+          <div
+            className={
+              "absolute ml-24 tooltip tooltip-open w-24 md:w-40 " +
+              ((currentSliderValue == 0 || currentSliderValue <= desiredSliderValue) && " hidden")
+            }
+            data-tip={"Desired Level cannot be less than Current Level."}
+          ></div>
+
           <div className="md:flex items-center">
             <Sliders
               handleSlider={handleSlider}
@@ -86,6 +103,8 @@ export default function SliderSelect({
               currentSliderValue={currentSliderValue}
               handleDesired={handleDesired}
               desiredSliderValue={desiredSliderValue}
+              isAutoAdvance={isAutoAdvance}
+              handleNext={handleNext}
             ></Sliders>
             <div className="-mt-40 hidden display h-80 md:flex md:-ml-28 text-xs text-slate-500 flex-row flex-row-reverse md:flex-col justify-between -ml-20 text-xs ">
               {/* <div>Level 5</div> */}
@@ -100,7 +119,7 @@ export default function SliderSelect({
 
         <div className="overflow-scroll pr-4 border bg-slate-100 h-24 md:hidden relative  px-2 text-sm">
           <div className="absolute ">
-            {desiredSliderValue == 0 && <div className="text-slate-400">Use the sliders to see more:</div>}
+            {desiredSliderValue == 0 && <div className="text-slate-400">Tap above to see more:</div>}
             {desiredSliderValue == 1 && currentQuestion.Response_1}
             {desiredSliderValue == 2 && currentQuestion.Response_2}
             {desiredSliderValue == 3 && currentQuestion.Response_3}
@@ -154,7 +173,7 @@ export default function SliderSelect({
             handleBack={handleBack}
             handleNext={handleNext}
             questionIndex={questionIndex}
-            isActive={currentQuestion.Current > 0 && currentQuestion.Desired > 0 && currentQuestion.Desired > currentQuestion.Current}
+            isActive={currentQuestion.Current > 0 && currentQuestion.Desired > 0 && currentQuestion.Desired >= currentQuestion.Current}
             isAutoAdvance={isAutoAdvance}
             setIsAutoAdvance={setIsAutoAdvance}
           />
@@ -168,7 +187,7 @@ export default function SliderSelect({
           handleBack={handleBack}
           handleNext={handleNext}
           questionIndex={questionIndex}
-          isActive={currentQuestion.Current > 0 && currentQuestion.Desired > 0 && currentQuestion.Desired > currentQuestion.Current}
+          isActive={currentQuestion.Current > 0 && currentQuestion.Desired > 0 && currentQuestion.Desired >= currentQuestion.Current}
           isAutoAdvance={isAutoAdvance}
           setIsAutoAdvance={setIsAutoAdvance}
           showAutoAdvance={true}

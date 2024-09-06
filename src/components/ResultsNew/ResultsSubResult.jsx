@@ -63,10 +63,7 @@ function ResultsSubResult({ result }) {
         <Divider text={result.dimension}> </Divider>
         <Box>
           <h3 className="md:hidden text-2xl py-4">{result.dimension}</h3>
-          <div className="text-justify">
-            {`The bellow recommendations and Benefits are tailored for to enhance your ${result.dimension}. These strategies are designed to help your
-            organization optimize ${DIMENSION_TEXT[result.dimension].display}, improve skills management, and support strategic business objectives.`}
-          </div>
+          <div className="text-justify">{result.intro}</div>
         </Box>
 
         <div className=" w-[350px] h-[250px] md:h-[200px] md:w-[400px] mt-20 flex flex-col place-self-center">

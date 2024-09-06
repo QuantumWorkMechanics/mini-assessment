@@ -10,7 +10,7 @@ function DiamondNew({ handleReady, selections, setSelections, setReady }) {
     path30: false,
     path76: false,
     path77: false,
-    path31: false,
+    path31: true,
   });
 
   const COMPONENT_MAP = {
@@ -27,7 +27,7 @@ function DiamondNew({ handleReady, selections, setSelections, setReady }) {
     // const temp = {...selections}
     let test = false;
     for (const key in temp) {
-      if (temp[key]) {
+      if (key != "path31" && temp[key]) {
         test = true;
       }
     }
@@ -47,7 +47,7 @@ function DiamondNew({ handleReady, selections, setSelections, setReady }) {
 
   function handleDiamondClick(e) {
     let temp = { ...selectedCircles };
-    if (e.target.id in temp) {
+    if (e.target.id in temp && e.target.id != "path31") {
       temp[e.target.id] = !temp[e.target.id];
       setSelectedCircles(temp);
       handleSelected(temp);
@@ -166,11 +166,7 @@ function DiamondNew({ handleReady, selections, setSelections, setReady }) {
           <path
             id="path31"
             d="M273.2 329.3c4.8 0 8.7-3.9 8.7-8.7 0-4.8-3.9-8.7-8.7-8.7s-8.7 3.9-8.7 8.7c0 4.8 3.9 8.7 8.7 8.7"
-            className={
-              " cursor-pointer " +
-              ((!selectedCircles.path31 && "fill-[#cccccc] hover:fill-[#FFCB18] ") || "") +
-              ((selectedCircles.path31 && "fill-[#FDB517] ") || "")
-            }
+            className=" fill-[#FDB517] "
           />
           <circle tabIndex={0} id="circle31" cx={273.2} cy={320.6} r={11} className="st11" />
         </g>

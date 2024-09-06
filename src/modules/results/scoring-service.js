@@ -27,13 +27,21 @@ export function scoreDiagnostic(diagnostic) {
   let currentAvg = Math.round(numericSet.reduce((acc, val) => acc + parseInt(val.Current), 0) / numericSet.length);
   let desiredAvg = Math.round(numericSet.reduce((acc, val) => acc + parseInt(val.Desired), 0) / numericSet.length);
   let tempKey = getLevelKey(currentAvg, desiredAvg);
-  let tempResult = { title: tempKey, result: results[`${type.toLowerCase()}_org`][Math.floor(Math.random() * 10)][tempKey] };
+  console.log({ results });
+  let mathRandOne = Math.floor(Math.random() * 10);
+  let mathRandTwo = mathRandOne;
+  while (mathRandTwo == mathRandOne) {
+    mathRandTwo = Math.floor(Math.random() * 10);
+  }
+  let tempResult = { title: tempKey, result: results[`${type.toLowerCase()}_org`][mathRandOne][tempKey] };
+  let tempResult2 = { title: tempKey, result: results[`${type.toLowerCase()}_org`][mathRandTwo][tempKey] };
   // console.log(currentAvg, desiredAvg);
   let result = {
     currentAvg,
     desiredAvg,
     dimensionResults: [],
     orgResults: tempResult,
+    orgResults2: tempResult2,
   };
   for (let dimension in COMPONENT_MAP) {
     let temp = getDimensionResult(dimension, numericSet, type);
@@ -67,7 +75,7 @@ function getDimensionResult(dimension, diagnostic, type) {
     desiredLevel = "Emerging";
   }
 
-  const resultKey = desiredLevel == currentLevel ? `Staying at ${desiredLevel} level` : `${currentLevel} to ${desiredLevel}`;
+  const resultKey = desiredLevel == currentLevel ? `Staying at ${desiredLevel} Level` : `${currentLevel} to ${desiredLevel}`;
 
   //   console.log(resultKey);
   //   console.log(results[COMPONENT_MAP[dimension]].filter((r) => r.Type == type)[0][resultKey]);
@@ -80,6 +88,7 @@ function getDimensionResult(dimension, diagnostic, type) {
     dimension,
     currentLevel,
     desiredLevel,
+    intro: results[COMPONENT_MAP[dimension]].filter((r) => r.Type == type)[0]["Intro"],
   };
   //   tempResult.Current = current;
   //   tempResult.Desired = desired;
@@ -108,7 +117,7 @@ function getLevelKey(current, desired) {
     desiredLevel = "Emerging";
   }
 
-  return desiredLevel == currentLevel ? `Staying at ${desiredLevel} level` : `${currentLevel} to ${desiredLevel}`;
+  return desiredLevel == currentLevel ? `Staying at ${desiredLevel} Level` : `${currentLevel} to ${desiredLevel}`;
 }
 
 //scoreDiagnostic(mockResults);

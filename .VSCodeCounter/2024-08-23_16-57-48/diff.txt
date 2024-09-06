@@ -1,0 +1,61 @@
+Date : 2024-08-23 16:57:48
+Directory : /Users/ianhrydziuszko/work-repos/mini-assess-v2/src
+Total : 25 files,  13186 codes, 22 comments, 11 blanks, all 13219 lines
+
+Languages
++----------------+------------+------------+------------+------------+------------+
+| language       | files      | code       | comment    | blank      | total      |
++----------------+------------+------------+------------+------------+------------+
+| JavaScript JSX |         13 |     13,135 |         10 |         10 |     13,155 |
+| JavaScript     |          5 |         26 |         12 |          1 |         39 |
+| JSON           |          6 |         18 |          0 |         -1 |         17 |
+| CSS            |          1 |          7 |          0 |          1 |          8 |
++----------------+------------+------------+------------+------------+------------+
+
+Directories
++------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                 | files      | code       | comment    | blank      | total      |
++------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                    |         25 |     13,186 |         22 |         11 |     13,219 |
+| . (Files)                                                                                            |          1 |          7 |          0 |          1 |          8 |
+| components                                                                                           |         13 |         72 |          8 |          8 |         88 |
+| components/Questionnaire                                                                             |          4 |         38 |         11 |          4 |         53 |
+| components/ResultsNew                                                                                |          6 |         30 |         -1 |          4 |         33 |
+| components/Setup                                                                                     |          2 |         -3 |          0 |          0 |         -3 |
+| components/Setup/Selections                                                                          |          2 |         -3 |          0 |          0 |         -3 |
+| components/Utils.jsx                                                                                 |          1 |          7 |         -2 |          0 |          5 |
+| modules                                                                                              |         11 |     13,107 |         14 |          2 |     13,123 |
+| modules/results                                                                                      |         11 |     13,107 |         14 |          2 |     13,123 |
++------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++------------------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| filename                                                                                             | language       | code       | comment    | blank      | total      |
++------------------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| /Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/Questionnaire/AllSectionsComplete.jsx | JavaScript JSX |         -7 |          0 |          0 |         -7 |
+| /Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/Questionnaire/Header.jsx              | JavaScript JSX |          3 |          0 |          0 |          3 |
+| /Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/Questionnaire/HubSpotForm.jsx         | JavaScript JSX |         32 |         11 |          2 |         45 |
+| /Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/Questionnaire/MultiSelect.jsx         | JavaScript JSX |         10 |          0 |          2 |         12 |
+| /Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/ResultsNew/LaunchPDF.jsx              | JavaScript JSX |          1 |         -1 |          0 |          0 |
+| /Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/ResultsNew/ResultsFlat.jsx            | JavaScript JSX |          9 |          0 |          1 |         10 |
+| /Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/ResultsNew/ResultsFull.jsx            | JavaScript JSX |          2 |          0 |          0 |          2 |
+| /Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/ResultsNew/ResultsLoadSpin.jsx        | JavaScript JSX |         14 |          0 |          3 |         17 |
+| /Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/ResultsNew/ResultsRadar.jsx           | JavaScript JSX |          3 |          0 |          0 |          3 |
+| /Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/ResultsNew/ResultsSubResult.jsx       | JavaScript JSX |          1 |          0 |          0 |          1 |
+| /Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/Setup/Selections/DiamondNew.jsx       | JavaScript JSX |         -4 |          0 |          0 |         -4 |
+| /Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/Setup/Selections/Selections.jsx       | JavaScript JSX |          1 |          0 |          0 |          1 |
+| /Users/ianhrydziuszko/work-repos/mini-assess-v2/src/components/Utils.jsx/createPDF.js                | JavaScript     |          7 |         -2 |          0 |          5 |
+| /Users/ianhrydziuszko/work-repos/mini-assess-v2/src/index.css                                        | CSS            |          7 |          0 |          1 |          8 |
+| /Users/ianhrydziuszko/work-repos/mini-assess-v2/src/modules/results/lms.json                         | JSON           |          3 |          0 |          0 |          3 |
+| /Users/ianhrydziuszko/work-repos/mini-assess-v2/src/modules/results/pm.json                          | JSON           |          3 |          0 |          0 |          3 |
+| /Users/ianhrydziuszko/work-repos/mini-assess-v2/src/modules/results/results-old.js                   | JavaScript     |      2,674 |          0 |          1 |      2,675 |
+| /Users/ianhrydziuszko/work-repos/mini-assess-v2/src/modules/results/results-scrubber.js              | JavaScript     |         10 |         14 |          1 |         25 |
+| /Users/ianhrydziuszko/work-repos/mini-assess-v2/src/modules/results/results.js                       | JavaScript     |     -2,674 |          0 |         -1 |     -2,675 |
+| /Users/ianhrydziuszko/work-repos/mini-assess-v2/src/modules/results/results.jsx                      | JavaScript JSX |     13,070 |          0 |          2 |     13,072 |
+| /Users/ianhrydziuszko/work-repos/mini-assess-v2/src/modules/results/scoring-service.js               | JavaScript     |          9 |          0 |          0 |          9 |
+| /Users/ianhrydziuszko/work-repos/mini-assess-v2/src/modules/results/ta.json                          | JSON           |          3 |          0 |          0 |          3 |
+| /Users/ianhrydziuszko/work-repos/mini-assess-v2/src/modules/results/tm.json                          | JSON           |          3 |          0 |          0 |          3 |
+| /Users/ianhrydziuszko/work-repos/mini-assess-v2/src/modules/results/vms.json                         | JSON           |          3 |          0 |          0 |          3 |
+| /Users/ianhrydziuszko/work-repos/mini-assess-v2/src/modules/results/wp.json                          | JSON           |          3 |          0 |         -1 |          2 |
+| Total                                                                                                |                |     13,186 |         22 |         11 |     13,219 |
++------------------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+

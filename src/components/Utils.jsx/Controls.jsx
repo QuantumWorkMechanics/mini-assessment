@@ -2,6 +2,7 @@ import { useState } from "react";
 
 function Controls({ handleNext, handleBack, isAutoAdvance, setIsAutoAdvance, questionIndex, isActive, showAutoAdvance }) {
   const [tipOpen, setTipOpen] = useState(false);
+  console.log(isActive);
   return (
     <>
       <div className=" flex mt-4 md:mt-0 justify-between w-full md:justify-center z-50">
@@ -12,14 +13,28 @@ function Controls({ handleNext, handleBack, isAutoAdvance, setIsAutoAdvance, que
             </div>
           )}
           {questionIndex > 0 && (
-            <div className="btn  bg-[#09497B] text-white border-slate-300" size="large" onClick={handleBack}>
+            <div
+              className="btn  bg-[#09497B] text-white border-slate-300"
+              size="large"
+              onClick={(e) => {
+                e.preventDefault();
+                handleBack();
+              }}
+            >
               BACK
             </div>
           )}
         </div>
         <div className="p-2">
           {isActive && (
-            <div className="btn bg-[#FDB517] text-[#09497B] border-slate-300" size="large" onClick={handleNext}>
+            <div
+              className="btn bg-[#FDB517] text-[#09497B] border-slate-300"
+              size="large"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNext();
+              }}
+            >
               NEXT
             </div>
           )}

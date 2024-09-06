@@ -73,6 +73,8 @@ export const questionBank = [
     errorMessage: "Please select at least one value",
     selections: [],
     max: null,
+    img_index: 0,
+    img_aria: "Team collaborating around a table.",
   },
   {
     question: "How would you describe the maturity levels of your HR technology ecosystem?",
@@ -139,9 +141,11 @@ export const questionBank = [
     selections: [],
     other: "",
     max: 3,
+    img_index: 1,
+    img_aria: "Man on phone in cafe, looking at laptop and smiling.",
   },
   {
-    question: "What is your organization readiness for these priorities?",
+    question: "What is your organization's readiness for these priorities?",
     Type: "HR Strategy and Planning",
     Current: 0,
     Desired: 0,
@@ -159,7 +163,7 @@ export const questionBank = [
     other: "",
   },
   {
-    question: "How widely are the above HR technologies adopted and utilized by HR and business teams?",
+    question: "How widely are the following HR technologies adopted and utilized by HR and business teams?",
     Type: "Implementation and Change Management",
     Current: 0,
     Desired: 0,
@@ -177,7 +181,7 @@ export const questionBank = [
     other: "",
   },
   {
-    question: "What is the level of adoption by HR & business for the above HR Technologies?",
+    question: "What is the level of adoption by HR & business for the following HR Technologies?",
     Type: "Implementation and Change Management",
     Current: 0,
     Desired: 0,
@@ -237,7 +241,9 @@ export const questionBank = [
   },
   {
     question:
-      "From the below listed HR Technologies, which ones your organization consider to implement, improve or change for enhancing your skills management capabilities? (select all that apply)",
+      "Which of the following HR Technologies would your organization like to implement, improve or change to enhance your skills management capabilities? (select all that apply)",
+    // question:
+    //   "From the below listed HR Technologies, which ones your organization consider to implement, improve or change for enhancing your skills management capabilities? (select all that apply)",
     Type: "",
     Current: 0,
     Desired: 0,
@@ -273,6 +279,8 @@ export const questionBank = [
     selections: [],
     max: null,
     other: "",
+    img_index: 2,
+    img_aria: "Woman puts sticky notes on wall as team sits around conference table.",
   },
   {
     question: "How would you rate your organization's capability to implement and manage these HR processes and technologies?",
@@ -396,6 +404,8 @@ export const questionBank = [
     selections: [],
     max: null,
     other: "",
+    img_index: 3,
+    img_aria: "Team with presentation spread out before them on table, making highlights.",
   },
   {
     question: "Please evaluate the maturity of your Vendor Management System (Contingent Worker)",
@@ -446,6 +456,8 @@ export const questionBank = [
     selections: [],
     max: null,
     other: "",
+    img_index: 4,
+    img_aria: "Coworkers brainstorming with graphs and sticky notes.",
   },
   {
     question: "Please assess the maturity of your Talent Acquisition Systems (CRM, ATS, Career Sites etc.)",
@@ -497,6 +509,8 @@ export const questionBank = [
     selections: [],
     max: null,
     other: "",
+    img_index: 5,
+    img_aria: "Woman smiling with tablet in front of office building.",
   },
   {
     question:
@@ -551,6 +565,8 @@ export const questionBank = [
     selections: [],
     max: null,
     other: "",
+    img_index: 6,
+    img_aria: "Woman with file folder standing in front of classical architecture.",
   },
   {
     question:
@@ -604,6 +620,8 @@ export const questionBank = [
     selections: [],
     max: null,
     other: "",
+    img_index: 7,
+    img_aria: "Woman in business suit with phone in hand in front of office buildings.",
   },
   {
     question: "Please assess the maturity of your Performance Management Systems.",
@@ -657,6 +675,8 @@ export const questionBank = [
     selections: [],
     max: null,
     other: "",
+    img_index: 8,
+    img_aria: "",
   },
   // {
   //   question: "Where is your company headquarters located?",
@@ -693,5 +713,7 @@ export const questionBank = [
     selections: [],
     max: null,
     other: "",
+    img_index: 9,
+    img_aria: "Data graphics in front of two business men engaged in conversation.",
   },
 ];

@@ -21,6 +21,7 @@ const STATIC_TEXT = {
 
 export default async function createPDF(setIsLoading, setProgress, results) {
   console.log("creatingPDF");
+
   const imgInput = document.getElementById("flat-result");
   const imgDiamond = await html2canvas(imgInput, {
     scale: 3,
@@ -216,26 +217,46 @@ export default async function createPDF(setIsLoading, setProgress, results) {
     );
     //compMain.updateAppearances(thisFont);
 
-    const compRec1 = componentForm.getTextField("comp_rec_1");
-    compRec1.setText(result.result.Recommendations[0].toString());
-
-    const compRec2 = componentForm.getTextField("comp_rec_2");
-    compRec2.setText(result.result.Recommendations[1].toString());
-    const compRec3 = componentForm.getTextField("comp_rec_3");
-    compRec3.setText(result.result.Recommendations[2].toString());
-
-    const compBenefit1 = componentForm.getTextField("comp_benefit_1");
-    compBenefit1.setText(result.result.Recommendations[0].toString());
-    const compBenefit2 = componentForm.getTextField("comp_benefit_2");
-    compBenefit2.setText(result.result.Recommendations[1].toString());
-    const compBenefit3 = componentForm.getTextField("comp_benefit_3");
-    compBenefit3.setText(result.result.Recommendations[2].toString());
-
-    function setText(field) {
-      field.setFontSize(TEXT_SIZE);
+    function addRecsAndBenefits(type) {
+      for (let i = 0; i < 3; i++) {
+        console.log({ result });
+        let fieldName = "comp_" + type + "_" + (i + 1);
+        let textField = componentForm.getTextField(fieldName);
+        //   console.log(result);
+        if (result.result[type == "rec" ? "Recommendations" : "Benefits"].length > i) {
+          let recOrBen = result.result[type == "rec" ? "Recommendations" : "Benefits"][i];
+          textField.setText(recOrBen.toString());
+          textField.setFontSize(TEXT_SIZE);
+        }
+      }
     }
 
-    [compRec1, compRec2, compRec3, compBenefit1, compBenefit2, compBenefit3].map((x) => setText(x));
+    addRecsAndBenefits("rec");
+    addRecsAndBenefits("benefit");
+
+    // if (componentForm.getTextField("comp_rec_1")) {
+    // const compRec1 = componentForm.getTextField("comp_rec_1");
+    // compRec1.setText(result.result.Recommendations[0].toString());
+    // if (componentForm.getTextField("comp_rec_2")) {
+    //   const compRec2 = componentForm.getTextField("comp_rec_2");
+    // }
+    // if (componentForm.getTextField("comp_rec_2")) {
+    // compRec2.setText(result.result.Recommendations[1].toString());
+    // const compRec3 = componentForm.getTextField("comp_rec_3");
+    // compRec3.setText(result.result.Recommendations[2].toString());
+
+    // const compBenefit1 = componentForm.getTextField("comp_benefit_1");
+    // compBenefit1.setText(result.result.Recommendations[0].toString());
+    // const compBenefit2 = componentForm.getTextField("comp_benefit_2");
+    // compBenefit2.setText(result.result.Recommendations[1].toString());
+    // const compBenefit3 = componentForm.getTextField("comp_benefit_3");
+    // compBenefit3.setText(result.result.Recommendations[2].toString());
+
+    // function setText(field) {
+    //   field.setFontSize(TEXT_SIZE);
+    // }
+
+    // [compRec1, compRec2, compRec3, compBenefit1, compBenefit2, compBenefit3].map((x) => setText(x));
 
     compTitle.updateAppearances(boldFont);
     // fillTextField(thisForm, "component_title", compName);
@@ -302,25 +323,28 @@ export default async function createPDF(setIsLoading, setProgress, results) {
   if (dimResArr.length > 0) {
     await createComponentPage(dimResArr[0]);
   }
-  // setProgress(50);
+  setProgress(50);
   if (dimResArr.length > 1) {
     await createComponentPage(dimResArr[1]);
   }
   if (dimResArr.length > 2) {
     await createComponentPage(dimResArr[2]);
   }
+  setProgress(60);
   if (dimResArr.length > 3) {
     await createComponentPage(dimResArr[3]);
   }
   if (dimResArr.length > 4) {
     await createComponentPage(dimResArr[4]);
   }
+  setProgress(70);
   if (dimResArr.length > 5) {
     await createComponentPage(dimResArr[5]);
   }
   if (dimResArr.length > 6) {
     await createComponentPage(dimResArr[6]);
   }
+  setProgress(90);
   if (dimResArr.length > 7) {
     await createComponentPage(dimResArr[7]);
   }
@@ -352,7 +376,8 @@ export default async function createPDF(setIsLoading, setProgress, results) {
   document.getElementById("pdf-download").appendChild(link);
 
   link.click();
-
-  // setIsLoading(false);
+  setProgress(0);
+  setIsLoading(false);
   // setProgress(0);
+  link.parentElement.removeChild(link);
 }

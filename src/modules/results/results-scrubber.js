@@ -28,18 +28,43 @@ export function parseResults() {
     pm,
     lms,
   };
+  let tempResults = {};
   for (const key in results) {
-    results[key] = results[key].map((res) => {
-      for (let key in res) {
-        if (key != "Type") {
-          let temp = res[key].split("\n\n");
+    console.log(results[key]);
 
-          res[key] = { Recommendations: temp[0].split("\n").slice(1), Benefits: temp[1].split("\n").slice(1) };
+    tempResults = results[key].map((res) => {
+      // console.log(res);
+      let response = { ...res };
+      for (let key2 in res) {
+        if (key2 != "Type" && key2 != "Intro") {
+          // console.log(key2);
+          // console.log(res[key2]);
+          // console.log(res[key2].split("\n\n"));
+          let temp = res[key2].split("\n\n");
+          let recs = temp[0].split("\n").slice(1);
+          let ben = temp[1].split("\n").slice(1);
+          // console.log(temp);
+          // console.log(recs);
+          // console.log(ben);
+          response[key2] = { Recommendations: recs, Benefits: ben };
+          console.log({ key2 });
+          console.log(res[key2]);
+          res[key2];
+          // res[key2] = { Recommendations: temp[0].split("\n").slice(1) };
+          // console.log(res);
+          // let response[key]
+          // let temp = res[key2].split("\n\n");
+          // console.log(temp);
+          // // temp.split("\n\n");
+          // res[key2] = { Recommendations: temp[0].split("\n").slice(1), Benefits: temp[1].split("\n").slice(1) };
         }
       }
-      return res;
+      return response;
     });
+
+    results[key] = tempResults;
   }
+  console.log({ tempResults });
   results.small_org = small;
   results.medium_org = medium;
   results.large_org = large;
