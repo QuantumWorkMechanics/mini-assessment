@@ -704,7 +704,7 @@ export const questionBank = [
     Number: 25,
     Of: 15,
     Dimension: "Organization Size",
-    Response_1: ["Small: Less than 100 Employees", "Medium: 100 to 1000 Employees", "Large: More than 1000 Employees"],
+    Response_1: ["Less than 100", "500 to 2,000", "2,000 to 5,000", "5,000 to 20,000", "20,000 to 50,000", "More than 50,000"],
     Response_2: "",
     Response_3: "",
     Response_4: "",

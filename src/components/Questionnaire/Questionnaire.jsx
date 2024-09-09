@@ -52,6 +52,7 @@ function Questionnaire() {
   const [isAutoAdvance, setIsAutoAdvance] = useState(false);
   const [isError, setIsError] = useState(false);
   const [noOfQuestions, setNoOfQuestions] = useState(false);
+  const [tooltipFlag, setToolTipFlag] = useState(0);
 
   useEffect(() => {
     //Scroll if using navbar for better visibility
@@ -246,6 +247,8 @@ function Questionnaire() {
                         handleNext={handleNext}
                         isAutoAdvance={isAutoAdvance}
                         setIsAutoAdvance={setIsAutoAdvance}
+                        tooltipFlag={tooltipFlag}
+                        setToolTipFlag={setToolTipFlag}
                       />
                     </>
                   )}

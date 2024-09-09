@@ -19,17 +19,21 @@ export default function SliderSelect({
   handleSlider,
   isAutoAdvance,
   setIsAutoAdvance,
+  tooltipFlag,
+  setToolTipFlag,
 }) {
   const [isError, setIsError] = useState(false);
   const CHAR_LIMIT = 300;
 
   useEffect(() => {
+    let isNeedsTip = currentSliderValue > 0 && currentSliderValue > desiredSliderValue;
+    if (isNeedsTip) {
+      setToolTipFlag((prev) => prev + 1);
+    }
     if (isError) {
       setIsError(false);
-    } else {
-      if (desiredSliderValue > 0 && currentSliderValue >= desiredSliderValue) {
-        setIsError(true);
-      }
+    } else if (isNeedsTip) {
+      setIsError(!isError);
     }
   }, [currentSliderValue, desiredSliderValue]);
 
@@ -72,18 +76,18 @@ export default function SliderSelect({
               <div className="hidden md:block absolute text-white z-50 text-2xl md:w-72  ml-20 animate-fade-up animate-once animate-duration-[800ms] animate-ease-linear ">
                 Use the sliders to select your current and desired level
               </div>
-              <div className=" md:hidden absolute text-white z-50 text-2xl w-72 -mt-20 ml-20 animate-fade-up animate-once animate-duration-[800ms] animate-ease-linear ">
+              {/* <div className=" md:hidden absolute text-white z-50 text-2xl w-72 -mt-20 ml-20 animate-fade-up animate-once animate-duration-[800ms] animate-ease-linear ">
                 Tap to select your current and desired level
-              </div>
+              </div> */}
               <div
                 onClick={() => setSpotLight((prev) => prev + 1)}
-                className="mt-20 ml-36 md:ml-34 md:mt-44  z-50 absolute bg-white rounded animate-fade-up animate-once  animate-duration-[800ms] animate-ease-linear"
+                className="max-sm:hidden mt-20 ml-36 md:ml-34 md:mt-44  z-50 absolute bg-white rounded animate-fade-up animate-once  animate-duration-[800ms] animate-ease-linear"
               >
                 <button className="-mt-2 p-3 ">Continue</button>
               </div>
               <div
                 onClick={() => setSpotLight((prev) => prev + 1)}
-                className="pinhole z-30 w-[130px] h-[130px] mt-8 ml-32 md:mt-28 md:ml-32 rounded-full animate-fade-up animate-once animate-duration-[800ms] animate-ease-linear "
+                className="max-sm:hidden pinhole z-30 w-[130px] h-[130px] mt-8 ml-32 md:mt-28 md:ml-32 rounded-full animate-fade-up animate-once animate-duration-[800ms] animate-ease-linear "
               ></div>
             </>
           )}
@@ -91,7 +95,7 @@ export default function SliderSelect({
           <div
             className={
               "absolute ml-24 tooltip tooltip-open w-24 md:w-40 " +
-              ((currentSliderValue == 0 || currentSliderValue <= desiredSliderValue) && " hidden")
+              ((currentSliderValue == 0 || currentSliderValue <= desiredSliderValue || tooltipFlag > 2) && " hidden")
             }
             data-tip={"Desired Level cannot be less than Current Level."}
           ></div>
