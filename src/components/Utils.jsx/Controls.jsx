@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Controls({ handleNext, handleBack, isAutoAdvance, setIsAutoAdvance, questionIndex, isActive, showAutoAdvance }) {
+function Controls({ handleNext, handleBack, isAutoAdvance, setIsAutoAdvance, questionIndex, isActive, showAutoAdvance, currentQuestion }) {
   const [tipOpen, setTipOpen] = useState(false);
   console.log(isActive);
   return (
@@ -32,16 +32,26 @@ function Controls({ handleNext, handleBack, isAutoAdvance, setIsAutoAdvance, que
               size="large"
               onClick={(e) => {
                 e.preventDefault();
-                handleNext();
+                handleNext(true);
               }}
             >
               NEXT
             </div>
           )}
           {!isActive && (
-            <div className="btn btn-outline disabled bg-slate-300 border-slate-300" size="large">
-              NEXT
-            </div>
+            <>
+              <div
+                className="hidden md:block  tooltip "
+                data-tip={currentQuestion && currentQuestion.errorMessage ? currentQuestion.errorMessage : ""}
+              >
+                <div className="btn btn-outline disabled bg-slate-300 border-slate-300" size="large">
+                  NEXT
+                </div>
+              </div>
+              <div className="md:hidden btn btn-outline disabled bg-slate-300 border-slate-300" size="large">
+                NEXT
+              </div>
+            </>
           )}
         </div>
       </div>
@@ -50,7 +60,19 @@ function Controls({ handleNext, handleBack, isAutoAdvance, setIsAutoAdvance, que
           <div className="w-fit tooltip " data-tip="Will advance to next question when enough selections are made.">
             <label className="label cursor-pointer">
               <span className="label-text pr-3 ">Auto-advance</span>
-              <input type="checkbox" className="toggle bg-[#09497B]" checked={isAutoAdvance} onChange={() => setIsAutoAdvance((prev) => !prev)} />
+              <input
+                type="checkbox"
+                className="toggle bg-[#09497B]"
+                checked={isAutoAdvance}
+                onChange={() => {
+                  setIsAutoAdvance((prev) => {
+                    if (!prev && isActive) {
+                      handleNext();
+                    }
+                    return !prev;
+                  });
+                }}
+              />
             </label>
           </div>
         </div>

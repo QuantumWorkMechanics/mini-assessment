@@ -14,6 +14,10 @@ body {
   overflow-x: clip !important;
 }
 
+.sub-bar .recharts-wrapper {
+  margin: 0 auto;
+}
+
 .recharts-legend-item {
   font-size: 8pt;
   font-family: "Noto Sans", "Roboto", "Arial";

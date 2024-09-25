@@ -61,7 +61,7 @@ export default function SliderSelect({
 
       <div className="overflow-y-scroll border bg-slate-100  md:border-none  w-screen h-24 md:hidden p-2 relative  px-2 mb-8 mt-4">
         <div className="absolute text-sm">
-          {currentSliderValue == 0 && <div className="text-slate-400">Tap below to see more:</div>}
+          {currentSliderValue == 0 && <div className="text-slate-400">Tap below to select Current options:</div>}
           {currentSliderValue == 1 && currentQuestion.Response_1}
           {currentSliderValue == 2 && currentQuestion.Response_2}
           {currentSliderValue == 3 && currentQuestion.Response_3}
@@ -94,8 +94,8 @@ export default function SliderSelect({
 
           <div
             className={
-              "absolute ml-24 tooltip tooltip-open w-24 md:w-40 " +
-              ((currentSliderValue == 0 || currentSliderValue <= desiredSliderValue || tooltipFlag > 2) && " hidden")
+              "absolute ml-24 tooltip tooltip-open w-24 md:w-40 md:hidden " +
+              ((currentSliderValue == 0 || currentSliderValue <= desiredSliderValue || tooltipFlag > 3) && " hidden")
             }
             data-tip={"Desired Level cannot be less than Current Level."}
           ></div>
@@ -123,7 +123,7 @@ export default function SliderSelect({
 
         <div className="overflow-scroll pr-4 border bg-slate-100 h-24 md:hidden relative  px-2 text-sm">
           <div className="absolute ">
-            {desiredSliderValue == 0 && <div className="text-slate-400">Tap above to see more:</div>}
+            {desiredSliderValue == 0 && <div className="text-slate-400">Tap above to Desired options:</div>}
             {desiredSliderValue == 1 && currentQuestion.Response_1}
             {desiredSliderValue == 2 && currentQuestion.Response_2}
             {desiredSliderValue == 3 && currentQuestion.Response_3}
@@ -188,6 +188,7 @@ export default function SliderSelect({
       </div>
       <div className="hidden md:block w-[screen]  ">
         <Controls
+          currentQuestion={currentQuestion}
           handleBack={handleBack}
           handleNext={handleNext}
           questionIndex={questionIndex}

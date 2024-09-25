@@ -58,7 +58,7 @@ export const categoriesList = [
 
 export const questionBank = [
   {
-    question: "What is your Human Capital management platform? (select all that apply)",
+    question: "What is your Human Capital Management platform? (select all that apply)",
     Type: "",
     Current: 0,
     Desired: 0,
@@ -77,7 +77,8 @@ export const questionBank = [
     img_aria: "Team collaborating around a table.",
   },
   {
-    question: "How would you describe the maturity levels of your HR technology ecosystem?",
+    question: "Which of the following options best describes your current and desired maturity level of your HR technology ecosystem?",
+    // question: "How would you describe the maturity levels of your HR technology ecosystem?",
     Type: "HR Ecosystem Maturity",
     Current: 0,
     Desired: 0,
@@ -157,7 +158,7 @@ export const questionBank = [
     Response_3: "Data-driven execution; continuous monitoring; aligned goals; high engagement.",
     Response_4: "Strategy embedded in culture; innovation; predictive analytics; strong agility.",
     fieldType: "Slider Field",
-    errorMessage: "Slider Field",
+    errorMessage: "Your desired level cannot be smaller than the current level.",
     selections: [],
     max: 0,
     other: "",
@@ -180,65 +181,65 @@ export const questionBank = [
     max: 0,
     other: "",
   },
-  {
-    question: "What is the level of adoption by HR & business for the following HR Technologies?",
-    Type: "Implementation and Change Management",
-    Current: 0,
-    Desired: 0,
-    Number: 7,
-    Of: 3,
-    Dimension: "Implementation and Change Management",
-    Response_1:
-      "HR:\n" +
-      "- HR technologies are implemented for specific functions (e.g., payroll, basic recruitment).\n" +
-      "- Some degree of process standardization is achieved.\n" +
-      "- Initial training provided to HR staff.\n" +
-      "- Data is collected but not extensively analyzed.\n" +
-      "\n" +
-      "Business:\n" +
-      "- Awareness and occasional use of HR technologies outside HR.\n" +
-      "- Limited integration with broader business systems (e.g., finance, operations).\n" +
-      "- Early-stage benefits realized in HR-specific areas.",
-    Response_2:
-      "HR:\n" +
-      "- Comprehensive HR technology solutions are implemented (e.g., ATS, LMS, performance management systems).\n" +
-      "- Processes are standardized and consistently followed.\n" +
-      "- Regular training programs for HR staff and end-users.\n" +
-      "- Data-driven decision-making begins to inform HR practices.\n" +
-      "\n" +
-      "Business:\n" +
-      "- Broader business begins to see the impact of HR technologies on overall efficiency and effectiveness.\n" +
-      "- Integration with other business systems improves. - Collaboration between HR and other departments to leverage technology for better outcomes.",
-    Response_3:
-      "HR:\n" +
-      "- Advanced HR technologies are fully integrated into all HR functions (e.g., AI-driven recruitment, predictive analytics for talent management).\n" +
-      "- Strong emphasis on data analytics and continuous improvement.\n" +
-      "- High level of user adoption and competency across HR and related functions.\n" +
-      "- Strategic alignment with business goals.\n" +
-      "\n" +
-      "Business:\n" +
-      "- Significant impact of HR technologies on overall business performance.\n" +
-      "- High integration with other business functions, enabling seamless workflows.\n" +
-      "- Enhanced collaboration and data sharing between HR and other departments.\n" +
-      "- Improved employee experience and productivity.",
-    Response_4:
-      "HR:\n" +
-      "- HR technologies are deeply embedded in organizational culture and daily operations.\n" +
-      "- Continuous optimization and innovation using advanced technologies (e.g., machine learning, blockchain).\n" +
-      "- Comprehensive, real-time analytics inform strategic and operational decisions.\n" +
-      "- High level of agility and responsiveness to changes in the business environment.\n" +
-      "\n" +
-      "Business:\n" +
-      "- HR technologies drive sustained competitive advantage and business transformation.\n" +
-      "- Full integration with all business functions, enabling a holistic approach to talent management.\n" +
-      "- Data from HR technologies informs strategic business initiatives and fosters innovation.\n" +
-      "- High employee engagement and satisfaction due to seamless and efficient HR processes.",
-    fieldType: "Slider Field",
-    errorMessage: "Your desired level cannot be smaller than the current level.",
-    selections: [],
-    max: 0,
-    other: "",
-  },
+  // {
+  //   question: "What is the level of adoption by HR & business for the following HR Technologies?",
+  //   Type: "Implementation and Change Management",
+  //   Current: 0,
+  //   Desired: 0,
+  //   Number: 7,
+  //   Of: 3,
+  //   Dimension: "Implementation and Change Management",
+  //   Response_1:
+  //     "HR:\n" +
+  //     "- HR technologies are implemented for specific functions (e.g., payroll, basic recruitment).\n" +
+  //     "- Some degree of process standardization is achieved.\n" +
+  //     "- Initial training provided to HR staff.\n" +
+  //     "- Data is collected but not extensively analyzed.\n" +
+  //     "\n" +
+  //     "Business:\n" +
+  //     "- Awareness and occasional use of HR technologies outside HR.\n" +
+  //     "- Limited integration with broader business systems (e.g., finance, operations).\n" +
+  //     "- Early-stage benefits realized in HR-specific areas.",
+  //   Response_2:
+  //     "HR:\n" +
+  //     "- Comprehensive HR technology solutions are implemented (e.g., ATS, LMS, performance management systems).\n" +
+  //     "- Processes are standardized and consistently followed.\n" +
+  //     "- Regular training programs for HR staff and end-users.\n" +
+  //     "- Data-driven decision-making begins to inform HR practices.\n" +
+  //     "\n" +
+  //     "Business:\n" +
+  //     "- Broader business begins to see the impact of HR technologies on overall efficiency and effectiveness.\n" +
+  //     "- Integration with other business systems improves. - Collaboration between HR and other departments to leverage technology for better outcomes.",
+  //   Response_3:
+  //     "HR:\n" +
+  //     "- Advanced HR technologies are fully integrated into all HR functions (e.g., AI-driven recruitment, predictive analytics for talent management).\n" +
+  //     "- Strong emphasis on data analytics and continuous improvement.\n" +
+  //     "- High level of user adoption and competency across HR and related functions.\n" +
+  //     "- Strategic alignment with business goals.\n" +
+  //     "\n" +
+  //     "Business:\n" +
+  //     "- Significant impact of HR technologies on overall business performance.\n" +
+  //     "- High integration with other business functions, enabling seamless workflows.\n" +
+  //     "- Enhanced collaboration and data sharing between HR and other departments.\n" +
+  //     "- Improved employee experience and productivity.",
+  //   Response_4:
+  //     "HR:\n" +
+  //     "- HR technologies are deeply embedded in organizational culture and daily operations.\n" +
+  //     "- Continuous optimization and innovation using advanced technologies (e.g., machine learning, blockchain).\n" +
+  //     "- Comprehensive, real-time analytics inform strategic and operational decisions.\n" +
+  //     "- High level of agility and responsiveness to changes in the business environment.\n" +
+  //     "\n" +
+  //     "Business:\n" +
+  //     "- HR technologies drive sustained competitive advantage and business transformation.\n" +
+  //     "- Full integration with all business functions, enabling a holistic approach to talent management.\n" +
+  //     "- Data from HR technologies informs strategic business initiatives and fosters innovation.\n" +
+  //     "- High employee engagement and satisfaction due to seamless and efficient HR processes.",
+  //   fieldType: "Slider Field",
+  //   errorMessage: "Your desired level cannot be smaller than the current level.",
+  //   selections: [],
+  //   max: 0,
+  //   other: "",
+  // },
   {
     question:
       "Which of the following HR Technologies would your organization like to implement, improve or change to enhance your skills management capabilities? (select all that apply)",
@@ -704,7 +705,7 @@ export const questionBank = [
     Number: 25,
     Of: 15,
     Dimension: "Organization Size",
-    Response_1: ["Less than 100", "500 to 2,000", "2,000 to 5,000", "5,000 to 20,000", "20,000 to 50,000", "More than 50,000"],
+    Response_1: ["Less than 500", "501 to 2,000", "2,001 to 5,000", "5,001 to 20,000", "20,001 to 50,000", "More than 50,000"],
     Response_2: "",
     Response_3: "",
     Response_4: "",

@@ -66,7 +66,7 @@ export default function AllSectionsComplete({ setSeeResult, setIsExploding, tfHi
             <div className="flex flex-col w-screen justify-center items-center ">
               <div className="md:w-1/3 bg-slate-100 min-h-screen border-2 my-4 ">
                 <div className="flex flex-col animate-fade-up">
-                  <div
+                  {/* <div
                     className="btn btn-outline animate-fade-up animate-delay-500"
                     onClick={() => {
                       setViewForm(false);
@@ -75,7 +75,7 @@ export default function AllSectionsComplete({ setSeeResult, setIsExploding, tfHi
                     }}
                   >
                     SKIP
-                  </div>
+                  </div> */}
                   <img src={logo} className="h-52 w-fit self-center " alt="" />
                   <HubSpotForm tfHidden={tfHidden} setViewForm={setViewForm} setSeeResult={setSeeResult} setIsExpoding={setIsExploding} />
                 </div>

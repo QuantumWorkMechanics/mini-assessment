@@ -45,6 +45,7 @@ function SingleSelect({ currentQuestion, handleSingleSelect, handleNext, count, 
           </div>
           <div className="mt-6 max-sm:w-screen">
             <Controls
+              currentQuestion={currentQuestion}
               handleBack={handleBack}
               handleNext={handleNext}
               questionIndex={questionIndex}

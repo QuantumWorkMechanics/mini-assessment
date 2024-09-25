@@ -5,7 +5,7 @@ import html2canvas from "html2canvas";
 import { resultsList } from "../../modules/question-bank";
 import overview from "../../assets/Overview.pdf";
 import component from "../../assets/Component.pdf";
-import noto from "../../assets/NotoSans-VariableFont_wdth,wght.ttf";
+import noto from "../../assets/NotoSans-Regular.ttf";
 
 export default async function fillForm(categories, questionList, currentTotal, desiredTotal, setIsLoading, setProgress) {
   const imgInput = document.getElementById("diamond-png");

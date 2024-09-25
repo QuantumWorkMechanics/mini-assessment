@@ -56,7 +56,7 @@ export default function Selections({ setData }) {
                 </div>
               </div>
             </div>
-            <div className="w-screen md:mt-4 -mt-[80%] flex justify-center">
+            <div className="w-screen md:mt-4 -mt-[80%] flex justify-center md:hidden">
               <button
                 className="text-2xl md:text-3xl text-white md:text-[#09497B] hover:text-white hover:outline-[#0EA8DC] hover:bg-[#09497B] outline outline-4  p-2"
                 onClick={handleStart}
@@ -82,12 +82,12 @@ export default function Selections({ setData }) {
                 Design your new world of work
               </h1>
               <h2 className="text-md px-4 text-justify pt-0 pb-2 text-white font-extralight md:text-[16pt] md:leading-10">
-                Click on the diamond components to select the worktech competencies you woud like to assess.
+                Click on one or multiple Diamond Model dimensions (circles) to select the Worktech competencies to assess.
+                {/* Click on the diamond components to select the worktech competencies you woud like to assess. */}
               </h2>
-              <div className="self-end text-xs text-white font-light px-4">*HR, IS and EP selected by default.</div>
               {!ready && (
                 <button
-                  className="text-2xl m-4 font-lighter w-[100px] btn btn-disabled  text-[#016AAB] bg-white font-semibold hover:text-[#0EA8DC] "
+                  className="md:hidden block text-2xl m-4 font-lighter w-[100px] btn btn-disabled  text-[#016AAB] bg-white font-semibold hover:text-[#0EA8DC] "
                   onClick={() => handleReady()}
                 >
                   READY
@@ -95,7 +95,34 @@ export default function Selections({ setData }) {
               )}
               {ready && (
                 <button
-                  className="text-2xl m-4 font-lighter w-[100px] btn btn-outline text-[#016AAB] bg-white font-semibold hover:text-[#0EA8DC] "
+                  className="md:hidden block text-2xl m-4 font-lighter w-[100px] btn btn-outline text-[#016AAB] bg-white font-semibold hover:text-[#0EA8DC] "
+                  onClick={() => handleReady()}
+                >
+                  READY
+                </button>
+              )}
+              <div className="md:hidden block self-end text-xs text-white font-light px-4 mt-4">*HR, IS and EP selected by default.</div>
+              <div className="rounded h-1 w-[90%] bg-[#FDB517] ml-[5%]"></div>
+              <div className="text-white text-justify text-sm my-4 px-4">
+                The QWA Diamond Model©, developed by QuantumWork Advisory, is a comprehensive strategic framework designed to evaluate workforce
+                strategies throughout the entire employee lifecycle, from acquisition to management. It serves as a crucial tool for QWA consultants,
+                guiding organizations through AI-driven digital transformations to enhance agility and achieve success. What you're viewing here is a
+                streamlined diagnostic version of our more robust strategic solution, crafted to deliver essential directional insights. Our tools are
+                built upon well-established benchmarks from leading organizations in workforce planning and execution.
+              </div>
+              <div className="rounded h-1 w-[90%] bg-[#FDB517] ml-[5%]"></div>
+              <div className="hidden md:block self-end text-xs text-white font-light px-4 mt-4">*HR, IS and EP selected by default.</div>
+              {!ready && (
+                <button
+                  className="hidden md:block text-2xl m-4 font-lighter w-[100px] btn btn-disabled  text-[#016AAB] bg-white font-semibold hover:text-[#0EA8DC] "
+                  onClick={() => handleReady()}
+                >
+                  READY
+                </button>
+              )}
+              {ready && (
+                <button
+                  className="hidden md:block text-2xl m-4 font-lighter w-[100px] btn btn-outline text-[#016AAB] bg-white font-semibold hover:text-[#0EA8DC] "
                   onClick={() => handleReady()}
                 >
                   READY

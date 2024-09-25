@@ -43,7 +43,7 @@ function ResultsSubResult({ result }) {
       <div
         id={result.dimension + "_bar"}
         aria-hidden="true"
-        className="overflow-clip absolute -mt-[2500%] h-[200px] w-[400px]  flex flex-col place-self-center"
+        className=" overflow-clip absolute -mt-[2500%] h-[200px] w-[400px]  flex flex-col place-self-center"
       >
         <SubBarGraph
           dataSet={[
@@ -63,10 +63,10 @@ function ResultsSubResult({ result }) {
         <Divider text={result.dimension}> </Divider>
         <Box>
           <h3 className="md:hidden text-2xl py-4">{result.dimension}</h3>
-          <div className="text-justify">{result.intro}</div>
+          <div className="leading-7">{result.intro}</div>
         </Box>
 
-        <div className=" w-[350px] h-[250px] md:h-[200px] md:w-[400px] mt-20 flex flex-col place-self-center">
+        <div className="sub-bar mr-10 w-full h-[250px] md:h-[200px] md:w-[400px] mt-20 flex flex-col place-self-center">
           <SubBarGraph
             dataSet={[
               {
@@ -82,20 +82,20 @@ function ResultsSubResult({ result }) {
           />
         </div>
 
-        <Box className="bg-slate-200 flex flex-col md:mx-20 md:my-8 p-10 gap-2 border border-[#999999] shadow">
-          <h3 className="font-bold text-xl w-full">Recommendations:</h3>
+        <Box>
+          <h3 className="font-bold text-xl w-full mb-2">Recommendations:</h3>
           {result.result.Recommendations.map((rec, i) => {
             return (
-              <div className="w-full" key={`rec_${i}`}>
+              <div className="w-full mb-3  leading-7" key={`rec_${i}`}>
                 <span className="font-bold">{rec.split(":")[0]}:</span>
                 {rec.split(":")[1]}
               </div>
             );
           })}
-          <h3 className="font-bold text-xl pt-6 w-full">Benefits:</h3>
+          <h3 className="font-bold text-xl pt-6 w-full mb-3">Benefits:</h3>
           {result.result.Benefits.map((rec, i) => {
             return (
-              <div className="w-full" key={`ben_${i}`}>
+              <div className="w-full mb-2 leading-7" key={`ben_${i}`}>
                 <span className="font-bold w-full">{rec.split(":")[0]}:</span>
                 {rec.split(":")[1]}
               </div>

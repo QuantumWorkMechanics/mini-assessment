@@ -17,13 +17,21 @@ export function scoreDiagnostic(diagnostic) {
   let type;
   //console.log(diagnostic[-1]);
   const SIZE_RESPONSE = diagnostic.filter((x) => x.Dimension == "Organization Size")[0].selections;
-  if (SIZE_RESPONSE.includes("Small")) {
+  // if (SIZE_RESPONSE.includes("Small")) {
+  //   type = "Small";
+  // } else if (SIZE_RESPONSE.includes("Medium")) {
+  //   type = "Medium";
+  // } else {
+  //   type = "Large";
+  // }
+  if (SIZE_RESPONSE.includes("500" || SIZE_RESPONSE.includes("501"))) {
     type = "Small";
-  } else if (SIZE_RESPONSE.includes("Medium")) {
+  } else if (SIZE_RESPONSE.includes("2,001") || SIZE_RESPONSE.includes("5,001")) {
     type = "Medium";
   } else {
     type = "Large";
   }
+
   let currentAvg = Math.round(numericSet.reduce((acc, val) => acc + parseInt(val.Current), 0) / numericSet.length);
   let desiredAvg = Math.round(numericSet.reduce((acc, val) => acc + parseInt(val.Desired), 0) / numericSet.length);
   let tempKey = getLevelKey(currentAvg, desiredAvg);

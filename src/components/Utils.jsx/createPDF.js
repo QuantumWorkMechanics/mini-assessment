@@ -3,10 +3,12 @@ import fontkit from "@pdf-lib/fontkit";
 import { findAvg } from "./Functions";
 import html2canvas from "html2canvas";
 import { resultsList } from "../../modules/question-bank";
-import overview from "../../assets/Overall-v2.pdf";
+import overview from "../../assets/Overall-v1.pdf";
+import overviewLg from "../../assets/Overall-v2-2.pdf";
 import component from "../../assets/Components-v2.pdf";
 import next from "../../assets/Next-v2.pdf";
-import noto from "../../assets/NotoSans-VariableFont_wdth,wght.ttf";
+//import noto from "../../assets/NotoSans-VariableFont_wdth,wght.ttf";
+import noto from "../../assets/NotoSans-Regular.ttf";
 import notoBold from "../../assets/NotoSans-Bold.ttf";
 import { DIMENSION_TEXT } from "../ResultsNew/ResultsSubResult";
 
@@ -55,9 +57,14 @@ export default async function createPDF(setIsLoading, setProgress, results) {
 
   setProgress(25);
 
+  let formPDF;
+  console.log("Length: " + results.orgResults.result.toString().length);
   const pngURL = imgDiamond.toDataURL();
-
-  const formPDF = await fetch(overview).then((res) => res.arrayBuffer());
+  if (results.orgResults.result.toString().length > 630) {
+    formPDF = await fetch(overviewLg).then((res) => res.arrayBuffer());
+  } else {
+    formPDF = await fetch(overview).then((res) => res.arrayBuffer());
+  }
   const componentPDF = await fetch(component).then((res) => res.arrayBuffer());
   const nextPDF = await fetch(next).then((res) => res.arrayBuffer());
   const pdfDoc = await PDFDocument.load(formPDF);
@@ -86,7 +93,13 @@ export default async function createPDF(setIsLoading, setProgress, results) {
 
   const overallResult = overallForm.getTextField("overall_result");
   overallResult.setText(results.orgResults.result.toString());
-
+  //overallResult.setText(
+  // "Your organization should prioritize integrating advanced AI and machine learning tools into its HR technology ecosystem. Recent HR research indicates that leveraging these technologies can improve decision-making speed and accuracy by up to 35% and enable real-time data analytics for more strategic HR initiatives. Emphasizing skills management and development can lead to up to a 25% increase in employee productivity and engagement. Studies show that robust skills tracking is crucial for identifying skill gaps and implementing targeted development efforts, fostering a highly adaptable and capable workforce that can respond quickly to changing business needs."
+  //); // By creating personalized learning pathways and leveraging AI for skills matching, your organization can ensure that employees are continuously developing and aligned with the organization's strategic goals."
+  // );
+  // overallResult.setText(
+  //   "Industry research indicates that integrating AI into organizational strategy can significantly boost operational efficiency by up to 30%. By investing in AI tools tailored to business needs, companies can enhance decision-making accuracy by up to 25%. Building AI competencies within the team not only increases innovation by up to 20% but also provides a competitive edge. These findings illustrate the substantial benefits of AI integration for skills enhancement and operational efficiency."
+  // );
   const overallDivHeader = overallForm.getTextField("overall_div_header");
   overallDivHeader.setText(STATIC_TEXT.overallDivHeader);
 
@@ -104,18 +117,18 @@ export default async function createPDF(setIsLoading, setProgress, results) {
   // diagnosticTitle.setFontSize(22);
   // diagnosticTitle.updateAppearances(boldFont);
   overallSubheader.setFontSize(TEXT_SIZE);
-  //overallSubheader.updateAppearances(customFont);
+  overallSubheader.updateAppearances(customFont);
   overallTitle.setAlignment(TextAlignment.Center);
   overallTitle.setFontSize(DIV_TEXT_SIZE);
   overallTitle.updateAppearances(boldFont);
   overallResult.setFontSize(TEXT_SIZE);
 
-  //overallResult.updateAppearances(customFont);
+  overallResult.updateAppearances(customFont);
   //overallDivHeader.setAlignment(TextAlignment.Center);
   overallDivHeader.setFontSize(DIV_TEXT_SIZE);
   overallDivHeader.updateAppearances(boldFont);
   overallDivContent.setFontSize(TEXT_SIZE);
-  // overallDivContent.updateAppearances(customFont);
+  overallDivContent.updateAppearances(customFont);
 
   overallForm.flatten();
   // const allDesired = form.getTextField("desired");
@@ -207,15 +220,18 @@ export default async function createPDF(setIsLoading, setProgress, results) {
     const componentForm = compDoc.getForm();
     const compTitle = componentForm.getTextField("comp_title");
     compTitle.setText(result.dimension.toString());
+    // compTitle.updateAppearances(boldFont)
     const compMain = componentForm.getTextField("comp_main");
-    compMain.setText(
-      `The bellow recommendations and Benefits are tailored for to enhance your ${
-        result.dimension
-      }. These strategies are designed to help yourorganization optimize ${
-        DIMENSION_TEXT[result.dimension].display
-      }, improve skills management, and support strategic business objectives.`
-    );
-    //compMain.updateAppearances(thisFont);
+    // compMain.setText(
+    //   `The bellow recommendations and Benefits are tailored for to enhance your ${
+    //     result.dimension
+    //   }. These strategies are designed to help yourorganization optimize ${
+    //     DIMENSION_TEXT[result.dimension].display
+    //   }, improve skills management, and support strategic business objectives.`
+    // );
+    compMain.setText(result.intro.toString());
+    compMain.setFontSize(TEXT_SIZE);
+    compMain.updateAppearances(thisFont);
 
     function addRecsAndBenefits(type) {
       for (let i = 0; i < 3; i++) {
@@ -227,6 +243,7 @@ export default async function createPDF(setIsLoading, setProgress, results) {
           let recOrBen = result.result[type == "rec" ? "Recommendations" : "Benefits"][i];
           textField.setText(recOrBen.toString());
           textField.setFontSize(TEXT_SIZE);
+          textField.updateAppearances(thisFont);
         }
       }
     }
@@ -294,7 +311,7 @@ export default async function createPDF(setIsLoading, setProgress, results) {
       // x: existingPage.getWidth() / 2 + 10,
       // y: existingPage.getHeight() - imgHeight - 200,
       x: 140,
-      y: 420,
+      y: 345,
       width: 100 * 3,
       height: 54.44 * 3,
 

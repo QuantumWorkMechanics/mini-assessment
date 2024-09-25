@@ -69,7 +69,7 @@ function ResultsFlat({ diagnostic }) {
             <div className="flex flex-col md:gap-4 xl:gap-10 md:flex-row bg-[#09497B] text-white xl:justify-around items-center p-2 md:pl-20 md:pr-20 xl:pl-40 xl:pr-40">
               <div className="md:w-1/2 ">
                 {/* <h1 className="text-2xl md:pt-10 text-center animate-fade-up font-semibold">WORFORCE AGILITY DIAGNOSTIC</h1> */}
-                <div className="flex items-center py-4 px-4 md:p-0 text-justify md:mt-10 md:text-2xl font-light">
+                <div className=" py-4 px-2 md:p-0 leading-7 md:mt-10 md:text-lg font-light">
                   Thank you for completing the diagnostic. Your responses provide valuable insights that will help us tailor solutions to advance your
                   HR technology capabilities and align them with your strategic goals. Below, you'll find the maturity results for your HR tech
                   ecosystem and a detailed analysis for the selected tech stack area(s).{" "}
@@ -83,7 +83,7 @@ function ResultsFlat({ diagnostic }) {
             <div className="bg-[#09497B]">
               {/* <div className="bg-slate-200 flex text-justify flex-col md:mx-20 md:my-8 p-10 gap-10 border border-black-2 shadow-md"> */}
               <Box>
-                <div className="flex items-center text-justify">{orgResults.result}</div>
+                <div className="flex items-center leading-7">{orgResults.result}</div>
               </Box>
               {/* </div> */}
             </div>
@@ -100,7 +100,7 @@ function ResultsFlat({ diagnostic }) {
                 <SpeedometerFive gaugeVal={desired} />
               </div>
             </div>
-            <div className="m-5 md:m-14 overflow-x-contain w-full">
+            <div className="m-5 md:my-14 overflow-x-contain w-full">
               <ResultsRadar
                 customLabel={false}
                 data={diagnostic.filter((question) => {
@@ -111,8 +111,8 @@ function ResultsFlat({ diagnostic }) {
             <Divider text={BUSINESS_STRATEGY.title} />
 
             <Box>
-              <h3 className="md:hidden text-2xl py-4 text-center">{BUSINESS_STRATEGY.title} </h3>
-              <div className="text-justify">{orgResults2.result}</div>
+              <h3 className="md:hidden text-2xl py-4 ">{BUSINESS_STRATEGY.title} </h3>
+              <div className="leading-7">{orgResults2.result}</div>
             </Box>
             <div className="md:hidden h-96">
               <img className="h-full object-contain" src={businessImg} alt="Two men and two women in a modern office looking at charts." />
@@ -133,17 +133,18 @@ function ResultsFlat({ diagnostic }) {
                 <div className="py-6">
                   {WHATS_NEXT.map((el, i) => {
                     return (
-                      <div className="py-1" key={`next_${i}`}>
+                      <div className="py-2" key={`next_${i}`}>
                         <strong>{el.title}</strong>
-                        <div className="pl-4">{el.text[0]}</div>
-                        <div className="pl-4">{el.text[1]}</div>
+                        <div className="mb-2">{el.text[0]}</div>
+                        <div className="">{el.text[1]}</div>
                       </div>
                     );
                   })}
                 </div>
-                <div className="font-semibold">
+                <div className="font-semibold leading-7">
                   By partnering with us, your organization will benefit from our deep expertise, strategic insights, and proven methodologies,
-                  ensuring your HR technology evolves effectively and supports your long-term business success. Email us at info@quantumwork.com{" "}
+                  ensuring your HR technology evolves effectively and supports your long-term business success. Email us at{" "}
+                  <span className="text-[#09497B] font-bold">info@quantumwork.com</span>{" "}
                 </div>
               </div>
             </Box>

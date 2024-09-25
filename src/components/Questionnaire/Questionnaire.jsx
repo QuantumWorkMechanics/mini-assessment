@@ -9,7 +9,7 @@ import SectionComplete from "./SectionCompleted";
 import AllSectionsComplete from "./AllSectionsComplete";
 import Header from "./Header";
 import SliderSelect from "./SliderSelect";
-import Results from "../Results/Results";
+//import Results from "../Results/Results";
 import categoryList from "../Utils.jsx/CategoryList";
 import MultiSelect from "./MultiSelect";
 import img7 from "../../assets/image7.jpeg";
@@ -176,7 +176,7 @@ function Questionnaire() {
     });
   }
 
-  function handleNext() {
+  function handleNext(isManual) {
     let tempIndex = questionIndex;
     if (
       tempIndex + 1 < questionList.length &&
@@ -193,12 +193,13 @@ function Questionnaire() {
       return;
     }
     let tempList = questionList;
-
-    setProgress((questionIndex + 1) / questionList.length);
-    setCurrentSliderVal(tempList[questionIndex + 1].Current);
-    setDesiredSliderVal(tempList[questionIndex + 1].Desired);
-    setCurrentQuestion(questionList[questionIndex + 1]);
-    setQuestionIndex((prev) => prev + 1);
+    if (questionList[tempIndex].fieldType != "Slider Field" || !isAutoAdvance || (isAutoAdvance && !isManual)) {
+      setProgress((questionIndex + 1) / questionList.length);
+      setCurrentSliderVal(tempList[questionIndex + 1].Current);
+      setDesiredSliderVal(tempList[questionIndex + 1].Desired);
+      setCurrentQuestion(questionList[questionIndex + 1]);
+      setQuestionIndex((prev) => prev + 1);
+    }
   }
 
   function handleBack() {

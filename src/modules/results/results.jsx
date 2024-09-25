@@ -271,7 +271,6 @@ export const results = {
         Benefits: [
           "-  Up to a 55% Improvement in Recruitment Efficiency: Cutting-edge technology dramatically improves efficiency.",
           "-  Up to a 50% Higher Quality of Hire: Data-driven recruitment aligns with strategic business goals, enhancing hire quality.",
-          "### Staying at Emerging Level",
         ],
       },
       "Staying at Leader level": {
@@ -957,7 +956,6 @@ export const results = {
           "- Up to a 50% Increase in Efficiency: Cutting-edge technologies and full integration drastically improve efficiency.",
           "- Up to a 45% Improvement in Workforce Planning Precision: Advanced predictive tools provide highly accurate workforce and skills planning.",
           "- Up to a 40% Increase in Strategic Decision-Making: Real-time insights support agile and informed strategic decisions.",
-          "### Staying at Emerging Level",
         ],
       },
       "Staying at Leader level": {
@@ -2343,7 +2341,6 @@ export const results = {
         Benefits: [
           "-  Up to a 55% Improvement in Recruitment Efficiency: Cutting-edge technology dramatically improves efficiency.",
           "-  Up to a 50% Higher Quality of Hire: Data-driven recruitment aligns with strategic business goals, enhancing hire quality.",
-          "### Staying at Emerging Level",
         ],
       },
       "Staying at Leader level": {
@@ -3029,7 +3026,6 @@ export const results = {
           "- Up to a 50% Increase in Efficiency: Cutting-edge technologies and full integration drastically improve efficiency.",
           "- Up to a 45% Improvement in Workforce Planning Precision: Advanced predictive tools provide highly accurate workforce and skills planning.",
           "- Up to a 40% Increase in Strategic Decision-Making: Real-time insights support agile and informed strategic decisions.",
-          "### Staying at Emerging Level",
         ],
       },
       "Staying at Leader level": {
@@ -4415,7 +4411,6 @@ export const results = {
         Benefits: [
           "-  Up to a 55% Improvement in Recruitment Efficiency: Cutting-edge technology dramatically improves efficiency.",
           "-  Up to a 50% Higher Quality of Hire: Data-driven recruitment aligns with strategic business goals, enhancing hire quality.",
-          "### Staying at Emerging Level",
         ],
       },
       "Staying at Leader level": {
@@ -5101,7 +5096,6 @@ export const results = {
           "- Up to a 50% Increase in Efficiency: Cutting-edge technologies and full integration drastically improve efficiency.",
           "- Up to a 45% Improvement in Workforce Planning Precision: Advanced predictive tools provide highly accurate workforce and skills planning.",
           "- Up to a 40% Increase in Strategic Decision-Making: Real-time insights support agile and informed strategic decisions.",
-          "### Staying at Emerging Level",
         ],
       },
       "Staying at Leader level": {
@@ -6487,7 +6481,6 @@ export const results = {
         Benefits: [
           "-  Up to a 55% Improvement in Recruitment Efficiency: Cutting-edge technology dramatically improves efficiency.",
           "-  Up to a 50% Higher Quality of Hire: Data-driven recruitment aligns with strategic business goals, enhancing hire quality.",
-          "### Staying at Emerging Level",
         ],
       },
       "Staying at Leader level": {
@@ -7173,7 +7166,6 @@ export const results = {
           "- Up to a 50% Increase in Efficiency: Cutting-edge technologies and full integration drastically improve efficiency.",
           "- Up to a 45% Improvement in Workforce Planning Precision: Advanced predictive tools provide highly accurate workforce and skills planning.",
           "- Up to a 40% Increase in Strategic Decision-Making: Real-time insights support agile and informed strategic decisions.",
-          "### Staying at Emerging Level",
         ],
       },
       "Staying at Leader level": {
@@ -8559,7 +8551,6 @@ export const results = {
         Benefits: [
           "-  Up to a 55% Improvement in Recruitment Efficiency: Cutting-edge technology dramatically improves efficiency.",
           "-  Up to a 50% Higher Quality of Hire: Data-driven recruitment aligns with strategic business goals, enhancing hire quality.",
-          "### Staying at Emerging Level",
         ],
       },
       "Staying at Leader level": {
@@ -9245,7 +9236,6 @@ export const results = {
           "- Up to a 50% Increase in Efficiency: Cutting-edge technologies and full integration drastically improve efficiency.",
           "- Up to a 45% Improvement in Workforce Planning Precision: Advanced predictive tools provide highly accurate workforce and skills planning.",
           "- Up to a 40% Increase in Strategic Decision-Making: Real-time insights support agile and informed strategic decisions.",
-          "### Staying at Emerging Level",
         ],
       },
       "Staying at Leader level": {
@@ -10631,7 +10621,6 @@ export const results = {
         Benefits: [
           "-  Up to a 55% Improvement in Recruitment Efficiency: Cutting-edge technology dramatically improves efficiency.",
           "-  Up to a 50% Higher Quality of Hire: Data-driven recruitment aligns with strategic business goals, enhancing hire quality.",
-          "### Staying at Emerging Level",
         ],
       },
       "Staying at Leader level": {
@@ -11317,7 +11306,6 @@ export const results = {
           "- Up to a 50% Increase in Efficiency: Cutting-edge technologies and full integration drastically improve efficiency.",
           "- Up to a 45% Improvement in Workforce Planning Precision: Advanced predictive tools provide highly accurate workforce and skills planning.",
           "- Up to a 40% Increase in Strategic Decision-Making: Real-time insights support agile and informed strategic decisions.",
-          "### Staying at Emerging Level",
         ],
       },
       "Staying at Leader level": {

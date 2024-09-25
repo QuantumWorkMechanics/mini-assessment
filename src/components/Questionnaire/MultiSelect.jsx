@@ -137,6 +137,7 @@ function MultiSelect({
           </div>
           <div className="mt-6 max-sm:w-full">
             <Controls
+              currentQuestion={currentQuestion}
               handleBack={handleBack}
               handleNext={handleNext}
               questionIndex={questionIndex}

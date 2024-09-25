@@ -8,7 +8,7 @@ import Overall from "./Overall";
 import SubComponent from "./SubComponent";
 import { returnAvg } from "../Utils.jsx/Functions";
 import LoadSpinner from "../Utils.jsx/LoadSpinner";
-import dataReview from "../../assets/dataReview.png";
+import dataReview from "../../assets/image11.jpeg";
 
 export default function Results({ questionList, categories, setSeeResult }) {
   const [results, setResults] = useState({});
