@@ -69,11 +69,13 @@ export default function Selections({ setData }) {
       )}
       {showDiamond && (
         <div className="bg-[#074D7D] min-h-screen  w-screen">
-          <h1 className="z-50 text-3xl pb-6 md:text-[40pt] text-[#FDB517]  font-bold text-center pt-10">WORKFORCE AGILITY DIAGNOSTIC TOOL</h1>
+          <h1 className="z-50 text-3xl pb-6 md:text-[40pt] text-[#FDB517]  font-bold p-4 pt-10 md:pl-24 ">WORKFORCE AGILITY DIAGNOSTIC TOOL</h1>
           <div className="z-40 bg-[#074D7D] flex md:justify-center md:flex-row-reverse flex-col items-center w-screen animate-fade-up animate-duration-[600ms] animate-delay-[800ms] animate-ease-linear">
             <div className="w-full md:w-1/2">
               <div className="md:p-6 ml-3  z-50 md:mt-20 md:-mr-2  ">
-                <div className="absolute"></div>
+                <div className="text-white font-light md:text-center max-sm:ml-2 md:mr-14 text-xs md:text-sm -mb-4 md:-mb-10">
+                  Make selections below:
+                </div>
                 <DiamondNew setReady={setReady} handleReady={handleReady} selections={selections} setSelections={setSelections}></DiamondNew>
               </div>
             </div>
@@ -81,13 +83,13 @@ export default function Selections({ setData }) {
               <h1 className="text-2xl p-4 leading-10 md:pb-8  md:text-[25pt] text-white font-extralight animate-flip-up animate-delay-[1200ms]">
                 Design your new world of work
               </h1>
-              <h2 className="text-md px-4 text-justify pt-0 pb-2 text-white font-extralight md:text-[16pt] md:leading-10">
+              <h2 className="text-md px-4 text-justify pt-0 pb-2 text-white font-extralight md:text-[14pt] md:leading-8">
                 Click on one or multiple Diamond Model dimensions (circles) to select the Worktech competencies to assess.
                 {/* Click on the diamond components to select the worktech competencies you woud like to assess. */}
               </h2>
               {!ready && (
                 <button
-                  className="md:hidden block text-2xl m-4 font-lighter w-[100px] btn btn-disabled  text-[#016AAB] bg-white font-semibold hover:text-[#0EA8DC] "
+                  className="md:hidden block text-2xl m-4 font-lighter  btn btn-disabled  text-[#016AAB] bg-white font-semibold hover:text-[#0EA8DC] "
                   onClick={() => handleReady()}
                 >
                   READY
@@ -95,7 +97,7 @@ export default function Selections({ setData }) {
               )}
               {ready && (
                 <button
-                  className="md:hidden block text-2xl m-4 font-lighter w-[100px] btn btn-outline text-[#016AAB] bg-white font-semibold hover:text-[#0EA8DC] "
+                  className="md:hidden block text-2xl m-4 font-lighter  btn btn-outline text-[#016AAB] bg-white font-semibold hover:text-[#0EA8DC] "
                   onClick={() => handleReady()}
                 >
                   READY
@@ -103,7 +105,7 @@ export default function Selections({ setData }) {
               )}
               <div className="md:hidden block self-end text-xs text-white font-light px-4 mt-4">*HR, IS and EP selected by default.</div>
               <div className="rounded h-1 w-[90%] bg-[#FDB517] ml-[5%]"></div>
-              <div className="text-white text-justify text-sm my-4 px-4">
+              <div className="text-white  text-sm my-4 px-4">
                 The QWA Diamond Model©, developed by QuantumWork Advisory, is a comprehensive strategic framework designed to evaluate workforce
                 strategies throughout the entire employee lifecycle, from acquisition to management. It serves as a crucial tool for QWA consultants,
                 guiding organizations through AI-driven digital transformations to enhance agility and achieve success. What you're viewing here is a
@@ -114,7 +116,7 @@ export default function Selections({ setData }) {
               <div className="hidden md:block self-end text-xs text-white font-light px-4 mt-4">*HR, IS and EP selected by default.</div>
               {!ready && (
                 <button
-                  className="hidden md:block text-2xl m-4 font-lighter w-[100px] btn btn-disabled  text-[#016AAB] bg-white font-semibold hover:text-[#0EA8DC] "
+                  className="hidden md:block text-2xl m-4 font-lighter  btn btn-disabled  text-[#016AAB] bg-white font-semibold hover:text-[#0EA8DC] "
                   onClick={() => handleReady()}
                 >
                   READY
@@ -122,7 +124,7 @@ export default function Selections({ setData }) {
               )}
               {ready && (
                 <button
-                  className="hidden md:block text-2xl m-4 font-lighter w-[100px] btn btn-outline text-[#016AAB] bg-white font-semibold hover:text-[#0EA8DC] "
+                  className="hidden md:block text-2xl m-4 font-lighter  btn btn-outline text-[#016AAB] bg-white font-semibold hover:text-[#0EA8DC] "
                   onClick={() => handleReady()}
                 >
                   READY
