@@ -18,6 +18,7 @@ import Box from "../Utils.jsx/Box";
 import LaunchPDF from "./LaunchPDF";
 import businessImg from "../../assets/image18.jpg";
 import businessImg2 from "../../assets/image5.jpeg";
+import BarVertical from "./BarVertical";
 
 const DIMENSIONS = [
   "HR Ecosystem Maturity",
@@ -40,7 +41,7 @@ function ResultsFlat({ diagnostic }) {
 
   useEffect(() => {
     setTimeout(() => {
-      console.log({ diagnostic });
+      //  console.log({ diagnostic });
       const tempResults = scoreDiagnostic(diagnostic);
       setResults(diagnostic);
       setDimensionResults(tempResults.dimensionResults);
@@ -49,7 +50,7 @@ function ResultsFlat({ diagnostic }) {
       setDesired(tempResults.desiredAvg);
       setOrgResults(tempResults.orgResults);
       setOrgResults2(tempResults.orgResults2);
-      console.log(tempResults);
+      //    console.log(tempResults);
       setReady(true);
     }, 2500);
   }, []);
@@ -100,9 +101,16 @@ function ResultsFlat({ diagnostic }) {
                 <SpeedometerFive gaugeVal={desired} />
               </div>
             </div>
-            <div className="m-5 md:my-14 overflow-x-contain w-full">
+            <div className=" max-sm:overflow-clip max-sm:absolute max-sm:-mt-[2500%] m-5 md:my-14 overflow-x-contain w-full">
               <ResultsRadar
                 customLabel={false}
+                data={diagnostic.filter((question) => {
+                  return question.fieldType == "Slider Field" && DIMENSIONS.includes(question.Type);
+                })}
+              />
+            </div>
+            <div className="md:hidden">
+              <BarVertical
                 data={diagnostic.filter((question) => {
                   return question.fieldType == "Slider Field" && DIMENSIONS.includes(question.Type);
                 })}

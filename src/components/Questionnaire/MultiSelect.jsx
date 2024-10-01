@@ -31,11 +31,11 @@ function MultiSelect({
 </div> */
   }
 
-  console.log(currentQuestion.question.length);
+  // console.log(currentQuestion.question.length);
 
   function handleSelection(item, currentSelections) {
     const maxSel = currentQuestion.max;
-    console.log({ maxSel, currentQuestion });
+    // console.log({ maxSel, currentQuestion });
     if (maxSel && maxSel != null && maxSel > 0 && !currentSelections.includes(item)) {
       if (currentSelections.length == maxSel || (currentSelections.length == maxSel - 1 && currentQuestion.other != "")) {
         setIsError(true);
@@ -95,7 +95,7 @@ function MultiSelect({
                 return;
               }
               // let isSelected = questionNum.selections.indexOf(item) > -1;
-              console.log(currentQuestion.Response_1.length);
+              //  console.log(currentQuestion.Response_1.length);
               return (
                 <div className=" hover:bg-slate-200  max-w-72 form control bg-white  border-2 rounded max-sm:mt-0 " key={`btn_${choice}_${i}`}>
                   <label className="label cursor-pointer flex justify-start gap-3 p-1 ">
@@ -104,7 +104,7 @@ function MultiSelect({
                         let temp = currentQuestion.selections;
                         handleSelection(item, temp);
                         // if (`#${item}_check`)
-                        console.log(item);
+                        //   console.log(item);
                       }}
                       id={`${item}_check`}
                       type="checkbox"

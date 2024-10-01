@@ -38,7 +38,7 @@ function TestHSForm() {
                 let testS = `input[name="${q}"]`;
                 let inputElement = document.querySelector(testS);
                 inputElement.value = tfHidden[q];
-                console.log(inputElement.value);
+                //   console.log(inputElement.value);
               }
             }}
             loading={<div>Loading...</div>}

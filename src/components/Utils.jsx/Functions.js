@@ -1,4 +1,4 @@
-import { tidy, summarize, mean } from "@tidyjs/tidy";
+import { tidy, summarize, mean, groupBy } from "@tidyjs/tidy";
 
 export const ALLCOLOR = "#0E6AAD";
 export const FILTER1COLOR = "#FFCB18";
@@ -20,4 +20,10 @@ export function returnAvg(arr, component) {
 
 export function roundToTenth(item) {
   if (item) return Number(item.toFixed(1));
+}
+
+export function getDataSet(data) {
+  let tempData = tidy(data, groupBy("Type", [summarize({ Current: mean("Current"), Desired: mean("Desired") })]));
+  //  console.log({ tempData });
+  return tempData;
 }

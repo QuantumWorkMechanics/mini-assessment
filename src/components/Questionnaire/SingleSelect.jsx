@@ -35,7 +35,7 @@ function SingleSelect({ currentQuestion, handleSingleSelect, handleNext, count, 
                     // setIsSelected((prev) => !prev);
                     handleSingleSelect(item);
                     // if (`#${item}_check`)
-                    console.log(item);
+                    //   console.log(item);
                   }}
                 >
                   {item}

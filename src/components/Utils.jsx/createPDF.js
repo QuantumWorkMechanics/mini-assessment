@@ -22,7 +22,7 @@ const STATIC_TEXT = {
 };
 
 export default async function createPDF(setIsLoading, setProgress, results) {
-  console.log("creatingPDF");
+  //  console.log("creatingPDF");
 
   const imgInput = document.getElementById("flat-result");
   const imgDiamond = await html2canvas(imgInput, {
@@ -30,7 +30,7 @@ export default async function createPDF(setIsLoading, setProgress, results) {
     //backgroundColor: "rgba(9,73,123)",
     backgroundColor: null,
   });
-  console.log({ results });
+  //  console.log({ results });
   const currentDial = document.getElementById("current-speedometer");
   const imgCurrentDial = await html2canvas(currentDial, {
     scale: 6,
@@ -58,7 +58,7 @@ export default async function createPDF(setIsLoading, setProgress, results) {
   setProgress(25);
 
   let formPDF;
-  console.log("Length: " + results.orgResults.result.toString().length);
+  //  console.log("Length: " + results.orgResults.result.toString().length);
   const pngURL = imgDiamond.toDataURL();
   if (results.orgResults.result.toString().length > 630) {
     formPDF = await fetch(overviewLg).then((res) => res.arrayBuffer());
@@ -192,21 +192,21 @@ export default async function createPDF(setIsLoading, setProgress, results) {
 
   async function createComponentPage(result) {
     // if (categories[diamondLoc]) {
-    console.log({ result });
+    //  console.log({ result });
     const compDoc = await PDFDocument.load(componentPDF);
-    console.log(result.dimension + "_bar");
+    //  console.log(result.dimension + "_bar");
     const barEl = document.getElementById(result.dimension + "_bar");
 
     // const compEl2 = document.getElementById(compName + "_radar");
-    console.log({ barEl });
+    //  console.log({ barEl });
     const barImg = await html2canvas(barEl, {
       scale: 3,
       // height: 1,
       // width: 20,
       backgroundColor: "white",
     });
-    console.log({ barImg });
-    console.log("hmtl2canvas ran on bar");
+    // console.log({ barImg });
+    // console.log("hmtl2canvas ran on bar");
 
     // const imgBar2 = await html2canvas(compEl2, { scale: 3 });
 
@@ -235,7 +235,7 @@ export default async function createPDF(setIsLoading, setProgress, results) {
 
     function addRecsAndBenefits(type) {
       for (let i = 0; i < 3; i++) {
-        console.log({ result });
+        //  console.log({ result });
         let fieldName = "comp_" + type + "_" + (i + 1);
         let textField = componentForm.getTextField(fieldName);
         //   console.log(result);
@@ -292,18 +292,18 @@ export default async function createPDF(setIsLoading, setProgress, results) {
     // fillTextField(thisForm, "text_field2", tempResultsList[0][setLevel(desired).toLowerCase()], thisFont, 8);
 
     componentForm.flatten();
-    console.log("flattened");
+    //  console.log("flattened");
     const barURL = barImg.toDataURL("image/png");
-    console.log({ barURL });
-    console.log("bar to URL");
+    // console.log({ barURL });
+    // console.log("bar to URL");
     // const barURL2 = imgBar2.toDataURL();
     const barPNG = await compDoc.embedPng(barURL);
 
-    console.log("bar to PNG");
+    //   console.log("bar to PNG");
     // const pngImg2 = await compDoc.embedPng(barURL2);
     // const imgHeight = 150;
     const barEmbed = await compDoc.embedPng(barURL);
-    console.log("embedded");
+    //    console.log("embedded");
     const pages = compDoc.getPages();
     const existingPage = pages[0];
 
@@ -319,7 +319,7 @@ export default async function createPDF(setIsLoading, setProgress, results) {
       // height: existingPage.getHeight(),
     });
 
-    console.log("added component image");
+    //   console.log("added component image");
 
     //   existingPage.drawImage(pngImg2, {
     //     x: existingPage.getWidth() / 2 + 10,
@@ -380,7 +380,7 @@ export default async function createPDF(setIsLoading, setProgress, results) {
   const tempDoc = await pdfDoc.copyPages(nextDoc, [0]);
   pdfDoc.addPage(tempDoc[0]);
 
-  console.log("created PDF");
+  //  console.log("created PDF");
 
   const pdfResults = await pdfDoc.save();
   const blob = new Blob([pdfResults], { type: "application/pdf" });

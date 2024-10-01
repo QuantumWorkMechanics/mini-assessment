@@ -2,7 +2,7 @@ import { useState } from "react";
 
 function Controls({ handleNext, handleBack, isAutoAdvance, setIsAutoAdvance, questionIndex, isActive, showAutoAdvance, currentQuestion }) {
   const [tipOpen, setTipOpen] = useState(false);
-  console.log(isActive);
+  // console.log(isActive);
   return (
     <>
       <div className=" flex mt-4 md:mt-0 justify-between w-full md:justify-center z-50">

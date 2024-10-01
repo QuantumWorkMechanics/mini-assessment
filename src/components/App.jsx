@@ -10,6 +10,8 @@ import PopupTest from "./Questionnaire/PopupTest";
 import Speedometer from "./Utils.jsx/Speedometer";
 import Radial from "./Utils.jsx/Radial";
 import TestHSForm from "./Questionnaire/TestHSForm";
+import BarVertical from "./ResultsNew/BarVertical";
+import BarTest from "./ResultsNew/BarTest";
 
 function App() {
   const [data, setData] = useState();
@@ -24,6 +26,7 @@ function App() {
       <Route path="/speedometer" element={<Speedometer />} />
       <Route path="/radial" element={<Radial />} />
       <Route path="/test-form" element={<TestHSForm />} />
+      <Route path="/bar-test" element={<BarTest />} />
     </Routes>
   );
 }

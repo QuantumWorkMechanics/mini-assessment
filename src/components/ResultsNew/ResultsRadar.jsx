@@ -17,7 +17,8 @@ import {
   Rectangle,
 } from "recharts";
 //import Overall from "./Overall";
-import { tidy, summarize, mean, groupBy } from "@tidyjs/tidy";
+//import { tidy, summarize, mean, groupBy } from "@tidyjs/tidy";
+import { getDataSet } from "../Utils.jsx/Functions";
 import { returnAvg } from "../Utils.jsx/Functions";
 //import SubBarGraph from "./subBarGraph";
 
@@ -26,12 +27,12 @@ export default function ResultsRadar({ data, customLabel }) {
   let desired = returnAvg(data, "Desired");
   let dataSet = [{ current, desired }];
 
-  function getDataSet(data) {
-    let tempData = tidy(data, groupBy("Type", [summarize({ Current: mean("Current"), Desired: mean("Desired") })]));
-    console.log({ tempData });
-    return tempData;
-  }
-
+  // function getDataSet(data) {
+  //   let tempData = tidy(data, groupBy("Type", [summarize({ Current: mean("Current"), Desired: mean("Desired") })]));
+  //   //  console.log({ tempData });
+  //   return tempData;
+  // }
+  //console.log(data);
   // function customLabel({ payload, x, y, textAnchor, stroke, radius }) {
   //   console.log({ payload });
   //   if (payload != undefined)

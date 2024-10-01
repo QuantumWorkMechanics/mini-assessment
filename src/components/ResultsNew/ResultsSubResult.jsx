@@ -36,7 +36,7 @@ export const DIMENSION_TEXT = {
 };
 
 function ResultsSubResult({ result }) {
-  console.log(result);
+  // console.log(result);
 
   return (
     <>

@@ -8,7 +8,7 @@ import small from "./small_ent.json" assert { type: "json" };
 import medium from "./medium_ent.json" assert { type: "json" };
 import large from "./large_ent.json" assert { type: "json" };
 
-// console.log(tm);
+// // console.log(tm);
 export function parseResults() {
   //   let ta = await fetch("ta.json").then((res) => res.json());
   //   let tm = await fetch("./ta.json").then((res) => res.json());
@@ -30,31 +30,31 @@ export function parseResults() {
   };
   let tempResults = {};
   for (const key in results) {
-    console.log(results[key]);
+    // console.log(results[key]);
 
     tempResults = results[key].map((res) => {
-      // console.log(res);
+      // // console.log(res);
       let response = { ...res };
       for (let key2 in res) {
         if (key2 != "Type" && key2 != "Intro") {
-          // console.log(key2);
-          // console.log(res[key2]);
-          // console.log(res[key2].split("\n\n"));
+          // // console.log(key2);
+          // // console.log(res[key2]);
+          // // console.log(res[key2].split("\n\n"));
           let temp = res[key2].split("\n\n");
           let recs = temp[0].split("\n").slice(1);
           let ben = temp[1].split("\n").slice(1);
-          // console.log(temp);
-          // console.log(recs);
-          // console.log(ben);
+          // // console.log(temp);
+          // // console.log(recs);
+          // // console.log(ben);
           response[key2] = { Recommendations: recs, Benefits: ben };
-          console.log({ key2 });
-          console.log(res[key2]);
+          // console.log({ key2 });
+          // console.log(res[key2]);
           res[key2];
           // res[key2] = { Recommendations: temp[0].split("\n").slice(1) };
-          // console.log(res);
+          // // console.log(res);
           // let response[key]
           // let temp = res[key2].split("\n\n");
-          // console.log(temp);
+          // // console.log(temp);
           // // temp.split("\n\n");
           // res[key2] = { Recommendations: temp[0].split("\n").slice(1), Benefits: temp[1].split("\n").slice(1) };
         }
@@ -64,12 +64,12 @@ export function parseResults() {
 
     results[key] = tempResults;
   }
-  console.log({ tempResults });
+  // console.log({ tempResults });
   results.small_org = small;
   results.medium_org = medium;
   results.large_org = large;
-  // console.log(results.ta);
-  console.log(results);
+  // // console.log(results.ta);
+  // console.log(results);
 }
 
 parseResults();

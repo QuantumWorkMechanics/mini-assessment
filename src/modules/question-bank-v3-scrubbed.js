@@ -59,6 +59,7 @@ export const categoriesList = [
 export const questionBank = [
   {
     question: "What is your Human Capital Management platform? (select all that apply)",
+    hs_formName: "q1",
     Type: "",
     Current: 0,
     Desired: 0,
@@ -79,6 +80,7 @@ export const questionBank = [
   {
     question: "Which of the following options best describes your current and desired maturity level of your HR technology ecosystem?",
     // question: "How would you describe the maturity levels of your HR technology ecosystem?",
+    hs_formName: "q2",
     Type: "HR Ecosystem Maturity",
     Current: 0,
     Desired: 0,
@@ -97,6 +99,7 @@ export const questionBank = [
   },
   {
     question: "How would you rate the integration and use of skills in your HR processes and technology?",
+    hs_formName: "q3",
     Type: "Skills Maturity",
     Current: 0,
     Desired: 0,
@@ -115,6 +118,7 @@ export const questionBank = [
   },
   {
     question: "What are the near term top 3 strategic talent priorities for your organization?",
+    hs_formName: "q4",
     Type: "",
     Current: 0,
     Desired: 0,
@@ -147,6 +151,7 @@ export const questionBank = [
   },
   {
     question: "What is your organization's readiness for these priorities?",
+    hs_formName: "q5",
     Type: "HR Strategy and Planning",
     Current: 0,
     Desired: 0,
@@ -165,6 +170,7 @@ export const questionBank = [
   },
   {
     question: "How widely are the following HR technologies adopted and utilized by HR and business teams?",
+    hs_formName: "q6",
     Type: "Implementation and Change Management",
     Current: 0,
     Desired: 0,
@@ -243,6 +249,7 @@ export const questionBank = [
   {
     question:
       "Which of the following HR Technologies would your organization like to implement, improve or change to enhance your skills management capabilities? (select all that apply)",
+    hs_formName: "q7",
     // question:
     //   "From the below listed HR Technologies, which ones your organization consider to implement, improve or change for enhancing your skills management capabilities? (select all that apply)",
     Type: "",
@@ -285,6 +292,7 @@ export const questionBank = [
   },
   {
     question: "How would you rate your organization's capability to implement and manage these HR processes and technologies?",
+    hs_formName: "q8",
     Type: "Implementation and Change Management",
     Current: 0,
     Desired: 0,
@@ -303,6 +311,7 @@ export const questionBank = [
   },
   {
     question: "Is your organization currently leveraging artificial intelligence (AI) in its operations?",
+    hs_formName: "q9",
     Type: "Digital HR Transformation",
     Current: 0,
     Desired: 0,
@@ -321,6 +330,7 @@ export const questionBank = [
   },
   {
     question: "How would you assess the maturity of the digital experience offered by your HR ecosystem?",
+    hs_formName: "q10",
     Type: "Digital HR Transformation",
     Current: 0,
     Desired: 0,
@@ -339,6 +349,7 @@ export const questionBank = [
   },
   {
     question: "How do you assess the effectiveness of data utilization in HR decision-making within your organization?",
+    hs_formName: "q11",
     Type: "Digital HR Transformation",
     Current: 0,
     Desired: 0,
@@ -357,6 +368,7 @@ export const questionBank = [
   },
   {
     question: "Please assess the maturity of your Workforce Planning System.",
+    hs_formName: "q12",
     Type: "",
     Current: 0,
     Desired: 0,
@@ -376,6 +388,7 @@ export const questionBank = [
   },
   {
     question: "What is your Workforce Planning System? (select all that apply)",
+    hs_formName: "q13",
     Type: "",
     Current: 0,
     Desired: 0,
@@ -410,6 +423,7 @@ export const questionBank = [
   },
   {
     question: "Please evaluate the maturity of your Vendor Management System (Contingent Worker)",
+    hs_formName: "q14",
     Type: "",
     Current: 0,
     Desired: 0,
@@ -428,6 +442,7 @@ export const questionBank = [
   },
   {
     question: "What is your Vendor Management System? (select all that apply)",
+    hs_formName: "q15",
     Type: "",
     Current: 0,
     Desired: 0,
@@ -462,6 +477,7 @@ export const questionBank = [
   },
   {
     question: "Please assess the maturity of your Talent Acquisition Systems (CRM, ATS, Career Sites etc.)",
+    hs_formName: "q16",
     Type: "",
     Current: 0,
     Desired: 0,
@@ -481,6 +497,7 @@ export const questionBank = [
   },
   {
     question: "Which systems are used for Talent Acquisition? (select all that apply)",
+    hs_formName: "q17",
     Type: "",
     Current: 0,
     Desired: 0,
@@ -516,6 +533,7 @@ export const questionBank = [
   {
     question:
       "Please assess the maturity of your Talent Management Systems (Career Pathing, Mentoring, Talent marketplace, Internal Mobility, Gigs etc.)",
+    hs_formName: "q18",
     Type: "",
     Current: 0,
     Desired: 0,
@@ -537,6 +555,7 @@ export const questionBank = [
   },
   {
     question: "Which systems are used for Talent Management? (select all that apply)",
+    hs_formName: "q19",
     Type: "",
     Current: 0,
     Desired: 0,
@@ -572,6 +591,7 @@ export const questionBank = [
   {
     question:
       "Please assess the maturity of your Learning & Development Systems (Learning Managament Systems, Digital Learning, Succsession Planning etc.).",
+    hs_formName: "q20",
     Type: "",
     Current: 0,
     Desired: 0,
@@ -592,6 +612,7 @@ export const questionBank = [
   },
   {
     question: "Which systems are used for Learning & Development? (select all that apply)",
+    hs_formName: "q21",
     Type: "",
     Current: 0,
     Desired: 0,
@@ -626,6 +647,7 @@ export const questionBank = [
   },
   {
     question: "Please assess the maturity of your Performance Management Systems.",
+    hs_formName: "q22",
     Type: "",
     Current: 0,
     Desired: 0,
@@ -647,6 +669,7 @@ export const questionBank = [
   },
   {
     question: "What is your Performance Management System? (select all that apply)",
+    hs_formName: "q23",
     Type: "",
     Current: 0,
     Desired: 0,
@@ -699,6 +722,7 @@ export const questionBank = [
   // },
   {
     question: "How large is your organization?",
+    hs_formName: "0-2/diagnostic_tool_size",
     Type: "",
     Current: 0,
     Desired: 0,

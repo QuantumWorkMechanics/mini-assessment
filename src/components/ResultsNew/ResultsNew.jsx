@@ -14,14 +14,14 @@ function ResultsNew({ diagnostic }) {
 
   useEffect(() => {
     setTimeout(() => {
-      console.log({ diagnostic });
+      //  console.log({ diagnostic });
       const tempResults = scoreDiagnostic(diagnostic);
       setResults(diagnostic);
       //   console.log((tempResults.currentAvg / 4) * 100);
       setCurrent((tempResults.currentAvg / 4) * 100);
       setDesired((tempResults.desiredAvg / 4) * 100);
       setOrgResults(tempResults.orgResults);
-      console.log(tempResults);
+      //  console.log(tempResults);
       setReady(true);
     }, 2500);
   }, []);

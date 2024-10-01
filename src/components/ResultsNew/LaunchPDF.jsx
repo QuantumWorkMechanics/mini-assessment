@@ -12,7 +12,7 @@ export default function LaunchPDF({ setIsLoading, setProgress, results }) {
         <button
           onClick={() => {
             setIsLoading(true);
-            console.log("running");
+            //  console.log("running");
             //  document.getElementById("HR Ecosystem Maturity_radar").classList.remove("max-sm:hidden");
             createPDF(setIsLoading, setProgress, results);
           }}

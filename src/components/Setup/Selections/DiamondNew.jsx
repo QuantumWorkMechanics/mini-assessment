@@ -42,7 +42,7 @@ function DiamondNew({ handleReady, selections, setSelections, setReady }) {
       tempSelections[categoriesList.filter((x) => x.DiamondPath == key)[0].DiamondLoc] = tempCircles[key];
     }
     setSelections(tempSelections);
-    console.log(tempSelections);
+    // console.log(tempSelections);
   }
 
   function handleDiamondClick(e) {

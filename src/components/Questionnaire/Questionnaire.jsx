@@ -84,7 +84,7 @@ function Questionnaire() {
         includedCategories = [...includedCategories, categoriesList.filter((cat) => cat.DiamondLoc == key)[0]];
       }
     }
-    console.log(includedCategories);
+    //  console.log(includedCategories);
     // filterCategories
     includedCategories.map((cat) => {
       let temp = questionBank.filter((q) => q.Dimension == cat.Type);
@@ -95,7 +95,7 @@ function Questionnaire() {
     tempList = tempList.sort((a, b) => {
       return a.Number - b.Number;
     });
-    console.log(tempList);
+    //  console.log(tempList);
     tempList.map((el, i) => {
       tempList[i].Current = 0;
       tempList[i].Desired = 0;
@@ -165,13 +165,14 @@ function Questionnaire() {
       let tempHidden = {};
       prev.map((el) => {
         if (el.fieldType == "Slider Field") {
-          tempHidden[`q${el.Number}`] = `Current: ${el.Current}, Desired: ${el.Desired}`;
+          tempHidden[`${el.hs_formName}`] = `Current: ${el.Current}, Desired: ${el.Desired}`;
         } else {
-          tempHidden[`q${el.Number}`] = el.selections.toString();
+          tempHidden[`${el.hs_formName}`] = el.selections.toString();
         }
       });
-      console.log({ prev, tempHidden });
+      // console.log({ prev, tempHidden });
       settfHidden(tempHidden);
+
       return prev;
     });
   }

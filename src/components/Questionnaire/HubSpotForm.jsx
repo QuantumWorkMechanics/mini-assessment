@@ -10,7 +10,7 @@ function HubSpotForm({ tfHidden, setViewForm, setSeeResult, setIsExpoding }) {
   // },[])
   function handleSubmit() {
     // e.preventDefault();
-    console.log("Handle Submit");
+    // console.log("Handle Submit");
     document.getElementById("complete-message-wrapper").classList.add("absolute", "-mt-[2500%]");
     // setViewForm(false);
     //setIsExpoding(false);
@@ -36,7 +36,7 @@ function HubSpotForm({ tfHidden, setViewForm, setSeeResult, setIsExpoding }) {
             formId="df3ac686-87c9-4fb1-91d9-dcc3f4fe2041"
             onSubmit={(e) => {
               //  e.preventDefault();
-              console.log("I ran");
+              //      console.log("I ran");
               setViewForm(false);
               setIsExpoding(false);
               setSeeResult(true);
@@ -82,7 +82,7 @@ function HubSpotForm({ tfHidden, setViewForm, setSeeResult, setIsExpoding }) {
                 let testS = `input[name="${q}"]`;
                 let inputElement = document.querySelector(testS);
                 inputElement.value = tfHidden[q];
-                console.log(inputElement.value);
+                //   console.log(inputElement.value);
               }
             }}
           />
