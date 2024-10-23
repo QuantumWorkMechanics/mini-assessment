@@ -30,6 +30,7 @@ import img10 from "../../assets/image11.jpeg";
 import ResultsFlat from "../ResultsNew/ResultsFlat";
 import useTimeout from "../Utils.jsx/useTimeout";
 import ResultsFull from "../ResultsNew/ResultsFull";
+import HeaderDiag from "../Utils.jsx/HeaderDiag";
 
 const IMAGES = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10];
 
@@ -129,8 +130,8 @@ function Questionnaire() {
 
   function checkForAutoAdvance(sliderType, sliderValue) {
     return (
-      (sliderType == "Desired" && currentSliderValue > 0 && sliderValue >= currentSliderValue) |
-      (sliderType == "Current" && sliderValue > 0 && sliderValue <= desiredSliderValue)
+      (sliderType == "Desired" && currentSliderValue > 0 && (sliderValue > currentSliderValue || (currentSliderValue == 4 && sliderValue == 4))) |
+      (sliderType == "Current" && sliderValue > 0 && (sliderValue < desiredSliderValue || (desiredSliderValue == 4 && sliderValue == 4)))
     );
   }
 
@@ -225,15 +226,16 @@ function Questionnaire() {
     <>
       {!seeResult && !isExploding && (
         <>
-          <div className="-mt-2.5 fixed overflow-x-clip">
-            <progress className="progress progress-secondary w-screen" value={progress * 100} max="100"></progress>
+          {/* <HeaderDiag /> */}
+          <div className="fixed top-18 -mt-2.5 overflow-x-clip">
+            <progress className="progress progress-secondary w-screen " value={progress * 100} max="100"></progress>
           </div>
 
-          <div className="h-screen text-primary flex-col md:flex-row flex w-screen">
+          <div className="h-screen text-primary flex-col md:flex-row flex w-screen ">
             {sectionComplete && <SectionComplete setSectionComplete={setSectionComplete} setSeeResult={setSeeResult} />}
             {!isExploding && !sectionComplete && (
               <>
-                <div>
+                <div tabIndex={0} id="focus-gaurd" aria-label="Guard to start focus at beginning of inputs.">
                   {currentQuestion.fieldType == "Slider Field" && (
                     <>
                       <Header currentQuestion={currentQuestion} count={noOfQuestions} questionIndex={questionIndex} />
@@ -288,6 +290,15 @@ function Questionnaire() {
                 )}
               </>
             )}
+            <div
+              tabIndex={0}
+              className="focus-gaurd"
+              onFocus={() => {
+                let nextEl = document.querySelector("#focus-gaurd");
+                console.log(nextEl);
+                nextEl.focus();
+              }}
+            ></div>
           </div>
         </>
       )}{" "}

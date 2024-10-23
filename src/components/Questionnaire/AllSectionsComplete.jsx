@@ -25,20 +25,20 @@ export default function AllSectionsComplete({ setSeeResult, setIsExploding, tfHi
         Click below to see your results.
       </div>
       <div className="w-[150px] place-self-center mt-24 animate-fade animate-once animate-duration-400 animate-delay-[1600ms]">
-        {/* {!viewForm && ( */}
-        <Button
-          variant="outlined"
-          size="large"
-          onClick={() => {
-            setViewForm(true);
-            // document.getElementById("hs_modal").showModal();
-            // setSeeResult(true);
-            // setIsExploding(false);
-          }}
-        >
-          See Results
-        </Button>
-        {/* )} */}
+        {!viewForm && (
+          <Button
+            variant="outlined"
+            size="large"
+            onClick={() => {
+              setViewForm(true);
+              // document.getElementById("hs_modal").showModal();
+              // setSeeResult(true);
+              // setIsExploding(false);
+            }}
+          >
+            See Results
+          </Button>
+        )}
 
         {/* <PopupButton
           hidden={tfHidden}
@@ -66,7 +66,7 @@ export default function AllSectionsComplete({ setSeeResult, setIsExploding, tfHi
             <div className="flex flex-col w-screen justify-center items-center ">
               <div className="md:w-1/3 bg-slate-100 min-h-screen border-2 my-4 ">
                 <div className="flex flex-col animate-fade-up">
-                  {import.meta.env.VITE_IS_DEV != undefined && (
+                  {/* {import.meta.env.VITE_IS_DEV != undefined && (
                     <div
                       className="btn btn-outline animate-fade-up animate-delay-500"
                       onClick={() => {
@@ -77,7 +77,7 @@ export default function AllSectionsComplete({ setSeeResult, setIsExploding, tfHi
                     >
                       SKIP
                     </div>
-                  )}
+                  )} */}
                   <img src={logo} className="h-52 w-fit self-center " alt="" />
                   <HubSpotForm tfHidden={tfHidden} setViewForm={setViewForm} setSeeResult={setSeeResult} setIsExpoding={setIsExploding} />
                 </div>

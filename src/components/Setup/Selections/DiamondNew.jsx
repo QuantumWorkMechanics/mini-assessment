@@ -47,8 +47,8 @@ function DiamondNew({ handleReady, selections, setSelections, setReady }) {
 
   function handleDiamondClick(e) {
     let temp = { ...selectedCircles };
-    if (e.target.id in temp && e.target.id != "path31") {
-      temp[e.target.id] = !temp[e.target.id];
+    if (e in temp && e != "path31") {
+      temp[e] = !temp[e];
       setSelectedCircles(temp);
       handleSelected(temp);
       setReady(isReady(temp));
@@ -68,8 +68,8 @@ function DiamondNew({ handleReady, selections, setSelections, setReady }) {
       style={{
         enableBackground: "new 0 0 576 396.7",
       }}
-      onClick={(e) => handleDiamondClick(e)}
-      onFocus={(e) => console.log(e.target.id)}
+      onClick={(e) => handleDiamondClick(e.target.id)}
+      //onFocus={(e) => console.log(e.target.id)}
       viewBox="0 0 576 396.7"
     >
       <style id="style1" type="text/css">
@@ -130,7 +130,23 @@ function DiamondNew({ handleReady, selections, setSelections, setReady }) {
             d="M160.1 85.9c4.8 0 8.7-3.9 8.7-8.7 0-4.8-3.9-8.7-8.7-8.7s-8.7 3.9-8.7 8.7c0 4.8 3.9 8.7 8.7 8.7"
             // className="st10"
           />
-          <circle tabIndex={0} id="circle27" cx={160.1} cy={77.2} r={11} className="st11" />
+          <circle
+            role="button"
+            aria-label={COMPONENT_MAP.path27}
+            onKeyDown={(e) => {
+              console.log(e);
+              //  e.preventDefault();
+              if (e.key == "Enter" || e.key == " ") {
+                handleDiamondClick("path27");
+              }
+            }}
+            tabIndex={0}
+            id="circle27"
+            cx={160.1}
+            cy={77.2}
+            r={11}
+            className="st11"
+          />
           <path
             id="path28"
             d="M383.9 85.9c4.8 0 8.7-3.9 8.7-8.7 0-4.8-3.9-8.7-8.7-8.7s-8.7 3.9-8.7 8.7c.1 4.8 4 8.7 8.7 8.7"
@@ -140,7 +156,23 @@ function DiamondNew({ handleReady, selections, setSelections, setReady }) {
               ((selectedCircles.path28 && "fill-[#FDB517] ") || "")
             }
           />
-          <circle tabIndex={0} id="circle28" cx={383.9} cy={77.2} r={11} className="st11" />
+          <circle
+            role="button"
+            aria-label={COMPONENT_MAP.path28}
+            onKeyDown={(e) => {
+              console.log(e);
+              // e.preventDefault();
+              if (e.key == "Enter" || e.key == " ") {
+                handleDiamondClick("path28");
+              }
+            }}
+            tabIndex={0}
+            id="circle28"
+            cx={383.9}
+            cy={77.2}
+            r={11}
+            className="st11"
+          />
           <path
             id="path29"
             d="M445.6 151.8c4.8 0 8.7-3.9 8.7-8.7 0-4.8-3.9-8.7-8.7-8.7s-8.7 3.9-8.7 8.7c0 4.8 3.9 8.7 8.7 8.7"
@@ -150,7 +182,23 @@ function DiamondNew({ handleReady, selections, setSelections, setReady }) {
               ((selectedCircles.path29 && "fill-[#FDB517] ") || "")
             }
           />
-          <circle tabIndex={0} id="circle29" cx={445.6} cy={143.1} r={11} className="st11" />
+          <circle
+            role="button"
+            aria-label={COMPONENT_MAP.path29}
+            onKeyDown={(e) => {
+              console.log(e);
+              // e.preventDefault();
+              if (e.key == "Enter" || e.key == " ") {
+                handleDiamondClick("path29");
+              }
+            }}
+            tabIndex={0}
+            id="circle29"
+            cx={445.6}
+            cy={143.1}
+            r={11}
+            className="st11"
+          />
           <g id="g30">
             <path
               id="path30"
@@ -161,14 +209,46 @@ function DiamondNew({ handleReady, selections, setSelections, setReady }) {
                 ((selectedCircles.path30 && "fill-[#FDB517] ") || "")
               }
             />
-            <circle tabIndex={0} id="circle30" cx={96.3} cy={143.1} r={11} className="st11" />
+            <circle
+              role="button"
+              aria-label={COMPONENT_MAP.path30}
+              onKeyDown={(e) => {
+                console.log(e);
+                // e.preventDefault();
+                if (e.key == "Enter" || e.key == " ") {
+                  handleDiamondClick("path30");
+                }
+              }}
+              tabIndex={0}
+              id="circle30"
+              cx={96.3}
+              cy={143.1}
+              r={11}
+              className="st11"
+            />
           </g>
           <path
             id="path31"
             d="M273.2 329.3c4.8 0 8.7-3.9 8.7-8.7 0-4.8-3.9-8.7-8.7-8.7s-8.7 3.9-8.7 8.7c0 4.8 3.9 8.7 8.7 8.7"
             className=" fill-[#FDB517] "
           />
-          <circle tabIndex={0} id="circle31" cx={273.2} cy={320.6} r={11} className="st11" />
+          <circle
+            // role="button"
+            // aria-label={COMPONENT_MAP.path31}
+            // onKeyDown={(e) => {
+            //   console.log(e);
+            //   // e.preventDefault();
+            //   if (e.key == "Enter" || e.key == " ") {
+            //     handleDiamondClick("path31");
+            //   }
+            // }}
+            // tabIndex={0}
+            id="circle31"
+            cx={273.2}
+            cy={320.6}
+            r={11}
+            className="st11"
+          />
         </g>
         <text id="text31" className="st12 st13 st14" transform="translate(164.725 36.547)" />
         <text id="text33" transform="translate(223.087 353.33)">
@@ -495,7 +575,23 @@ function DiamondNew({ handleReady, selections, setSelections, setReady }) {
               ((selectedCircles.path76 && "fill-[#FDB517] ") || "")
             }
           />
-          <circle tabIndex={0} id="circle76" cx={174.8} cy={172.7} r={11} className="st11" />
+          <circle
+            role="button"
+            aria-label={COMPONENT_MAP.path76}
+            onKeyDown={(e) => {
+              console.log(e);
+              // e.preventDefault();
+              if (e.key == "Enter" || e.key == " ") {
+                handleDiamondClick("path76");
+              }
+            }}
+            tabIndex={0}
+            id="circle76"
+            cx={174.8}
+            cy={172.7}
+            r={11}
+            className="st11"
+          />
         </g>
         <path id="line77" d="m369.2 173.1 34.7 27.1" className="st0" />
         <g id="g77">
@@ -508,7 +604,23 @@ function DiamondNew({ handleReady, selections, setSelections, setReady }) {
               ((selectedCircles.path77 && "fill-[#FDB517] ") || "")
             }
           />
-          <circle tabIndex={0} id="circle77" cx={368.9} cy={172.7} r={11} className="st11" />
+          <circle
+            role="button"
+            aria-label={COMPONENT_MAP.path77}
+            onKeyDown={(e) => {
+              console.log(e);
+              // e.preventDefault();
+              if (e.key == "Enter" || e.key == " ") {
+                handleDiamondClick("path77");
+              }
+            }}
+            tabIndex={0}
+            id="circle77"
+            cx={368.9}
+            cy={172.7}
+            r={11}
+            className="st11"
+          />
         </g>
         <text
           xmlSpace="preserve"

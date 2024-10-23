@@ -9,7 +9,6 @@
 .hsForm_df3ac686-87c9-4fb1-91d9-dcc3f4fe2041 .hs-submit,
 .hsForm_df3ac686-87c9-4fb1-91d9-dcc3f4fe2041 .hs-submit:hover,
 .hsForm_df3ac686-87c9-4fb1-91d9-dcc3f4fe2041 .hs-submit:hover:not(.inactive),
-.hsForm_df3ac686-87c9-4fb1-91d9-dcc3f4fe2041 .hs-submit:focus,
 .hsForm_df3ac686-87c9-4fb1-91d9-dcc3f4fe2041 .hs-submit:active,
 .hsForm_df3ac686-87c9-4fb1-91d9-dcc3f4fe2041 .hs-submit:active:not(.inactive):not(.link) {
   width: 100px;
@@ -19,6 +18,11 @@
   font-size: 12px;
   line-height: 12px;
   font-family: Noto Sans;
+}
+
+.hsForm_df3ac686-87c9-4fb1-91d9-dcc3f4fe2041 .hs-button:focus {
+  outline: #178fe5;
+  /* border-color: red; */
 }
 
 .hsForm_df3ac686-87c9-4fb1-91d9-dcc3f4fe2041 legend.hs-field-desc {

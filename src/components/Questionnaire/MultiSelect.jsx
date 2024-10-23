@@ -131,7 +131,6 @@ function MultiSelect({
                   />
                   <span className="">{currentQuestion.other ? "Other: " + currentQuestion.other : "Other (Please Specify)"}</span>
                 </label>
-                <OtherPopup other={currentQuestion.other} setOther={handleOther} />
               </div>
             )}
           </div>
@@ -151,6 +150,7 @@ function MultiSelect({
               NEXT
             </div> */}
         </div>
+        <OtherPopup other={currentQuestion.other} setOther={handleOther} />
       </div>
 
       <div className="hidden md:block md:min-w-1/2 md:w-1/2  mt-2 right-0 fixed">

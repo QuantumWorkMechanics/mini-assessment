@@ -28,6 +28,12 @@ export default function Sliders({ handleCurrent, handleDesired, currentSliderVal
                 e.preventDefault();
                 handleSlider(e.target.value, "Current");
               }}
+              // onKeyDown={(e) => {
+              //   //console.log(e.key);
+              //   if (key == "ArrowUp" || key == "ArrowDown") {
+              //     handleSlider(e.target.value, "Current");
+              //   }
+              // }}
             />
             <div className="z-20"></div>
           </div>
@@ -45,7 +51,11 @@ export default function Sliders({ handleCurrent, handleDesired, currentSliderVal
                 min={0}
                 max={4}
                 onMouseUp={() => {
-                  if (isAutoAdvance && currentSliderValue > 0 && desiredSliderValue >= currentSliderValue) {
+                  if (
+                    isAutoAdvance &&
+                    currentSliderValue > 0 &&
+                    (desiredSliderValue > currentSliderValue || (desiredSliderValue == 4 && currentSliderValue == 4))
+                  ) {
                     setTimeout(() => {
                       handleNext();
                     }, 900);

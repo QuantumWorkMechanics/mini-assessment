@@ -7,6 +7,34 @@ import $ from "jquery";
 function HubSpotForm({ tfHidden, setViewForm, setSeeResult, setIsExpoding }) {
   // useEffect(()=>{
 
+  function inputHandler(event) {
+    // console.log(document.querySelectorAll(".invalid"));
+    // console.log("FirstName: " + document.querySelector("input[name='firstname']").value);
+    // console.log("Your Role: " + document.querySelector("select[name='your_role']").value);
+    if (
+      document.querySelectorAll(".invalid").length > 1 ||
+      document.querySelector("input[name='email']").value == "" ||
+      document.querySelector("input[name='firstname']").value == "" ||
+      document.querySelector("input[name='lastname']").value == "" ||
+      document.querySelector("select[name='your_role']").value == "" ||
+      document.querySelector("select[name='0-2/diagnostic_tool_industry']").value == "" ||
+      document.querySelector("input[name='0-2/diagnostic_company_name']").value == "" ||
+      document.querySelector("select[name='0-2/region']").value == ""
+    ) {
+      console.log("I ran");
+      console.log(document.querySelectorAll(".invalid"));
+      console.log(document.querySelector("input[name='email']"));
+      console.log(document.querySelector("input[name='firstname']"));
+      console.log(document.querySelector("input[name='lastname']"));
+      console.log(document.querySelector("select[name='your_role']"));
+      console.log(document.querySelector("select[name='0-2/diagnostic_tool_industry']"));
+      console.log(document.querySelector("input[name='0-2/diagnostic_company_name']"));
+      console.log(document.querySelector("select[name='0-2/region']"));
+    } else {
+      handleSubmit();
+    }
+  }
+
   // },[])
   function handleSubmit() {
     // e.preventDefault();
@@ -46,37 +74,20 @@ function HubSpotForm({ tfHidden, setViewForm, setSeeResult, setIsExpoding }) {
               // console.log(document.querySelectorAll(".invalid").length);
               addClasses("form", ["flex", "flex-col", "gap-6", "text-noto", "items-center", "max-sm:w-screen"]);
               let submitButton = document.querySelector("input[type='submit']");
-              submitButton.addEventListener("click", (event) => {
-                // console.log(document.querySelectorAll(".invalid"));
-                // console.log("FirstName: " + document.querySelector("input[name='firstname']").value);
-                // console.log("Your Role: " + document.querySelector("select[name='your_role']").value);
-                if (
-                  document.querySelectorAll(".invalid").length > 1 ||
-                  document.querySelector("input[name='email']").value == "" ||
-                  document.querySelector("input[name='firstname']").value == "" ||
-                  document.querySelector("input[name='lastname']").value == "" ||
-                  document.querySelector("select[name='your_role']").value == "" ||
-                  document.querySelector("select[name='0-2/diagnostic_tool_industry']").value == "" ||
-                  document.querySelector("input[name='0-2/diagnostic_company_name']").value == "" ||
-                  document.querySelector("select[name='0-2/region']").value == ""
-                ) {
-                  console.log("I ran");
-                  console.log(document.querySelectorAll(".invalid"));
-                  console.log(document.querySelector("input[name='email']"));
-                  console.log(document.querySelector("input[name='firstname']"));
-                  console.log(document.querySelector("input[name='lastname']"));
-                  console.log(document.querySelector("select[name='your_role']"));
-                  console.log(document.querySelector("select[name='0-2/diagnostic_tool_industry']"));
-                  console.log(document.querySelector("input[name='0-2/diagnostic_company_name']"));
-                  console.log(document.querySelector("select[name='0-2/region']"));
-                } else {
-                  handleSubmit();
+              submitButton.classList.add("focus:outline");
+              submitButton.addEventListener("click", (event) => inputHandler(event));
+              submitButton.addEventListener("onKeyDown", (event) => {
+                if (e.key == "Enter" || e.key == " ") {
+                  inputHandler(event);
                 }
               });
               let inputs = document.querySelectorAll("input");
+              inputs = [...inputs, ...document.querySelectorAll("select")];
+              console.log(inputs);
               for (let i = 0; i < inputs.length; i++) {
-                inputs[i].setAttribute("tabindex", "1");
+                inputs[i].setAttribute("tabindex", "0");
               }
+              // let submitButton = document.querySelector("hs-button");
 
               for (const q in tfHidden) {
                 let testS = `input[name="${q}"]`;

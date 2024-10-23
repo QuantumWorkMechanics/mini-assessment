@@ -19,7 +19,7 @@ function SingleSelect({ currentQuestion, handleSingleSelect, handleNext, count, 
               let item = choice.replace("-", "").trim();
               // let isSelected = questionNum.selections.indexOf(item) > -1;
               return (
-                <div
+                <button
                   className={
                     "cursor-pointer w-72  p-1 rounded  md:hover:bg-blue-200 border-2 " +
                     (!currentQuestion.selections && item != currentQuestion.selections && "  bg-blue-50 ") +
@@ -31,7 +31,8 @@ function SingleSelect({ currentQuestion, handleSingleSelect, handleNext, count, 
                   // (currentQuestion.selections.indexOf(item) > -1 && " bg-sky-700 text-white")
                   // }
                   key={`btn_${choice}_${i}`}
-                  onClick={() => {
+                  onClick={(e) => {
+                    e.preventDefault();
                     // setIsSelected((prev) => !prev);
                     handleSingleSelect(item);
                     // if (`#${item}_check`)
@@ -39,7 +40,7 @@ function SingleSelect({ currentQuestion, handleSingleSelect, handleNext, count, 
                   }}
                 >
                   {item}
-                </div>
+                </button>
               );
             })}
           </div>

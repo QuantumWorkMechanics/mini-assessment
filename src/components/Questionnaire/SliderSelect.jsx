@@ -83,7 +83,16 @@ export default function SliderSelect({
                 onClick={() => setSpotLight((prev) => prev + 1)}
                 className="max-sm:hidden mt-20 ml-36 md:ml-34 md:mt-44  z-50 absolute bg-white rounded animate-fade-up animate-once  animate-duration-[800ms] animate-ease-linear"
               >
-                <button className="-mt-2 p-3 ">Continue</button>
+                <button
+                  tabIndex={spotLight == 1 ? 0 : 10}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setSpotLight((prev) => prev + 1);
+                  }}
+                  className="-mt-2 p-3 focus-element"
+                >
+                  Continue
+                </button>
               </div>
               <div
                 onClick={() => setSpotLight((prev) => prev + 1)}
@@ -177,7 +186,11 @@ export default function SliderSelect({
             handleBack={handleBack}
             handleNext={handleNext}
             questionIndex={questionIndex}
-            isActive={currentQuestion.Current > 0 && currentQuestion.Desired > 0 && currentQuestion.Desired >= currentQuestion.Current}
+            isActive={
+              currentQuestion.Current > 0 &&
+              currentQuestion.Desired > 0 &&
+              (currentQuestion.Desired > currentQuestion.Current || (currentQuestion.Desired == 4 && currentQuestion.Current == 4))
+            }
             isAutoAdvance={isAutoAdvance}
             setIsAutoAdvance={setIsAutoAdvance}
           />
@@ -192,7 +205,11 @@ export default function SliderSelect({
           handleBack={handleBack}
           handleNext={handleNext}
           questionIndex={questionIndex}
-          isActive={currentQuestion.Current > 0 && currentQuestion.Desired > 0 && currentQuestion.Desired >= currentQuestion.Current}
+          isActive={
+            currentQuestion.Current > 0 &&
+            currentQuestion.Desired > 0 &&
+            (currentQuestion.Desired > currentQuestion.Current || (currentQuestion.Desired == 4 && currentQuestion.Current == 4))
+          }
           isAutoAdvance={isAutoAdvance}
           setIsAutoAdvance={setIsAutoAdvance}
           showAutoAdvance={true}

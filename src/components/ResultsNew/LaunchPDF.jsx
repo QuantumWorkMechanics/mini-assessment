@@ -20,6 +20,9 @@ export default function LaunchPDF({ setIsLoading, setProgress, results }) {
         >
           GET PDF
         </button>
+        {/* <div className="bg-[#FDB517] text-white  text-xl p-4 flex items-center font-semibold rounded h-10 shadow-lg">
+          <a href="https://quantumwork.com/">GO HOME</a>
+        </div> */}
       </div>
     </>
   );

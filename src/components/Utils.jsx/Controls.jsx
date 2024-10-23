@@ -8,12 +8,12 @@ function Controls({ handleNext, handleBack, isAutoAdvance, setIsAutoAdvance, que
       <div className=" flex mt-4 md:mt-0 justify-between w-full md:justify-center z-50">
         <div className="p-2 ">
           {questionIndex == 0 && (
-            <div className="btn btn-outline disabled bg-slate-300 border-slate-300" size="large">
+            <button disabled className="btn btn-outline disabled bg-slate-300 border-slate-300" size="large">
               BACK
-            </div>
+            </button>
           )}
           {questionIndex > 0 && (
-            <div
+            <button
               className="btn  bg-[#09497B] text-white border-slate-300"
               size="large"
               onClick={(e) => {
@@ -22,21 +22,24 @@ function Controls({ handleNext, handleBack, isAutoAdvance, setIsAutoAdvance, que
               }}
             >
               BACK
-            </div>
+            </button>
           )}
         </div>
         <div className="p-2">
           {isActive && (
-            <div
+            <button
+              tabIndex={0}
               className="btn bg-[#FDB517] text-[#09497B] border-slate-300"
               size="large"
               onClick={(e) => {
                 e.preventDefault();
+                let fg = document.querySelector("#focus-gaurd");
+                fg.focus();
                 handleNext(true);
               }}
             >
               NEXT
-            </div>
+            </button>
           )}
           {!isActive && (
             <>
@@ -44,13 +47,13 @@ function Controls({ handleNext, handleBack, isAutoAdvance, setIsAutoAdvance, que
                 className="hidden md:block  tooltip "
                 data-tip={currentQuestion && currentQuestion.errorMessage ? currentQuestion.errorMessage : ""}
               >
-                <div className="btn btn-outline disabled bg-slate-300 border-slate-300" size="large">
+                <button disabled className="btn btn-outline disabled bg-slate-300 border-slate-300" size="large">
                   NEXT
-                </div>
+                </button>
               </div>
-              <div className="md:hidden btn btn-outline disabled bg-slate-300 border-slate-300" size="large">
+              <button disabled className="md:hidden btn btn-outline disabled bg-slate-300 border-slate-300" size="large">
                 NEXT
-              </div>
+              </button>
             </>
           )}
         </div>
