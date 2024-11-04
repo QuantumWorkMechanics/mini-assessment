@@ -35,7 +35,7 @@ export function scoreDiagnostic(diagnostic) {
   let currentAvg = Math.round(numericSet.reduce((acc, val) => acc + parseInt(val.Current), 0) / numericSet.length);
   let desiredAvg = Math.round(numericSet.reduce((acc, val) => acc + parseInt(val.Desired), 0) / numericSet.length);
   let tempKey = getLevelKey(currentAvg, desiredAvg);
-  console.log({ results });
+  //console.log({ results });
   let mathRandOne = Math.floor(Math.random() * 10);
   let mathRandTwo = mathRandOne;
   while (mathRandTwo == mathRandOne) {
@@ -62,7 +62,7 @@ export function scoreDiagnostic(diagnostic) {
 
 function getDimensionResult(dimension, diagnostic, type) {
   //filter for dimension
-  console.log({ dimension, diagnostic, type });
+  //console.log({ dimension, diagnostic, type });
   let dimensionResults = diagnostic.filter((question) => {
     return question.Dimension == dimension;
   });

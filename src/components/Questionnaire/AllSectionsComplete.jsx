@@ -9,8 +9,9 @@ import logo from "../../assets/colorLogo.png";
 const FORM_ID = "df3ac686-87c9-4fb1-91d9-dcc3f4fe2041";
 const PORTAL_ID = "7988397";
 
-export default function AllSectionsComplete({ setSeeResult, setIsExploding, tfHidden }) {
+export default function AllSectionsComplete({ campaign, setSeeResult, setIsExploding, tfHidden }) {
   const [viewForm, setViewForm] = useState(false);
+  // console.log(campaign);
   // console.log({ tfHidden });
   return (
     <>
@@ -79,7 +80,13 @@ export default function AllSectionsComplete({ setSeeResult, setIsExploding, tfHi
                     </div>
                   )} */}
                   <img src={logo} className="h-52 w-fit self-center " alt="" />
-                  <HubSpotForm tfHidden={tfHidden} setViewForm={setViewForm} setSeeResult={setSeeResult} setIsExpoding={setIsExploding} />
+                  <HubSpotForm
+                    campaign={campaign}
+                    tfHidden={tfHidden}
+                    setViewForm={setViewForm}
+                    setSeeResult={setSeeResult}
+                    setIsExpoding={setIsExploding}
+                  />
                 </div>
               </div>
             </div>

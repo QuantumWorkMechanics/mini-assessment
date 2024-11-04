@@ -54,6 +54,7 @@ function Questionnaire() {
   const [isError, setIsError] = useState(false);
   const [noOfQuestions, setNoOfQuestions] = useState(false);
   const [tooltipFlag, setToolTipFlag] = useState(0);
+  const [campaign, setCampaign] = useState(null);
 
   useEffect(() => {
     //Scroll if using navbar for better visibility
@@ -63,6 +64,8 @@ function Questionnaire() {
     //setQuestionList([]);
     //window.history.replaceState();
     // window.history.replaceState({}, "");
+    //console.log(location.state);
+    setCampaign(location.state.campaignId);
     let tempList = questionBank.filter((el) => {
       let test = categoriesList.map((x) => x.Type);
       // console.log(test);
@@ -80,8 +83,9 @@ function Questionnaire() {
       "HR Data",
       "Organization Size",
     ];
-    for (const key in location.state) {
-      if (location.state[key]) {
+    // console.log(location.state);
+    for (const key in location.state.selections) {
+      if (location.state.selections[key]) {
         includedCategories = [...includedCategories, categoriesList.filter((cat) => cat.DiamondLoc == key)[0]];
       }
     }
@@ -102,6 +106,8 @@ function Questionnaire() {
       tempList[i].Desired = 0;
       tempList[i].selections = [];
     });
+
+    console.log(tempList);
 
     setQuestionList(tempList);
     setCurrentQuestion(tempList[0]);
@@ -304,14 +310,14 @@ function Questionnaire() {
       )}{" "}
       {isExploding && (
         <div id="complete-message-wrapper" className="flex flex-col justify-center items-center w-screen">
-          <AllSectionsComplete setIsExploding={setIsExploding} setSeeResult={setSeeResult} tfHidden={tfHidden} />
+          <AllSectionsComplete campaign={campaign} setIsExploding={setIsExploding} setSeeResult={setSeeResult} tfHidden={tfHidden} />
         </div>
       )}
       {seeResult && questionList && (
         <>
           {/* // <div className=" w-screen h-screen flex flex-col text-center pt-20">Coming Soon</div> */}
           <div className="">
-            <ResultsFull diagnostic={questionList} selections={location.state} />
+            <ResultsFull diagnostic={questionList} selections={location.state.selections} />
           </div>
         </>
       )}

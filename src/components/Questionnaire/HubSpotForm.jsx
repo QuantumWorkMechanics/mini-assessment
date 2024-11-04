@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 import $ from "jquery";
 //import "./styleHs.css";
 
-function HubSpotForm({ tfHidden, setViewForm, setSeeResult, setIsExpoding }) {
+function HubSpotForm({ campaign, tfHidden, setViewForm, setSeeResult, setIsExpoding }) {
   // useEffect(()=>{
 
   function inputHandler(event) {
@@ -21,7 +21,7 @@ function HubSpotForm({ tfHidden, setViewForm, setSeeResult, setIsExpoding }) {
       document.querySelector("input[name='0-2/diagnostic_company_name']").value == "" ||
       document.querySelector("select[name='0-2/region']").value == ""
     ) {
-      console.log("I ran");
+      // console.log("I ran");
       console.log(document.querySelectorAll(".invalid"));
       console.log(document.querySelector("input[name='email']"));
       console.log(document.querySelector("input[name='firstname']"));
@@ -54,6 +54,8 @@ function HubSpotForm({ tfHidden, setViewForm, setSeeResult, setIsExpoding }) {
 
   const FORM_ID = "df3ac686-87c9-4fb1-91d9-dcc3f4fe2041";
   const PORTAL_ID = "7988397";
+  // console.log({ campaign });
+  // console.log(location.state);
 
   return (
     <>
@@ -61,7 +63,7 @@ function HubSpotForm({ tfHidden, setViewForm, setSeeResult, setIsExpoding }) {
         <div className="md:w-1/3">
           <HubspotForm
             portalId="7988397"
-            formId="df3ac686-87c9-4fb1-91d9-dcc3f4fe2041"
+            formId={campaign && campaign == "test" ? "f570752e-2c34-4f2a-827f-f8844f1a6086" : "df3ac686-87c9-4fb1-91d9-dcc3f4fe2041"}
             onSubmit={(e) => {
               //  e.preventDefault();
               //      console.log("I ran");
@@ -83,7 +85,7 @@ function HubSpotForm({ tfHidden, setViewForm, setSeeResult, setIsExpoding }) {
               });
               let inputs = document.querySelectorAll("input");
               inputs = [...inputs, ...document.querySelectorAll("select")];
-              console.log(inputs);
+              // console.log(inputs);
               for (let i = 0; i < inputs.length; i++) {
                 inputs[i].setAttribute("tabindex", "0");
               }
@@ -94,6 +96,11 @@ function HubSpotForm({ tfHidden, setViewForm, setSeeResult, setIsExpoding }) {
                 let inputElement = document.querySelector(testS);
                 inputElement.value = tfHidden[q];
                 //   console.log(inputElement.value);
+              }
+              if (campaign) {
+                const campaignQuestion = document.querySelector('input[name="src_campaign"]');
+                // console.log({ campaignQuestion });
+                campaignQuestion.value = campaign;
               }
             }}
           />

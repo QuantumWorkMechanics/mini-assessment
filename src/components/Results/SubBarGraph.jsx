@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { ResponsiveContainer, Legend, BarChart, CartesianGrid, XAxis, YAxis, Bar, LabelList } from "recharts";
 
 export default function SubBarGraph({ dataSet, result }) {
-  console.log(dataSet);
+  // console.log(dataSet);
 
   const COLORS = ["#09497B", "#FDB517"];
 

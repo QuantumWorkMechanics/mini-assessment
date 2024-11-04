@@ -14,7 +14,7 @@ function ResultsFull({ diagnostic, selections }) {
   useEffect(() => {
     let tempResults = scoreDiagnostic(diagnostic);
     setResults(tempResults);
-    console.log(tempResults);
+    //  console.log(tempResults);
   }, []);
 
   return (

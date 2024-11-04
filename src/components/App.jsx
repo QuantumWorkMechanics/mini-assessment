@@ -15,9 +15,11 @@ import BarTest from "./ResultsNew/BarTest";
 
 function App() {
   const [data, setData] = useState();
+
   return (
     <Routes>
       <Route path="/" element={<Selections data={data} setData={setData}></Selections>} />
+      <Route path="/campaign/:campaignId" element={<Selections data={data} setData={setData}></Selections>} />
       <Route path="/questionnaire" element={<Questionnaire />} />
       <Route path="/scrubber" element={<Scrubber />} />
       <Route path="/results-test" element={<ResultsTesting />} />

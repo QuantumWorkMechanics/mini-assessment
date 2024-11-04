@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import DiamondNew from "./DiamondNew";
 import NavBar from "../../Navigation/NavBar";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { questionBank, categoriesList } from "../../../modules/question-bank-v3-scrubbed";
 import { PopupButton } from "@typeform/embed-react";
 
@@ -20,10 +20,16 @@ export default function Selections({ setData }) {
     middleCircle: false,
     middleCircle2: false,
   });
+  const [searchParams] = useSearchParams();
+
+  let { campaignId } = useParams();
+  // console.log(campaignId);
 
   // useEffect(() => {
-  //   // document.querySelector("body").style.backgroundColor = "#09497B";
-
+  //   if (campaignId != undefined || campaignId != null) {
+  //     setCampaign(campaignId);
+  //     console.log(campaignId);
+  //   }
   // }, []);
 
   function handleStart() {
@@ -32,7 +38,7 @@ export default function Selections({ setData }) {
 
   function handleReady() {
     setData(selections);
-    navigate("/questionnaire", { state: selections });
+    navigate("/questionnaire", { state: { selections, campaignId } });
   }
 
   return (

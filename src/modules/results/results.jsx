@@ -57,7 +57,7 @@ export const results = {
           "-  Up to a 40% Higher Quality of Hire: Predictive analytics and improved interview processes ensure better talent matching.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Leverage Cutting-Edge Technologies: Utilize AI and machine learning for predictive analytics and talent matching.",
           "2. Fully Automate Recruitment Systems: Ensure all systems (ATS, CRM, HRIS) are fully automated.",
@@ -165,7 +165,7 @@ export const results = {
           "-  Up to a 45% Higher Retention Rates: Enhanced talent matching and onboarding processes improve retention.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Adopt Advanced AI Technologies: Implement AI for talent matching and predictive analytics.",
           "2. Integrate All Recruitment Systems: Ensure seamless integration of ATS, CRM, and other recruitment tools.",
@@ -273,7 +273,7 @@ export const results = {
           "-  Up to a 50% Higher Quality of Hire: Data-driven recruitment aligns with strategic business goals, enhancing hire quality.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Utilize AI and Machine Learning: Implement AI for predictive analytics and talent matching across all systems.",
           "2. Ensure Full System Integration: Fully integrate ATS, CRM, HRIS, and other tools for seamless operations.",
@@ -388,7 +388,7 @@ export const results = {
           "- Talent Strategy: Predictive analytics can enhance talent strategy effectiveness by up to 25%.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Leverage Cutting-Edge Technologies: Utilize AI and predictive analytics for advanced workforce and skills planning.",
           "2. Ensure Full System Integration: Fully integrate talent management with ERP, procurement, HRIS, and other systems for seamless data flow.",
@@ -501,7 +501,7 @@ export const results = {
           "- Strategic Alignment: Advanced analytics can improve strategic alignment by up to 30%.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Adopt Advanced AI Technologies: Implement AI and machine learning for predictive workforce and skills analytics.",
           "2. Achieve Comprehensive System Integration: Fully integrate all relevant systems for seamless data flow and skills management.",
@@ -614,7 +614,7 @@ export const results = {
           "- Strategic Impact: Deep strategic embedding of talent management can drive business outcomes by up to 35%.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Implement Cutting-Edge Predictive Analytics and AI: Use the latest AI technologies for advanced predictive talent management.",
           "2. Ensure End-to-End System Integration: Achieve full integration with ERP, HRIS, financial, and other systems for comprehensive skills management.",
@@ -732,7 +732,7 @@ export const results = {
           "- 30% Increase in Strategic Flexibility: Real-time data allows for quick adjustments and strategic alignment with evolving skills needs.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Leverage Cutting-Edge Technologies: Utilize AI and predictive analytics for advanced workforce and skills planning.",
           "2. Ensure Full System Integration: Fully integrate workforce planning with ERP, procurement system, HRIS, and others for seamless data flow.",
@@ -845,7 +845,7 @@ export const results = {
           "- Up to a 35% Increase in Strategic Alignment: Real-time data ensures continuous alignment with business goals and skills requirements.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Adopt Advanced AI Technologies: Implement AI and machine learning for predictive workforce and skills analytics.",
           "2. Achieve Comprehensive System Integration: Fully integrate all relevant systems for seamless data flow and skills management.",
@@ -958,7 +958,7 @@ export const results = {
           "- Up to a 40% Increase in Strategic Decision-Making: Real-time insights support agile and informed strategic decisions.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Implement Cutting-Edge Predictive Analytics and AI: Use the latest AI technologies for advanced predictive workforce and skills planning.",
           "2. Ensure End-to-End System Integration: Achieve full integration with ERP, HRIS, financial system, and others for comprehensive skills management.",
@@ -1073,7 +1073,7 @@ export const results = {
           "- Up to a 35% Increase in Strategic Decision-Making: Real-time data supports informed strategic decisions.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Leverage Cutting-Edge VMS Technologies: Utilize AI and machine learning for predictive analytics and advanced vendor management.",
           "2. Ensure Full System Integration: Fully integrate VMS with ERP, procurement, HRIS, and other relevant systems.",
@@ -1186,7 +1186,7 @@ export const results = {
           "- Up to a 40% Increase in Strategic Alignment: Real-time data enhances strategic decision-making.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Adopt Advanced AI Technologies: Implement AI for predictive analytics and machine learning across the VMS.",
           "2. Ensure Comprehensive System Integration: Fully integrate VMS with ERP, procurement, and HRIS for seamless operations.",
@@ -1299,7 +1299,7 @@ export const results = {
           "- Up to a 45% Increase in Vendor Performance and Compliance: Advanced monitoring tools ensure top-notch vendor management.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Leverage Advanced AI and Predictive Analytics: Utilize AI for predictive insights and real-time analytics across the VMS.",
           "2. Ensure Seamless System Integration: Fully integrate VMS with ERP, procurement, HRIS, and other relevant systems.",
@@ -1414,7 +1414,7 @@ export const results = {
           "- Up to a 30% Increase in Strategic Flexibility: Real-time data allows for quick adjustments and strategic alignment with performance and skills development goals.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Leverage Cutting-Edge Technologies: Utilize AI and predictive analytics for advanced performance and skills management.",
           "2. Ensure Full System Integration: Fully integrate performance management systems with ERP, procurement, HRIS, and other systems for seamless data flow.",
@@ -1533,7 +1533,7 @@ export const results = {
           "- Up to a 35% Increase in Strategic Alignment: Real-time data ensures continuous alignment with business goals and performance objectives.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Adopt Advanced AI Technologies: Implement AI and machine learning for predictive performance and skills analytics.",
           "2. Achieve Comprehensive System Integration: Fully integrate all relevant systems for seamless data flow and performance management.",
@@ -1652,7 +1652,7 @@ export const results = {
           "- Up to a 40% Increase in Strategic Decision-Making: Real-time insights support agile and informed strategic decisions.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Implement Cutting-Edge Predictive Analytics and AI: Use the latest AI technologies for advanced predictive performance and skills management.",
           "2. Ensure End-to-End System Integration: Achieve full integration with ERP, HRIS, financial tools, and other systems for comprehensive performance and skills management.",
@@ -1773,7 +1773,7 @@ export const results = {
           "- Up to a 30% Increase in Strategic Flexibility: Real-time data allows for quick adjustments and strategic alignment with skill development goals.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Leverage Cutting-Edge Technologies: Utilize AI and predictive analytics for advanced workforce and skills planning.",
           "2. Ensure Full System Integration: Fully integrate L&D systems with ERP, procurement, HRIS, and other systems for seamless data flow.",
@@ -1800,7 +1800,7 @@ export const results = {
           "- Up to a 30% Enhancement in Employee Development: Advanced programs and real-time monitoring improve upskilling and reskilling efforts.",
         ],
       },
-      "Basic Tot Mature": {
+      "Basic to Mature": {
         Recommendations: [
           "1. Implement Comprehensive L&D Tools: Introduce advanced tools for e-learning, succession planning, and skill tracking.",
           "2. Develop and Standardize Processes: Create standardized, automated processes for L&D activities, including skills assessment.",
@@ -1892,7 +1892,7 @@ export const results = {
           "- Up to a 35% Increase in Strategic Alignment: Real-time data ensures continuous alignment with business goals and skills requirements.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Adopt Advanced AI Technologies: Implement AI and machine learning for predictive workforce and skills analytics.",
           "2. Achieve Comprehensive System Integration: Fully integrate all relevant systems for seamless data flow and skills management.",
@@ -1919,7 +1919,7 @@ export const results = {
           "- Up to a 35% Reduction in Skill Gaps: Continuous monitoring and adjustment reduce skill gaps and improve employee competency.",
         ],
       },
-      "Basic Tot Mature": {
+      "Basic to Mature": {
         Recommendations: [
           "1. Deploy Advanced L&D Tools: Implement scalable tools with AI capabilities for comprehensive learning and development, including succession planning and digital learning.",
           "2. Standardize and Document Processes: Develop standardized, documented processes for L&D, including skills assessment and development.",
@@ -2011,7 +2011,7 @@ export const results = {
           "- Up to a 40% Increase in Strategic Decision-Making: Real-time insights support agile and informed strategic decisions.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Implement Cutting-Edge Predictive Analytics and AI: Use the latest AI technologies for advanced predictive learning and development management focused on skills.",
           "2. Ensure End-to-End System Integration: Achieve full integration with ERP, HRIS, financial tools, and other systems for comprehensive skills management.",
@@ -2038,7 +2038,7 @@ export const results = {
           "- Up to a 40% Enhancement in Skills Development: Comprehensive upskilling and reskilling programs ensure continuous skills development and alignment with business goals.",
         ],
       },
-      "Basic Tot Mature": {
+      "Basic to Mature": {
         Recommendations: [
           "1. Deploy Comprehensive L&D Solutions: Implement robust tools to automate and integrate all aspects of learning and development, with a focus on skills development.",
           "2. Develop and Standardize Processes: Establish standardized L&D processes across the organization.",
@@ -2127,7 +2127,7 @@ export const results = {
           "-  Up to a 40% Higher Quality of Hire: Predictive analytics and improved interview processes ensure better talent matching.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Leverage Cutting-Edge Technologies: Utilize AI and machine learning for predictive analytics and talent matching.",
           "2. Fully Automate Recruitment Systems: Ensure all systems (ATS, CRM, HRIS) are fully automated.",
@@ -2235,7 +2235,7 @@ export const results = {
           "-  Up to a 45% Higher Retention Rates: Enhanced talent matching and onboarding processes improve retention.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Adopt Advanced AI Technologies: Implement AI for talent matching and predictive analytics.",
           "2. Integrate All Recruitment Systems: Ensure seamless integration of ATS, CRM, and other recruitment tools.",
@@ -2343,7 +2343,7 @@ export const results = {
           "-  Up to a 50% Higher Quality of Hire: Data-driven recruitment aligns with strategic business goals, enhancing hire quality.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Utilize AI and Machine Learning: Implement AI for predictive analytics and talent matching across all systems.",
           "2. Ensure Full System Integration: Fully integrate ATS, CRM, HRIS, and other tools for seamless operations.",
@@ -2458,7 +2458,7 @@ export const results = {
           "- Talent Strategy: Predictive analytics can enhance talent strategy effectiveness by up to 25%.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Leverage Cutting-Edge Technologies: Utilize AI and predictive analytics for advanced workforce and skills planning.",
           "2. Ensure Full System Integration: Fully integrate talent management with ERP, procurement, HRIS, and other systems for seamless data flow.",
@@ -2571,7 +2571,7 @@ export const results = {
           "- Strategic Alignment: Advanced analytics can improve strategic alignment by up to 30%.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Adopt Advanced AI Technologies: Implement AI and machine learning for predictive workforce and skills analytics.",
           "2. Achieve Comprehensive System Integration: Fully integrate all relevant systems for seamless data flow and skills management.",
@@ -2684,7 +2684,7 @@ export const results = {
           "- Strategic Impact: Deep strategic embedding of talent management can drive business outcomes by up to 35%.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Implement Cutting-Edge Predictive Analytics and AI: Use the latest AI technologies for advanced predictive talent management.",
           "2. Ensure End-to-End System Integration: Achieve full integration with ERP, HRIS, financial, and other systems for comprehensive skills management.",
@@ -2802,7 +2802,7 @@ export const results = {
           "- 30% Increase in Strategic Flexibility: Real-time data allows for quick adjustments and strategic alignment with evolving skills needs.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Leverage Cutting-Edge Technologies: Utilize AI and predictive analytics for advanced workforce and skills planning.",
           "2. Ensure Full System Integration: Fully integrate workforce planning with ERP, procurement system, HRIS, and others for seamless data flow.",
@@ -2915,7 +2915,7 @@ export const results = {
           "- Up to a 35% Increase in Strategic Alignment: Real-time data ensures continuous alignment with business goals and skills requirements.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Adopt Advanced AI Technologies: Implement AI and machine learning for predictive workforce and skills analytics.",
           "2. Achieve Comprehensive System Integration: Fully integrate all relevant systems for seamless data flow and skills management.",
@@ -3028,7 +3028,7 @@ export const results = {
           "- Up to a 40% Increase in Strategic Decision-Making: Real-time insights support agile and informed strategic decisions.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Implement Cutting-Edge Predictive Analytics and AI: Use the latest AI technologies for advanced predictive workforce and skills planning.",
           "2. Ensure End-to-End System Integration: Achieve full integration with ERP, HRIS, financial system, and others for comprehensive skills management.",
@@ -3143,7 +3143,7 @@ export const results = {
           "- Up to a 35% Increase in Strategic Decision-Making: Real-time data supports informed strategic decisions.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Leverage Cutting-Edge VMS Technologies: Utilize AI and machine learning for predictive analytics and advanced vendor management.",
           "2. Ensure Full System Integration: Fully integrate VMS with ERP, procurement, HRIS, and other relevant systems.",
@@ -3256,7 +3256,7 @@ export const results = {
           "- Up to a 40% Increase in Strategic Alignment: Real-time data enhances strategic decision-making.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Adopt Advanced AI Technologies: Implement AI for predictive analytics and machine learning across the VMS.",
           "2. Ensure Comprehensive System Integration: Fully integrate VMS with ERP, procurement, and HRIS for seamless operations.",
@@ -3369,7 +3369,7 @@ export const results = {
           "- Up to a 45% Increase in Vendor Performance and Compliance: Advanced monitoring tools ensure top-notch vendor management.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Leverage Advanced AI and Predictive Analytics: Utilize AI for predictive insights and real-time analytics across the VMS.",
           "2. Ensure Seamless System Integration: Fully integrate VMS with ERP, procurement, HRIS, and other relevant systems.",
@@ -3484,7 +3484,7 @@ export const results = {
           "- Up to a 30% Increase in Strategic Flexibility: Real-time data allows for quick adjustments and strategic alignment with performance and skills development goals.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Leverage Cutting-Edge Technologies: Utilize AI and predictive analytics for advanced performance and skills management.",
           "2. Ensure Full System Integration: Fully integrate performance management systems with ERP, procurement, HRIS, and other systems for seamless data flow.",
@@ -3603,7 +3603,7 @@ export const results = {
           "- Up to a 35% Increase in Strategic Alignment: Real-time data ensures continuous alignment with business goals and performance objectives.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Adopt Advanced AI Technologies: Implement AI and machine learning for predictive performance and skills analytics.",
           "2. Achieve Comprehensive System Integration: Fully integrate all relevant systems for seamless data flow and performance management.",
@@ -3722,7 +3722,7 @@ export const results = {
           "- Up to a 40% Increase in Strategic Decision-Making: Real-time insights support agile and informed strategic decisions.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Implement Cutting-Edge Predictive Analytics and AI: Use the latest AI technologies for advanced predictive performance and skills management.",
           "2. Ensure End-to-End System Integration: Achieve full integration with ERP, HRIS, financial tools, and other systems for comprehensive performance and skills management.",
@@ -3843,7 +3843,7 @@ export const results = {
           "- Up to a 30% Increase in Strategic Flexibility: Real-time data allows for quick adjustments and strategic alignment with skill development goals.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Leverage Cutting-Edge Technologies: Utilize AI and predictive analytics for advanced workforce and skills planning.",
           "2. Ensure Full System Integration: Fully integrate L&D systems with ERP, procurement, HRIS, and other systems for seamless data flow.",
@@ -3870,7 +3870,7 @@ export const results = {
           "- Up to a 30% Enhancement in Employee Development: Advanced programs and real-time monitoring improve upskilling and reskilling efforts.",
         ],
       },
-      "Basic Tot Mature": {
+      "Basic to Mature": {
         Recommendations: [
           "1. Implement Comprehensive L&D Tools: Introduce advanced tools for e-learning, succession planning, and skill tracking.",
           "2. Develop and Standardize Processes: Create standardized, automated processes for L&D activities, including skills assessment.",
@@ -3962,7 +3962,7 @@ export const results = {
           "- Up to a 35% Increase in Strategic Alignment: Real-time data ensures continuous alignment with business goals and skills requirements.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Adopt Advanced AI Technologies: Implement AI and machine learning for predictive workforce and skills analytics.",
           "2. Achieve Comprehensive System Integration: Fully integrate all relevant systems for seamless data flow and skills management.",
@@ -3989,7 +3989,7 @@ export const results = {
           "- Up to a 35% Reduction in Skill Gaps: Continuous monitoring and adjustment reduce skill gaps and improve employee competency.",
         ],
       },
-      "Basic Tot Mature": {
+      "Basic to Mature": {
         Recommendations: [
           "1. Deploy Advanced L&D Tools: Implement scalable tools with AI capabilities for comprehensive learning and development, including succession planning and digital learning.",
           "2. Standardize and Document Processes: Develop standardized, documented processes for L&D, including skills assessment and development.",
@@ -4081,7 +4081,7 @@ export const results = {
           "- Up to a 40% Increase in Strategic Decision-Making: Real-time insights support agile and informed strategic decisions.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Implement Cutting-Edge Predictive Analytics and AI: Use the latest AI technologies for advanced predictive learning and development management focused on skills.",
           "2. Ensure End-to-End System Integration: Achieve full integration with ERP, HRIS, financial tools, and other systems for comprehensive skills management.",
@@ -4108,7 +4108,7 @@ export const results = {
           "- Up to a 40% Enhancement in Skills Development: Comprehensive upskilling and reskilling programs ensure continuous skills development and alignment with business goals.",
         ],
       },
-      "Basic Tot Mature": {
+      "Basic to Mature": {
         Recommendations: [
           "1. Deploy Comprehensive L&D Solutions: Implement robust tools to automate and integrate all aspects of learning and development, with a focus on skills development.",
           "2. Develop and Standardize Processes: Establish standardized L&D processes across the organization.",
@@ -4197,7 +4197,7 @@ export const results = {
           "-  Up to a 40% Higher Quality of Hire: Predictive analytics and improved interview processes ensure better talent matching.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Leverage Cutting-Edge Technologies: Utilize AI and machine learning for predictive analytics and talent matching.",
           "2. Fully Automate Recruitment Systems: Ensure all systems (ATS, CRM, HRIS) are fully automated.",
@@ -4305,7 +4305,7 @@ export const results = {
           "-  Up to a 45% Higher Retention Rates: Enhanced talent matching and onboarding processes improve retention.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Adopt Advanced AI Technologies: Implement AI for talent matching and predictive analytics.",
           "2. Integrate All Recruitment Systems: Ensure seamless integration of ATS, CRM, and other recruitment tools.",
@@ -4413,7 +4413,7 @@ export const results = {
           "-  Up to a 50% Higher Quality of Hire: Data-driven recruitment aligns with strategic business goals, enhancing hire quality.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Utilize AI and Machine Learning: Implement AI for predictive analytics and talent matching across all systems.",
           "2. Ensure Full System Integration: Fully integrate ATS, CRM, HRIS, and other tools for seamless operations.",
@@ -4528,7 +4528,7 @@ export const results = {
           "- Talent Strategy: Predictive analytics can enhance talent strategy effectiveness by up to 25%.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Leverage Cutting-Edge Technologies: Utilize AI and predictive analytics for advanced workforce and skills planning.",
           "2. Ensure Full System Integration: Fully integrate talent management with ERP, procurement, HRIS, and other systems for seamless data flow.",
@@ -4641,7 +4641,7 @@ export const results = {
           "- Strategic Alignment: Advanced analytics can improve strategic alignment by up to 30%.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Adopt Advanced AI Technologies: Implement AI and machine learning for predictive workforce and skills analytics.",
           "2. Achieve Comprehensive System Integration: Fully integrate all relevant systems for seamless data flow and skills management.",
@@ -4754,7 +4754,7 @@ export const results = {
           "- Strategic Impact: Deep strategic embedding of talent management can drive business outcomes by up to 35%.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Implement Cutting-Edge Predictive Analytics and AI: Use the latest AI technologies for advanced predictive talent management.",
           "2. Ensure End-to-End System Integration: Achieve full integration with ERP, HRIS, financial, and other systems for comprehensive skills management.",
@@ -4872,7 +4872,7 @@ export const results = {
           "- 30% Increase in Strategic Flexibility: Real-time data allows for quick adjustments and strategic alignment with evolving skills needs.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Leverage Cutting-Edge Technologies: Utilize AI and predictive analytics for advanced workforce and skills planning.",
           "2. Ensure Full System Integration: Fully integrate workforce planning with ERP, procurement system, HRIS, and others for seamless data flow.",
@@ -4985,7 +4985,7 @@ export const results = {
           "- Up to a 35% Increase in Strategic Alignment: Real-time data ensures continuous alignment with business goals and skills requirements.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Adopt Advanced AI Technologies: Implement AI and machine learning for predictive workforce and skills analytics.",
           "2. Achieve Comprehensive System Integration: Fully integrate all relevant systems for seamless data flow and skills management.",
@@ -5098,7 +5098,7 @@ export const results = {
           "- Up to a 40% Increase in Strategic Decision-Making: Real-time insights support agile and informed strategic decisions.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Implement Cutting-Edge Predictive Analytics and AI: Use the latest AI technologies for advanced predictive workforce and skills planning.",
           "2. Ensure End-to-End System Integration: Achieve full integration with ERP, HRIS, financial system, and others for comprehensive skills management.",
@@ -5213,7 +5213,7 @@ export const results = {
           "- Up to a 35% Increase in Strategic Decision-Making: Real-time data supports informed strategic decisions.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Leverage Cutting-Edge VMS Technologies: Utilize AI and machine learning for predictive analytics and advanced vendor management.",
           "2. Ensure Full System Integration: Fully integrate VMS with ERP, procurement, HRIS, and other relevant systems.",
@@ -5326,7 +5326,7 @@ export const results = {
           "- Up to a 40% Increase in Strategic Alignment: Real-time data enhances strategic decision-making.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Adopt Advanced AI Technologies: Implement AI for predictive analytics and machine learning across the VMS.",
           "2. Ensure Comprehensive System Integration: Fully integrate VMS with ERP, procurement, and HRIS for seamless operations.",
@@ -5439,7 +5439,7 @@ export const results = {
           "- Up to a 45% Increase in Vendor Performance and Compliance: Advanced monitoring tools ensure top-notch vendor management.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Leverage Advanced AI and Predictive Analytics: Utilize AI for predictive insights and real-time analytics across the VMS.",
           "2. Ensure Seamless System Integration: Fully integrate VMS with ERP, procurement, HRIS, and other relevant systems.",
@@ -5554,7 +5554,7 @@ export const results = {
           "- Up to a 30% Increase in Strategic Flexibility: Real-time data allows for quick adjustments and strategic alignment with performance and skills development goals.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Leverage Cutting-Edge Technologies: Utilize AI and predictive analytics for advanced performance and skills management.",
           "2. Ensure Full System Integration: Fully integrate performance management systems with ERP, procurement, HRIS, and other systems for seamless data flow.",
@@ -5673,7 +5673,7 @@ export const results = {
           "- Up to a 35% Increase in Strategic Alignment: Real-time data ensures continuous alignment with business goals and performance objectives.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Adopt Advanced AI Technologies: Implement AI and machine learning for predictive performance and skills analytics.",
           "2. Achieve Comprehensive System Integration: Fully integrate all relevant systems for seamless data flow and performance management.",
@@ -5792,7 +5792,7 @@ export const results = {
           "- Up to a 40% Increase in Strategic Decision-Making: Real-time insights support agile and informed strategic decisions.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Implement Cutting-Edge Predictive Analytics and AI: Use the latest AI technologies for advanced predictive performance and skills management.",
           "2. Ensure End-to-End System Integration: Achieve full integration with ERP, HRIS, financial tools, and other systems for comprehensive performance and skills management.",
@@ -5913,7 +5913,7 @@ export const results = {
           "- Up to a 30% Increase in Strategic Flexibility: Real-time data allows for quick adjustments and strategic alignment with skill development goals.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Leverage Cutting-Edge Technologies: Utilize AI and predictive analytics for advanced workforce and skills planning.",
           "2. Ensure Full System Integration: Fully integrate L&D systems with ERP, procurement, HRIS, and other systems for seamless data flow.",
@@ -5940,7 +5940,7 @@ export const results = {
           "- Up to a 30% Enhancement in Employee Development: Advanced programs and real-time monitoring improve upskilling and reskilling efforts.",
         ],
       },
-      "Basic Tot Mature": {
+      "Basic to Mature": {
         Recommendations: [
           "1. Implement Comprehensive L&D Tools: Introduce advanced tools for e-learning, succession planning, and skill tracking.",
           "2. Develop and Standardize Processes: Create standardized, automated processes for L&D activities, including skills assessment.",
@@ -6032,7 +6032,7 @@ export const results = {
           "- Up to a 35% Increase in Strategic Alignment: Real-time data ensures continuous alignment with business goals and skills requirements.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Adopt Advanced AI Technologies: Implement AI and machine learning for predictive workforce and skills analytics.",
           "2. Achieve Comprehensive System Integration: Fully integrate all relevant systems for seamless data flow and skills management.",
@@ -6059,7 +6059,7 @@ export const results = {
           "- Up to a 35% Reduction in Skill Gaps: Continuous monitoring and adjustment reduce skill gaps and improve employee competency.",
         ],
       },
-      "Basic Tot Mature": {
+      "Basic to Mature": {
         Recommendations: [
           "1. Deploy Advanced L&D Tools: Implement scalable tools with AI capabilities for comprehensive learning and development, including succession planning and digital learning.",
           "2. Standardize and Document Processes: Develop standardized, documented processes for L&D, including skills assessment and development.",
@@ -6151,7 +6151,7 @@ export const results = {
           "- Up to a 40% Increase in Strategic Decision-Making: Real-time insights support agile and informed strategic decisions.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Implement Cutting-Edge Predictive Analytics and AI: Use the latest AI technologies for advanced predictive learning and development management focused on skills.",
           "2. Ensure End-to-End System Integration: Achieve full integration with ERP, HRIS, financial tools, and other systems for comprehensive skills management.",
@@ -6178,7 +6178,7 @@ export const results = {
           "- Up to a 40% Enhancement in Skills Development: Comprehensive upskilling and reskilling programs ensure continuous skills development and alignment with business goals.",
         ],
       },
-      "Basic Tot Mature": {
+      "Basic to Mature": {
         Recommendations: [
           "1. Deploy Comprehensive L&D Solutions: Implement robust tools to automate and integrate all aspects of learning and development, with a focus on skills development.",
           "2. Develop and Standardize Processes: Establish standardized L&D processes across the organization.",
@@ -6267,7 +6267,7 @@ export const results = {
           "-  Up to a 40% Higher Quality of Hire: Predictive analytics and improved interview processes ensure better talent matching.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Leverage Cutting-Edge Technologies: Utilize AI and machine learning for predictive analytics and talent matching.",
           "2. Fully Automate Recruitment Systems: Ensure all systems (ATS, CRM, HRIS) are fully automated.",
@@ -6375,7 +6375,7 @@ export const results = {
           "-  Up to a 45% Higher Retention Rates: Enhanced talent matching and onboarding processes improve retention.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Adopt Advanced AI Technologies: Implement AI for talent matching and predictive analytics.",
           "2. Integrate All Recruitment Systems: Ensure seamless integration of ATS, CRM, and other recruitment tools.",
@@ -6483,7 +6483,7 @@ export const results = {
           "-  Up to a 50% Higher Quality of Hire: Data-driven recruitment aligns with strategic business goals, enhancing hire quality.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Utilize AI and Machine Learning: Implement AI for predictive analytics and talent matching across all systems.",
           "2. Ensure Full System Integration: Fully integrate ATS, CRM, HRIS, and other tools for seamless operations.",
@@ -6598,7 +6598,7 @@ export const results = {
           "- Talent Strategy: Predictive analytics can enhance talent strategy effectiveness by up to 25%.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Leverage Cutting-Edge Technologies: Utilize AI and predictive analytics for advanced workforce and skills planning.",
           "2. Ensure Full System Integration: Fully integrate talent management with ERP, procurement, HRIS, and other systems for seamless data flow.",
@@ -6711,7 +6711,7 @@ export const results = {
           "- Strategic Alignment: Advanced analytics can improve strategic alignment by up to 30%.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Adopt Advanced AI Technologies: Implement AI and machine learning for predictive workforce and skills analytics.",
           "2. Achieve Comprehensive System Integration: Fully integrate all relevant systems for seamless data flow and skills management.",
@@ -6824,7 +6824,7 @@ export const results = {
           "- Strategic Impact: Deep strategic embedding of talent management can drive business outcomes by up to 35%.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Implement Cutting-Edge Predictive Analytics and AI: Use the latest AI technologies for advanced predictive talent management.",
           "2. Ensure End-to-End System Integration: Achieve full integration with ERP, HRIS, financial, and other systems for comprehensive skills management.",
@@ -6942,7 +6942,7 @@ export const results = {
           "- 30% Increase in Strategic Flexibility: Real-time data allows for quick adjustments and strategic alignment with evolving skills needs.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Leverage Cutting-Edge Technologies: Utilize AI and predictive analytics for advanced workforce and skills planning.",
           "2. Ensure Full System Integration: Fully integrate workforce planning with ERP, procurement system, HRIS, and others for seamless data flow.",
@@ -7055,7 +7055,7 @@ export const results = {
           "- Up to a 35% Increase in Strategic Alignment: Real-time data ensures continuous alignment with business goals and skills requirements.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Adopt Advanced AI Technologies: Implement AI and machine learning for predictive workforce and skills analytics.",
           "2. Achieve Comprehensive System Integration: Fully integrate all relevant systems for seamless data flow and skills management.",
@@ -7168,7 +7168,7 @@ export const results = {
           "- Up to a 40% Increase in Strategic Decision-Making: Real-time insights support agile and informed strategic decisions.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Implement Cutting-Edge Predictive Analytics and AI: Use the latest AI technologies for advanced predictive workforce and skills planning.",
           "2. Ensure End-to-End System Integration: Achieve full integration with ERP, HRIS, financial system, and others for comprehensive skills management.",
@@ -7283,7 +7283,7 @@ export const results = {
           "- Up to a 35% Increase in Strategic Decision-Making: Real-time data supports informed strategic decisions.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Leverage Cutting-Edge VMS Technologies: Utilize AI and machine learning for predictive analytics and advanced vendor management.",
           "2. Ensure Full System Integration: Fully integrate VMS with ERP, procurement, HRIS, and other relevant systems.",
@@ -7396,7 +7396,7 @@ export const results = {
           "- Up to a 40% Increase in Strategic Alignment: Real-time data enhances strategic decision-making.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Adopt Advanced AI Technologies: Implement AI for predictive analytics and machine learning across the VMS.",
           "2. Ensure Comprehensive System Integration: Fully integrate VMS with ERP, procurement, and HRIS for seamless operations.",
@@ -7509,7 +7509,7 @@ export const results = {
           "- Up to a 45% Increase in Vendor Performance and Compliance: Advanced monitoring tools ensure top-notch vendor management.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Leverage Advanced AI and Predictive Analytics: Utilize AI for predictive insights and real-time analytics across the VMS.",
           "2. Ensure Seamless System Integration: Fully integrate VMS with ERP, procurement, HRIS, and other relevant systems.",
@@ -7624,7 +7624,7 @@ export const results = {
           "- Up to a 30% Increase in Strategic Flexibility: Real-time data allows for quick adjustments and strategic alignment with performance and skills development goals.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Leverage Cutting-Edge Technologies: Utilize AI and predictive analytics for advanced performance and skills management.",
           "2. Ensure Full System Integration: Fully integrate performance management systems with ERP, procurement, HRIS, and other systems for seamless data flow.",
@@ -7743,7 +7743,7 @@ export const results = {
           "- Up to a 35% Increase in Strategic Alignment: Real-time data ensures continuous alignment with business goals and performance objectives.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Adopt Advanced AI Technologies: Implement AI and machine learning for predictive performance and skills analytics.",
           "2. Achieve Comprehensive System Integration: Fully integrate all relevant systems for seamless data flow and performance management.",
@@ -7862,7 +7862,7 @@ export const results = {
           "- Up to a 40% Increase in Strategic Decision-Making: Real-time insights support agile and informed strategic decisions.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Implement Cutting-Edge Predictive Analytics and AI: Use the latest AI technologies for advanced predictive performance and skills management.",
           "2. Ensure End-to-End System Integration: Achieve full integration with ERP, HRIS, financial tools, and other systems for comprehensive performance and skills management.",
@@ -7983,7 +7983,7 @@ export const results = {
           "- Up to a 30% Increase in Strategic Flexibility: Real-time data allows for quick adjustments and strategic alignment with skill development goals.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Leverage Cutting-Edge Technologies: Utilize AI and predictive analytics for advanced workforce and skills planning.",
           "2. Ensure Full System Integration: Fully integrate L&D systems with ERP, procurement, HRIS, and other systems for seamless data flow.",
@@ -8010,7 +8010,7 @@ export const results = {
           "- Up to a 30% Enhancement in Employee Development: Advanced programs and real-time monitoring improve upskilling and reskilling efforts.",
         ],
       },
-      "Basic Tot Mature": {
+      "Basic to Mature": {
         Recommendations: [
           "1. Implement Comprehensive L&D Tools: Introduce advanced tools for e-learning, succession planning, and skill tracking.",
           "2. Develop and Standardize Processes: Create standardized, automated processes for L&D activities, including skills assessment.",
@@ -8102,7 +8102,7 @@ export const results = {
           "- Up to a 35% Increase in Strategic Alignment: Real-time data ensures continuous alignment with business goals and skills requirements.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Adopt Advanced AI Technologies: Implement AI and machine learning for predictive workforce and skills analytics.",
           "2. Achieve Comprehensive System Integration: Fully integrate all relevant systems for seamless data flow and skills management.",
@@ -8129,7 +8129,7 @@ export const results = {
           "- Up to a 35% Reduction in Skill Gaps: Continuous monitoring and adjustment reduce skill gaps and improve employee competency.",
         ],
       },
-      "Basic Tot Mature": {
+      "Basic to Mature": {
         Recommendations: [
           "1. Deploy Advanced L&D Tools: Implement scalable tools with AI capabilities for comprehensive learning and development, including succession planning and digital learning.",
           "2. Standardize and Document Processes: Develop standardized, documented processes for L&D, including skills assessment and development.",
@@ -8221,7 +8221,7 @@ export const results = {
           "- Up to a 40% Increase in Strategic Decision-Making: Real-time insights support agile and informed strategic decisions.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Implement Cutting-Edge Predictive Analytics and AI: Use the latest AI technologies for advanced predictive learning and development management focused on skills.",
           "2. Ensure End-to-End System Integration: Achieve full integration with ERP, HRIS, financial tools, and other systems for comprehensive skills management.",
@@ -8248,7 +8248,7 @@ export const results = {
           "- Up to a 40% Enhancement in Skills Development: Comprehensive upskilling and reskilling programs ensure continuous skills development and alignment with business goals.",
         ],
       },
-      "Basic Tot Mature": {
+      "Basic to Mature": {
         Recommendations: [
           "1. Deploy Comprehensive L&D Solutions: Implement robust tools to automate and integrate all aspects of learning and development, with a focus on skills development.",
           "2. Develop and Standardize Processes: Establish standardized L&D processes across the organization.",
@@ -8337,7 +8337,7 @@ export const results = {
           "-  Up to a 40% Higher Quality of Hire: Predictive analytics and improved interview processes ensure better talent matching.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Leverage Cutting-Edge Technologies: Utilize AI and machine learning for predictive analytics and talent matching.",
           "2. Fully Automate Recruitment Systems: Ensure all systems (ATS, CRM, HRIS) are fully automated.",
@@ -8445,7 +8445,7 @@ export const results = {
           "-  Up to a 45% Higher Retention Rates: Enhanced talent matching and onboarding processes improve retention.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Adopt Advanced AI Technologies: Implement AI for talent matching and predictive analytics.",
           "2. Integrate All Recruitment Systems: Ensure seamless integration of ATS, CRM, and other recruitment tools.",
@@ -8553,7 +8553,7 @@ export const results = {
           "-  Up to a 50% Higher Quality of Hire: Data-driven recruitment aligns with strategic business goals, enhancing hire quality.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Utilize AI and Machine Learning: Implement AI for predictive analytics and talent matching across all systems.",
           "2. Ensure Full System Integration: Fully integrate ATS, CRM, HRIS, and other tools for seamless operations.",
@@ -8668,7 +8668,7 @@ export const results = {
           "- Talent Strategy: Predictive analytics can enhance talent strategy effectiveness by up to 25%.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Leverage Cutting-Edge Technologies: Utilize AI and predictive analytics for advanced workforce and skills planning.",
           "2. Ensure Full System Integration: Fully integrate talent management with ERP, procurement, HRIS, and other systems for seamless data flow.",
@@ -8781,7 +8781,7 @@ export const results = {
           "- Strategic Alignment: Advanced analytics can improve strategic alignment by up to 30%.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Adopt Advanced AI Technologies: Implement AI and machine learning for predictive workforce and skills analytics.",
           "2. Achieve Comprehensive System Integration: Fully integrate all relevant systems for seamless data flow and skills management.",
@@ -8894,7 +8894,7 @@ export const results = {
           "- Strategic Impact: Deep strategic embedding of talent management can drive business outcomes by up to 35%.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Implement Cutting-Edge Predictive Analytics and AI: Use the latest AI technologies for advanced predictive talent management.",
           "2. Ensure End-to-End System Integration: Achieve full integration with ERP, HRIS, financial, and other systems for comprehensive skills management.",
@@ -9012,7 +9012,7 @@ export const results = {
           "- 30% Increase in Strategic Flexibility: Real-time data allows for quick adjustments and strategic alignment with evolving skills needs.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Leverage Cutting-Edge Technologies: Utilize AI and predictive analytics for advanced workforce and skills planning.",
           "2. Ensure Full System Integration: Fully integrate workforce planning with ERP, procurement system, HRIS, and others for seamless data flow.",
@@ -9125,7 +9125,7 @@ export const results = {
           "- Up to a 35% Increase in Strategic Alignment: Real-time data ensures continuous alignment with business goals and skills requirements.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Adopt Advanced AI Technologies: Implement AI and machine learning for predictive workforce and skills analytics.",
           "2. Achieve Comprehensive System Integration: Fully integrate all relevant systems for seamless data flow and skills management.",
@@ -9238,7 +9238,7 @@ export const results = {
           "- Up to a 40% Increase in Strategic Decision-Making: Real-time insights support agile and informed strategic decisions.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Implement Cutting-Edge Predictive Analytics and AI: Use the latest AI technologies for advanced predictive workforce and skills planning.",
           "2. Ensure End-to-End System Integration: Achieve full integration with ERP, HRIS, financial system, and others for comprehensive skills management.",
@@ -9353,7 +9353,7 @@ export const results = {
           "- Up to a 35% Increase in Strategic Decision-Making: Real-time data supports informed strategic decisions.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Leverage Cutting-Edge VMS Technologies: Utilize AI and machine learning for predictive analytics and advanced vendor management.",
           "2. Ensure Full System Integration: Fully integrate VMS with ERP, procurement, HRIS, and other relevant systems.",
@@ -9466,7 +9466,7 @@ export const results = {
           "- Up to a 40% Increase in Strategic Alignment: Real-time data enhances strategic decision-making.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Adopt Advanced AI Technologies: Implement AI for predictive analytics and machine learning across the VMS.",
           "2. Ensure Comprehensive System Integration: Fully integrate VMS with ERP, procurement, and HRIS for seamless operations.",
@@ -9579,7 +9579,7 @@ export const results = {
           "- Up to a 45% Increase in Vendor Performance and Compliance: Advanced monitoring tools ensure top-notch vendor management.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Leverage Advanced AI and Predictive Analytics: Utilize AI for predictive insights and real-time analytics across the VMS.",
           "2. Ensure Seamless System Integration: Fully integrate VMS with ERP, procurement, HRIS, and other relevant systems.",
@@ -9694,7 +9694,7 @@ export const results = {
           "- Up to a 30% Increase in Strategic Flexibility: Real-time data allows for quick adjustments and strategic alignment with performance and skills development goals.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Leverage Cutting-Edge Technologies: Utilize AI and predictive analytics for advanced performance and skills management.",
           "2. Ensure Full System Integration: Fully integrate performance management systems with ERP, procurement, HRIS, and other systems for seamless data flow.",
@@ -9813,7 +9813,7 @@ export const results = {
           "- Up to a 35% Increase in Strategic Alignment: Real-time data ensures continuous alignment with business goals and performance objectives.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Adopt Advanced AI Technologies: Implement AI and machine learning for predictive performance and skills analytics.",
           "2. Achieve Comprehensive System Integration: Fully integrate all relevant systems for seamless data flow and performance management.",
@@ -9932,7 +9932,7 @@ export const results = {
           "- Up to a 40% Increase in Strategic Decision-Making: Real-time insights support agile and informed strategic decisions.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Implement Cutting-Edge Predictive Analytics and AI: Use the latest AI technologies for advanced predictive performance and skills management.",
           "2. Ensure End-to-End System Integration: Achieve full integration with ERP, HRIS, financial tools, and other systems for comprehensive performance and skills management.",
@@ -10053,7 +10053,7 @@ export const results = {
           "- Up to a 30% Increase in Strategic Flexibility: Real-time data allows for quick adjustments and strategic alignment with skill development goals.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Leverage Cutting-Edge Technologies: Utilize AI and predictive analytics for advanced workforce and skills planning.",
           "2. Ensure Full System Integration: Fully integrate L&D systems with ERP, procurement, HRIS, and other systems for seamless data flow.",
@@ -10080,7 +10080,7 @@ export const results = {
           "- Up to a 30% Enhancement in Employee Development: Advanced programs and real-time monitoring improve upskilling and reskilling efforts.",
         ],
       },
-      "Basic Tot Mature": {
+      "Basic to Mature": {
         Recommendations: [
           "1. Implement Comprehensive L&D Tools: Introduce advanced tools for e-learning, succession planning, and skill tracking.",
           "2. Develop and Standardize Processes: Create standardized, automated processes for L&D activities, including skills assessment.",
@@ -10172,7 +10172,7 @@ export const results = {
           "- Up to a 35% Increase in Strategic Alignment: Real-time data ensures continuous alignment with business goals and skills requirements.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Adopt Advanced AI Technologies: Implement AI and machine learning for predictive workforce and skills analytics.",
           "2. Achieve Comprehensive System Integration: Fully integrate all relevant systems for seamless data flow and skills management.",
@@ -10199,7 +10199,7 @@ export const results = {
           "- Up to a 35% Reduction in Skill Gaps: Continuous monitoring and adjustment reduce skill gaps and improve employee competency.",
         ],
       },
-      "Basic Tot Mature": {
+      "Basic to Mature": {
         Recommendations: [
           "1. Deploy Advanced L&D Tools: Implement scalable tools with AI capabilities for comprehensive learning and development, including succession planning and digital learning.",
           "2. Standardize and Document Processes: Develop standardized, documented processes for L&D, including skills assessment and development.",
@@ -10291,7 +10291,7 @@ export const results = {
           "- Up to a 40% Increase in Strategic Decision-Making: Real-time insights support agile and informed strategic decisions.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Implement Cutting-Edge Predictive Analytics and AI: Use the latest AI technologies for advanced predictive learning and development management focused on skills.",
           "2. Ensure End-to-End System Integration: Achieve full integration with ERP, HRIS, financial tools, and other systems for comprehensive skills management.",
@@ -10318,7 +10318,7 @@ export const results = {
           "- Up to a 40% Enhancement in Skills Development: Comprehensive upskilling and reskilling programs ensure continuous skills development and alignment with business goals.",
         ],
       },
-      "Basic Tot Mature": {
+      "Basic to Mature": {
         Recommendations: [
           "1. Deploy Comprehensive L&D Solutions: Implement robust tools to automate and integrate all aspects of learning and development, with a focus on skills development.",
           "2. Develop and Standardize Processes: Establish standardized L&D processes across the organization.",
@@ -10407,7 +10407,7 @@ export const results = {
           "-  Up to a 40% Higher Quality of Hire: Predictive analytics and improved interview processes ensure better talent matching.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Leverage Cutting-Edge Technologies: Utilize AI and machine learning for predictive analytics and talent matching.",
           "2. Fully Automate Recruitment Systems: Ensure all systems (ATS, CRM, HRIS) are fully automated.",
@@ -10515,7 +10515,7 @@ export const results = {
           "-  Up to a 45% Higher Retention Rates: Enhanced talent matching and onboarding processes improve retention.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Adopt Advanced AI Technologies: Implement AI for talent matching and predictive analytics.",
           "2. Integrate All Recruitment Systems: Ensure seamless integration of ATS, CRM, and other recruitment tools.",
@@ -10623,7 +10623,7 @@ export const results = {
           "-  Up to a 50% Higher Quality of Hire: Data-driven recruitment aligns with strategic business goals, enhancing hire quality.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Utilize AI and Machine Learning: Implement AI for predictive analytics and talent matching across all systems.",
           "2. Ensure Full System Integration: Fully integrate ATS, CRM, HRIS, and other tools for seamless operations.",
@@ -10738,7 +10738,7 @@ export const results = {
           "- Talent Strategy: Predictive analytics can enhance talent strategy effectiveness by up to 25%.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Leverage Cutting-Edge Technologies: Utilize AI and predictive analytics for advanced workforce and skills planning.",
           "2. Ensure Full System Integration: Fully integrate talent management with ERP, procurement, HRIS, and other systems for seamless data flow.",
@@ -10851,7 +10851,7 @@ export const results = {
           "- Strategic Alignment: Advanced analytics can improve strategic alignment by up to 30%.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Adopt Advanced AI Technologies: Implement AI and machine learning for predictive workforce and skills analytics.",
           "2. Achieve Comprehensive System Integration: Fully integrate all relevant systems for seamless data flow and skills management.",
@@ -10964,7 +10964,7 @@ export const results = {
           "- Strategic Impact: Deep strategic embedding of talent management can drive business outcomes by up to 35%.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Implement Cutting-Edge Predictive Analytics and AI: Use the latest AI technologies for advanced predictive talent management.",
           "2. Ensure End-to-End System Integration: Achieve full integration with ERP, HRIS, financial, and other systems for comprehensive skills management.",
@@ -11082,7 +11082,7 @@ export const results = {
           "- 30% Increase in Strategic Flexibility: Real-time data allows for quick adjustments and strategic alignment with evolving skills needs.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Leverage Cutting-Edge Technologies: Utilize AI and predictive analytics for advanced workforce and skills planning.",
           "2. Ensure Full System Integration: Fully integrate workforce planning with ERP, procurement system, HRIS, and others for seamless data flow.",
@@ -11195,7 +11195,7 @@ export const results = {
           "- Up to a 35% Increase in Strategic Alignment: Real-time data ensures continuous alignment with business goals and skills requirements.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Adopt Advanced AI Technologies: Implement AI and machine learning for predictive workforce and skills analytics.",
           "2. Achieve Comprehensive System Integration: Fully integrate all relevant systems for seamless data flow and skills management.",
@@ -11308,7 +11308,7 @@ export const results = {
           "- Up to a 40% Increase in Strategic Decision-Making: Real-time insights support agile and informed strategic decisions.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Implement Cutting-Edge Predictive Analytics and AI: Use the latest AI technologies for advanced predictive workforce and skills planning.",
           "2. Ensure End-to-End System Integration: Achieve full integration with ERP, HRIS, financial system, and others for comprehensive skills management.",
@@ -11423,7 +11423,7 @@ export const results = {
           "- Up to a 35% Increase in Strategic Decision-Making: Real-time data supports informed strategic decisions.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Leverage Cutting-Edge VMS Technologies: Utilize AI and machine learning for predictive analytics and advanced vendor management.",
           "2. Ensure Full System Integration: Fully integrate VMS with ERP, procurement, HRIS, and other relevant systems.",
@@ -11536,7 +11536,7 @@ export const results = {
           "- Up to a 40% Increase in Strategic Alignment: Real-time data enhances strategic decision-making.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Adopt Advanced AI Technologies: Implement AI for predictive analytics and machine learning across the VMS.",
           "2. Ensure Comprehensive System Integration: Fully integrate VMS with ERP, procurement, and HRIS for seamless operations.",
@@ -11649,7 +11649,7 @@ export const results = {
           "- Up to a 45% Increase in Vendor Performance and Compliance: Advanced monitoring tools ensure top-notch vendor management.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Leverage Advanced AI and Predictive Analytics: Utilize AI for predictive insights and real-time analytics across the VMS.",
           "2. Ensure Seamless System Integration: Fully integrate VMS with ERP, procurement, HRIS, and other relevant systems.",
@@ -11764,7 +11764,7 @@ export const results = {
           "- Up to a 30% Increase in Strategic Flexibility: Real-time data allows for quick adjustments and strategic alignment with performance and skills development goals.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Leverage Cutting-Edge Technologies: Utilize AI and predictive analytics for advanced performance and skills management.",
           "2. Ensure Full System Integration: Fully integrate performance management systems with ERP, procurement, HRIS, and other systems for seamless data flow.",
@@ -11883,7 +11883,7 @@ export const results = {
           "- Up to a 35% Increase in Strategic Alignment: Real-time data ensures continuous alignment with business goals and performance objectives.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Adopt Advanced AI Technologies: Implement AI and machine learning for predictive performance and skills analytics.",
           "2. Achieve Comprehensive System Integration: Fully integrate all relevant systems for seamless data flow and performance management.",
@@ -12002,7 +12002,7 @@ export const results = {
           "- Up to a 40% Increase in Strategic Decision-Making: Real-time insights support agile and informed strategic decisions.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Implement Cutting-Edge Predictive Analytics and AI: Use the latest AI technologies for advanced predictive performance and skills management.",
           "2. Ensure End-to-End System Integration: Achieve full integration with ERP, HRIS, financial tools, and other systems for comprehensive performance and skills management.",
@@ -12123,7 +12123,7 @@ export const results = {
           "- Up to a 30% Increase in Strategic Flexibility: Real-time data allows for quick adjustments and strategic alignment with skill development goals.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Leverage Cutting-Edge Technologies: Utilize AI and predictive analytics for advanced workforce and skills planning.",
           "2. Ensure Full System Integration: Fully integrate L&D systems with ERP, procurement, HRIS, and other systems for seamless data flow.",
@@ -12150,7 +12150,7 @@ export const results = {
           "- Up to a 30% Enhancement in Employee Development: Advanced programs and real-time monitoring improve upskilling and reskilling efforts.",
         ],
       },
-      "Basic Tot Mature": {
+      "Basic to Mature": {
         Recommendations: [
           "1. Implement Comprehensive L&D Tools: Introduce advanced tools for e-learning, succession planning, and skill tracking.",
           "2. Develop and Standardize Processes: Create standardized, automated processes for L&D activities, including skills assessment.",
@@ -12242,7 +12242,7 @@ export const results = {
           "- Up to a 35% Increase in Strategic Alignment: Real-time data ensures continuous alignment with business goals and skills requirements.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Adopt Advanced AI Technologies: Implement AI and machine learning for predictive workforce and skills analytics.",
           "2. Achieve Comprehensive System Integration: Fully integrate all relevant systems for seamless data flow and skills management.",
@@ -12269,7 +12269,7 @@ export const results = {
           "- Up to a 35% Reduction in Skill Gaps: Continuous monitoring and adjustment reduce skill gaps and improve employee competency.",
         ],
       },
-      "Basic Tot Mature": {
+      "Basic to Mature": {
         Recommendations: [
           "1. Deploy Advanced L&D Tools: Implement scalable tools with AI capabilities for comprehensive learning and development, including succession planning and digital learning.",
           "2. Standardize and Document Processes: Develop standardized, documented processes for L&D, including skills assessment and development.",
@@ -12361,7 +12361,7 @@ export const results = {
           "- Up to a 40% Increase in Strategic Decision-Making: Real-time insights support agile and informed strategic decisions.",
         ],
       },
-      "Staying at Leader level": {
+      "Staying at Leader Level": {
         Recommendations: [
           "1. Implement Cutting-Edge Predictive Analytics and AI: Use the latest AI technologies for advanced predictive learning and development management focused on skills.",
           "2. Ensure End-to-End System Integration: Achieve full integration with ERP, HRIS, financial tools, and other systems for comprehensive skills management.",
@@ -12388,7 +12388,7 @@ export const results = {
           "- Up to a 40% Enhancement in Skills Development: Comprehensive upskilling and reskilling programs ensure continuous skills development and alignment with business goals.",
         ],
       },
-      "Basic Tot Mature": {
+      "Basic to Mature": {
         Recommendations: [
           "1. Deploy Comprehensive L&D Solutions: Implement robust tools to automate and integrate all aspects of learning and development, with a focus on skills development.",
           "2. Develop and Standardize Processes: Establish standardized L&D processes across the organization.",
@@ -12433,7 +12433,7 @@ export const results = {
         "To optimize your HR technology ecosystem, expanding automation to include more functionalities such as onboarding and offboarding can significantly improve efficiency. Research indicates this can reduce administrative tasks by up to 40%. Additionally, integrating systems like recruitment and performance management will streamline operations, lowering data entry errors by up to 30% and enhancing data accuracy. Investing in basic reporting and data analytics tools can enhance decision-making by up to 25%, providing critical insights into employee performance and engagement. Aligning HR technology with business goals ensures that your investments support strategic objectives, driving growth and efficiency.",
       "Staying at Mature Level":
         "Maintaining your HR technology at the Mature level involves ensuring comprehensive automation of HR processes with advanced solutions such as AI-driven recruitment and predictive analytics. Recent research indicates this can boost employee productivity by up to 20%. Improving integration between HR systems will facilitate seamless data flow, which is vital for operational efficiency. Utilizing advanced data analytics tools regularly can improve HR forecast accuracy by up to 50%, aiding in effective workforce planning. Ensuring HR technology aligns with business strategy can drive significant business impact, resulting in cost savings of up to 30% on HR operations.",
-      "Staying at Leader level":
+      "Staying at Leader Level":
         "Your enterprise is already a leader in HR technology, and to maintain this status, it is crucial to continuously invest in cutting-edge technologies like AI and machine learning. Research indicates that such investments can provide a sustained competitive advantage, with leading companies reporting up to 50% higher revenue growth compared to peers. Leveraging real-time data and advanced analytics for strategic decisions can improve decision-making speed and accuracy by up to 60%. Ensuring that skills management is deeply embedded in all HR processes, from recruitment to career development, will keep you at the forefront of innovation. Advanced skills analytics can identify talent gaps and opportunities, driving continuous improvement and organizational agility.",
       "Emerging to Leader":
         "Achieving excellence in HR technology necessitates a keen focus on advanced skills management. Implementing AI and machine learning for skills development and matching can significantly enhance your capabilities, with recent research demonstrating up to a 60% improvement in decision-making accuracy. By embedding skills management into all HR processes, you will drive substantial increases in employee engagement and productivity. Leveraging real-time skills data to guide strategic HR decisions ensures your organization remains agile and responsive to market changes, solidifying your competitive edge.",
@@ -12454,7 +12454,7 @@ export const results = {
         "Your HR technology is at the Emerging level, and to enhance it, expanding automation to include more functions like onboarding can greatly improve efficiency. Studies show that this can cut administrative time by up to 40%. Integrating recruitment and performance management systems will streamline operations and reduce data entry errors by up to 30%. Enhancing basic data analytics tools will improve decision-making by up to 25%, offering valuable insights into employee performance. Aligning HR technology with business goals will ensure your investments support strategic objectives, driving growth.",
       "Staying at Mature Level":
         "To sustain a high level of HR technology maturity, it is crucial to fully automate HR processes with advanced solutions like AI-driven recruitment. Studies show this can enhance employee productivity by up to 20%. Improving integration between HR systems will ensure seamless data flow, enhancing operational efficiency. Regular use of advanced data analytics tools can increase HR forecast accuracy by up to 50%, supporting effective workforce planning. Aligning HR technology with business strategy will drive significant business impact, achieving cost savings of up to 30% on HR operations.",
-      "Staying at Leader level":
+      "Staying at Leader Level":
         "To remain at the forefront of HR technology, it is imperative to focus on advanced skills management. Investing in AI and machine learning for skills matching and development will ensure you maintain a competitive edge. Recent studies show that such technologies can improve decision-making accuracy by up to 60%. Embedding skills as a central focus in all HR processes will enhance employee engagement and productivity. Continuously leveraging real-time skills data to drive strategic HR decisions ensures you stay adaptable and responsive to market changes, thereby sustaining your leadership status.",
       "Emerging to Leader":
         "To be at the forefront of HR technology, prioritizing advanced skills management is essential. Adopting AI and machine learning for sophisticated skills matching and development provides cutting-edge capabilities, boosting decision-making accuracy by up to 60%, as indicated by recent studies. Integrating skills management into all HR processes will significantly enhance employee engagement and productivity. Utilizing real-time skills data to inform strategic decisions will ensure your organization remains agile, innovative, and responsive to dynamic market conditions.",
@@ -12475,7 +12475,7 @@ export const results = {
         "Expanding your HR technology ecosystem by automating more processes, such as onboarding, can reduce administrative tasks by up to 40%. Integrating additional HR systems like recruitment and performance management will lower data entry errors by up to 30% and improve overall data accuracy. Investing in basic data analytics tools can enhance decision-making by up to 25%, providing better insights into employee performance and engagement. Aligning HR technology with business goals ensures that your investments support strategic objectives, driving organizational growth and efficiency.",
       "Staying at Mature Level":
         "For continued success at the Mature level, ensuring all HR processes are fully automated with advanced technology solutions such as AI-driven recruitment and predictive analytics is essential. Research indicates this can enhance employee productivity by up to 20%. Improving the integration between HR systems will create a seamless experience and real-time data flow, crucial for operational efficiency. Regular utilization of advanced data analytics tools can increase HR forecast accuracy by up to 50%, aiding in workforce planning. Aligning HR technology with business strategy will drive significant business impact, resulting in cost savings of up to 30%.",
-      "Staying at Leader level":
+      "Staying at Leader Level":
         "As a leader in HR technology, maintaining your position requires a strong emphasis on advanced skills management. Integrating AI and machine learning to optimize skills matching and development can significantly enhance your competitive edge. Research highlights that leveraging these technologies can increase decision-making speed and accuracy by up to 60%. By making skills a central focus of all HR processes, from recruitment to career development, you ensure continuous improvement and high employee engagement. Utilizing real-time skills data will drive strategic HR and business decisions, keeping your organization agile and innovative.",
       "Emerging to Leader":
         "Elevating your HR technology framework requires a strategic focus on skills management. Investing in AI and machine learning for skills development enhances decision-making accuracy by up to 60%, according to the latest research. Embedding skills as a core element in all HR processes will drive substantial improvements in employee engagement and productivity. Utilizing real-time skills data to guide strategic HR decisions will ensure your organization remains agile, responsive, and well-positioned to adapt to evolving market demands.",
@@ -12496,7 +12496,7 @@ export const results = {
         "To enhance your HR technology at the Emerging level, expanding automation to include more HR functions, like onboarding, can significantly improve efficiency, reducing administrative tasks by up to 40%. Integrating recruitment and performance management systems will streamline operations and reduce data entry errors by up to 30%. Investing in basic data analytics tools will enhance decision-making by up to 25%, offering critical insights into employee performance. Aligning HR technology with business goals ensures that your investments support strategic objectives, driving growth and efficiency.",
       "Staying at Mature Level":
         "Maintaining maturity in HR technology requires comprehensive automation of HR processes with advanced solutions like AI-driven recruitment and predictive analytics. Research highlights that such integration can enhance employee productivity by up to 20% and operational efficiency. Regular use of advanced data analytics tools can improve HR decision-making accuracy by up to 50%, essential for effective workforce planning. Ensuring HR technology aligns with business strategy can lead to significant cost savings and business impact.",
-      "Staying at Leader level":
+      "Staying at Leader Level":
         "To sustain your leadership in HR technology, focusing on advanced skills management is essential. Continuous investment in AI and machine learning for skills matching and development can maintain your competitive advantage. Studies indicate this can enhance decision-making accuracy by up to 60%. Embedding skills management into all HR processes will boost employee engagement and productivity. Leveraging real-time skills data for strategic decisions will ensure organizational agility and responsiveness to market changes, reinforcing your leadership position.",
       "Emerging to Leader":
         "Maintaining a leadership position in HR technology demands an unwavering focus on advanced skills management. Research indicates that implementing AI and machine learning for skills matching can enhance decision-making accuracy by up to 60%. Embedding comprehensive skills management into all HR processes will drive employee engagement and productivity to new heights. Leveraging real-time skills data ensures that strategic HR decisions are well-informed and responsive to market dynamics, fostering sustained organizational agility.",
@@ -12517,7 +12517,7 @@ export const results = {
         "Optimizing your HR technology involves expanding automation to cover more HR processes such as onboarding, which can reduce administrative tasks by up to 40%. Integrating systems like recruitment and performance management can streamline operations and lower data entry errors by up to 30%, enhancing data accuracy. Investing in basic reporting and data analytics tools can improve decision-making by up to 25%, providing valuable insights into employee performance and engagement. Aligning HR technology with business goals ensures that your investments support strategic objectives, driving growth.",
       "Staying at Mature Level":
         "To sustain your HR technology maturity, it is important to fully automate HR processes with advanced solutions such as AI-driven recruitment and predictive analytics. Studies show this can boost employee productivity by up to 20%. Improving integration between HR systems will facilitate seamless data flow, enhancing operational efficiency. Regularly using advanced data analytics tools can improve HR forecast accuracy by up to 50%, aiding workforce planning. Aligning HR technology with business strategy can drive significant business impact and achieve cost savings of up to 30%.",
-      "Staying at Leader level":
+      "Staying at Leader Level":
         "Remaining a leader in HR technology involves prioritizing advanced skills management. Continuous investment in AI and machine learning for optimizing skills matching and development is crucial. Research shows that these technologies can improve decision-making accuracy by up to 60%. By making skills management central to all HR processes, you can enhance employee engagement and productivity. Utilizing real-time skills data for strategic HR decisions will keep your organization agile and innovative, ensuring sustained leadership.",
       "Emerging to Leader":
         "Ensuring top-tier performance in HR technology involves a dedicated emphasis on skills management. Utilizing AI and machine learning for skills development and matching offers advanced capabilities, with studies showing up to a 60% improvement in decision-making accuracy. Embedding skills management throughout all HR processes boosts employee engagement and productivity significantly. Harnessing real-time skills data to drive strategic decisions keeps your organization agile, innovative, and competitive in an ever-changing market.",
@@ -12538,7 +12538,7 @@ export const results = {
         "Enhancing your HR technology at the Emerging level requires expanding automation to include more functions like onboarding, which can cut administrative time by up to 40%. Integrating recruitment and performance management systems will streamline operations, reducing data entry errors by up to 30%. Investing in basic data analytics tools can enhance decision-making by up to 25%, providing insights into employee performance. Aligning HR technology with business goals ensures your investments support strategic objectives, driving organizational growth and efficiency.",
       "Staying at Mature Level":
         "Optimizing your HR technology at the Mature level involves ensuring comprehensive automation of HR processes with advanced solutions such as AI-driven recruitment and predictive analytics. Research indicates this can boost employee productivity by up to 20%. Enhancing integration between HR systems will create seamless data flow, essential for operational efficiency. Utilizing advanced data analytics tools regularly can improve HR forecast accuracy by up to 50%, supporting effective workforce planning. Ensuring HR technology aligns with business strategy can result in significant business impact and cost savings of up to 30%.",
-      "Staying at Leader level":
+      "Staying at Leader Level":
         "To stay at the forefront of HR technology, focusing on advanced skills management is vital. Investing in AI and machine learning for skills development and matching will ensure you maintain a competitive edge. Studies reveal that these technologies can increase decision-making accuracy by up to 60%. Embedding skills as a key component in all HR processes will drive continuous improvement and high employee engagement. Leveraging real-time skills data for strategic decisions will keep your organization agile and responsive to market changes, sustaining your leadership status.",
       "Emerging to Leader":
         "To maintain excellence in HR technology, a strategic focus on advanced skills management is crucial. Implementing AI and machine learning for skills matching improves decision-making accuracy by up to 60%, as supported by recent research. Embedding skills management into all HR processes will enhance employee engagement and productivity, creating a more dynamic and responsive organization. Leveraging real-time skills data for strategic HR decisions ensures that your organization remains agile and adaptable to market changes.",
@@ -12559,7 +12559,7 @@ export const results = {
         "To improve your HR technology ecosystem, expanding automation to include more HR functions such as onboarding can significantly improve efficiency, reducing administrative tasks by up to 40%. Integrating recruitment and performance management systems will streamline operations, lowering data entry errors by up to 30% and enhancing overall data accuracy. Investing in basic data analytics tools can enhance decision-making by up to 25%, offering valuable insights into employee performance and engagement. Aligning HR technology with business goals ensures that your investments support strategic objectives, driving growth and efficiency.",
       "Staying at Mature Level":
         "To maintain a high level of HR technology maturity, comprehensive automation of HR processes with advanced solutions such as AI-driven recruitment and predictive analytics is crucial. Studies show this can enhance employee productivity by up to 20%. Improving integration between HR systems will ensure seamless data flow, vital for operational efficiency. Regular use of advanced data analytics tools can increase HR forecast accuracy by up to 50%, aiding in effective workforce planning. Aligning HR technology with business strategy will drive significant business impact and achieve cost savings of up to 30%.",
-      "Staying at Leader level":
+      "Staying at Leader Level":
         "As a leader in HR technology, maintaining your status requires a strong emphasis on skills management. Investing in AI and machine learning for skills matching and development is essential. Research indicates that leveraging these technologies can improve decision-making speed and accuracy by up to 60%. Making skills management a central focus in all HR processes will enhance employee engagement and productivity. Utilizing real-time skills data to drive strategic HR decisions ensures you stay adaptable and innovative, reinforcing your leadership position.",
       "Emerging to Leader":
         "Focusing on advanced skills management is essential for excelling in HR technology. Research shows that adopting AI and machine learning for skills development can improve decision-making accuracy by up to 60%. Embedding skills management into all HR processes will significantly increase employee engagement and productivity. Utilizing real-time skills data to guide strategic decisions ensures organizational agility, innovation, and responsiveness to market dynamics, cementing your leadership in the industry.",
@@ -12580,7 +12580,7 @@ export const results = {
         "Your HR technology is at the Emerging level, and to enhance it, expanding automation to include more functions like onboarding can greatly improve efficiency. Studies show this can reduce administrative tasks by up to 40%. Integrating recruitment and performance management systems will streamline operations, lowering data entry errors by up to 30%. Enhancing basic data analytics tools will improve decision-making by up to 25%, providing valuable insights into employee performance. Aligning HR technology with business goals will ensure that your investments support strategic objectives, driving growth.",
       "Staying at Mature Level":
         "To sustain your HR technology maturity, fully automating HR processes with advanced solutions like AI-driven recruitment and predictive analytics is essential. Research indicates this can enhance employee productivity by up to 20%. Improving integration between HR systems will facilitate seamless data flow, enhancing operational efficiency. Regular use of advanced data analytics tools can improve HR forecast accuracy by up to 50%, aiding workforce planning. Ensuring HR technology aligns with business strategy can result in significant business impact and cost savings of up to 30%.",
-      "Staying at Leader level":
+      "Staying at Leader Level":
         "To sustain your leadership in HR technology, it is critical to focus on advanced skills management. Continuous investment in AI and machine learning for skills development and matching can maintain your competitive advantage. Studies highlight that these technologies can enhance decision-making accuracy by up to 60%. Embedding skills management into all HR processes will boost employee engagement and productivity. Leveraging real-time skills data for strategic HR decisions will ensure organizational agility and responsiveness to market changes, reinforcing your leadership position.",
       "Emerging to Leader":
         "Achieving excellence in HR technology requires a robust emphasis on skills management. Recent studies indicate that implementing AI and machine learning for skills matching significantly enhances decision-making accuracy by up to 60%. Integrating skills management into all HR processes drives notable improvements in employee engagement and productivity. Leveraging real-time skills data to inform strategic HR decisions ensures your organization remains agile, innovative, and responsive to evolving market conditions.",
@@ -12601,7 +12601,7 @@ export const results = {
         "Expanding your HR technology ecosystem by automating more processes, such as onboarding, can reduce administrative tasks by up to 40%. Integrating additional HR systems like recruitment and performance management will lower data entry errors by up to 30% and improve overall data accuracy. Investing in basic data analytics tools can enhance decision-making by up to 25%, providing better insights into employee performance and engagement. Aligning HR technology with business goals ensures that your investments support strategic objectives, driving organizational growth and efficiency.",
       "Staying at Mature Level":
         "Maintaining a high level of HR technology maturity involves comprehensive automation of HR processes with advanced solutions like AI-driven recruitment and predictive analytics. Studies show this can enhance employee productivity by up to 20%. Improving integration between HR systems will ensure seamless data flow, vital for operational efficiency. Regularly utilizing advanced data analytics tools can increase HR forecast accuracy by up to 50%, supporting effective workforce planning. Aligning HR technology with business strategy can drive significant business impact, resulting in cost savings of up to 30%.",
-      "Staying at Leader level":
+      "Staying at Leader Level":
         "Remaining at the forefront of HR technology necessitates a focus on advanced skills management. Investing in AI and machine learning for skills matching and development will secure your competitive edge. Research shows these technologies can increase decision-making accuracy by up to 60%. Embedding skills as a central focus in all HR processes will drive continuous improvement and high employee engagement. Utilizing real-time skills data for strategic decisions will keep your organization agile and innovative, sustaining your leadership status.",
       "Emerging to Leader":
         "Maintaining a leadership role in HR technology necessitates a strong focus on advanced skills management. Research highlights that using AI and machine learning for skills development can improve decision-making accuracy by up to 60%. Embedding skills management in all HR processes will greatly enhance employee engagement and productivity. Utilizing real-time skills data ensures that strategic decisions are well-informed and responsive to market changes, promoting sustained organizational agility and competitiveness.",
@@ -12622,7 +12622,7 @@ export const results = {
         "To enhance your HR technology at the Emerging level, expanding automation to include more HR functions, like onboarding, can significantly improve efficiency, reducing administrative tasks by up to 40%. Integrating recruitment and performance management systems will streamline operations and reduce data entry errors by up to 30%. Investing in basic data analytics tools will enhance decision-making by up to 25%, offering critical insights into employee performance. Aligning HR technology with business goals ensures that your investments support strategic objectives, driving growth and efficiency.",
       "Staying at Mature Level":
         "For continued success at the Mature level, fully automating HR processes with advanced technology solutions such as AI-driven recruitment and predictive analytics is essential. Research indicates this can enhance employee productivity by up to 20%. Improving integration between HR systems will create a seamless experience and real-time data flow, crucial for operational efficiency. Regular use of advanced data analytics tools can increase HR forecast accuracy by up to 50%, aiding workforce planning. Aligning HR technology with business strategy will drive significant business impact, resulting in cost savings of up to 30%.",
-      "Staying at Leader level":
+      "Staying at Leader Level":
         "To continue leading in HR technology, prioritizing advanced skills management is crucial. Ongoing investment in AI and machine learning for optimizing skills matching and development can maintain your competitive advantage. Studies indicate that leveraging these technologies can enhance decision-making accuracy by up to 60%. By embedding skills management into all HR processes, you will boost employee engagement and productivity. Using real-time skills data to drive strategic HR decisions ensures organizational agility and responsiveness to market changes, reinforcing your leadership position.",
       "Emerging to Leader":
         "To excel in HR technology, a dedicated focus on advanced skills management is vital. Implementing AI and machine learning for skills matching and development can significantly enhance capabilities, with studies showing up to a 60% improvement in decision-making accuracy. Embedding skills management throughout all HR processes boosts employee engagement and productivity substantially. Leveraging real-time skills data for strategic decisions ensures your organization remains agile, innovative, and responsive to changes, maintaining its leadership position.",
@@ -12645,7 +12645,7 @@ export const results = {
         "To maintain your HR technology, focus on expanding automation and improving integration across key HR processes. Implementing AI and machine learning for skills tracking can enhance decision-making accuracy by up to 30%. Embedding skills management into recruitment and performance management processes will streamline operations and boost employee engagement and productivity. Regularly utilizing data analytics tools will help you derive actionable insights, ensuring alignment with business goals and improving overall efficiency.",
       "Staying at Mature Level":
         "To maintain excellence in your HR technology, it is crucial to fully automate HR processes with advanced solutions like AI-driven recruitment and predictive analytics. Research indicates that such integration can boost employee productivity by up to 20%. Emphasizing advanced skills management will further enhance your capabilities. Embedding comprehensive skills tracking into recruitment and performance management processes will improve decision-making accuracy by up to 50%, as supported by recent studies. Leveraging real-time skills data will ensure seamless operations and alignment with strategic business goals, driving significant business impact and operational efficiency.",
-      "Staying at Leader level":
+      "Staying at Leader Level":
         "To maintain excellence in HR technology, continuous investment in cutting-edge skills management technologies like AI and machine learning is essential. Recent research shows that these investments can enhance decision-making speed and accuracy by up to 60%. Embedding comprehensive skills management into all HR processes, from recruitment to career development, will drive significant improvements in employee engagement and productivity. Leveraging real-time data and advanced analytics ensures your organization remains agile, innovative, and responsive to market changes, maintaining your competitive edge.",
       "Emerging to Leader":
         "To progress to the forefront of HR technology, a strategic focus on advanced skills management is essential. Implementing AI and machine learning for skills tracking and development can significantly enhance your capabilities, improving decision-making accuracy by up to 60%. Embedding comprehensive skills management into all HR processes, from recruitment to career development, will drive substantial improvements in employee engagement and productivity. Leveraging real-time skills data will ensure your organization remains agile, innovative, and responsive to market changes, positioning you as an industry leader.",
@@ -12666,7 +12666,7 @@ export const results = {
         "Sustaining your HR technology involves strategic use of AI and machine learning for skills management. Research shows these tools can improve decision-making accuracy by up to 30%. Integrating skills tracking into recruitment and performance management processes will increase employee engagement and productivity. Utilizing data analytics to monitor and address skill gaps ensures your organization maintains its operational effectiveness and aligns with strategic objectives.",
       "Staying at Mature Level":
         "Maintaining a high standard in HR technology requires comprehensive automation of HR processes with AI-driven solutions. Studies show that integrating AI can enhance productivity by up to 20%. Focusing on skills management is equally important. Embedding skills tracking into recruitment and performance management processes will significantly boost decision-making accuracy, improving it by up to 50%. Utilizing advanced data analytics to monitor and develop employee skills ensures your organization remains agile and aligned with strategic business objectives.",
-      "Staying at Leader level":
+      "Staying at Leader Level":
         "Sustaining a high standard in HR technology involves prioritizing advanced skills management through AI and machine learning. Research indicates this can improve decision-making accuracy by up to 60%. Integrating skills management into all HR processes, from recruitment to career development, will enhance employee engagement and productivity. Utilizing real-time data and analytics for strategic decisions ensures organizational agility and responsiveness, securing your competitive advantage.",
       "Emerging to Leader":
         "Achieving leadership in HR technology necessitates prioritizing advanced skills management. Adopting AI and machine learning for skills development and matching can enhance decision-making accuracy by up to 60%, according to recent research. Integrating skills management into all HR processes will boost employee engagement and productivity. Utilizing real-time skills data for strategic HR decisions ensures your organization is agile, responsive, and well-positioned to lead in a dynamic market environment.",
@@ -12687,7 +12687,7 @@ export const results = {
         "To optimize your HR technology, it is essential to focus on expanding automation and enhancing integration within HR processes. Adopting AI and machine learning for skills tracking can enhance decision-making accuracy by up to 30%. Embedding skills management into key HR functions such as recruitment and performance reviews will drive employee engagement and productivity. Utilizing data analytics tools to derive actionable insights ensures alignment with business goals and operational efficiency.",
       "Staying at Mature Level":
         "To sustain your advanced HR technology capabilities, it is essential to focus on both automation and skills management. Implementing AI-driven recruitment and predictive analytics can boost employee productivity by up to 20%. According to recent HR research, embedding skills management into all HR processes, such as recruitment and performance reviews, enhances decision-making accuracy by up to 50%. Regularly utilizing real-time skills data will ensure operational efficiency and alignment with business strategies, driving substantial business impact.",
-      "Staying at Leader level":
+      "Staying at Leader Level":
         "Maintaining top performance in HR technology requires a focus on advanced skills management using AI and machine learning. Recent studies show that these technologies can boost decision-making accuracy by up to 60%. Embedding skills management into all HR processes will drive substantial gains in employee engagement and productivity. Leveraging real-time data for strategic HR decisions ensures your organization remains agile and innovative, maintaining its competitive position.",
       "Emerging to Leader":
         "To reach the top tier of HR technology, a robust focus on skills management is crucial. Implementing AI and machine learning for advanced skills tracking will provide cutting-edge capabilities, improving decision-making accuracy by up to 60%. Embedding skills management throughout all HR processes will significantly enhance employee engagement and productivity. Utilizing real-time skills data will drive strategic decisions, ensuring organizational agility and market responsiveness, propelling your organization to a leadership position.",
@@ -12708,7 +12708,7 @@ export const results = {
         "Maintaining your HR technology requires a commitment to enhancing automation and integration. Implementing AI and machine learning for skills tracking can improve decision-making accuracy by up to 30%. Integrating these tools into recruitment and performance management processes will boost employee engagement and productivity. Regularly utilizing data analytics will provide valuable insights, ensuring your organization remains efficient and aligned with strategic goals.",
       "Staying at Mature Level":
         "Ensuring top-tier HR technology involves a strong emphasis on advanced skills management and comprehensive automation. AI-driven recruitment and predictive analytics can improve employee productivity by up to 20%, according to recent studies. Embedding skills tracking and development into recruitment and performance management processes enhances decision-making accuracy by up to 50%. Leveraging real-time skills data for strategic decisions ensures your organization remains efficient, agile, and aligned with business goals.",
-      "Staying at Leader level":
+      "Staying at Leader Level":
         "Ensuring leadership in HR technology necessitates a strategic focus on skills management and continuous technological investment. Research shows that implementing AI and machine learning for skills matching and development can improve decision-making accuracy by up to 60%. Embedding comprehensive skills management into all HR processes will enhance employee engagement and productivity. Utilizing real-time data and advanced analytics ensures your organization remains responsive and adaptive, sustaining your competitive advantage.",
       "Emerging to Leader":
         "Transforming your HR technology requires a strong emphasis on skills management. Research indicates that using AI and machine learning for skills development can enhance decision-making accuracy by up to 60%. Embedding comprehensive skills management into all HR processes will drive employee engagement and productivity to new heights. Leveraging real-time skills data ensures that strategic HR decisions are well-informed and agile, positioning your organization as a leader in the industry.",
@@ -12729,7 +12729,7 @@ export const results = {
         "To sustain your HR technology, prioritize expanding automation and improving integration in HR processes. AI and machine learning tools for skills tracking can enhance decision-making accuracy by up to 30%. Embedding skills management in recruitment and performance management will increase employee engagement and productivity. Using data analytics tools to track and address skill gaps ensures operational efficiency and alignment with business goals.",
       "Staying at Mature Level":
         "To maintain high performance in HR technology, it is critical to prioritize both automation and skills management. Research indicates that AI-driven solutions can boost productivity by up to 20%. Embedding comprehensive skills management into recruitment and performance management processes significantly improves decision-making accuracy by up to 50%. Utilizing advanced data analytics to track and develop employee skills will ensure your organization remains agile and aligned with strategic business objectives, driving significant operational impact.",
-      "Staying at Leader level":
+      "Staying at Leader Level":
         "To excel in HR technology, continuous investment in AI and machine learning for advanced skills management is crucial. Recent studies indicate that these technologies can enhance decision-making accuracy by up to 60%. Embedding skills management into all HR processes, from recruitment to career development, will significantly boost employee engagement and productivity. Leveraging real-time data for strategic decisions ensures your organization remains agile, innovative, and responsive to market dynamics.",
       "Emerging to Leader":
         "To rise to the top in HR technology, focusing on advanced skills management is essential. Utilizing AI and machine learning for skills tracking and development offers significant improvements, with studies showing up to a 60% boost in decision-making accuracy. Embedding skills management in all HR processes, from recruitment to performance management, will enhance employee engagement and productivity. Leveraging real-time skills data will ensure your organization is agile, innovative, and capable of leading the market.",
@@ -12750,7 +12750,7 @@ export const results = {
         "Continuing to enhance your HR technology involves strategic investment in automation and integration. AI and machine learning for skills tracking can significantly improve decision-making accuracy by up to 30%. Integrating skills management into HR processes such as recruitment and performance management will enhance employee engagement and productivity. Leveraging data analytics tools will help identify skill gaps and drive efficiency, ensuring alignment with organizational goals.",
       "Staying at Mature Level":
         "Sustaining excellence in HR technology requires a dual focus on automation and skills management. Implementing AI-driven recruitment and predictive analytics can increase employee productivity by up to 20%. Recent HR research supports the integration of skills tracking into recruitment and performance management, which enhances decision-making accuracy by up to 50%. Leveraging real-time skills data ensures operational efficiency and alignment with strategic business goals, fostering significant business impact.",
-      "Staying at Leader level":
+      "Staying at Leader Level":
         "Sustaining excellence in HR technology involves a strong focus on advanced skills management. Recent HR research highlights that using AI and machine learning for skills development can improve decision-making accuracy by up to 60%. Embedding skills management into all HR processes will drive significant improvements in employee engagement and productivity. Utilizing real-time data and advanced analytics will ensure your organization remains agile and competitive, securing its position in the market.",
       "Emerging to Leader":
         "Achieving a leading position in HR technology involves a dedicated focus on skills management. Implementing AI and machine learning for skills matching can significantly improve decision-making accuracy by up to 60%, as highlighted by recent research. Embedding skills management into all HR processes will foster substantial improvements in employee engagement and productivity. Utilizing real-time skills data to guide strategic HR decisions ensures your organization remains agile and competitive, securing its place as an industry leader.",
@@ -12771,7 +12771,7 @@ export const results = {
         "To maintain your HR technology, focus on expanding automation and integrating key HR systems. Implementing AI and machine learning for skills tracking can boost decision-making accuracy by up to 30%. Embedding skills management into recruitment and performance processes will drive employee engagement and productivity. Utilizing data analytics tools to derive actionable insights ensures that your organization remains efficient and aligned with business objectives.",
       "Staying at Mature Level":
         "To uphold your advanced HR technology, it is crucial to focus on automation and skills management. AI-driven recruitment and predictive analytics can enhance employee productivity by up to 20%, as supported by recent studies. Embedding skills management into all HR processes, such as recruitment and performance reviews, improves decision-making accuracy by up to 50%. Utilizing advanced data analytics to monitor and develop skills will ensure your organization remains efficient, agile, and aligned with strategic business goals.",
-      "Staying at Leader level":
+      "Staying at Leader Level":
         "Maintaining high standards in HR technology requires prioritizing advanced skills management. Research shows that leveraging AI and machine learning for skills matching can enhance decision-making accuracy by up to 60%. Embedding skills management into all HR processes, from recruitment to career development, will significantly improve employee engagement and productivity. Utilizing real-time data and analytics for strategic HR decisions ensures your organization remains agile and innovative, maintaining its competitive edge.",
       "Emerging to Leader":
         "To advance in HR technology, prioritizing skills management is critical. Adopting AI and machine learning for advanced skills tracking and development can enhance decision-making accuracy by up to 60%. Embedding comprehensive skills management into all HR processes will drive significant increases in employee engagement and productivity. Leveraging real-time skills data will ensure your organization remains agile, responsive, and positioned as a leader in the industry.",
@@ -12792,7 +12792,7 @@ export const results = {
         "Sustaining your HR technology requires enhancing automation and integration within HR processes. AI and machine learning tools for skills tracking can improve decision-making accuracy by up to 30%. Integrating skills management into recruitment and performance management will boost employee engagement and productivity. Regularly using data analytics tools will provide valuable insights, ensuring alignment with business goals and operational efficiency.",
       "Staying at Mature Level":
         "Maintaining high standards in HR technology involves a commitment to both automation and skills management. Research indicates that AI-driven solutions can increase productivity by up to 20%. Embedding comprehensive skills tracking into recruitment and performance management processes significantly boosts decision-making accuracy by up to 50%. Leveraging real-time skills data for strategic decisions ensures operational efficiency and alignment with business strategies, driving substantial business impact.",
-      "Staying at Leader level":
+      "Staying at Leader Level":
         "Ensuring continued excellence in HR technology necessitates focusing on advanced skills management through continuous investment in AI and machine learning. Studies show that these technologies can boost decision-making accuracy by up to 60%. Embedding comprehensive skills management into all HR processes will enhance employee engagement and productivity. Leveraging real-time data and advanced analytics ensures your organization remains responsive and adaptive, sustaining its competitive advantage.",
       "Emerging to Leader":
         "Elevating your HR technology necessitates a robust focus on advanced skills management. Implementing AI and machine learning for skills tracking will provide transformative capabilities, with studies indicating up to a 60% improvement in decision-making accuracy. Embedding skills management throughout all HR processes will enhance employee engagement and productivity significantly. Utilizing real-time skills data will drive strategic HR decisions, ensuring organizational agility and responsiveness, securing your place as a market leader.",
@@ -12813,7 +12813,7 @@ export const results = {
         "To maintain your HR technology, it is vital to expand automation and improve integration in HR processes. Implementing AI and machine learning for skills tracking can enhance decision-making accuracy by up to 30%. Embedding skills management in recruitment and performance management processes will drive employee engagement and productivity. Utilizing data analytics tools will help track skill gaps and ensure operational efficiency, aligning with strategic goals.",
       "Staying at Mature Level":
         "To sustain excellence in HR technology, it is essential to prioritize automation and advanced skills management. AI-driven recruitment and predictive analytics can improve employee productivity by up to 20%. According to recent HR research, embedding skills management into recruitment and performance management processes enhances decision-making accuracy by up to 50%. Regularly utilizing real-time skills data ensures operational efficiency and alignment with business strategies, driving significant business impact.",
-      "Staying at Leader level":
+      "Staying at Leader Level":
         "To remain at the forefront of HR technology, continuous investment in AI and machine learning for skills management is vital. Research indicates this can improve decision-making accuracy by up to 60%. Embedding skills management into all HR processes, from recruitment to career development, will drive substantial improvements in employee engagement and productivity. Utilizing real-time data and advanced analytics will ensure your organization remains agile, innovative, and responsive to market changes, maintaining its competitive position.",
       "Emerging to Leader":
         "To lead in HR technology, a strong focus on skills management is essential. Implementing AI and machine learning for skills development can significantly enhance capabilities, improving decision-making accuracy by up to 60%. Embedding comprehensive skills management in all HR processes will boost employee engagement and productivity. Leveraging real-time skills data ensures your organization is agile, innovative, and well-positioned to lead in the industry.",
@@ -12834,7 +12834,7 @@ export const results = {
         "Sustaining your HR technology involves a focus on expanding automation and integration. AI and machine learning for skills tracking can significantly improve decision-making accuracy by up to 30%. Integrating skills management into HR processes such as recruitment and performance management will enhance employee engagement and productivity. Leveraging data analytics tools will provide actionable insights, ensuring your organization remains efficient and aligned with business goals.",
       "Staying at Mature Level":
         "Ensuring top performance in HR technology requires a strategic focus on automation and skills management. Research shows that AI-driven recruitment and predictive analytics can boost productivity by up to 20%. Embedding skills tracking and development into all HR processes significantly enhances decision-making accuracy by up to 50%. Utilizing advanced data analytics to monitor and develop employee skills ensures your organization remains agile, efficient, and aligned with strategic business goals, resulting in substantial operational impact.",
-      "Staying at Leader level":
+      "Staying at Leader Level":
         "Achieving and maintaining high performance in HR technology requires a strategic focus on skills management and technological innovation. Studies show that implementing AI and machine learning for skills matching and development can improve decision-making accuracy by up to 60%. Embedding comprehensive skills management into all HR processes will significantly enhance employee engagement and productivity. Leveraging real-time data and advanced analytics ensures your organization remains agile, adaptive, and competitive, sustaining its leadership edge.",
       "Emerging to Leader":
         "Achieving top performance in HR technology requires an unwavering focus on advanced skills management. Utilizing AI and machine learning for skills tracking and development will provide cutting-edge capabilities, enhancing decision-making accuracy by up to 60%, as supported by recent research. Embedding skills management throughout all HR processes will drive substantial increases in employee engagement and productivity. Leveraging real-time skills data for strategic HR decisions ensures your organization remains agile, responsive, and positioned as an industry leader.",
@@ -12857,7 +12857,7 @@ export const results = {
         "Your organization should focus on expanding automation across more HR processes and improving system integration. This can boost efficiency by up to 30% and reduce administrative costs by up to 20%. Investing in advanced reporting tools will improve decision-making speed by up to 25% and save up to $1 million annually through better retention management. Emphasizing skills management and development can increase employee productivity and engagement by up to 20%, as recent HR research indicates a strong correlation between skills development and workforce performance.",
       "Staying at Mature Level":
         "Your organization should enhance its existing HR systems by continuously optimizing automation and integration. Investing in advanced data analytics can lead to up to a 25% improvement in decision-making efficiency. Focusing on skills management and development, your organization can see up to a 20% increase in employee productivity and engagement. Recent HR research indicates a strong correlation between skills development and workforce performance, highlighting that organizations with robust skills management programs are better equipped to address skill gaps and enhance employee capabilities, leading to improved business outcomes.",
-      "Staying at Leader level":
+      "Staying at Leader Level":
         "Your organization should continue to innovate and optimize its HR technology ecosystem by integrating advanced AI and machine learning tools. Recent HR research indicates that leveraging these technologies can improve decision-making speed and accuracy by up to 35% and enable real-time data analytics for more strategic HR initiatives. Emphasizing skills management and development can lead to up to a 25% increase in employee productivity and engagement. Studies show that organizations at the leader level benefit significantly from continuous improvement in skills tracking, as it allows for better identification of skill gaps and targeted development efforts, fostering a highly adaptable and capable workforce that can respond quickly to changing business needs.",
       "Emerging to Leader":
         "Your organization should prioritize integrating advanced AI and machine learning tools into its HR technology ecosystem. Recent HR research indicates that leveraging these technologies can improve decision-making speed and accuracy by up to 35% and enable real-time data analytics for more strategic HR initiatives. Emphasizing skills management and development can lead to up to a 25% increase in employee productivity and engagement. Studies show that robust skills tracking is crucial for identifying skill gaps and implementing targeted development efforts, fostering a highly adaptable and capable workforce that can respond quickly to changing business needs. By creating personalized learning pathways and leveraging AI for skills matching, your organization can ensure that employees are continuously developing and aligned with the organization's strategic goals.",
@@ -12878,7 +12878,7 @@ export const results = {
         "To sustain its emerging-level HR technology ecosystem, your organization should emphasize refining automated processes and enhancing system integration. Advanced analytics can boost decision-making by up to 25%, providing insights that drive strategic HR initiatives. Prioritizing skills tracking and development can result in up to a 20% increase in productivity and employee engagement. Research shows that organizations with comprehensive skills management systems are better equipped to align employee capabilities with business needs, fostering a more agile and responsive workforce.",
       "Staying at Mature Level":
         "To sustain effective HR operations, your organization should emphasize refining automated processes and integrating systems more deeply. Advanced analytics can boost decision-making by up to 25%, providing insights that drive strategic HR initiatives. Prioritizing skills tracking and development can result in up to a 20% increase in productivity and employee engagement. Research shows that organizations with comprehensive skills management systems can better align employee capabilities with business needs, fostering a more agile and responsive workforce that can adapt to changing market conditions and technological advancements.",
-      "Staying at Leader level":
+      "Staying at Leader Level":
         "To sustain a leader-level HR technology ecosystem, your organization should focus on leveraging advanced analytics and AI for predictive modeling and strategic planning. According to recent research, this can enhance decision-making efficiency by up to 35%. Prioritizing skills management can boost productivity and engagement by up to 25%, with studies highlighting that robust skills development programs are essential for maintaining a competitive edge. Implementing comprehensive skills tracking and development initiatives ensures that employees’ skills are aligned with organizational goals, thereby enhancing workforce agility and driving continuous improvement in performance.",
       "Emerging to Leader":
         "Your organization should focus on leveraging advanced analytics and AI for predictive modeling and strategic planning. According to recent research, this can enhance decision-making efficiency by up to 35%. Prioritizing skills management can boost productivity and engagement by up to 25%, with studies highlighting that comprehensive skills development programs are essential for maintaining a competitive edge. Implementing robust skills tracking and development initiatives ensures that employees’ skills are aligned with organizational goals, thereby enhancing workforce agility. Regularly updating skills inventories and offering tailored training programs can help employees stay ahead of industry trends and prepare for future roles, ultimately driving continuous improvement in performance.",
@@ -12899,7 +12899,7 @@ export const results = {
         "Optimizing automation and integration in HR systems is essential for your organization to maintain operational efficiency at an emerging level. Enhancing data analytics capabilities can improve decision-making by up to 25%, enabling more informed and timely HR strategies. Emphasizing skills management and development can increase productivity by up to 20%, as recent studies show that effective skills tracking leads to better workforce utilization and higher engagement levels. Continuous learning and development programs ensure employees remain competitive and motivated, driving long-term success.",
       "Staying at Mature Level":
         "Optimizing automation and integration in HR systems is essential for your organization to maintain operational efficiency. Enhancing data analytics capabilities can improve decision-making by up to 25%, enabling more informed and timely HR strategies. Emphasizing skills management and development can increase productivity by up to 20%, as recent studies show that effective skills tracking leads to better workforce utilization and higher engagement levels. By investing in continuous learning and development programs, your organization can ensure employees remain competitive and motivated, ultimately driving long-term success.",
-      "Staying at Leader level":
+      "Staying at Leader Level":
         "Optimizing automation and deepening system integration with cutting-edge AI and machine learning is crucial for your organization. Recent HR studies indicate that advanced data analytics can improve decision-making by up to 35%, providing actionable insights for strategic HR decisions. Emphasizing skills management and development can increase productivity by up to 25%. Research shows that comprehensive skills tracking and development initiatives lead to better workforce performance and higher engagement levels. By continuously investing in skills development, your organization can create a dynamic workforce that is equipped to meet future challenges and drive innovation.",
       "Emerging to Leader":
         "Optimizing automation and deepening system integration with cutting-edge AI and machine learning is essential for your organization. Recent HR studies indicate that advanced data analytics can improve decision-making by up to 35%, providing actionable insights for strategic HR decisions. Emphasizing skills management and development can increase productivity by up to 25%. Research shows that comprehensive skills tracking and development initiatives lead to better workforce performance and higher engagement levels. Continuous investment in skills development will create a dynamic workforce equipped to meet future challenges and drive innovation. Utilizing AI for personalized learning and development plans can ensure that employees are continuously growing and contributing to the organization’s success.",
@@ -12920,7 +12920,7 @@ export const results = {
         "Your organization should focus on continuous improvement of automated processes and system integration to streamline HR operations. Advanced data analytics can improve decision-making efficiency by up to 25%, providing actionable insights that support strategic planning. Enhancing skills management processes can boost employee productivity and engagement by up to 20%. HR research indicates that companies with strong skills development initiatives can effectively close skill gaps and foster a culture of continuous improvement, leading to higher retention rates and a more competent workforce.",
       "Staying at Mature Level":
         "Your organization should focus on continuous improvement of automated processes and system integration to streamline HR operations. Advanced data analytics can improve decision-making efficiency by up to 25%, providing actionable insights that support strategic planning. Enhancing skills management processes can boost employee productivity and engagement by up to 20%. HR research indicates that companies with strong skills development initiatives can effectively close skill gaps and foster a culture of continuous improvement, leading to higher retention rates and a more competent workforce.",
-      "Staying at Leader level":
+      "Staying at Leader Level":
         "Your organization should continuously enhance automated processes and system integration with advanced technologies. Implementing sophisticated data analytics can improve decision-making by up to 35%, supporting more effective strategic planning. Enhancing skills management processes can boost employee productivity and engagement by up to 25%. HR research indicates that companies at the leader level with strong skills development initiatives can effectively close skill gaps and foster continuous innovation. By prioritizing skills tracking and targeted development programs, your organization can ensure employees possess the necessary competencies to excel in their roles and contribute to overall business success.",
       "Emerging to Leader":
         "Your organization should continuously enhance automated processes and system integration with advanced technologies. Implementing sophisticated data analytics can improve decision-making by up to 35%, supporting more effective strategic planning. Enhancing skills management processes can boost employee productivity and engagement by up to 25%. HR research indicates that companies with strong skills development initiatives can effectively close skill gaps and foster continuous innovation. Prioritizing skills tracking and targeted development programs will ensure employees possess the necessary competencies to excel and contribute to overall business success. By leveraging data to identify skill gaps and opportunities, your organization can develop strategic training programs that align with long-term objectives.",
@@ -12941,7 +12941,7 @@ export const results = {
         "To ensure effective HR operations at an emerging level, your organization should refine automation and integration efforts. Investing in advanced analytics can enhance decision-making by up to 25%, providing a clearer understanding of workforce trends and needs. Strengthening skills management and development programs can lead to up to a 20% increase in productivity, supported by research linking comprehensive skills tracking with higher employee engagement and performance. By focusing on skills development, your organization can build a more adaptable and skilled workforce, ready to meet future challenges and opportunities.",
       "Staying at Mature Level":
         "To ensure effective HR operations, your organization should refine automation and integration efforts. Investing in advanced analytics can enhance decision-making by up to 25%, providing a clearer understanding of workforce trends and needs. Strengthening skills management and development programs can lead to up to a 20% increase in productivity, supported by research linking comprehensive skills tracking with higher employee engagement and performance. By focusing on skills development, your organization can build a more adaptable and skilled workforce, ready to meet future challenges and opportunities.",
-      "Staying at Leader level":
+      "Staying at Leader Level":
         "To maintain a leader-level HR technology ecosystem, your organization should invest in the latest AI and machine learning technologies. Recent HR research suggests this can enhance decision-making by up to 35% and support real-time data-driven strategies. Strengthening skills management and development programs can lead to up to a 25% increase in productivity, supported by research linking advanced skills tracking with higher employee engagement and performance. By focusing on continuous innovation and comprehensive skills development, your organization can maintain its competitive edge and ensure that employees are prepared for evolving business demands.",
       "Emerging to Leader":
         "Your organization should invest in the latest AI and machine learning technologies. Recent HR research suggests this can enhance decision-making by up to 35% and support real-time data-driven strategies. Strengthening skills management and development programs can lead to up to a 25% increase in productivity, supported by research linking advanced skills tracking with higher employee engagement and performance. Focusing on continuous innovation and comprehensive skills development will help your organization stay ahead in the competitive landscape and ensure employees are prepared for evolving business demands. Regularly assessing skill levels and offering targeted training opportunities will help employees adapt to new roles and responsibilities.",
@@ -12962,7 +12962,7 @@ export const results = {
         "Improving automation and system integration is key for your organization to maintain efficiency in HR processes at an emerging level. Advanced data analytics can enhance decision-making by up to 25%, allowing HR teams to make more strategic and data-driven decisions. Focusing on skills management can increase productivity and engagement by up to 20%, as HR studies indicate that effective skills tracking and development are crucial for optimizing workforce performance. By prioritizing skills management, your organization can ensure employees have the necessary skills to succeed, driving overall organizational success.",
       "Staying at Mature Level":
         "Improving automation and system integration is key for your organization to maintain efficiency in HR processes. Advanced data analytics can enhance decision-making by up to 25%, allowing HR teams to make more strategic and data-driven decisions. Focusing on skills management can increase productivity and engagement by up to 20%, as HR studies indicate that effective skills tracking and development are crucial for optimizing workforce performance. By prioritizing skills management, your organization can ensure employees have the necessary skills to succeed, driving overall organizational success.",
-      "Staying at Leader level":
+      "Staying at Leader Level":
         "Improving automation and system integration with AI and machine learning is key for your organization to maintain leader-level efficiency in HR processes. Recent studies show that advanced data analytics can enhance decision-making by up to 35%, allowing HR teams to make more strategic and data-driven decisions. Focusing on skills management can increase productivity and engagement by up to 25%, as HR studies indicate that effective skills tracking and development are crucial for optimizing workforce performance. By investing in continuous skills development, your organization can build a highly skilled workforce that is capable of driving innovation and achieving strategic goals.",
       "Emerging to Leader":
         "Improving automation and system integration with AI and machine learning is key for your organization. Recent studies show that advanced data analytics can enhance decision-making by up to 35%, allowing HR teams to make more strategic and data-driven decisions. Focusing on skills management can increase productivity and engagement by up to 25%, as HR studies indicate that effective skills tracking and development are crucial for optimizing workforce performance. Investing in continuous skills development will build a highly skilled workforce capable of driving innovation and achieving strategic goals. By using AI to match employees with training programs and career opportunities, your organization can ensure ongoing skills enhancement.",
@@ -12983,7 +12983,7 @@ export const results = {
         "Your organization should continuously optimize HR systems' automation and integration to sustain operational efficiency at an emerging level. Advanced analytics can improve decision-making efficiency by up to 25%, offering deeper insights into workforce dynamics. Emphasizing skills management can boost productivity and employee engagement by up to 20%, with research showing that robust skills development programs lead to better performance and higher retention rates. By investing in skills tracking and development, your organization can create a more agile and competent workforce, capable of driving innovation and growth.",
       "Staying at Mature Level":
         "Your organization should continuously optimize HR systems' automation and integration to sustain operational efficiency. Advanced analytics can improve decision-making efficiency by up to 25%, offering deeper insights into workforce dynamics. Emphasizing skills management can boost productivity and employee engagement by up to 20%, with research showing that robust skills development programs lead to better performance and higher retention rates. By investing in skills tracking and development, your organization can create a more agile and competent workforce, capable of driving innovation and growth.",
-      "Staying at Leader level":
+      "Staying at Leader Level":
         "Your organization should continuously optimize HR systems with the latest AI and machine learning technologies to sustain operational efficiency at a leader level. Advanced analytics can improve decision-making by up to 35%, offering deeper insights into workforce dynamics. Emphasizing skills management can boost productivity and employee engagement by up to 25%, with research showing that robust skills development programs lead to better performance and higher retention rates. Investing in skills tracking and development ensures that your organization can maintain a highly adaptable workforce that is ready to tackle future challenges and capitalize on new opportunities.",
       "Emerging to Leader":
         "Your organization should continuously optimize HR systems with the latest AI and machine learning technologies. Advanced analytics can improve decision-making by up to 35%, offering deeper insights into workforce dynamics. Emphasizing skills management can boost productivity and employee engagement by up to 25%, with research showing that robust skills development programs lead to better performance and higher retention rates. Investing in skills tracking and development ensures that your organization can maintain a highly adaptable workforce ready to tackle future challenges and capitalize on new opportunities. Providing personalized development plans and tracking progress with advanced tools will help employees achieve their career goals while contributing to the organization’s success.",
@@ -13004,7 +13004,7 @@ export const results = {
         "To maintain effective HR operations at an emerging level, your organization needs to enhance its automation and integration capabilities. Advanced data analytics can boost decision-making by up to 25%, providing the necessary insights to align HR strategies with business goals. Prioritizing skills management and development can increase productivity by up to 20%, as recent research highlights the positive impact of comprehensive skills tracking on employee performance and engagement. By focusing on developing employees' skills, your organization can build a more resilient and versatile workforce, ready to navigate future challenges.",
       "Staying at Mature Level":
         "To maintain effective HR operations, your organization needs to enhance its automation and integration capabilities. Advanced data analytics can boost decision-making by up to 25%, providing the necessary insights to align HR strategies with business goals. Prioritizing skills management and development can increase productivity by up to 20%, as recent research highlights the positive impact of comprehensive skills tracking on employee performance and engagement. By focusing on developing employees' skills, your organization can build a more resilient and versatile workforce, ready to navigate future challenges.",
-      "Staying at Leader level":
+      "Staying at Leader Level":
         "To maintain effective HR operations at a leader level, your organization needs to leverage advanced automation and integration capabilities. Recent HR research indicates that AI and advanced data analytics can boost decision-making by up to 35%, providing the necessary insights to align HR strategies with business goals. Prioritizing skills management and development can increase productivity by up to 25%, as recent research highlights the positive impact of comprehensive skills tracking on employee performance and engagement. By focusing on developing employees' skills, your organization can build a more resilient and versatile workforce, equipped to navigate future challenges and drive sustained business success.",
       "Emerging to Leader":
         "Your organization needs to leverage advanced automation and integration capabilities. Recent HR research indicates that AI and advanced data analytics can boost decision-making by up to 35%, providing the necessary insights to align HR strategies with business goals. Prioritizing skills management and development can increase productivity by up to 25%, as recent research highlights the positive impact of comprehensive skills tracking on employee performance and engagement. Focusing on developing employees' skills will build a more resilient and versatile workforce equipped to navigate future challenges and drive sustained business success. Creating a culture of continuous learning and providing access to relevant training resources will ensure employees remain engaged and proficient.",
@@ -13025,7 +13025,7 @@ export const results = {
         "Your organization should focus on refining automated processes and integrating HR systems to maintain high operational standards at an emerging level. Enhancing data analytics capabilities can improve decision-making by up to 25%, supporting more effective HR strategies. Emphasizing skills management can boost productivity and engagement by up to 20%, supported by studies showing the benefits of effective skills tracking and development on workforce performance. By continually investing in skills management, your organization can ensure employees remain engaged and proficient, driving overall business success.",
       "Staying at Mature Level":
         "Your organization should focus on refining automated processes and integrating HR systems to maintain high operational standards. Enhancing data analytics capabilities can improve decision-making by up to 25%, supporting more effective HR strategies. Emphasizing skills management can boost productivity and engagement by up to 20%, supported by studies showing the benefits of effective skills tracking and development on workforce performance. By continually investing in skills management, your organization can ensure employees remain engaged and proficient, driving overall business success.",
-      "Staying at Leader level":
+      "Staying at Leader Level":
         "Your organization should focus on refining automated processes and integrating HR systems with advanced AI technologies to maintain high operational standards at a leader level. Enhancing data analytics capabilities can improve decision-making by up to 35%, supporting more effective HR strategies. Emphasizing skills management can boost productivity and engagement by up to 25%, supported by studies showing the benefits of effective skills tracking and development on workforce performance. By continually investing in skills management, your organization can ensure employees remain engaged and proficient, driving overall business success and maintaining a competitive advantage.",
       "Emerging to Leader":
         "Your organization should focus on refining automated processes and integrating HR systems with advanced AI technologies. Enhancing data analytics capabilities can improve decision-making by up to 35%, supporting more effective HR strategies. Emphasizing skills management can boost productivity and engagement by up to 25%, supported by studies showing the benefits of effective skills tracking and development on workforce performance. Continuously investing in skills management will ensure employees remain engaged and proficient, driving overall business success and maintaining a competitive advantage. By leveraging technology to create personalized learning experiences, your organization can ensure that employees are constantly evolving and contributing to business goals.",
@@ -13046,7 +13046,7 @@ export const results = {
         "To ensure ongoing effectiveness in HR operations at an emerging level, your organization should optimize automation and integration efforts. Advanced data analytics can enhance decision-making by up to 25%, providing valuable insights that drive strategic HR initiatives. Strengthening skills management processes can increase productivity and engagement by up to 20%, with HR research indicating that robust skills tracking and development are critical for improving overall employee performance. By focusing on skills development, your organization can cultivate a highly skilled and motivated workforce, poised to achieve organizational goals and maintain a competitive edge.",
       "Staying at Mature Level":
         "To ensure ongoing effectiveness in HR operations, your organization should optimize automation and integration efforts. Advanced data analytics can enhance decision-making by up to 25%, providing valuable insights that drive strategic HR initiatives. Strengthening skills management processes can increase productivity and engagement by up to 20%, with HR research indicating that robust skills tracking and development are critical for improving overall employee performance. By focusing on skills development, your organization can cultivate a highly skilled and motivated workforce, poised to achieve organizational goals and maintain a competitive edge.",
-      "Staying at Leader level":
+      "Staying at Leader Level":
         "To ensure ongoing effectiveness in HR operations at a leader level, your organization should optimize automation and integration efforts using advanced AI and machine learning. Recent HR research shows that sophisticated data analytics can enhance decision-making by up to 35%, providing valuable insights that drive strategic HR initiatives. Strengthening skills management processes can increase productivity and engagement by up to 25%, with HR research indicating that robust skills tracking and development are critical for improving overall employee performance. By focusing on continuous innovation and skills development, your organization can cultivate a highly skilled and motivated workforce, poised to achieve organizational goals and maintain a competitive edge.",
       "Emerging to Leader":
         "Your organization should optimize automation and integration efforts using advanced AI and machine learning. Recent HR research shows that sophisticated data analytics can enhance decision-making by up to 35%, providing valuable insights that drive strategic HR initiatives. Strengthening skills management processes can increase productivity and engagement by up to 25%, with HR research indicating that robust skills tracking and development are critical for improving overall employee performance. Focusing on continuous innovation and skills development will cultivate a highly skilled and motivated workforce poised to achieve organizational goals and maintain a competitive edge. By regularly updating skills inventories and providing targeted development programs, your organization can ensure employees are well-prepared for future challenges and opportunities.",

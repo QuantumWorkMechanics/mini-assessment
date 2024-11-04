@@ -104,9 +104,9 @@ export default function SliderSelect({
           <div
             className={
               "absolute ml-24 tooltip tooltip-open w-24 md:w-40 md:hidden " +
-              ((currentSliderValue == 0 || currentSliderValue <= desiredSliderValue || tooltipFlag > 3) && " hidden")
+              ((currentSliderValue == 0 || currentSliderValue <= desiredSliderValue || tooltipFlag > 6) && " hidden")
             }
-            data-tip={"Desired Level cannot be less than Current Level."}
+            data-tip={currentQuestion.errorMessage}
           ></div>
 
           <div className="md:flex items-center">
